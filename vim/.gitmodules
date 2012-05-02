@@ -34,3 +34,6 @@
 [submodule "bundle/vim-unimpaired"]
 	path = bundle/vim-unimpaired
 	url = git://github.com/tpope/vim-unimpaired.git
+[submodule "bundle/sourcevimod"]
+	path = bundle/sourcevimod
+	url = git@github.com:CrimsonTautology/SourceViMod.git
