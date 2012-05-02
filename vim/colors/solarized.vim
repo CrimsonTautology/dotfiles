@@ -831,14 +831,14 @@ exe "hi! ConId"    . s:fg_yellow .s:bg_none   .s:fmt_none
 exe "hi! hsImport" . s:fg_magenta.s:bg_none   .s:fmt_none
 exe "hi! hsString" . s:fg_base00 .s:bg_none   .s:fmt_none
 
-exe "hi! hsStructure"        . s:fg_cyan   .s:bg_none   .s:fmt_none
-exe "hi! hs_hlFunctionName"  . s:fg_blue   .s:bg_none
-exe "hi! hsStatement"        . s:fg_cyan   .s:bg_none   .s:fmt_none
+exe "hi! hsStructure"        . s:fg_magenta.s:bg_none   .s:fmt_none
+exe "hi! hs_hlFunctionName"  . s:fg_cyan   .s:bg_none   .s:fmt_ital
+exe "hi! hsStatement"        . s:fg_magenta.s:bg_none   .s:fmt_bold
 exe "hi! hsImportLabel"      . s:fg_cyan   .s:bg_none   .s:fmt_none
-exe "hi! hs_OpFunctionName"  . s:fg_yellow .s:bg_none   .s:fmt_none
+exe "hi! hs_OpFunctionName"  . s:fg_yellow .s:bg_none   .s:fmt_ital
 exe "hi! hs_DeclareFunction" . s:fg_orange .s:bg_none   .s:fmt_none
 exe "hi! hsVarSym"           . s:fg_cyan   .s:bg_none   .s:fmt_none
-exe "hi! hsType"             . s:fg_yellow .s:bg_none   .s:fmt_none
+exe "hi! hsType"             . s:fg_yellow .s:bg_none   .s:fmt_ital
 exe "hi! hsTypedef"          . s:fg_cyan   .s:bg_none   .s:fmt_none
 exe "hi! hsModuleName"       . s:fg_green  .s:bg_none   .s:fmt_undr
 exe "hi! hsModuleStartLabel" . s:fg_magenta.s:bg_none   .s:fmt_none
@@ -849,8 +849,8 @@ hi! link hsModuleWhereLabel  hsModuleStartLabel
 
 " following is for the haskell-conceal plugin
 " the first two items don't have an impact, but better safe
-exe "hi! hsNiceOperator"     . s:fg_cyan   .s:bg_none   .s:fmt_none
-exe "hi! hsniceoperator"     . s:fg_cyan   .s:bg_none   .s:fmt_none
+exe "hi! hsNiceOperator"     . s:fg_blue   .s:bg_none   .s:fmt_bold
+exe "hi! hsniceoperator"     . s:fg_blue   .s:bg_none   .s:fmt_bold
 
 "}}}
 " pandoc markdown syntax highlighting "{{{
