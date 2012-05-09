@@ -37,3 +37,6 @@
 [submodule "bundle/sourcevimod"]
 	path = bundle/sourcevimod
 	url = git@github.com:CrimsonTautology/SourceViMod.git
+[submodule "bundle/neco-ghc"]
+	path = bundle/neco-ghc
+	url = git://github.com/ujihisa/neco-ghc.git
