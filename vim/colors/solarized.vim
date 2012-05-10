@@ -1,3 +1,4 @@
+" Test 1
 " Name:     Solarized vim colorscheme
 " Author:   Ethan Schoonover <es@ethanschoonover.com>
 " URL:      http://ethanschoonover.com/solarized
