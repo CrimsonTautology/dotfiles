@@ -46,3 +46,6 @@
 [submodule "bundle/ghc-mod"]
 	path = bundle/ghc-mod
 	url = git://github.com/eagletmt/ghcmod-vim.git
+[submodule "bundle/neco-snippets-complete"]
+	path = bundle/neco-snippets-complete
+	url = git://github.com/Shougo/neocomplcache-snippets-complete.git
