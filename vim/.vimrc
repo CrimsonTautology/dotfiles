@@ -253,6 +253,7 @@ autocmd FileType c map <silent> <F11> :w<cr>:!a.exe<cr>
 " SourcePawn SourceMod
 autocmd BufNewFile,BufRead *.sp,*.inc set filetype=sourcepawn
 autocmd FileType sourcepawn compiler spcomp
+autocmd FileType sourcepawn set makeprg=spcomp\ %:p\ -w203\ -w204
 autocmd FileType sourcepawn map <silent> <F11> :w<cr>:!moveToDev.py %:t:r.smx<cr>
 autocmd FileType sourcepawn map <silent> <S-F11> :w<cr>:silent !startDevServer.py<cr>
 
@@ -270,14 +271,20 @@ autocmd BufNewFile,BufRead *.html map <silent> <F11> :w<cr>:!"C:\Program Files (
 " Haskel
 "autocmd FileType haskell set makeprg=ghc\ % 
 autocmd FileType haskell compiler ghc
-autocmd FileType haskell map <silent> <F11> :w<cr>:!start ghci %:p<cr>
+"autocmd FileType haskell compiler ghc-mod
+
+if executable("switchToAndThen.exe")  "Check if my switchToAndThen program is in the path.  This will switch focus to an existing ghci instead of creating a new one
+    autocmd FileType haskell map <silent> <F11> :w<cr>:!start switchToAndThen ghci "ghci %:p" ":r{enter}"<cr>
+else
+    autocmd FileType haskell map <silent> <F11> :w<cr>:!start ghci %:p<cr>
+endif
+
 autocmd FileType haskell map <silent> <s-F11> :w<cr>:! %:t:r.exe<cr>
 autocmd FileType haskell let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '`': '`', '«': '»'}
-"autocmd FileType haskell let g:tagbar_ctags_bin = 'C:\Users\Billy\AppData\Roaming\cabal\bin\hasktags.exe -c'
-"autocmd FileType haskell let Tlist_Ctags_Cmd = 'C:\Users\Billy\AppData\Roaming\cabal\bin\hasktags.exe -c'
-autocmd FileType haskell imap <silent> <c-.> ->
-autocmd FileType haskell imap <silent> <c-.><c-.> =>
-autocmd FileType haskell imap <silent> <c-,> <-
+
+autocmd FileType haskell imap <silent> <m-.> ->
+autocmd FileType haskell imap <silent> <m-.><m-.> =>
+autocmd FileType haskell imap <silent> <m-,> <-
 
 " Erlang
 autocmd FileType erlang set makeprg=erlc\ %
@@ -351,6 +358,15 @@ function! MyDiff()
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
+""Check if my switchToAndThen program is in the path.  This will switch focus to an existing window instead of creating a new one
+function! SwitchTo(windowName,  programName, autohotkeyScript)
+    if executable("switchToAndThen.exe")  
+        :!start switchToAndThen l:windowName . " " . l:programName . " " . l:autohotkeyScript<cr>
+    else
+        :!start l:programName<cr>
+    endif
+endfunction
+
 
 
 
@@ -405,37 +421,37 @@ amenu Plugin.Tagbar :TagbarToggle<cr>
 let g:tagbar_expand = 1
 
 let g:tagbar_type_sourcepawn = {
-    \ 'ctagstype' : 'c++',
-    \ 'kinds'     : [
-        \ 'd:macros:1',
-        \ 'p:prototypes:1',
-        \ 'g:enums',
-        \ 'e:enumerators',
-        \ 't:typedefs',
-        \ 'n:namespaces',
-        \ 'c:classes',
-        \ 's:structs',
-        \ 'u:unions',
-        \ 'f:functions',
-        \ 'm:members',
-        \ 'v:variables'
-    \ ],
-    \ 'sro'        : '::',
-    \ 'kind2scope' : {
-        \ 'g' : 'enum',
-        \ 'n' : 'namespace',
-        \ 'c' : 'class',
-        \ 's' : 'struct',
-        \ 'u' : 'union'
-    \ },
-    \ 'scope2kind' : {
-        \ 'enum'      : 'g',
-        \ 'namespace' : 'n',
-        \ 'class'     : 'c',
-        \ 'struct'    : 's',
-        \ 'union'     : 'u'
-    \ }
-\ }
+            \ 'ctagstype' : 'c++',
+            \ 'kinds'     : [
+            \ 'd:macros:1',
+            \ 'p:prototypes:1',
+            \ 'g:enums',
+            \ 'e:enumerators',
+            \ 't:typedefs',
+            \ 'n:namespaces',
+            \ 'c:classes',
+            \ 's:structs',
+            \ 'u:unions',
+            \ 'f:functions',
+            \ 'm:members',
+            \ 'v:variables'
+            \ ],
+            \ 'sro'        : '::',
+            \ 'kind2scope' : {
+            \ 'g' : 'enum',
+            \ 'n' : 'namespace',
+            \ 'c' : 'class',
+            \ 's' : 'struct',
+            \ 'u' : 'union'
+            \ },
+            \ 'scope2kind' : {
+            \ 'enum'      : 'g',
+            \ 'namespace' : 'n',
+            \ 'class'     : 'c',
+            \ 'struct'    : 's',
+            \ 'union'     : 'u'
+            \ }
+            \ }
 
 "-----------------------------------------------------------------------------
 ""Gundo
@@ -459,12 +475,12 @@ let g:gundo_help = 1
 
 
 "-----------------------------------------------------------------------------
-""VCS
+""Fugitive
 ""-----------------------------------------------------------------------------
-let VCSCommandDisableMappings = 1
+nmap <silent> <leader>grm :Gremove<CR>
+nmap <silent> <leader>ga :Gwrite<CR>
 
-nmap <silent> <leader>hga :VCSAdd<CR>
-nmap <silent> <leader>hgb :VCSBlame!<CR>
+nmap <silent> <leader>gb :Gblame!<CR>
 nmap <silent> <leader>hgc :VCSCommit<CR>
 nmap <silent> <leader>hgd :VCSDiff<CR>
 nmap <silent> <leader>hgi :VCSInfo<CR>
@@ -485,20 +501,27 @@ let g:neocomplcache_auto_completion_start_length = 2
 let g:neocomplcache_manual_completion_start_length = 2
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
+let g:neocomplcache_snippets_dir = "$HOME/.vim/snippets"
+
+
 set completeopt="longest,menuone,preview"
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 inoremap <expr><C-n>  pumvisible() ? "\<C-n>" : neocomplcache#manual_keyword_complete()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
+nmap <silent> <leader>esnip :NeoComplCacheEditSnippets<CR>
+
 " <CR>: close popup and save indent.
 "inoremap <expr><CR>  pumvisible() ? neocomplcache#cancel_popup() : "\<CR>"
 
 " <TAB>: completion.
+" SuperTab like snippets behavior.
+imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ?
+            \ "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 "inoremap <expr><TAB>  pumvisible() ? "\<CR>" : "\<TAB>"
 
 
@@ -506,6 +529,9 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 "Haskell Mode
 ""-----------------------------------------------------------------------------
 "let g:haddock_browser = "C:/Program Files (x86)/Mozilla Firefox/firefox.exe"
+let g:hs_highlight_delimiters = 1
+let g:hs_highlight_boolean = 1
+let g:hs_highlight_types = 1
 
 
 
