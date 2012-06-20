@@ -1,52 +1,70 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-"Current Ruby path
-let g:ruby_path = ':C:\ruby191\bin'
 "-----------------------------------------------------------------------------
 ""Global Vim settings
 ""-----------------------------------------------------------------------------
-"MSWin settings
-source $VIMRUNTIME/mswin.vim
+if has("gui_running")
+	"GUI only settings
+	"MSWin settings
+	source $VIMRUNTIME/mswin.vim
 
-"Some corrections to behave mswin
-set selectmode=
-set selection=inclusive
+	"Some corrections to behave mswin
+	set selectmode=
+	set selection=inclusive
 
-"guioptions
-"set guioptions+=b
-set guioptions-=T
-"set guioptions+=c
+	"guioptions
+	set guioptions+=bh "Horizontal scrollbar
+	set guioptions-=T
+	"set guioptions+=c
 
-"Disable altkeys selection the menuone
-set winaltkeys=no
-"Syntax highlighting and color scheme"
-syntax on
-set background=light
+	"disable menu alt keys
+	set winaltkeys=no
 
-"If we're in cmd tweak a bit, note this needs to be before setting solarized
-if &term == 'win32'
-    "let g:solarized_termcolors=256
-    set background=dark
+	set background=light
+
+	"Font"
+	set guifont=Consolas:h12:cANSI
+	
+	"Memorize window size
+	set sessionoptions+=resize,winpos
+
+	"set lines=42 columns =112
+	
+	"Proper tab stop
+	set tabstop=4
+	set softtabstop=4
+	set shiftwidth=4
+
+else
+	set bg=dark
+	"colorscheme xterm16
+	set scrolloff=8  " Keep 8 lines below and above the cursor
+	
 endif
 
+"Syntax highlighting and color scheme"
+syntax on
 colorscheme solarized
 
-"Font"
-set guifont=Consolas:h12:cANSI
+
 
 "Set the status line
 set showcmd      " Display incomplete commands.
 set laststatus=2 
 set showmode " Show the current mode
-set statusline=%f\%m\ %y\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n
-"set statusline+=%(%{Tlist_Get_Tagname_By_Line()}%) " Function name
 
-"Memorize window size
-set sessionoptions+=resize,winpos
+set statusline=""
+set statusline+=%f	"Tail of filename"
+set statusline+=%m	"Modified flag"
+set statusline+=\ %y	"filetype"
+set statusline+=\ %r	"read only flag"
+set statusline+=\ %h	"help file flag"
+set statusline+=%=	"left/right separator"
+set statusline+=\ %{tagbar#currenttag('[%s]','')}
+set statusline+=\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n
 
-set lines=42 columns =112
-
+"other
 set cursorline
 set number
 set ruler
@@ -61,17 +79,12 @@ set splitright   " Split new window to the right with :vs
 set nocompatible " Dont' be vi compatible
 set history=100
 set wildmenu "command line completion
-"set scrolloff=8  " Keep 8 lines below and above the cursor
 set backspace=2 " Allow backspacing over indent, eol, and the start of an insert
 
 "Tabbing"
 set autoindent
 set smartindent
 set noexpandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
 
 "Auto switch directory
 set autochdir
@@ -95,13 +108,6 @@ set viminfo='100,\"100,:20,%,n~/.viminfo
 set diffexpr=MyDiff()
 
 
-"TODO
-"" Initial path seeding
-"set path=
-"set path+=/usr/local/include/**
-"set path+=/usr/include/**
-"set path+=~/code/**
-"
 "" Set the tags files to be the following
 set tags+=../tags
 
@@ -144,6 +150,9 @@ vmap < <gv
 "Quick macro to the q registry, use Q to play back
 nnoremap Q @q
 
+"I never use ' so just map it to " for quick registers
+nnoremap ' "
+
 "Remap keys to alt that have been lost by mswin
 noremap <M-v>       <C-V>
 noremap <M-a>       <C-a>
@@ -167,6 +176,7 @@ map <leader>dp :diffput<cr>]c
 map <leader>dg :diffget<cr>]c
 
 nmap <silent> <leader>ve :e $MYVIMRC<CR>
+nmap <silent> <leader>vo :e! $MYVIMRC<CR>
 nmap <silent> <leader>vs :so $MYVIMRC<CR>
 
 " cd to the directory containing the file in the buffer
@@ -177,6 +187,13 @@ nmap <silent> <leader>cd :lcd %:h<CR>
 nmap <silent> <leader>rr :!%<cr>
 
 
+" CK log
+nmap <silent> <leader>ck yyp^WdE"=strftime("%m/%d/%y")<CR>PWC
+
+
+" Quick coldfusion/html comments
+nmap <silent> <leader>cc mpI<!--- <esc>A ---><esc>`p<cr>
+nmap <silent> <leader>ch mpI<!-- <esc>A --><esc>`p<cr>
 
 " Search the current file for what's currently in the search
 " register and display matches
@@ -233,6 +250,7 @@ au BufRead,BufNewFile *  setfiletype txt
 
 
 "Auto fold visual basic
+autocmd BufNewFile,BufRead *.vb setfiletype vb
 autocmd BufNewFile,BufRead *.vb set syntax=vb
 autocmd BufNewFile,BufRead *.vb call NetFold()
 
@@ -321,6 +339,16 @@ autocmd QuickFixCmdPost    l* nested botright lwindow
 "-----------------------------------------------------------------------------
 ""Functions
 ""-----------------------------------------------------------------------------
+"Convert an intermec logfile to a send inputs file for testing
+function! LogToSendInputs()
+	%s/\stimestamp=\d*$//g
+	%s/^tok\[0\]=//g
+	%s/\stok\[\d*\]=/|/g
+endfunction
+command! SAAlogToInputs call LogToSendInputs()
+
+
+
 function! NetFold()
   set foldmethod=syntax
   syn region myFold start="#Region" end="#End Region" fold
@@ -367,6 +395,59 @@ function! SwitchTo(windowName,  programName, autohotkeyScript)
     endif
 endfunction
 
+"Run on output from cron command from nike
+function! FilterDatabaseOutput()
+	g/^\s*$/d
+	g/Database closed\./d
+	g/Data committed\./d
+	g/Database selected\./d
+	g/1 row(s) updated\./d
+endfunction
+command! SAAfilterdata call FilterDatabaseOutput()
+
+"Convert all colors in vb.net to a solarized equivalent
+function! ToSolarizedPalletteLight()
+
+    let solarized_BASE03 = "Color.FromArgb(0, 43, 54)"
+    let solarized_BASE02 = "Color.FromArgb(7, 54, 66)"
+    let solarized_BASE01 = "Color.FromArgb(88, 110, 117)"
+    let solarized_BASE00 = "Color.FromArgb(101, 123, 131)"
+    let solarized_BASE0 = "Color.FromArgb(131, 148, 150)"
+    let solarized_BASE1 = "Color.FromArgb(147, 161, 161)"
+    let solarized_BASE2 = "Color.FromArgb(238, 232, 213)"
+    let solarized_BASE3 = "Color.FromArgb(253, 246, 227)"
+    let solarized_YELLOW = "Color.FromArgb(181, 137, 0)"
+    let solarized_ORANGE = "Color.FromArgb(203, 75, 22)"
+    let solarized_RED = "Color.FromArgb(220, 50, 47)"
+    let solarized_MAGENTA = "Color.FromArgb(211, 54, 130)"
+    let solarized_VIOLET = "Color.FromArgb(108, 113, 196)"
+    let solarized_BLUE = "Color.FromArgb(38, 139, 210)"
+    let solarized_CYAN = "Color.FromArgb(42, 161, 152)"
+    let solarized_GREEN = "Color.FromArgb(133, 153, 0)"
+
+	%s/System.Drawing.Color.Blue/solarized_BLUE/ge
+
+	%s/System.Drawing.Color.Cyan/solarized_CYAN/ge
+	%s/System.Drawing.Color.LightCyan/solarized_CYAN/ge
+
+	%s/System.Drawing.Color.Red/solarized_RED/ge
+	%s/System.Drawing.Color.Maroon/solarized_RED/ge
+	%s/Color.Salmon/solarized_RED/ge
+
+	%s/System.Drawing.Color.Green/solarized_GREEN/ge
+	%s/System.Drawing.Color.LimeGreen/solarized_GREEN/ge
+
+	%s/Color.Thistle/solarized_MAGENTA/ge
+
+	%s/System.Drawing.Color.LightYellow/solarized_BASE03/ge
+	%s/System.Drawing.Color.White/solarized_BASE3/ge
+	%s/System.Drawing.Color.WhiteSmoke/solarized_BASE2/ge
+
+	%s/System.Drawing.SystemColors.ControlLight/solarized_BASE02/ge
+	%s/System.Drawing.Color.Black/solarized_BASE03/ge
+
+endfunction
+command! SAAsolarizedLight call ToSolarizedPalletteLight()
 
 
 
@@ -453,6 +534,38 @@ let g:tagbar_type_sourcepawn = {
             \ }
             \ }
 
+"suport for visual basic
+let g:tagbar_type_vb = {
+			\ 'ctagstype' : 'vb',
+			\ 'kinds' : [
+			\ 's:subroutine',
+			\ 'f:function',
+			\ 'v:variable',
+			\ 'c:const',
+			\ 'n:name',
+			\ 'e:enum',
+			\ 'l:label',
+			\ ],
+			\ 'sro'        : '.',
+			\ 'kind2scope' : {
+			\ 's' : 'subroutine',
+			\ 'f' : 'function',
+			\ 'v' : 'variable',
+			\ 'c' : 'const',
+			\ 'n' : 'name',
+			\ 'e' : 'enum',
+			\ 'l' : 'label',
+			\ },
+			\ 'scope2kind' : {
+			\  'subroutine': 's',
+			\  'function' : 'f',
+			\  'variable' : 'v',
+			\  'const' : 'c',
+			\  'name'  : 'n',
+			\  'enum'  : 'e',
+			\  'label' : 'l',
+			\ }
+			\ }
 "-----------------------------------------------------------------------------
 ""Gundo
 ""-----------------------------------------------------------------------------
@@ -554,5 +667,44 @@ map <leader>u :Utl<cr>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"SANDBOX
+"SAA Overides
 ""-----------------------------------------------------------------------------
+if ($AUCTION == "SOUTHERN")
+	"SAA Terminal Settings
+	set bg=dark
+	"colorscheme xterm16
+	"Use custom ctags TODO (this is a pathing issue)
+	let g:tagbar_expand = 1
+	let Tlist_Ctags_Cmd= "~/bin/ctags"
+	let g:tagbar_ctags_bin="~/bin/ctags"
+
+	"Proper tab stop
+	set tabstop=2
+	set softtabstop=2
+	set shiftwidth=2
+	
+	"Fixed error format, ignore clock skewed errors
+	set errorformat^=%-GMon\ %.%#
+	set errorformat^=%-GTue\ %.%#
+	set errorformat^=%-GWed\ %.%#
+	set errorformat^=%-GThu\ %.%#
+	set errorformat^=%-GFri\ %.%#
+	
+	"<F3> Executes the current file 
+	"<F4> Runs our doall script
+	"<F5> Runs our make
+	"<F6> Open output file 
+	map <f3> :w<cr>:!%<cr>
+	map <f4> :w<cr>:!sh -x doall.sh<cr>
+	map <f5> :w<cr>:make <cr>
+	map <f6> :sp _%.out<cr> 
+	au BufRead,BufNewFile *.c         set makeprg=compile\ ccur
+	au BufRead,BufNewFile *.c         map <f3> :w<cr>:!%:r > _%.out<cr>
+	au BufRead,BufNewFile *.ec        set makeprg=compile\ ringman
+	au BufRead,BufNewFile K_*.c       set makeprg=compile\ intermec
+	au BufRead,BufNewFile A_*.c       set makeprg=compile\ o
+	au BufRead,BufNewFile *.sql       set makeprg=dsql\ prod\ <\ %\ >\ _%.out
+	au BufRead,BufNewFile *.sh        set makeprg=sh\ -x\ %\ >\ _%.out
+	au BufRead,BufNewFile .vimrc      map <f5> :w<cr>:so %<cr>
+	au BufRead,BufNewFile *.pl        set makeprg=%
+endif
