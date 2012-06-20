@@ -614,8 +614,7 @@ let g:neocomplcache_auto_completion_start_length = 2
 let g:neocomplcache_manual_completion_start_length = 2
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
-let g:neocomplcache_snippets_dir = "$HOME/.vim/snippets"
-
+let g:neocomplcache_snippets_dir = substitute(globpath(&rtp, 'snippets/'), "\n", ',', 'g')
 
 set completeopt="longest,menuone,preview"
 " Plugin key-mappings.
