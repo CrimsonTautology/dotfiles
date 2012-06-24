@@ -49,3 +49,6 @@
 [submodule "bundle/neco-snippets-complete"]
 	path = bundle/neco-snippets-complete
 	url = git://github.com/Shougo/neocomplcache-snippets-complete.git
+[submodule "bundle/vim-sourcemod"]
+	path = bundle/vim-sourcemod
+	url = git://github.com/CrimsonTautology/SourceViMod.git
