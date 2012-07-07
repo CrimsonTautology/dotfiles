@@ -1,6 +1,7 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
-
+"test 1
+"test 2
 "-----------------------------------------------------------------------------
 ""Global Vim settings
 ""-----------------------------------------------------------------------------
@@ -61,6 +62,7 @@ set statusline+=\ %y	"filetype"
 set statusline+=\ %r	"read only flag"
 set statusline+=\ %h	"help file flag"
 set statusline+=%=	"left/right separator"
+set statusline+=\ %{fugitive#statusline()}
 set statusline+=\ %{tagbar#currenttag('[%s]','')}
 set statusline+=\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n
 
@@ -88,6 +90,7 @@ set noexpandtab
 
 "Auto switch directory
 set autochdir
+set directory+=,~/tmp,$TMP
 "autocmd BufEnter * lcd %:p:h
 
 "Enable file type
@@ -291,11 +294,11 @@ autocmd BufNewFile,BufRead *.html map <silent> <F11> :w<cr>:!"C:\Program Files (
 autocmd FileType haskell compiler ghc
 "autocmd FileType haskell compiler ghc-mod
 
-if executable("switchToAndThen.exe")  "Check if my switchToAndThen program is in the path.  This will switch focus to an existing ghci instead of creating a new one
-    autocmd FileType haskell map <silent> <F11> :w<cr>:!start switchToAndThen ghci "ghci %:p" ":r{enter}"<cr>
-else
+"if executable("switchToAndThen.exe")  "Check if my switchToAndThen program is in the path.  This will switch focus to an existing ghci instead of creating a new one
+    "autocmd FileType haskell map <silent> <F11> :w<cr>:!start switchToAndThen ghci "ghci %:p" ":r{enter}"<cr>
+"else
     autocmd FileType haskell map <silent> <F11> :w<cr>:!start ghci %:p<cr>
-endif
+"endif
 
 autocmd FileType haskell map <silent> <s-F11> :w<cr>:! %:t:r.exe<cr>
 autocmd FileType haskell let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '`': '`', '«': '»'}
@@ -461,12 +464,6 @@ command! SAAsolarizedLight call ToSolarizedPalletteLight()
 "test [url=google.com]word[/url]  [url* ]link ][/url] <div id="me" color="blue">text</div>
 " more words to test in this test with [url=googleh*]code][/url=google] 
 
-"-----------------------------------------------------------------------------
-""Snipmate
-""-----------------------------------------------------------------------------
-"source ~/.vim/snippets/support_functions.vim
-"source ~/.vim/snippets/support_functions_derek.vim
-let g:snippets_dir="~/vimfiles/bundle/snippets"
 
 
 "-----------------------------------------------------------------------------
@@ -480,19 +477,6 @@ let NERDTreeChDirMode     = 1
 let NERDTreeDirArrows     = 0
 
 let NERDTreeIgnore=['\.hi$', '\.o$', '\.sw.$', '\~$', '\.smx$', '\.exe$', '\.beam$', '\~$']
-"-----------------------------------------------------------------------------
-""NERDCommenter
-""-----------------------------------------------------------------------------
-let NERDCreateDefaultMappings = 0
-map <Leader>ncc <Plug>NERDCommenterToggle
-map <Leader>nci <Plug>NERDCommenterInvert
-map <Leader>ncl <Plug>NERDCommenterToEOL
-map <Leader>nca <Plug>NERDCommenterAppend
-"-----------------------------------------------------------------------------
-""Taglist
-""-----------------------------------------------------------------------------
-nmap <silent> <leader>tl :TlistToggle<cr>
-amenu Plugin.Taglist :TlistToggle<cr>
 
 "-----------------------------------------------------------------------------
 ""Tagbar
@@ -581,11 +565,6 @@ let g:gundo_help = 1
 
 
 
-"-----------------------------------------------------------------------------
-""Pyflakes
-""-----------------------------------------------------------------------------
-"g:pyflakes_use_quickfix = 0
-
 
 "-----------------------------------------------------------------------------
 ""Fugitive
@@ -631,19 +610,10 @@ nmap <silent> <leader>esnip :NeoComplCacheEditSnippets<CR>
 "inoremap <expr><CR>  pumvisible() ? neocomplcache#cancel_popup() : "\<CR>"
 
 " <TAB>: completion.
-" SuperTab like snippets behavior.
 imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ?
-            \ "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-"inoremap <expr><TAB>  pumvisible() ? "\<CR>" : "\<TAB>"
+            \ "\<Plug>(neocomplcache_snippets_expand)" : "\<TAB>"
 
-
-"-----------------------------------------------------------------------------
-"Haskell Mode
-""-----------------------------------------------------------------------------
-"let g:haddock_browser = "C:/Program Files (x86)/Mozilla Firefox/firefox.exe"
-let g:hs_highlight_delimiters = 1
-let g:hs_highlight_boolean = 1
-let g:hs_highlight_types = 1
+smap <expr><TAB> "\<Plug>(neocomplcache_snippets_expand)"
 
 
 
