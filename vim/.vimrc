@@ -63,7 +63,7 @@ set statusline+=\ %r	"read only flag"
 set statusline+=\ %h	"help file flag"
 set statusline+=%=	"left/right separator"
 set statusline+=\ %{fugitive#statusline()}
-set statusline+=\ %{tagbar#currenttag('[%s]','')}
+"set statusline+=\ %{tagbar#currenttag('[%s]','')}
 set statusline+=\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n
 
 "other
@@ -178,9 +178,9 @@ map <leader>da yypf.l<c-a>WdE"=strftime("%m/%d/%y")<CR>PWcewms<esc>WC
 map <leader>dp :diffput<cr>]c
 map <leader>dg :diffget<cr>]c
 
-nmap <silent> <leader>ve :e $MYVIMRC<CR>
-nmap <silent> <leader>vo :e! $MYVIMRC<CR>
-nmap <silent> <leader>vs :so $MYVIMRC<CR>
+nmap <silent> <leader>ve :e $HOME/vimfiles/.vimrc<CR>
+nmap <silent> <leader>vo :e! $HOME/vimfiles/.vimrc<CR>
+nmap <silent> <leader>vs :so $HOME/vimfiles/.vimrc<CR>
 
 " cd to the directory containing the file in the buffer
 nmap <silent> <leader>cd :lcd %:h<CR>
