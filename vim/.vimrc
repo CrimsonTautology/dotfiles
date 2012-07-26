@@ -323,6 +323,8 @@ autocmd BufNewFile,BufRead *cfg/*.cfg set syntax=tf2
 "For text/reading files setlocal spell and wrap
 autocmd FileType txt,markdown setlocal spell
 autocmd FileType txt,markdown setlocal wrap
+autocmd FileType txt,markdown setlocal linebreak
+
 autocmd FileType txt,markdown nnoremap j gj
 autocmd FileType txt,markdown nnoremap k gk
 
