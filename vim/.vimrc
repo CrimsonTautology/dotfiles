@@ -320,11 +320,11 @@ autocmd FileType fsharp let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"
 "TF2/L4D/Source syntax
 autocmd BufNewFile,BufRead *cfg/*.cfg set syntax=tf2
 
-"For text/reading files set spell and wrap
-autocmd FileType txt setlocal spell
-"au BufRead,BufNewFile *  set wrap
-"au BufRead,BufNewFile *  nnoremap j gj
-"au BufRead,BufNewFile *  nnoremap k gk
+"For text/reading files setlocal spell and wrap
+autocmd FileType txt,markdown setlocal spell
+autocmd FileType txt,markdown setlocal wrap
+autocmd FileType txt,markdown nnoremap j gj
+autocmd FileType txt,markdown nnoremap k gk
 
 
 
