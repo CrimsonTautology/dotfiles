@@ -245,44 +245,38 @@ augroup END
 
 "Auto set any unknown file to .txt syntax                                       
 au BufRead,BufNewFile *  setfiletype txt
-"au BufRead,BufNewFile *  set wrap
-"au BufRead,BufNewFile *  nnoremap j gj
-"au BufRead,BufNewFile *  nnoremap k gk
-
-
-
 
 "Auto fold visual basic
 autocmd BufNewFile,BufRead *.vb setfiletype vb
-autocmd BufNewFile,BufRead *.vb set syntax=vb
+autocmd BufNewFile,BufRead *.vb setlocal syntax=vb
 autocmd BufNewFile,BufRead *.vb call NetFold()
 
 "Load coldfusion dictionary
-autocmd BufNewFile,BufRead *.cf  set dictionary=$VIM\vimfiles\dict\CF.dict
-autocmd BufNewFile,BufRead *.cfm  set dictionary=$VIM\vimfiles\dict\CF.dict
+autocmd BufNewFile,BufRead *.cf  setlocal dictionary=$VIM\vimfiles\dict\CF.dict
+autocmd BufNewFile,BufRead *.cfm  setlocal dictionary=$VIM\vimfiles\dict\CF.dict
 
 " Java
 autocmd FileType java compiler javac
-autocmd FileType java set makeprg=javac\ %
+autocmd FileType java setlocal makeprg=javac\ %
 autocmd FileType java map <silent> <F11> :w<cr>:!java %:r<cr>
 
 " C files
 autocmd FileType c compiler gcc
-autocmd FileType c set makeprg=gcc\ %
+autocmd FileType c setlocal makeprg=gcc\ %
 autocmd FileType c map <silent> <F11> :w<cr>:!a.exe<cr>
 
 " SourcePawn SourceMod
-autocmd BufNewFile,BufRead *.sp,*.inc set filetype=sourcepawn
+autocmd BufNewFile,BufRead *.sp,*.inc setfiletype filetype=sourcepawn
 autocmd FileType sourcepawn compiler spcomp
-autocmd FileType sourcepawn set makeprg=spcomp\ %:p\ -w203\ -w204
+autocmd FileType sourcepawn setlocal makeprg=spcomp\ %:p\ -w203\ -w204
 autocmd FileType sourcepawn map <silent> <F11> :w<cr>:!moveToDev.py %:t:r.smx<cr>
 autocmd FileType sourcepawn map <silent> <S-F11> :w<cr>:silent !startDevServer.py<cr>
 
 "Python files:  Open current file through command line or have vim run it
-"autocmd BufNewFile,BufRead *.py set makeprg=python\ %:p 
+"autocmd BufNewFile,BufRead *.py setlocal makeprg=python\ %:p 
 "autocmd BufNewFile,BufRead *.py map <silent> <F11> :w<cr>:!python %<cr>
 "autocmd BufNewFile,BufRead *.py map <silent> <S-F11> :w<cr>:pyfile %<cr>
-autocmd FileType python set makeprg=python\ % 
+autocmd FileType python setlocal makeprg=python\ % 
 autocmd FileType python map <silent> <F11> :w<cr>:!python %<cr>
 autocmd FileType python map <silent> <S-F11> :w<cr>:pyfile %<cr>
 
@@ -290,7 +284,7 @@ autocmd FileType python map <silent> <S-F11> :w<cr>:pyfile %<cr>
 autocmd BufNewFile,BufRead *.html map <silent> <F11> :w<cr>:!"C:\Program Files (x86)\Mozilla Firefox\firefox.exe" %<cr>
 
 " Haskel
-"autocmd FileType haskell set makeprg=ghc\ % 
+"autocmd FileType haskell setlocal makeprg=ghc\ % 
 autocmd FileType haskell compiler ghc
 "autocmd FileType haskell compiler ghc-mod
 
@@ -308,15 +302,15 @@ autocmd FileType haskell imap <silent> <m-.><m-.> =>
 autocmd FileType haskell imap <silent> <m-,> <-
 
 " Erlang
-autocmd FileType erlang set makeprg=erlc\ %
+autocmd FileType erlang setlocal makeprg=erlc\ %
 autocmd FileType erlang map <silent> <F11> :w<cr>:!start werl %<cr>
 autocmd FileType erlang map <silent> <s-F11> :w<cr>:!start %:t:r.exe<cr>
 autocmd FileType erlang imap <silent> <F10> ->
 autocmd FileType erlang imap <silent> <F10><F10> =>
 
 " F#  (fsharp)
-autocmd FileType fsharp set makeprg=fsc\ % 
-autocmd FileType fsharp set errorformat=\ %#%f(%l\\\,%c):\ %m
+autocmd FileType fsharp setlocal makeprg=fsc\ % 
+autocmd FileType fsharp setlocal errorformat=\ %#%f(%l\\\,%c):\ %m
 autocmd FileType fsharp map <silent> <F11> :w<cr>:!start fsi %:p<cr>
 autocmd FileType fsharp map <silent> <s-F11> :w<cr>:!start %:t:r.exe<cr>
 autocmd FileType fsharp let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '`': '`', '«': '»'}
@@ -325,6 +319,15 @@ autocmd FileType fsharp let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"
 
 "TF2/L4D/Source syntax
 autocmd BufNewFile,BufRead *cfg/*.cfg set syntax=tf2
+
+"For text/reading files set spell and wrap
+autocmd FileType txt setlocal spell
+"au BufRead,BufNewFile *  set wrap
+"au BufRead,BufNewFile *  nnoremap j gj
+"au BufRead,BufNewFile *  nnoremap k gk
+
+
+
 
 " Automatically open, but do not go to (if there are errors) the quickfix /
 " location list window, or close it when is has become empty. 

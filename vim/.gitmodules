@@ -50,3 +50,6 @@
 [submodule "bundle/sourcevimod"]
 	path = bundle/sourcevimod
 	url = git://github.com/CrimsonTautology/SourceViMod.git
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = git://github.com/tpope/vim-markdown.git
