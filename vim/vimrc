@@ -54,6 +54,11 @@ set autoindent
 set smartindent
 set noexpandtab
 
+"Proper tab stop
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
 "Auto switch directory
 set autochdir
 set directory+=,~/tmp,$TMP
