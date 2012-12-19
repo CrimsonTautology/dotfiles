@@ -1,12 +1,6 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
-[submodule "bundle/fsharp-vim"]
-	path = bundle/fsharp-vim
-	url = git://github.com/kongo2002/fsharp-vim.git
-[submodule "bundle/gundo"]
-	path = bundle/gundo
-	url = git://github.com/vim-scripts/Gundo.git
 [submodule "bundle/neocomplcache"]
 	path = bundle/neocomplcache
 	url = git://github.com/Shougo/neocomplcache.git
@@ -53,3 +47,6 @@
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = git://github.com/tpope/vim-markdown.git
+[submodule "bundle/vim-rails"]
+	path = bundle/vim-rails
+	url = git://github.com/tpope/vim-rails.git

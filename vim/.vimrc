@@ -25,7 +25,7 @@ if has("gui_running")
 	set background=light
 
 	"Font"
-	set guifont=Consolas:h12:cANSI
+	set guifont="Inconsolata Medium 12"
 	
 	"Memorize window size
 	set sessionoptions+=resize,winpos
@@ -46,6 +46,8 @@ endif
 
 "Syntax highlighting and color scheme"
 syntax on
+let g:solarized_termtrans = 1
+let g:solarized_termcolors = 16
 colorscheme solarized
 
 
@@ -67,7 +69,7 @@ set statusline+=\ %{fugitive#statusline()}
 set statusline+=\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n
 
 "other
-set cursorline
+"set cursorline
 set number
 set ruler
 set nowrap       " no wordwrap
@@ -178,9 +180,9 @@ map <leader>da yypf.l<c-a>WdE"=strftime("%m/%d/%y")<CR>PWcewms<esc>WC
 map <leader>dp :diffput<cr>]c
 map <leader>dg :diffget<cr>]c
 
-nmap <silent> <leader>ve :e $HOME/vimfiles/.vimrc<CR>
-nmap <silent> <leader>vo :e! $HOME/vimfiles/.vimrc<CR>
-nmap <silent> <leader>vs :so $HOME/vimfiles/.vimrc<CR>
+nmap <silent> <leader>ve :e $HOME/.vimrc<CR>
+nmap <silent> <leader>vo :e! $HOME/.vimrc<CR>
+nmap <silent> <leader>vs :so $HOME/.vimrc<CR>
 
 " cd to the directory containing the file in the buffer
 nmap <silent> <leader>cd :lcd %:h<CR>
@@ -321,9 +323,9 @@ autocmd FileType fsharp let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"
 autocmd BufNewFile,BufRead *cfg/*.cfg set syntax=tf2
 
 "For text/reading files setlocal spell and wrap
-autocmd FileType txt,markdown setlocal spell
-autocmd FileType txt,markdown setlocal wrap
-autocmd FileType txt,markdown setlocal linebreak
+"autocmd FileType txt,markdown setlocal spell
+"autocmd FileType txt,markdown setlocal wrap
+"autocmd FileType txt,markdown setlocal linebreak
 
 autocmd FileType txt,markdown nnoremap j gj
 autocmd FileType txt,markdown nnoremap k gk
