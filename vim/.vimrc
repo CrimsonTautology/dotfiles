@@ -349,15 +349,6 @@ autocmd QuickFixCmdPost    l* nested botright lwindow
 "-----------------------------------------------------------------------------
 ""Functions
 ""-----------------------------------------------------------------------------
-"Convert an intermec logfile to a send inputs file for testing
-function! LogToSendInputs()
-	%s/\stimestamp=\d*$//g
-	%s/^tok\[0\]=//g
-	%s/\stok\[\d*\]=/|/g
-endfunction
-command! SAAlogToInputs call LogToSendInputs()
-
-
 
 function! NetFold()
   set foldmethod=syntax
@@ -396,68 +387,6 @@ function! MyDiff()
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
-""Check if my switchToAndThen program is in the path.  This will switch focus to an existing window instead of creating a new one
-function! SwitchTo(windowName,  programName, autohotkeyScript)
-    if executable("switchToAndThen.exe")  
-        :!start switchToAndThen l:windowName . " " . l:programName . " " . l:autohotkeyScript<cr>
-    else
-        :!start l:programName<cr>
-    endif
-endfunction
-
-"Run on output from cron command from nike
-function! FilterDatabaseOutput()
-	g/^\s*$/d
-	g/Database closed\./d
-	g/Data committed\./d
-	g/Database selected\./d
-	g/1 row(s) updated\./d
-endfunction
-command! SAAfilterdata call FilterDatabaseOutput()
-
-"Convert all colors in vb.net to a solarized equivalent
-function! ToSolarizedPalletteLight()
-
-    let solarized_BASE03 = "Color.FromArgb(0, 43, 54)"
-    let solarized_BASE02 = "Color.FromArgb(7, 54, 66)"
-    let solarized_BASE01 = "Color.FromArgb(88, 110, 117)"
-    let solarized_BASE00 = "Color.FromArgb(101, 123, 131)"
-    let solarized_BASE0 = "Color.FromArgb(131, 148, 150)"
-    let solarized_BASE1 = "Color.FromArgb(147, 161, 161)"
-    let solarized_BASE2 = "Color.FromArgb(238, 232, 213)"
-    let solarized_BASE3 = "Color.FromArgb(253, 246, 227)"
-    let solarized_YELLOW = "Color.FromArgb(181, 137, 0)"
-    let solarized_ORANGE = "Color.FromArgb(203, 75, 22)"
-    let solarized_RED = "Color.FromArgb(220, 50, 47)"
-    let solarized_MAGENTA = "Color.FromArgb(211, 54, 130)"
-    let solarized_VIOLET = "Color.FromArgb(108, 113, 196)"
-    let solarized_BLUE = "Color.FromArgb(38, 139, 210)"
-    let solarized_CYAN = "Color.FromArgb(42, 161, 152)"
-    let solarized_GREEN = "Color.FromArgb(133, 153, 0)"
-
-	%s/System.Drawing.Color.Blue/solarized_BLUE/ge
-
-	%s/System.Drawing.Color.Cyan/solarized_CYAN/ge
-	%s/System.Drawing.Color.LightCyan/solarized_CYAN/ge
-
-	%s/System.Drawing.Color.Red/solarized_RED/ge
-	%s/System.Drawing.Color.Maroon/solarized_RED/ge
-	%s/Color.Salmon/solarized_RED/ge
-
-	%s/System.Drawing.Color.Green/solarized_GREEN/ge
-	%s/System.Drawing.Color.LimeGreen/solarized_GREEN/ge
-
-	%s/Color.Thistle/solarized_MAGENTA/ge
-
-	%s/System.Drawing.Color.LightYellow/solarized_BASE03/ge
-	%s/System.Drawing.Color.White/solarized_BASE3/ge
-	%s/System.Drawing.Color.WhiteSmoke/solarized_BASE2/ge
-
-	%s/System.Drawing.SystemColors.ControlLight/solarized_BASE02/ge
-	%s/System.Drawing.Color.Black/solarized_BASE03/ge
-
-endfunction
-command! SAAsolarizedLight call ToSolarizedPalletteLight()
 
 
 
@@ -557,19 +486,6 @@ let g:tagbar_type_vb = {
 			\  'label' : 'l',
 			\ }
 			\ }
-"-----------------------------------------------------------------------------
-""Gundo
-""-----------------------------------------------------------------------------
-nmap <silent> <leader>gun :GundoToggle<cr>
-amenu Plugin.Gundo :GundoToggle<cr>
-let g:gundo_width = 45
-let g:gundo_preview_height = 20
-let g:gundo_preview_bottom = 0
-let g:gundo_right = 1
-let g:gundo_help = 1
-"let g:gundo_disable = 0
-"let g:gundo_close_on_revert = 0
-
 
 
 
@@ -623,64 +539,3 @@ imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ?
 smap <expr><TAB> "\<Plug>(neocomplcache_snippets_expand)"
 
 
-
-"-----------------------------------------------------------------------------
-"Utl - Plugin
-""-----------------------------------------------------------------------------
-map <leader>u :Utl<cr>
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-
-
-
-
-
-
-
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"SAA Overides
-""-----------------------------------------------------------------------------
-if ($AUCTION == "SOUTHERN")
-	"SAA Terminal Settings
-	set bg=dark
-	"colorscheme xterm16
-	"Use custom ctags TODO (this is a pathing issue)
-	let g:tagbar_expand = 1
-	let Tlist_Ctags_Cmd= "~/bin/ctags"
-	let g:tagbar_ctags_bin="~/bin/ctags"
-
-	"Proper tab stop
-	set tabstop=2
-	set softtabstop=2
-	set shiftwidth=2
-	
-	"Fixed error format, ignore clock skewed errors
-	set errorformat^=%-GMon\ %.%#
-	set errorformat^=%-GTue\ %.%#
-	set errorformat^=%-GWed\ %.%#
-	set errorformat^=%-GThu\ %.%#
-	set errorformat^=%-GFri\ %.%#
-	
-	"<F3> Executes the current file 
-	"<F4> Runs our doall script
-	"<F5> Runs our make
-	"<F6> Open output file 
-	map <f3> :w<cr>:!%<cr>
-	map <f4> :w<cr>:!sh -x doall.sh<cr>
-	map <f5> :w<cr>:make <cr>
-	map <f6> :sp _%.out<cr> 
-	au BufRead,BufNewFile *.c         set makeprg=compile\ ccur
-	au BufRead,BufNewFile *.c         map <f3> :w<cr>:!%:r > _%.out<cr>
-	au BufRead,BufNewFile *.ec        set makeprg=compile\ ringman
-	au BufRead,BufNewFile K_*.c       set makeprg=compile\ intermec
-	au BufRead,BufNewFile A_*.c       set makeprg=compile\ o
-	au BufRead,BufNewFile *.sql       set makeprg=dsql\ prod\ <\ %\ >\ _%.out
-	au BufRead,BufNewFile *.sh        set makeprg=sh\ -x\ %\ >\ _%.out
-	au BufRead,BufNewFile .vimrc      map <f5> :w<cr>:so %<cr>
-	au BufRead,BufNewFile *.pl        set makeprg=%
-endif
