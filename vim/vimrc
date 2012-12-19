@@ -1,48 +1,12 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
-"test 1
-"test 2
 "-----------------------------------------------------------------------------
 ""Global Vim settings
 ""-----------------------------------------------------------------------------
-if has("gui_running")
-	"GUI only settings
-	"MSWin settings
-	source $VIMRUNTIME/mswin.vim
+set bg=dark
+"colorscheme xterm16
+set scrolloff=8  " Keep 8 lines below and above the cursor
 
-	"Some corrections to behave mswin
-	set selectmode=
-	set selection=inclusive
-
-	"guioptions
-	set guioptions+=bh "Horizontal scrollbar
-	set guioptions-=T
-	"set guioptions+=c
-
-	"disable menu alt keys
-	set winaltkeys=no
-
-	set background=light
-
-	"Font"
-	set guifont="Inconsolata Medium 12"
-	
-	"Memorize window size
-	set sessionoptions+=resize,winpos
-
-	"set lines=42 columns =112
-	
-	"Proper tab stop
-	set tabstop=4
-	set softtabstop=4
-	set shiftwidth=4
-
-else
-	set bg=dark
-	"colorscheme xterm16
-	set scrolloff=8  " Keep 8 lines below and above the cursor
-	
-endif
 
 "Syntax highlighting and color scheme"
 syntax on
@@ -143,7 +107,7 @@ nmap Y y$
 "in insert mode, ctrl j/k are used to scroll the acp window
 inoremap <c-j> <c-n>
 inoremap <c-k> <c-p>
-              
+
 "Make shift h and l easy begining and end of line"
 map H ^
 map L $
@@ -203,15 +167,15 @@ nmap <silent> <leader>ch mpI<!-- <esc>A --><esc>`p<cr>
 " Search the current file for what's currently in the search
 " register and display matches
 nmap <silent> <leader>gs
-     \ :vimgrep /<C-r>// %<CR>:ccl<CR>:cwin<CR><C-W>J:set nohls<CR>
+			\ :vimgrep /<C-r>// %<CR>:ccl<CR>:cwin<CR><C-W>J:set nohls<CR>
 
 " Search the current file for the word under the cursor and display matches
 nmap <silent> <leader>gw
-     \ :vimgrep /<C-r><C-w>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:set nohls<CR>
+			\ :vimgrep /<C-r><C-w>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:set nohls<CR>
 
 " Search the current file for the WORD under the cursor and display matches
 nmap <silent> <leader>gW
-     \ :vimgrep /<C-r><C-a>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:set nohls<CR>
+			\ :vimgrep /<C-r><C-a>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:set nohls<CR>
 
 
 "-----------------------------------------------------------------------------
@@ -225,8 +189,8 @@ map <silent> <F5> :w<cr>:make<cr>
 
 "Display Highlight group
 map <F8> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+			\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+			\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 
 "-----------------------------------------------------------------------------
@@ -234,15 +198,15 @@ map <F8> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<
 ""-----------------------------------------------------------------------------
 "Restore cursor position
 function! ResCur()
-  if line("'\"") <= line("$")
-    normal! g`"
-    return 1
-  endif
+	if line("'\"") <= line("$")
+		normal! g`"
+		return 1
+	endif
 endfunction
 
 augroup resCur
-  autocmd!
-  autocmd BufWinEnter * call ResCur()
+	autocmd!
+	autocmd BufWinEnter * call ResCur()
 augroup END
 
 "Auto set any unknown file to .txt syntax                                       
@@ -291,9 +255,9 @@ autocmd FileType haskell compiler ghc
 "autocmd FileType haskell compiler ghc-mod
 
 "if executable("switchToAndThen.exe")  "Check if my switchToAndThen program is in the path.  This will switch focus to an existing ghci instead of creating a new one
-    "autocmd FileType haskell map <silent> <F11> :w<cr>:!start switchToAndThen ghci "ghci %:p" ":r{enter}"<cr>
+"autocmd FileType haskell map <silent> <F11> :w<cr>:!start switchToAndThen ghci "ghci %:p" ":r{enter}"<cr>
 "else
-    autocmd FileType haskell map <silent> <F11> :w<cr>:!start ghci %:p<cr>
+autocmd FileType haskell map <silent> <F11> :w<cr>:!start ghci %:p<cr>
 "endif
 
 autocmd FileType haskell map <silent> <s-F11> :w<cr>:! %:t:r.exe<cr>
@@ -322,16 +286,6 @@ autocmd FileType fsharp let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"
 "TF2/L4D/Source syntax
 autocmd BufNewFile,BufRead *cfg/*.cfg set syntax=tf2
 
-"For text/reading files setlocal spell and wrap
-"autocmd FileType txt,markdown setlocal spell
-"autocmd FileType txt,markdown setlocal wrap
-"autocmd FileType txt,markdown setlocal linebreak
-
-autocmd FileType txt,markdown nnoremap j gj
-autocmd FileType txt,markdown nnoremap k gk
-
-
-
 
 " Automatically open, but do not go to (if there are errors) the quickfix /
 " location list window, or close it when is has become empty. 
@@ -351,40 +305,40 @@ autocmd QuickFixCmdPost    l* nested botright lwindow
 ""-----------------------------------------------------------------------------
 
 function! NetFold()
-  set foldmethod=syntax
-  syn region myFold start="#Region" end="#End Region" fold
-  syn sync fromstart
-  set foldcolumn=2
+	set foldmethod=syntax
+	syn region myFold start="#Region" end="#End Region" fold
+	syn sync fromstart
+	set foldcolumn=2
 endfunction
 
 function! NetUnFold()
-  set foldmethod=manual
-  set foldcolumn=0
-  norm zE
+	set foldmethod=manual
+	set foldcolumn=0
+	norm zE
 endfunction
 
 function! MyDiff()
-  let opt = '-a --binary '
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  let arg1 = v:fname_in
-  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  let arg2 = v:fname_new
-  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  let arg3 = v:fname_out
-  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  let eq = ''
-  if $VIMRUNTIME =~ ' '
-    if &sh =~ '\<cmd'
-      let cmd = '""' . $VIMRUNTIME . '\diff"'
-      let eq = '"'
-    else
-      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    endif
-  else
-    let cmd = $VIMRUNTIME . '\diff'
-  endif
-  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+	let opt = '-a --binary '
+	if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+	if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+	let arg1 = v:fname_in
+	if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+	let arg2 = v:fname_new
+	if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+	let arg3 = v:fname_out
+	if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+	let eq = ''
+	if $VIMRUNTIME =~ ' '
+		if &sh =~ '\<cmd'
+			let cmd = '""' . $VIMRUNTIME . '\diff"'
+			let eq = '"'
+		else
+			let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+		endif
+	else
+		let cmd = $VIMRUNTIME . '\diff'
+	endif
+	silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
 
@@ -422,37 +376,37 @@ amenu Plugin.Tagbar :TagbarToggle<cr>
 let g:tagbar_expand = 1
 
 let g:tagbar_type_sourcepawn = {
-            \ 'ctagstype' : 'c++',
-            \ 'kinds'     : [
-            \ 'd:macros:1',
-            \ 'p:prototypes:1',
-            \ 'g:enums',
-            \ 'e:enumerators',
-            \ 't:typedefs',
-            \ 'n:namespaces',
-            \ 'c:classes',
-            \ 's:structs',
-            \ 'u:unions',
-            \ 'f:functions',
-            \ 'm:members',
-            \ 'v:variables'
-            \ ],
-            \ 'sro'        : '::',
-            \ 'kind2scope' : {
-            \ 'g' : 'enum',
-            \ 'n' : 'namespace',
-            \ 'c' : 'class',
-            \ 's' : 'struct',
-            \ 'u' : 'union'
-            \ },
-            \ 'scope2kind' : {
-            \ 'enum'      : 'g',
-            \ 'namespace' : 'n',
-            \ 'class'     : 'c',
-            \ 'struct'    : 's',
-            \ 'union'     : 'u'
-            \ }
-            \ }
+			\ 'ctagstype' : 'c++',
+			\ 'kinds'     : [
+			\ 'd:macros:1',
+			\ 'p:prototypes:1',
+			\ 'g:enums',
+			\ 'e:enumerators',
+			\ 't:typedefs',
+			\ 'n:namespaces',
+			\ 'c:classes',
+			\ 's:structs',
+			\ 'u:unions',
+			\ 'f:functions',
+			\ 'm:members',
+			\ 'v:variables'
+			\ ],
+			\ 'sro'        : '::',
+			\ 'kind2scope' : {
+			\ 'g' : 'enum',
+			\ 'n' : 'namespace',
+			\ 'c' : 'class',
+			\ 's' : 'struct',
+			\ 'u' : 'union'
+			\ },
+			\ 'scope2kind' : {
+			\ 'enum'      : 'g',
+			\ 'namespace' : 'n',
+			\ 'class'     : 'c',
+			\ 'struct'    : 's',
+			\ 'union'     : 'u'
+			\ }
+			\ }
 
 "suport for visual basic
 let g:tagbar_type_vb = {
@@ -534,7 +488,7 @@ nmap <silent> <leader>esnip :NeoComplCacheEditSnippets<CR>
 
 " <TAB>: completion.
 imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ?
-            \ "\<Plug>(neocomplcache_snippets_expand)" : "\<TAB>"
+			\ "\<Plug>(neocomplcache_snippets_expand)" : "\<TAB>"
 
 smap <expr><TAB> "\<Plug>(neocomplcache_snippets_expand)"
 
