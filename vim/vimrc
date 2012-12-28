@@ -289,7 +289,7 @@ autocmd FileType fsharp let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"
 
 
 "TF2/L4D/Source syntax
-autocmd BufNewFile,BufRead *cfg/*.cfg set syntax=tf2
+autocmd BufNewFile,BufRead *tf/*cfg/*.cfg setf tf2
 
 
 " Automatically open, but do not go to (if there are errors) the quickfix /
@@ -463,13 +463,20 @@ nmap <silent> <leader>hgr :VCSRevert<CR>
 "-----------------------------------------------------------------------------
 "NeoComplCache
 ""-----------------------------------------------------------------------------
-"let g:acp_enableAtStartup = 0
-let g:neocomplcache_enable_at_startup          = 1
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 1
+" Use underbar completion.
+let g:neocomplcache_enable_underbar_completion = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
 
 let g:neocomplcache_enable_auto_select         = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_enable_smart_case          = 1
-let g:neocomplcache_enable_camel_case_completion = 1
 
 let g:neocomplcache_auto_completion_start_length = 2
 let g:neocomplcache_manual_completion_start_length = 2
@@ -479,6 +486,11 @@ let g:neocomplcache_snippets_dir = substitute(globpath(&rtp, 'snippets/'), "\n",
 
 set completeopt="longest,menuone,preview"
 " Plugin key-mappings.
+" <CR>: close popup and save indent.
+inoremap <expr><CR>  neocomplcache#close_popup() . "\<CR>"
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
 imap <C-k>     <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
@@ -488,13 +500,6 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 nmap <silent> <leader>esnip :NeoComplCacheEditSnippets<CR>
 
-" <CR>: close popup and save indent.
-"inoremap <expr><CR>  pumvisible() ? neocomplcache#cancel_popup() : "\<CR>"
 
-" <TAB>: completion.
-imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ?
-			\ "\<Plug>(neocomplcache_snippets_expand)" : "\<TAB>"
-
-smap <expr><TAB> "\<Plug>(neocomplcache_snippets_expand)"
 
 

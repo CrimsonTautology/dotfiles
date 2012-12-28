@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/bill/current_work/rails_projects/first_app/.git'
 let g:netrw_dirhist_2='/home/bill/.vimperator'
 let g:netrw_dirhist_3='/home/bill/current_work/rails_projects/project_manager'
 let g:netrw_dirhist_4='/home/bill/current_work/rails_projects/project_manager/app/views/people'
+let g:netrw_dirhist_5='/home/bill/current_work/rails_projects/project_manager'
