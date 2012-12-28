@@ -214,8 +214,6 @@ augroup resCur
 	autocmd BufWinEnter * call ResCur()
 augroup END
 
-"Auto set any unknown file to .txt syntax                                       
-au BufRead,BufNewFile *  setfiletype txt
 
 "Auto fold visual basic
 autocmd BufNewFile,BufRead *.vb setfiletype vb
@@ -237,16 +235,12 @@ autocmd FileType c setlocal makeprg=gcc\ %
 autocmd FileType c map <silent> <F11> :w<cr>:!a.exe<cr>
 
 " SourcePawn SourceMod
-autocmd BufNewFile,BufRead *.sp,*.inc setfiletype filetype=sourcepawn
 autocmd FileType sourcepawn compiler spcomp
 autocmd FileType sourcepawn setlocal makeprg=spcomp\ %:p\ -w203\ -w204
 autocmd FileType sourcepawn map <silent> <F11> :w<cr>:!moveToDev.py %:t:r.smx<cr>
 autocmd FileType sourcepawn map <silent> <S-F11> :w<cr>:silent !startDevServer.py<cr>
 
 "Python files:  Open current file through command line or have vim run it
-"autocmd BufNewFile,BufRead *.py setlocal makeprg=python\ %:p 
-"autocmd BufNewFile,BufRead *.py map <silent> <F11> :w<cr>:!python %<cr>
-"autocmd BufNewFile,BufRead *.py map <silent> <S-F11> :w<cr>:pyfile %<cr>
 autocmd FileType python setlocal makeprg=python\ % 
 autocmd FileType python map <silent> <F11> :w<cr>:!python %<cr>
 autocmd FileType python map <silent> <S-F11> :w<cr>:pyfile %<cr>
@@ -288,8 +282,6 @@ autocmd FileType fsharp let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"
 
 
 
-"TF2/L4D/Source syntax
-autocmd BufNewFile,BufRead *tf/*cfg/*.cfg setf tf2
 
 
 " Automatically open, but do not go to (if there are errors) the quickfix /
