@@ -1,6 +1,7 @@
 # Symlink to this file from ~/.bashrc
 # ln -s ~/bin/dotfiles/bashrc ~/.bashrc 
 
+. ~/bin/dotfiles/git/git-completion.bash
 . ~/bin/dotfiles/bash/env
 . ~/bin/dotfiles/bash/config
 . ~/bin/dotfiles/bash/aliases
