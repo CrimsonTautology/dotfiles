@@ -1,5 +1,5 @@
 # Symlink to this file from ~/.bashrc
-# ln -s ~/.bashrc ~/bin/dotfiles/bashrc
+# ln -s ~/bin/dotfiles/bashrc ~/.bashrc 
 
 . ~/bin/dotfiles/bash/env
 . ~/bin/dotfiles/bash/config
