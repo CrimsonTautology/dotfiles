@@ -32,6 +32,9 @@ alias tf2='cd ~/servers/srcds/tf2/orangebox/tf/'
 alias sm='cd ~/current_work/sourcemod'
 alias ra='cd ~/current_work/rails_projects'
 
-#vim startups
+#Vim
 alias vimn='vim -c "NERDTree" '
 alias gvimn='gvim -c "NERDTree" '
+
+#Git
+alias gpom='git push -u origin master'
