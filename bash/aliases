@@ -16,6 +16,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+#Default command overrides
+alias rm='rm -i'
+
 # some more ls aliases
 alias ll='ls -alFh'
 alias la='ls -A'
@@ -26,3 +29,7 @@ alias sxs='screen -x SRCDS'
 
 # directory shortcuts
 alias tf2='cd ~/servers/srcds/tf2/orangebox/tf/'
+
+#vim startups
+alias vimn='vim -c "NERDTree" '
+alias gvimn='gvim -c "NERDTree" '
