@@ -4,4 +4,5 @@ export PATH=$HOME/bin/:$PATH
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH="/usr/local/heroku/bin:$PATH" ### Added by the Heroku Toolbelt
 
+export PAGER=less
 

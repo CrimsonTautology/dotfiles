@@ -29,6 +29,8 @@ alias sxs='screen -x SRCDS'
 
 # directory shortcuts
 alias tf2='cd ~/servers/srcds/tf2/orangebox/tf/'
+alias sm='cd ~/current_work/sourcemod'
+alias ra='cd ~/current_work/rails_projects'
 
 #vim startups
 alias vimn='vim -c "NERDTree" '
