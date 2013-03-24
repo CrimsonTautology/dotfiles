@@ -361,7 +361,7 @@ amenu Plugin.NERDTree :NERDTreeToggle <cr>
 
 let NERDTreeShowBookmarks = 1
 let NERDTreeChDirMode     = 1
-let NERDTreeDirArrows     = 0
+let NERDTreeDirArrows     = 1
 
 let NERDTreeIgnore=['\.hi$', '\.o$', '\.sw.$', '\~$', '\.smx$', '\.exe$', '\.beam$', '\~$']
 
