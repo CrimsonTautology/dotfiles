@@ -15,3 +15,7 @@ To install a new submodule...
 git submodule add `repository_url` bundle/`plugin_folder`
 git add .
 git commit
+
+To update all
+-------------
+git submodule foreach git pull origin master
