@@ -31,6 +31,7 @@ alias sxs='screen -x SRCDS'
 alias tf2='cd ~/servers/srcds/tf2/orangebox/tf/'
 alias sm='cd ~/current_work/sourcemod'
 alias ra='cd ~/current_work/rails_projects'
+alias repo='cd ~/repo_dump'
 
 #Vim
 alias vimn='vim -c "NERDTree" '
