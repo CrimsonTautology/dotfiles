@@ -52,7 +52,7 @@ set backspace=2 " Allow backspacing over indent, eol, and the start of an insert
 "Tabbing"
 set autoindent
 set smartindent
-set noexpandtab
+set expandtab
 
 "Proper tab stop
 set tabstop=4
@@ -169,19 +169,6 @@ nmap <silent> <leader>ck yyp^WdE"=strftime("%m/%d/%y")<CR>PWC
 nmap <silent> <leader>cc mpI<!--- <esc>A ---><esc>`p<cr>
 nmap <silent> <leader>ch mpI<!-- <esc>A --><esc>`p<cr>
 
-" Search the current file for what's currently in the search
-" register and display matches
-nmap <silent> <leader>gs
-			\ :vimgrep /<C-r>// %<CR>:ccl<CR>:cwin<CR><C-W>J:set nohls<CR>
-
-" Search the current file for the word under the cursor and display matches
-nmap <silent> <leader>gw
-			\ :vimgrep /<C-r><C-w>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:set nohls<CR>
-
-" Search the current file for the WORD under the cursor and display matches
-nmap <silent> <leader>gW
-			\ :vimgrep /<C-r><C-a>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:set nohls<CR>
-
 
 "-----------------------------------------------------------------------------
 ""Function Keys
@@ -189,6 +176,7 @@ nmap <silent> <leader>gW
 "Run source
 "map <silent> <f5> :!%<cr>
 map <silent> <F5> :w<cr>:make<cr>
+map <silent> <F4> :w<cr>:Rake<cr>
 
 
 
@@ -214,6 +202,9 @@ augroup resCur
 	autocmd BufWinEnter * call ResCur()
 augroup END
 
+"Switch currsor line between insert modes
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
 
 "Auto fold visual basic
 autocmd BufNewFile,BufRead *.vb setfiletype vb
@@ -281,6 +272,9 @@ autocmd FileType fsharp map <silent> <s-F11> :w<cr>:!start %:t:r.exe<cr>
 autocmd FileType fsharp let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '`': '`', '«': '»'}
 
 
+" Ruby
+autocmd FileType java compiler ruby
+autocmd FileType java setlocal makeprg=ruby\ %
 
 
 
@@ -350,7 +344,6 @@ endfunction
 
 "test [url=google.com]word[/url]  [url* ]link ][/url] <div id="me" color="blue">text</div>
 " more words to test in this test with [url=googleh*]code][/url=google] 
-
 
 
 "-----------------------------------------------------------------------------
@@ -443,55 +436,87 @@ let g:tagbar_type_vb = {
 "-----------------------------------------------------------------------------
 ""Fugitive
 ""-----------------------------------------------------------------------------
-nmap <silent> <leader>grm :Gremove<CR>
-nmap <silent> <leader>ga :Gwrite<CR>
+nmap <silent> <leader>gs :Gstatus<CR>
+nmap <silent> <leader>gw :Gwrite<CR>
+nmap <silent> <leader>gr :Gread<CR>
+nmap <silent> <leader>gc :Gcommit<CR>
+nmap <silent> <leader>gd :Gdiff<CR>
 
-nmap <silent> <leader>gb :Gblame!<CR>
-nmap <silent> <leader>hgc :VCSCommit<CR>
-nmap <silent> <leader>hgd :VCSDiff<CR>
-nmap <silent> <leader>hgi :VCSInfo<CR>
-nmap <silent> <leader>hgr :VCSRevert<CR>
+"-----------------------------------------------------------------------------
+"""vim-rails
+""-----------------------------------------------------------------------------
+nmap <silent> <leader>ae :AE<CR>
+nmap <silent> <leader>as :AS<CR>
+nmap <silent> <leader>av :AV<CR>
+
+nmap <silent> <leader>re :RE<CR>
+nmap <silent> <leader>rs :RS<CR>
+nmap <silent> <leader>rv :RV<CR>
+
+nmap <silent> <leader>rp :RPreview<CR>
+
+
 
 "-----------------------------------------------------------------------------
 "NeoComplCache
 ""-----------------------------------------------------------------------------
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplcache.
 let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion.
-let g:neocomplcache_enable_camel_case_completion = 1
-" Use underbar completion.
-let g:neocomplcache_enable_underbar_completion = 1
-" Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 3
 
-let g:neocomplcache_enable_auto_select         = 1
+let g:neocomplcache_max_list = 100
+let g:neocomplcache_max_keyword_width = 50
+let g:neocomplcache_max_filename_width = 15
 
 let g:neocomplcache_auto_completion_start_length = 2
 let g:neocomplcache_manual_completion_start_length = 2
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
-let g:neocomplcache_snippets_dir = substitute(globpath(&rtp, 'snippets/'), "\n", ',', 'g')
+let g:neocomplcache_min_keyword_length = 3
+let g:neocomplcache_min_syntax_length = 3
 
-set completeopt="longest,menuone,preview"
+let g:neocomplcache_enable_ignore_case = 1
+let g:neocomplcache_enable_smart_case = 1
+
+let g:neocomplcache_disable_auto_complete = 0
+
+let g:neocomplcache_enable_wildcard = 1
+let g:neocomplcache_enable_quick_match = 0
+let g:neocomplcache_enable_auto_select = 0
+let g:neocomplcache_enable_auto_delimiter = 0
+
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+
+let g:neocomplcache_enable_caching_message = 1
+
+if !exists('g:neocomplcache_same_filetype_lists')
+	let g:neocomplcache_same_filetype_lists = {}
+endif
+let g:neocomplcache_same_filetype_lists.html = 'css'
+let g:neocomplcache_same_filetype_lists.xhtml = 'html'
+let g:neocomplcache_same_filetype_lists.zsh = 'sh'
+
+if !exists('g:neocomplcache_filetype_include_lists')
+	let g:neocomplcache_filetype_include_lists= {}
+endif
+let g:neocomplcache_plugin_disable = { 'tags_complete': 1 }
+
+if !exists('g:neocomplcache_plugin_rank')
+	let g:neocomplcache_plugin_rank = {}
+endif
+let g:neocomplcache_plugin_rank.buffer_complete = 10 
+
 " Plugin key-mappings.
-" <CR>: close popup and save indent.
-inoremap <expr><CR>  neocomplcache#close_popup() . "\<CR>"
 " <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
-imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
+imap <C-k> <Plug>(neocomplcache_snippets_expand)
+inoremap <expr><C-g> neocomplcache#undo_completion()
+inoremap <expr><C-l> neocomplcache#complete_common_string()
 
-inoremap <expr><C-n>  pumvisible() ? "\<C-n>" : neocomplcache#manual_keyword_complete()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
+inoremap <expr><C-n> pumvisible() ? "\<C-n>" : neocomplcache#manual_keyword_complete()
+inoremap <expr><C-e> neocomplcache#cancel_popup()
 
 nmap <silent> <leader>esnip :NeoComplCacheEditSnippets<CR>
 
-
+let g:neocomplcache_snippets_dir = $VIM_DIR.'/snippets'
 
 
