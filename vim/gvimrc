@@ -18,7 +18,8 @@ if has("gui_running")
 
 
 	"Font"
-	set guifont="Inconsolata Medium 12"
+	"set guifont="Inconsolata Medium 12"
+	set guifont=Consolas:h12:cANSI
 	
 	"Syntax highlighting and color scheme"
 	syntax on
@@ -37,5 +38,8 @@ if has("gui_running")
 	set softtabstop=4
 	set shiftwidth=4
 
-	set scrolloff=0  " Keep 8 lines below and above the cursor
+	set scrolloff=0 
+
+
+	set cursorline
 endif

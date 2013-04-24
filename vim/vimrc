@@ -33,7 +33,6 @@ set statusline+=\ %{fugitive#statusline()}
 set statusline+=\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n
 
 "other
-"set cursorline
 set number
 set ruler
 set nowrap       " no wordwrap
@@ -162,7 +161,10 @@ nmap <silent> <leader>rr :!%<cr>
 
 
 " CK log
-nmap <silent> <leader>ck yyp^WdE"=strftime("%m/%d/%y")<CR>PWC
+nmap <silent> <leader>ck o-<TAB><ESC>"=strftime("%m/%d/%y")<CR>pA<TAB>
+
+"Ribon log
+nmap <silent> <leader>rib yyp^WdE"=strftime("%m/%d/%y")<CR>PWC
 
 
 " Quick coldfusion/html comments
@@ -201,10 +203,6 @@ augroup resCur
 	autocmd!
 	autocmd BufWinEnter * call ResCur()
 augroup END
-
-"Switch currsor line between insert modes
-autocmd InsertEnter * set cul
-autocmd InsertLeave * set nocul
 
 "Auto fold visual basic
 autocmd BufNewFile,BufRead *.vb setfiletype vb
@@ -519,4 +517,8 @@ nmap <silent> <leader>esnip :NeoComplCacheEditSnippets<CR>
 
 let g:neocomplcache_snippets_dir = $VIM_DIR.'/snippets'
 
+
+if ($AUCTION == "SOUTHERN")
+	source ~/.southern.vim
+endif
 
