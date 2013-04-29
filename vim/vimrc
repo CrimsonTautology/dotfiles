@@ -84,6 +84,17 @@ set diffexpr=MyDiff()
 "" Set the tags files to be the following
 set tags+=../tags
 
+"Unicode
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  scriptencoding utf-8
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  "setglobal bomb
+  set fileencodings=ucs-bom,utf-8,latin1
+endif
 
 "-----------------------------------------------------------------------------
 ""Abreviations

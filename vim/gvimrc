@@ -42,4 +42,8 @@ if has("gui_running")
 
 
 	set cursorline
+
+    "unicode
+    set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ 
+
 endif
