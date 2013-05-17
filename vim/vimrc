@@ -282,8 +282,11 @@ autocmd FileType fsharp let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"
 
 
 " Ruby
-autocmd FileType java compiler ruby
-autocmd FileType java setlocal makeprg=ruby\ %
+autocmd FileType ruby compiler ruby
+autocmd FileType ruby setlocal makeprg=ruby\ %
+autocmd FileType ruby setlocal tabstop=2
+autocmd FileType ruby setlocal softtabstop=2
+autocmd FileType ruby setlocal shiftwidth=2
 
 
 
