@@ -471,7 +471,7 @@ nmap <silent> <leader>rp :RPreview<CR>
 "-----------------------------------------------------------------------------
 "EndWise
 ""-----------------------------------------------------------------------------
-let g:endwise_no_mappings = 1
+"let g:endwise_no_mappings = 1
 
 "-----------------------------------------------------------------------------
 "NeoComplCache
@@ -521,7 +521,7 @@ endif
 let g:neocomplcache_plugin_rank.buffer_complete = 10 
 
 " Plugin key-mappings.
-inoremap <expr><CR> neocomplcache#close_popup() . "\<CR>"
+"inoremap <expr><CR> neocomplcache#close_popup() . "\<CR>"
 "inoremap <expr><CR> pumbvisible() ? neocomplache#close_popup : "\<CR>"
 
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
