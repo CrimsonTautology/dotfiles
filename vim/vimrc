@@ -282,14 +282,16 @@ autocmd FileType fsharp let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"
 
 
 " Ruby
-autocmd FileType ruby compiler rake
-autocmd FileType ruby setlocal makeprg=ruby\ %
-autocmd FileType ruby setlocal tabstop=2
-autocmd FileType ruby setlocal softtabstop=2
-autocmd FileType ruby setlocal shiftwidth=2
-autocmd FileType ruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby let g:rubycomplete_classes_in_global = 1
-autocmd FileType ruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby compiler rake
+"autocmd FileType ruby,eruby setlocal makeprg=ruby\ %
+autocmd FileType ruby,eruby setlocal tabstop=2
+autocmd FileType ruby,eruby setlocal softtabstop=2
+autocmd FileType ruby,eruby setlocal shiftwidth=2
+"autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
+"let g:ruby_path = 'C:\ruby193\bin'
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 
 
@@ -523,6 +525,13 @@ if !exists('g:neocomplcache_plugin_rank')
 	let g:neocomplcache_plugin_rank = {}
 endif
 let g:neocomplcache_plugin_rank.buffer_complete = 10 
+
+" Enable heavy omni completion.
+if !exists('g:neocomplcache_force_omni_patterns')
+    let g:neocomplcache_force_omni_patterns = {}
+endif
+let g:neocomplcache_force_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
 
 " Plugin key-mappings.
 "inoremap <expr><CR> neocomplcache#close_popup() . "\<CR>"
