@@ -282,7 +282,6 @@ autocmd FileType fsharp let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"
 
 
 " Ruby
-<<<<<<< HEAD
 autocmd FileType ruby,eruby compiler rake
 "autocmd FileType ruby,eruby setlocal makeprg=ruby\ %
 autocmd FileType ruby,eruby setlocal tabstop=2
@@ -294,13 +293,6 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
-=======
-autocmd FileType ruby compiler rake
-autocmd FileType ruby setlocal makeprg=ruby\ %
-autocmd FileType ruby setlocal tabstop=2
-autocmd FileType ruby setlocal softtabstop=2
-autocmd FileType ruby setlocal shiftwidth=2
->>>>>>> e23fece77e4a7353e54dbd32191a87761e743c33
 
 
 " Automatically open, but do not go to (if there are errors) the quickfix /
