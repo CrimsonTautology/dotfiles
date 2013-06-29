@@ -50,3 +50,7 @@ alias gvimn='gvim -c "NERDTree" '
 
 #Git
 alias gpom='git push -u origin master'
+
+#Tmux
+alias tmux2='tmux source-file ~/bin/dotfiles/tmux/session_2right'
+alias tmux3='tmux source-file ~/bin/dotfiles/tmux/session_3right'
