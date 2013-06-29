@@ -53,4 +53,6 @@ alias gpom='git push -u origin master'
 
 #Tmux
 alias tmux2='tmux source-file ~/bin/dotfiles/tmux/session_2right'
+alias tmux21='tmux source-file ~/bin/dotfiles/tmux/session_2right_1down'
 alias tmux3='tmux source-file ~/bin/dotfiles/tmux/session_3right'
+alias killtmux='tmux kill-session'
