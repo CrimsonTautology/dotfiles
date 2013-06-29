@@ -2,7 +2,7 @@
 selectp -t 0
 splitw -h -p 33
 selectp -t 1
-splitw -v -p 33
+splitw -v -p 66
 selectp -t 2
-splitw -v -p 33
+splitw -v -p 50
 selectp -t 0
