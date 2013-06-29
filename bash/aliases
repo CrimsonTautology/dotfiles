@@ -40,6 +40,7 @@ alias sm='cd ~/current_work/sourcemod'
 alias ra='cd ~/current_work/rails_projects'
 alias ha='cd ~/current_work/haskell'
 alias sc='cd ~/current_work/scala'
+alias rb='cd ~/current_work/ruby'
 alias bd='cd ~/bin/dotfiles/'
 alias repo='cd ~/repo_dump'
 
