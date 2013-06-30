@@ -10,6 +10,9 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
+[submodule "bundle/vim-autoclose"]
+	path = bundle/vim-autoclose
+	url = git://github.com/Townk/vim-autoclose.git
 [submodule "bundle/vim-indent-object"]
 	path = bundle/vim-indent-object
 	url = git://github.com/michaeljsmith/vim-indent-object.git
@@ -34,6 +37,13 @@
 [submodule "bundle/ghc-mod"]
 	path = bundle/ghc-mod
 	url = git://github.com/eagletmt/ghcmod-vim.git
+[submodule "bundle/neco-snippets-complete"]
+	path = bundle/neco-snippets-complete
+	url = git://github.com/Shougo/neocomplcache-snippets-complete.git
+
+[submodule "bundle/sourcevimod"]
+	path = bundle/sourcevimod
+	url = git://github.com/CrimsonTautology/SourceViMod.git
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = git://github.com/tpope/vim-markdown.git
@@ -55,9 +65,12 @@
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
+<<<<<<< HEAD
 [submodule "bundle/vim-tmux-navigator"]
 	path = bundle/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
+=======
 [submodule "bundle/vim-css-color"]
 	path = bundle/vim-css-color
 	url = git@github.com:skammer/vim-css-color.git
+>>>>>>> 0db1e061318fdf1f5203c6a3fac591a35e24fe6e
