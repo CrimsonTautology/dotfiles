@@ -1,0 +1,8 @@
+#Tmux session with 3 panes on the right, one big one on the left
+selectp -t 0
+splitw -h -p 33
+selectp -t 1
+splitw -v -p 66
+selectp -t 2
+splitw -v -p 50
+selectp -t 0

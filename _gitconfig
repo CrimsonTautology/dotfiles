@@ -5,6 +5,7 @@
 	user = CrimsonTautology
 [alias]
 	co = checkout
+	d = difftool
 [core]
 	editor = vim -f
 [diff]
