@@ -12,8 +12,13 @@ Bundle 'gmarik/vundle'
 "-----------------------------------------------------------------------------
 "Bundles go here
 ""-----------------------------------------------------------------------------
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/vimproc'
+if has('win32') || has('win64')
+    Bundle 'Shougo/neocomplcache'
+    Bundle 'ujihisa/neco-ghc'
+else
+    Bundle 'Valloric/YouCompleteMe'
+endif
+Bundle 'Townk/vim-autoclose'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'eagletmt/ghcmod-vim'
 Bundle 'godlygeek/tabular'
@@ -21,6 +26,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'scrooloose/nerdtree'
 Bundle 'skammer/vim-css-color'
+Bundle 'sukima/xmledit'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
@@ -28,7 +34,6 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'ujihisa/neco-ghc'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'withgod/vim-sourcepawn'
 
