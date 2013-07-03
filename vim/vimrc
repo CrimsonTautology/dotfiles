@@ -1,5 +1,41 @@
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+set nocompatible
+filetype off
+
+if has('win32') || has('win64')
+    set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+endif
+
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+"-----------------------------------------------------------------------------
+"Bundles go here
+""-----------------------------------------------------------------------------
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/vimproc'
+Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'eagletmt/ghcmod-vim'
+Bundle 'godlygeek/tabular'
+Bundle 'majutsushi/tagbar'
+Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'scrooloose/nerdtree'
+Bundle 'skammer/vim-css-color'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'ujihisa/neco-ghc'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'withgod/vim-sourcepawn'
+
+filetype plugin indent on
+"""END"""
+
+
 "-----------------------------------------------------------------------------
 ""Global Vim settings
 ""-----------------------------------------------------------------------------
@@ -86,14 +122,14 @@ set tags+=../tags
 
 "Unicode
 if has("multi_byte")
-  if &termencoding == ""
-    let &termencoding = &encoding
-  endif
-  scriptencoding utf-8
-  set encoding=utf-8
-  setglobal fileencoding=utf-8
-  "setglobal bomb
-  set fileencodings=ucs-bom,utf-8,latin1
+    if &termencoding == ""
+        let &termencoding = &encoding
+    endif
+    scriptencoding utf-8
+    set encoding=utf-8
+    setglobal fileencoding=utf-8
+    "setglobal bomb
+    set fileencodings=ucs-bom,utf-8,latin1
 endif
 
 "-----------------------------------------------------------------------------
@@ -195,8 +231,8 @@ map <silent> <F4> :w<cr>:Rake<cr>
 
 "Display Highlight group
 map <F8> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-			\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-			\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+            \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+            \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 
 "-----------------------------------------------------------------------------
@@ -204,15 +240,15 @@ map <F8> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<
 ""-----------------------------------------------------------------------------
 "Restore cursor position
 function! ResCur()
-	if line("'\"") <= line("$")
-		normal! g`"
-		return 1
-	endif
+    if line("'\"") <= line("$")
+        normal! g`"
+        return 1
+    endif
 endfunction
 
 augroup resCur
-	autocmd!
-	autocmd BufWinEnter * call ResCur()
+    autocmd!
+    autocmd BufWinEnter * call ResCur()
 augroup END
 
 "Auto fold visual basic
@@ -313,40 +349,40 @@ autocmd QuickFixCmdPost    l* nested botright lwindow
 ""-----------------------------------------------------------------------------
 
 function! NetFold()
-	set foldmethod=syntax
-	syn region myFold start="#Region" end="#End Region" fold
-	syn sync fromstart
-	set foldcolumn=2
+    set foldmethod=syntax
+    syn region myFold start="#Region" end="#End Region" fold
+    syn sync fromstart
+    set foldcolumn=2
 endfunction
 
 function! NetUnFold()
-	set foldmethod=manual
-	set foldcolumn=0
-	norm zE
+    set foldmethod=manual
+    set foldcolumn=0
+    norm zE
 endfunction
 
 function! MyDiff()
-	let opt = '-a --binary '
-	if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-	if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-	let arg1 = v:fname_in
-	if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-	let arg2 = v:fname_new
-	if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-	let arg3 = v:fname_out
-	if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-	let eq = ''
-	if $VIMRUNTIME =~ ' '
-		if &sh =~ '\<cmd'
-			let cmd = '""' . $VIMRUNTIME . '\diff"'
-			let eq = '"'
-		else
-			let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-		endif
-	else
-		let cmd = $VIMRUNTIME . '\diff'
-	endif
-	silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+    let opt = '-a --binary '
+    if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+    if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+    let arg1 = v:fname_in
+    if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+    let arg2 = v:fname_new
+    if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+    let arg3 = v:fname_out
+    if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+    let eq = ''
+    if $VIMRUNTIME =~ ' '
+        if &sh =~ '\<cmd'
+            let cmd = '""' . $VIMRUNTIME . '\diff"'
+            let eq = '"'
+        else
+            let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+        endif
+    else
+        let cmd = $VIMRUNTIME . '\diff'
+    endif
+    silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
 
@@ -383,70 +419,70 @@ amenu Plugin.Tagbar :TagbarToggle<cr>
 let g:tagbar_expand = 1
 
 let g:tagbar_type_sourcepawn = {
-			\ 'ctagstype' : 'c++',
-			\ 'kinds'     : [
-			\ 'd:macros:1',
-			\ 'p:prototypes:1',
-			\ 'g:enums',
-			\ 'e:enumerators',
-			\ 't:typedefs',
-			\ 'n:namespaces',
-			\ 'c:classes',
-			\ 's:structs',
-			\ 'u:unions',
-			\ 'f:functions',
-			\ 'm:members',
-			\ 'v:variables'
-			\ ],
-			\ 'sro'        : '::',
-			\ 'kind2scope' : {
-			\ 'g' : 'enum',
-			\ 'n' : 'namespace',
-			\ 'c' : 'class',
-			\ 's' : 'struct',
-			\ 'u' : 'union'
-			\ },
-			\ 'scope2kind' : {
-			\ 'enum'      : 'g',
-			\ 'namespace' : 'n',
-			\ 'class'     : 'c',
-			\ 'struct'    : 's',
-			\ 'union'     : 'u'
-			\ }
-			\ }
+            \ 'ctagstype' : 'c++',
+            \ 'kinds'     : [
+            \ 'd:macros:1',
+            \ 'p:prototypes:1',
+            \ 'g:enums',
+            \ 'e:enumerators',
+            \ 't:typedefs',
+            \ 'n:namespaces',
+            \ 'c:classes',
+            \ 's:structs',
+            \ 'u:unions',
+            \ 'f:functions',
+            \ 'm:members',
+            \ 'v:variables'
+            \ ],
+            \ 'sro'        : '::',
+            \ 'kind2scope' : {
+            \ 'g' : 'enum',
+            \ 'n' : 'namespace',
+            \ 'c' : 'class',
+            \ 's' : 'struct',
+            \ 'u' : 'union'
+            \ },
+            \ 'scope2kind' : {
+            \ 'enum'      : 'g',
+            \ 'namespace' : 'n',
+            \ 'class'     : 'c',
+            \ 'struct'    : 's',
+            \ 'union'     : 'u'
+            \ }
+            \ }
 
 "suport for visual basic
 let g:tagbar_type_vb = {
-			\ 'ctagstype' : 'vb',
-			\ 'kinds' : [
-			\ 's:subroutine',
-			\ 'f:function',
-			\ 'v:variable',
-			\ 'c:const',
-			\ 'n:name',
-			\ 'e:enum',
-			\ 'l:label',
-			\ ],
-			\ 'sro'        : '.',
-			\ 'kind2scope' : {
-			\ 's' : 'subroutine',
-			\ 'f' : 'function',
-			\ 'v' : 'variable',
-			\ 'c' : 'const',
-			\ 'n' : 'name',
-			\ 'e' : 'enum',
-			\ 'l' : 'label',
-			\ },
-			\ 'scope2kind' : {
-			\  'subroutine': 's',
-			\  'function' : 'f',
-			\  'variable' : 'v',
-			\  'const' : 'c',
-			\  'name'  : 'n',
-			\  'enum'  : 'e',
-			\  'label' : 'l',
-			\ }
-			\ }
+            \ 'ctagstype' : 'vb',
+            \ 'kinds' : [
+            \ 's:subroutine',
+            \ 'f:function',
+            \ 'v:variable',
+            \ 'c:const',
+            \ 'n:name',
+            \ 'e:enum',
+            \ 'l:label',
+            \ ],
+            \ 'sro'        : '.',
+            \ 'kind2scope' : {
+            \ 's' : 'subroutine',
+            \ 'f' : 'function',
+            \ 'v' : 'variable',
+            \ 'c' : 'const',
+            \ 'n' : 'name',
+            \ 'e' : 'enum',
+            \ 'l' : 'label',
+            \ },
+            \ 'scope2kind' : {
+            \  'subroutine': 's',
+            \  'function' : 'f',
+            \  'variable' : 'v',
+            \  'const' : 'c',
+            \  'name'  : 'n',
+            \  'enum'  : 'e',
+            \  'label' : 'l',
+            \ }
+            \ }
 
 
 
@@ -510,19 +546,19 @@ let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_enable_caching_message = 1
 
 if !exists('g:neocomplcache_same_filetype_lists')
-	let g:neocomplcache_same_filetype_lists = {}
+    let g:neocomplcache_same_filetype_lists = {}
 endif
 let g:neocomplcache_same_filetype_lists.html = 'css'
 let g:neocomplcache_same_filetype_lists.xhtml = 'html'
 let g:neocomplcache_same_filetype_lists.zsh = 'sh'
 
 if !exists('g:neocomplcache_filetype_include_lists')
-	let g:neocomplcache_filetype_include_lists= {}
+    let g:neocomplcache_filetype_include_lists= {}
 endif
 let g:neocomplcache_plugin_disable = { 'tags_complete': 1 }
 
 if !exists('g:neocomplcache_plugin_rank')
-	let g:neocomplcache_plugin_rank = {}
+    let g:neocomplcache_plugin_rank = {}
 endif
 let g:neocomplcache_plugin_rank.buffer_complete = 10 
 
@@ -550,6 +586,6 @@ let g:neocomplcache_snippets_dir = $VIM_DIR.'/snippets'
 
 
 if ($AUCTION == "SOUTHERN")
-	source ~/.southern.vim
+    source ~/.southern.vim
 endif
 
