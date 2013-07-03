@@ -47,6 +47,7 @@ alias repo='cd ~/repo_dump'
 #Vim
 alias vimn='vim -c "NERDTree" '
 alias gvimn='gvim -c "NERDTree" '
+alias vundle='vim +BundleInstall +qall'
 
 #Git
 alias gpom='git push -u origin master'
