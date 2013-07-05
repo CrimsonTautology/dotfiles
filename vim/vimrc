@@ -18,7 +18,7 @@ if has('win32') || has('win64')
 else
     Bundle 'Valloric/YouCompleteMe'
 endif
-Bundle 'Townk/vim-autoclose'
+Bundle 'Raimondi/delimitMate'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'eagletmt/ghcmod-vim'
 Bundle 'godlygeek/tabular'
