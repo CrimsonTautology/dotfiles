@@ -25,7 +25,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'scrooloose/nerdtree'
-Bundle 'skammer/vim-css-color'
+"Bundle 'skammer/vim-css-color' "This makes loading files very slow
 Bundle 'sukima/xmledit'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
@@ -328,7 +328,7 @@ autocmd FileType ruby,eruby compiler rake
 autocmd FileType ruby,eruby setlocal tabstop=2
 autocmd FileType ruby,eruby setlocal softtabstop=2
 autocmd FileType ruby,eruby setlocal shiftwidth=2
-"autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
 "let g:ruby_path = 'C:\ruby193\bin'
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
