@@ -28,6 +28,8 @@ Bundle 'scrooloose/nerdtree'
 "Bundle 'skammer/vim-css-color' "This makes loading files very slow
 "Bundle 'sukima/xmledit'
 Bundle 'othree/html5.vim'
+"Bundle 'othree/xml.vim'
+Bundle 'tristen/vim-sparkup'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
@@ -324,7 +326,7 @@ autocmd FileType fsharp let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"
 
 
 " Ruby
-autocmd FileType ruby,eruby compiler rake
+"autocmd FileType ruby,eruby compiler rake
 "autocmd FileType ruby,eruby setlocal makeprg=ruby\ %
 autocmd FileType ruby,eruby setlocal tabstop=2
 autocmd FileType ruby,eruby setlocal softtabstop=2
