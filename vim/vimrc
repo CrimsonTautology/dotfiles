@@ -25,11 +25,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'scrooloose/nerdtree'
-"Bundle 'skammer/vim-css-color' "This makes loading files very slow
-"Bundle 'sukima/xmledit'
 Bundle 'othree/html5.vim'
-"Bundle 'othree/xml.vim'
-Bundle 'tristen/vim-sparkup'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
@@ -403,8 +399,12 @@ endfunction
 "let g:surround_{char2nr("d")} = "<div\1id: \r..*\r id=\"&\"\1>\r</div>"  
 "let g:surround_{char2nr("c")} = "[\1\1\2=..*\2*\r]\r[/\1\1]"  
 
-"test [url=google.com]word[/url]  [url* ]link ][/url] <div id="me" color="blue">text</div>
-" more words to test in this test with [url=googleh*]code][/url=google] 
+"test [url=google.com]word[/url]  [url*
+ ]link ]
+[/url] <div id="me" color="blue">text</div>
+" more words to test in this test with [url=googleh*
+]code]
+[/url=google] 
 
 
 "-----------------------------------------------------------------------------
