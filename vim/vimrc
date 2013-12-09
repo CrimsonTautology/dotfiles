@@ -401,8 +401,12 @@ endfunction
 "let g:surround_{char2nr("d")} = "<div\1id: \r..*\r id=\"&\"\1>\r</div>"  
 "let g:surround_{char2nr("c")} = "[\1\1\2=..*\2*\r]\r[/\1\1]"  
 
-"test [url=google.com]word[/url]  [url* ]link ][/url] <div id="me" color="blue">text</div>
-" more words to test in this test with [url=googleh*]code][/url=google] 
+"test [url=google.com]word[/url]  [url*
+ ]link ]
+[/url] <div id="me" color="blue">text</div>
+" more words to test in this test with [url=googleh*
+]code]
+[/url=google] 
 
 
 "-----------------------------------------------------------------------------
