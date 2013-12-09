@@ -173,7 +173,7 @@ function! ghcmod#expand(path) "{{{
   let l:dir = fnamemodify(a:path, ':h')
 
   let l:qflist = []
-  let l:cmd = ghcmod#build_command(['expand', a:path])
+  let l:cmd = ghcmod#build_command(['expand', "-b '\n'", a:path])
   for l:line in split(s:system(l:cmd), '\n')
     " path:line:col1-col2: message
     " or path:line:col: message
@@ -216,32 +216,40 @@ function! ghcmod#expand(path) "{{{
   return l:qflist
 endfunction "}}}
 
+function! ghcmod#add_autogen_dir(path, cmd)
+  " detect autogen directory
+  let l:autogen_dir = a:path . '/autogen'
+  if isdirectory(l:autogen_dir)
+    call extend(a:cmd, ['-g', '-i' . l:autogen_dir, '-g', '-I' . l:autogen_dir])
+    let l:macros_path = l:autogen_dir . '/cabal_macros.h'
+    if filereadable(l:macros_path)
+      call extend(a:cmd, ['-g', '-optP-include', '-g', '-optP' . l:macros_path])
+    endif
+  endif
+endfunction
+
 function! ghcmod#build_command(args) "{{{
   let l:cmd = ['ghc-mod']
 
-  let l:build_dir = s:find_basedir() . '/dist/build'
-  if isdirectory(l:build_dir)
-    " detect autogen directory
-    let l:autogen_dir = l:build_dir . '/autogen'
-    if isdirectory(l:autogen_dir)
-      call extend(l:cmd, ['-g', '-i' . l:autogen_dir, '-g', '-I' . l:autogen_dir])
-      let l:macros_path = l:autogen_dir . '/cabal_macros.h'
-      if filereadable(l:macros_path)
-        call extend(l:cmd, ['-g', '-optP-include', '-g', '-optP' . l:macros_path])
+  let l:dist_top  = s:find_basedir() . '/dist'
+  let l:sandboxes = split(glob(l:dist_top . '/dist-*', 1), '\n')
+  for l:dist_dir in [l:dist_top] + l:sandboxes
+    let l:build_dir = l:dist_dir . '/build'
+    if isdirectory(l:build_dir)
+      call ghcmod#add_autogen_dir(l:build_dir, l:cmd)
+
+      let l:tmps = ghcmod#util#globlist(l:build_dir . '/*/*-tmp')
+      if !empty(l:tmps)
+        " add *-tmp directory to include path for executable project
+        for l:tmp in l:tmps
+          call extend(l:cmd, ['-g', '-i' . l:tmp, '-g', '-I' . l:tmp])
+        endfor
+      else
+        " add build directory to include path for library project
+        call extend(l:cmd, ['-g', '-i' . l:build_dir, '-g', '-I' . l:build_dir])
       endif
     endif
-
-    let l:tmps = ghcmod#util#globlist(l:build_dir . '/*/*-tmp')
-    if !empty(l:tmps)
-      " add *-tmp directory to include path for executable project
-      for l:tmp in l:tmps
-        call extend(l:cmd, ['-g', '-i' . l:tmp, '-g', '-I' . l:tmp])
-      endfor
-    else
-      " add build directory to include path for library project
-      call extend(l:cmd, ['-g', '-i' . l:build_dir, '-g', '-I' . l:build_dir])
-    endif
-  endif
+  endfor
 
   if exists('b:ghcmod_ghc_options')
     let l:opts = b:ghcmod_ghc_options
@@ -296,7 +304,7 @@ function! s:find_basedir() "{{{
 endfunction "}}}
 
 function! ghcmod#version() "{{{
-  return [1, 0, 0]
+  return [1, 1, 0]
 endfunction "}}}
 
 " vim: set ts=2 sw=2 et fdm=marker:

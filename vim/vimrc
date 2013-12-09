@@ -11,13 +11,13 @@ Bundle 'gmarik/vundle'
 
 "-----------------------------------------------------------------------------
 "Bundles go here
+":BundleInstall
+":BundleUpdate
+":BundleClean
 ""-----------------------------------------------------------------------------
-if has('win32') || has('win64')
-    Bundle 'Shougo/neocomplcache'
-    Bundle 'ujihisa/neco-ghc'
-else
-    Bundle 'Valloric/YouCompleteMe'
-endif
+
+Bundle 'Shougo/neocomplcache'
+Bundle 'ujihisa/neco-ghc'
 Bundle 'Raimondi/delimitMate'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'eagletmt/ghcmod-vim'
@@ -25,11 +25,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'scrooloose/nerdtree'
-"Bundle 'skammer/vim-css-color' "This makes loading files very slow
-"Bundle 'sukima/xmledit'
 Bundle 'othree/html5.vim'
-"Bundle 'othree/xml.vim'
-Bundle 'tristen/vim-sparkup'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
@@ -39,10 +35,12 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'withgod/vim-sourcepawn'
+Bundle 'scrooloose/syntastic'
 
 filetype plugin indent on
 """END"""
 
+runtime macros/matchit.vim
 
 "-----------------------------------------------------------------------------
 ""Global Vim settings
@@ -517,6 +515,16 @@ nmap <silent> <leader>rv :RV<CR>
 nmap <silent> <leader>rp :RPreview<CR>
 
 
+
+"-----------------------------------------------------------------------------
+"LightLine
+""-----------------------------------------------------------------------------
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"⭤":""}'
+      \ }
+      \ }
 
 "-----------------------------------------------------------------------------
 "EndWise
