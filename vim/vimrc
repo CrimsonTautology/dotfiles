@@ -121,6 +121,7 @@ set ofu=syntaxcomplete#Complete
 set viminfo='100,\"100,:20,%,n~/.viminfo
 
 set diffexpr=MyDiff()
+set diffexpr=""
 
 
 "" Set the tags files to be the following
