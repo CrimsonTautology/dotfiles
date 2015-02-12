@@ -19,10 +19,7 @@ Bundle 'gmarik/vundle'
 Bundle 'Shougo/neocomplcache'
 Bundle 'ujihisa/neco-ghc'
 Bundle 'Raimondi/delimitMate'
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'eagletmt/ghcmod-vim'
 Bundle 'godlygeek/tabular'
-Bundle 'majutsushi/tagbar'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'scrooloose/nerdtree'
 Bundle 'othree/html5.vim'
@@ -36,6 +33,8 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'withgod/vim-sourcepawn'
 Bundle 'scrooloose/syntastic'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'alvan/vim-closetag'
 
 filetype plugin indent on
 """END"""
@@ -140,14 +139,6 @@ if has("multi_byte")
 endif
 
 "-----------------------------------------------------------------------------
-""Abreviations
-""-----------------------------------------------------------------------------
-ab sss SCCSIDE: %W% %E% %U
-
-
-
-
-"-----------------------------------------------------------------------------
 ""Key maps
 ""-----------------------------------------------------------------------------
 "Windowsplit jumper"
@@ -230,16 +221,7 @@ nmap <silent> <leader>ch mpI<!-- <esc>A --><esc>`p<cr>
 ""Function Keys
 ""-----------------------------------------------------------------------------
 "Run source
-"map <silent> <f5> :!%<cr>
 map <silent> <F5> :w<cr>:make<cr>
-map <silent> <F4> :w<cr>:Rake<cr>
-
-
-
-"Display Highlight group
-map <F8> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-            \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-            \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 
 "-----------------------------------------------------------------------------
@@ -289,21 +271,12 @@ autocmd FileType python map <silent> <F11> :w<cr>:!python %<cr>
 autocmd FileType python map <silent> <S-F11> :w<cr>:pyfile %<cr>
 
 " HTML
-autocmd BufNewFile,BufRead *.html map <silent> <F11> :w<cr>:!"C:\Program Files (x86)\Mozilla Firefox\firefox.exe" %<cr>
+autocmd FileType html let b:delimitMate_matchpairs = "(:),[:],{:}"
 
 " Haskel
 "autocmd FileType haskell setlocal makeprg=ghc\ % 
 autocmd FileType haskell compiler ghc
 "autocmd FileType haskell compiler ghc-mod
-
-"if executable("switchToAndThen.exe")  "Check if my switchToAndThen program is in the path.  This will switch focus to an existing ghci instead of creating a new one
-"autocmd FileType haskell map <silent> <F11> :w<cr>:!start switchToAndThen ghci "ghci %:p" ":r{enter}"<cr>
-"else
-autocmd FileType haskell map <silent> <F11> :w<cr>:!start ghci %:p<cr>
-"endif
-
-autocmd FileType haskell map <silent> <s-F11> :w<cr>:! %:t:r.exe<cr>
-autocmd FileType haskell let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '`': '`', '«': '»'}
 
 autocmd FileType haskell imap <silent> <m-.> ->
 autocmd FileType haskell imap <silent> <m-.><m-.> =>
@@ -321,7 +294,6 @@ autocmd FileType fsharp setlocal makeprg=fsc\ %
 autocmd FileType fsharp setlocal errorformat=\ %#%f(%l\\\,%c):\ %m
 autocmd FileType fsharp map <silent> <F11> :w<cr>:!start fsi %:p<cr>
 autocmd FileType fsharp map <silent> <s-F11> :w<cr>:!start %:t:r.exe<cr>
-autocmd FileType fsharp let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '`': '`', '«': '»'}
 
 
 " Ruby
@@ -504,17 +476,6 @@ nmap <silent> <leader>rv :RV<CR>
 
 nmap <silent> <leader>rp :RPreview<CR>
 
-
-
-"-----------------------------------------------------------------------------
-"LightLine
-""-----------------------------------------------------------------------------
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ 'component': {
-      \   'readonly': '%{&readonly?"⭤":""}'
-      \ }
-      \ }
 
 "-----------------------------------------------------------------------------
 "EndWise
