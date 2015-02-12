@@ -260,7 +260,7 @@ autocmd FileType c setlocal makeprg=gcc\ %
 autocmd FileType c map <silent> <F11> :w<cr>:!a.exe<cr>
 
 " SourcePawn SourceMod
-autocmd FileType sourcepawn setlocal makeprg=compile_sourcemod.sh
+autocmd FileType sourcepawn setlocal makeprg=rake\ compile
 autocmd FileType sourcepawn map <silent> <F6> :w<cr>:!moveToDev.py %:t:r<cr>
 autocmd FileType sourcepawn map <silent> <F11> :w<cr>:!moveToDev.py %:t:r.smx<cr>
 autocmd FileType sourcepawn map <silent> <S-F11> :w<cr>:silent !startDevServer.py<cr>
