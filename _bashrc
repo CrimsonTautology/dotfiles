@@ -6,6 +6,3 @@
 . ~/bin/dotfiles/bash/config
 . ~/bin/dotfiles/bash/aliases
 
-export SOURCEMOD_DIR="$HOME/sourcemod/addons/sourcemod/"
-export SOURCEMOD_DEV_SERVER="$HOME/steamcmd/tf2_jet/tf/"
-export SAK="1B8A8B643CF3AC667016897F8429D00C"
