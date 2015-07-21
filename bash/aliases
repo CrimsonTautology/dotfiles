@@ -29,6 +29,8 @@ alias less='less -MR'
 
 alias mdy='date +%m%d%y'
 alias mdY='date +%m%d%Y'
+alias ymd='date +%y%m%d'
+alias Ymd='date +%Y%m%d'
 
 #SRCDS
 alias sxs='screen -x SRCDS'
