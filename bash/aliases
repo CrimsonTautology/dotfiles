@@ -27,6 +27,9 @@ alias l='ls -CF'
 alias vrep='grep -v'
 alias less='less -MR'
 
+alias mdy='date +%m%d%y'
+alias mdY='date +%m%d%Y'
+
 #SRCDS
 alias sxs='screen -x SRCDS'
 
