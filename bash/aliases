@@ -64,6 +64,11 @@ alias sm='cd ~/sourcemod'
 alias bd='cd ~/bin/dotfiles/'
 alias repo='cd ~/repo_dump'
 
+alias silenced='cat L* | sed -e "s/L.*: //g" | sed -e "s/<[0-9]*>//g" | sed -e "s/\] \"[^\"]*\"//" | grep "\<silenced\>\|\<muted\>\|\<gagged\>" | sort | uniq -c | sort -n'
+alias kicked='cat L* | sed -e "s/L.*: //g" | sed -e "s/<[0-9]*>//g" | sed -e "s/\] \"[^\"]*\"//" | grep "\<kicked\>" | sort | uniq -c | sort -n'
+alias banned='cat L* | sed -e "s/L.*: //g" | sed -e "s/<[0-9]*>//g" | sed -e "s/\] \"[^\"]*\"//" | grep "\<banned\>" | sort | uniq -c | sort -n'
+alias rtvs='grep -B 3 "rockthevote" L* | grep "Mapchange to" | sed -e "s/^.*Mapchange to //g" | sed -e "s/ -*//g" | sort | uniq -c |sort -n'
+
 #Vim
 alias vimn='vim -c "NERDTree" '
 alias gvimn='gvim -c "NERDTree" '
