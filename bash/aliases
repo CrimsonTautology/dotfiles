@@ -68,6 +68,7 @@ alias silenced='cat L* | sed -e "s/L.*: //g" | sed -e "s/<[0-9]*>//g" | sed -e "
 alias kicked='cat L* | sed -e "s/L.*: //g" | sed -e "s/<[0-9]*>//g" | sed -e "s/\] \"[^\"]*\"//" | grep "\<kicked\>" | sort | uniq -c | sort -n'
 alias banned='cat L* | sed -e "s/L.*: //g" | sed -e "s/<[0-9]*>//g" | sed -e "s/\] \"[^\"]*\"//" | grep "\<banned\>" | sort | uniq -c | sort -n'
 alias rtvs='grep -B 3 "rockthevote" L* | grep "Mapchange to" | sed -e "s/^.*Mapchange to //g" | sed -e "s/ -*//g" | sort | uniq -c |sort -n'
+alias chats='cat ~/logs/fof_main_chat ~/steamcmd/fof_main/fof/addons/sourcemod/logs/chat*  |sed -e "s/^.*: \"\(.*\)\"$/\1/" | sort | uniq -ic |sort -n'
 
 #Vim
 alias vimn='vim -c "NERDTree" '
