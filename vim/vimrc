@@ -11,31 +11,32 @@ Bundle 'VundleVim/Vundle.vim'
 
 "-----------------------------------------------------------------------------
 "Bundles go here
-":BundleInstall
-":BundleUpdate
-":BundleClean
+":PluginInstall
+":PluginUpdate
+":PluginClean
 ""-----------------------------------------------------------------------------
 
-Bundle 'Shougo/neocomplcache'
-Bundle 'Raimondi/delimitMate'
-Bundle 'godlygeek/tabular'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'withgod/vim-sourcepawn'
-Bundle 'scrooloose/syntastic'
-Bundle 'alvan/vim-closetag'
-Bundle 'othree/html5.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'pangloss/vim-javascript'
-Bundle 'leafgarland/typescript-vim'
-Bundle 'moll/vim-node'
+Plugin 'Shougo/neocomplcache'
+Plugin 'Raimondi/delimitMate'
+Plugin 'godlygeek/tabular'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'withgod/vim-sourcepawn'
+Plugin 'scrooloose/syntastic'
+Plugin 'alvan/vim-closetag'
+Plugin 'othree/html5.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'othree/yajs.vim'
+Plugin 'gavocanov/vim-js-indent'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'moll/vim-node'
 
 call vundle#end()
 filetype plugin indent on
