@@ -5,9 +5,9 @@ if has('win32') || has('win64')
     set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 endif
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Bundle 'VundleVim/Vundle.vim'
 
 "-----------------------------------------------------------------------------
 "Bundles go here
@@ -17,12 +17,9 @@ Bundle 'gmarik/vundle'
 ""-----------------------------------------------------------------------------
 
 Bundle 'Shougo/neocomplcache'
-Bundle 'ujihisa/neco-ghc'
 Bundle 'Raimondi/delimitMate'
 Bundle 'godlygeek/tabular'
-Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'scrooloose/nerdtree'
-Bundle 'othree/html5.vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
@@ -33,9 +30,14 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'withgod/vim-sourcepawn'
 Bundle 'scrooloose/syntastic'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'alvan/vim-closetag'
+Bundle 'othree/html5.vim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'pangloss/vim-javascript'
+Bundle 'leafgarland/typescript-vim'
+Bundle 'moll/vim-node'
 
+call vundle#end()
 filetype plugin indent on
 """END"""
 
@@ -307,6 +309,21 @@ autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+
+" Javascript
+autocmd FileType javascript setlocal tabstop=2
+autocmd FileType javascript setlocal softtabstop=2
+autocmd FileType javascript setlocal shiftwidth=2
+
+" Typescript
+autocmd FileType typescript setlocal tabstop=2
+autocmd FileType typescript setlocal softtabstop=2
+autocmd FileType typescript setlocal shiftwidth=2
+
+" Coffeescript
+autocmd FileType coffee setlocal tabstop=2
+autocmd FileType coffee setlocal softtabstop=2
+autocmd FileType coffee setlocal shiftwidth=2
 
 
 
