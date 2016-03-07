@@ -196,9 +196,9 @@ map <leader>da yypf.l<c-a>WdE"=strftime("%m/%d/%y")<CR>PWcewms<esc>WC
 map <leader>dp :diffput<cr>]c
 map <leader>dg :diffget<cr>]c
 
-nmap <silent> <leader>ve :e $HOME/.vimrc<CR>
-nmap <silent> <leader>vo :e! $HOME/.vimrc<CR>
-nmap <silent> <leader>vs :so $HOME/.vimrc<CR>
+nmap <silent> <leader>ve :e $HOME/.vim/vimrc<CR>
+nmap <silent> <leader>vo :e! $HOME/.vim/vimrc<CR>
+nmap <silent> <leader>vs :so $HOME/.vim/vimrc<CR>
 
 " cd to the directory containing the file in the buffer
 nmap <silent> <leader>cd :lcd %:h<CR>
