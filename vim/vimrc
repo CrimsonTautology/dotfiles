@@ -188,107 +188,78 @@ nmap <silent> <leader>rib yyp^WdE"=strftime("%m/%d/%y")<CR>PWC
 "Run source
 map <silent> <F5> :w<cr>:make<cr>
 
-
 "-----------------------------------------------------------------------------
 ""Auto Commands
 ""-----------------------------------------------------------------------------
-"Restore cursor position
-function! ResCur()
-    if line("'\"") <= line("$")
-        normal! g`"
-        return 1
-    endif
-endfunction
-
 augroup resCur
     autocmd!
     autocmd BufWinEnter * call ResCur()
 augroup END
 
-"Auto fold visual basic
-autocmd BufNewFile,BufRead *.vb setfiletype vb
-autocmd BufNewFile,BufRead *.vb setlocal syntax=vb
-autocmd BufNewFile,BufRead *.vb call NetFold()
-
-"Load coldfusion dictionary
-autocmd BufNewFile,BufRead *.cf  setlocal dictionary=$VIM\vimfiles\dict\CF.dict
-autocmd BufNewFile,BufRead *.cfm  setlocal dictionary=$VIM\vimfiles\dict\CF.dict
-
-" Java
+"Java
 autocmd FileType java compiler javac
 autocmd FileType java setlocal makeprg=javac\ %
 autocmd FileType java map <silent> <F11> :w<cr>:!java %:r<cr>
 
-" C files
+"C
 autocmd FileType c compiler gcc
 autocmd FileType c setlocal makeprg=gcc\ %
 autocmd FileType c map <silent> <F11> :w<cr>:!a.exe<cr>
 
-" SourcePawn SourceMod
+"Sourcepawn
 autocmd FileType sourcepawn setlocal makeprg=rake\ compile
-autocmd FileType sourcepawn map <silent> <F6> :w<cr>:!moveToDev.py %:t:r<cr>
-autocmd FileType sourcepawn map <silent> <F11> :w<cr>:!moveToDev.py %:t:r.smx<cr>
-autocmd FileType sourcepawn map <silent> <S-F11> :w<cr>:silent !startDevServer.py<cr>
+autocmd FileType sourcepawn map <silent> <F11> :w<cr>:!rake<cr>
+autocmd FileType sourcepawn map <silent> <S-F11> :w<cr>:!rake uninstall<cr>
 
-"Python files:  Open current file through command line or have vim run it
+"Python
 autocmd FileType python setlocal makeprg=python\ % 
 autocmd FileType python map <silent> <F11> :w<cr>:!python %<cr>
 autocmd FileType python map <silent> <S-F11> :w<cr>:pyfile %<cr>
 
-" HTML
+"HTML
 autocmd FileType html let b:delimitMate_matchpairs = "(:),[:],{:}"
 
-" Haskel
-"autocmd FileType haskell setlocal makeprg=ghc\ % 
+"Haskel
 autocmd FileType haskell compiler ghc
-"autocmd FileType haskell compiler ghc-mod
-
 autocmd FileType haskell imap <silent> <m-.> ->
 autocmd FileType haskell imap <silent> <m-.><m-.> =>
 autocmd FileType haskell imap <silent> <m-,> <-
 
-" Erlang
+"Erlang
 autocmd FileType erlang setlocal makeprg=erlc\ %
-autocmd FileType erlang map <silent> <F11> :w<cr>:!start werl %<cr>
-autocmd FileType erlang map <silent> <s-F11> :w<cr>:!start %:t:r.exe<cr>
-autocmd FileType erlang imap <silent> <F10> ->
-autocmd FileType erlang imap <silent> <F10><F10> =>
+autocmd FileType erlang imap <silent> <m-.> ->
+autocmd FileType erlang imap <silent> <m-.><m-.> =>
 
-" F#  (fsharp)
+"F#
 autocmd FileType fsharp setlocal makeprg=fsc\ % 
 autocmd FileType fsharp setlocal errorformat=\ %#%f(%l\\\,%c):\ %m
 autocmd FileType fsharp map <silent> <F11> :w<cr>:!start fsi %:p<cr>
 autocmd FileType fsharp map <silent> <s-F11> :w<cr>:!start %:t:r.exe<cr>
 
-
-" Ruby
-"autocmd FileType ruby,eruby compiler rake
-"autocmd FileType ruby,eruby setlocal makeprg=ruby\ %
+"Ruby
 autocmd FileType ruby,eruby setlocal tabstop=2
 autocmd FileType ruby,eruby setlocal softtabstop=2
 autocmd FileType ruby,eruby setlocal shiftwidth=2
 autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
-"let g:ruby_path = 'C:\ruby193\bin'
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
-" Javascript
+"Javascript
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType javascript setlocal tabstop=2
 autocmd FileType javascript setlocal softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2
 
-" Typescript
+"Typescript
 autocmd FileType typescript setlocal tabstop=2
 autocmd FileType typescript setlocal softtabstop=2
 autocmd FileType typescript setlocal shiftwidth=2
 
-" Coffeescript
+"Coffeescript
 autocmd FileType coffee setlocal tabstop=2
 autocmd FileType coffee setlocal softtabstop=2
 autocmd FileType coffee setlocal shiftwidth=2
-
-
 
 " Automatically open, but do not go to (if there are errors) the quickfix /
 " location list window, or close it when is has become empty. 
@@ -301,27 +272,16 @@ autocmd FileType coffee setlocal shiftwidth=2
 autocmd QuickFixCmdPost [^l]* nested botright cwindow
 autocmd QuickFixCmdPost    l* nested botright lwindow
 
-
-
 "-----------------------------------------------------------------------------
 ""Functions
 ""-----------------------------------------------------------------------------
-
-function! NetFold()
-    set foldmethod=syntax
-    syn region myFold start="#Region" end="#End Region" fold
-    syn sync fromstart
-    set foldcolumn=2
+"Restore cursor position
+function! ResCur()
+    if line("'\"") <= line("$")
+        normal! g`"
+        return 1
+    endif
 endfunction
-
-function! NetUnFold()
-    set foldmethod=manual
-    set foldcolumn=0
-    norm zE
-endfunction
-
-
-
 
 "-----------------------------------------------------------------------------
 ""NERDTree
