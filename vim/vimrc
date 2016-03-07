@@ -48,18 +48,13 @@ runtime macros/matchit.vim
 "-----------------------------------------------------------------------------
 ""Global Vim settings
 ""-----------------------------------------------------------------------------
+
+"Syntax highlighting and color scheme
 set bg=dark
-"colorscheme xterm16
-set scrolloff=8  " Keep 8 lines below and above the cursor
-
-
-"Syntax highlighting and color scheme"
 syntax on
 let g:solarized_termtrans = 1
 let g:solarized_termcolors = 16
 colorscheme solarized
-
-
 
 "Set the status line
 set showcmd      " Display incomplete commands.
@@ -77,28 +72,27 @@ set statusline+=\ %{fugitive#statusline()}
 "set statusline+=\ %{tagbar#currenttag('[%s]','')}
 set statusline+=\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n
 
-"other
+"Other Settings
 set number
 set ruler
-set nowrap       " no wordwrap
-set showmatch    " Show matching parentheses
-set noerrorbells " Damn the bell
-set hlsearch     " Highlight search
+set nowrap       "No wordwrap
+set showmatch    "Show matching parentheses
+set noerrorbells "Damn the bell
+set hlsearch     "Highlight search
 set ignorecase
 set smartcase
-set splitbelow   " Split window below current one with :sp
-set splitright   " Split new window to the right with :vs
-set nocompatible " Dont' be vi compatible
+set splitbelow   "Split window below current one with :sp
+set splitright   "Split new window to the right with :vs
+set nocompatible "Dont' be vi compatible
 set history=100
-set wildmenu "command line completion
-set backspace=2 " Allow backspacing over indent, eol, and the start of an insert
+set wildmenu     "Command line completion
+set backspace=2  "Allow backspacing over indent, eol, and the start of an insert
+set scrolloff=8  "Keep 8 lines below and above the cursor
 
-"Tabbing"
+"Tabbing
 set autoindent
 set smartindent
 set expandtab
-
-"Proper tab stop
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -106,7 +100,6 @@ set shiftwidth=4
 "Auto switch directory
 set autochdir
 set directory+=,~/tmp,$TMP
-"autocmd BufEnter * lcd %:p:h
 
 "Enable file type
 filetype on
@@ -117,10 +110,10 @@ set ofu=syntaxcomplete#Complete
 
 " Tell vim to remember certain things when we exit
 "  '100  :  marks will be remembered for up to 10 previously edited files
-"  "100 :  will save up to 100 lines for each register
-"  :20  :  up to 20 lines of command-line history will be remembered
-"  %    :  saves and restores the buffer list
-"  n... :  where to save the viminfo files
+"  "100  :  will save up to 100 lines for each register
+"  :20   :  up to 20 lines of command-line history will be remembered
+"  %     :  saves and restores the buffer list
+"  n...  :  where to save the viminfo files
 set viminfo='100,\"100,:20,%,n~/.viminfo
 
 set diffexpr=MyDiff()
