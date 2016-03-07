@@ -57,17 +57,17 @@ let g:solarized_termcolors = 16
 colorscheme solarized
 
 "Set the status line
-set showcmd      " Display incomplete commands.
-set laststatus=2 
-set showmode " Show the current mode
+set showcmd          "Display incomplete commands.
+set laststatus=2
+set showmode         "Show the current mode
 
 set statusline=""
-set statusline+=%f	"Tail of filename"
-set statusline+=%m	"Modified flag"
-set statusline+=\ %y	"filetype"
-set statusline+=\ %r	"read only flag"
-set statusline+=\ %h	"help file flag"
-set statusline+=%=	"left/right separator"
+set statusline+=%f   "Tail of filename
+set statusline+=%m   "Modified flag
+set statusline+=\ %y "filetype
+set statusline+=\ %r "read only flag
+set statusline+=\ %h "help file flag
+set statusline+=%=   "left/right separator
 set statusline+=\ %{fugitive#statusline()}
 "set statusline+=\ %{tagbar#currenttag('[%s]','')}
 set statusline+=\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n
