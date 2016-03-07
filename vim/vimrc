@@ -116,11 +116,7 @@ set ofu=syntaxcomplete#Complete
 "  n...  :  where to save the viminfo files
 set viminfo='100,\"100,:20,%,n~/.viminfo
 
-set diffexpr=MyDiff()
-set diffexpr=""
-
-
-"" Set the tags files to be the following
+"Set the tags files to be the following
 set tags+=../tags
 
 "Unicode
@@ -138,35 +134,21 @@ endif
 "-----------------------------------------------------------------------------
 ""Key maps
 ""-----------------------------------------------------------------------------
-"Windowsplit jumper"
+"Windowsplit jumper
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-"Easy esc (CTRL + Enter)"
-inoremap <C-CR> <Esc>
-
-"Correctly map shift y to yank to end of line"
+"Correctly map shift y to yank to end of line
 nmap Y y$
-
-"in insert mode, ctrl j/k are used to scroll the acp window
-inoremap <c-j> <c-n>
-inoremap <c-k> <c-p>
 
 "Make shift h and l easy begining and end of line"
 map H ^
 map L $
 
-"Easy visual mode tabbing, so using < or > does not clear selection"
-vmap > >gv
-vmap < <gv
-
 "Quick macro to the q registry, use Q to play back
 nnoremap Q @q
-
-"I never use ' so just map it to " for quick registers
-nnoremap ' "
 
 "Remap keys to alt that have been lost by mswin
 noremap <M-v>       <C-V>
@@ -174,9 +156,6 @@ noremap <M-a>       <C-a>
 noremap <M-x>       <C-x>
 noremap <M-z>       <C-z>
 noremap <M-s>       <C-s>
-
-
-
 
 "-----------------------------------------------------------------------------
 ""Leader Maps
@@ -186,7 +165,7 @@ let mapleader = ","
 "Super cool auto timestamp and comment
 map <leader>da yypf.l<c-a>WdE"=strftime("%m/%d/%y")<CR>PWcewms<esc>WC
 
-"diff get and put
+"Diff get and put
 map <leader>dp :diffput<cr>]c
 map <leader>dg :diffget<cr>]c
 
@@ -194,25 +173,14 @@ nmap <silent> <leader>ve :e $HOME/.vim/vimrc<CR>
 nmap <silent> <leader>vo :e! $HOME/.vim/vimrc<CR>
 nmap <silent> <leader>vs :so $HOME/.vim/vimrc<CR>
 
-" cd to the directory containing the file in the buffer
+"cd to the directory containing the file in the buffer
 nmap <silent> <leader>cd :lcd %:h<CR>
-"nmap <silent> <leader>md :!mkdir -p %:p:h<CR>
 
-"Run the file it's self
-nmap <silent> <leader>rr :!%<cr>
-
-
-" CK log
+"CK log
 nmap <silent> <leader>ck o-<TAB><ESC>"=strftime("%m/%d/%y")<CR>pA<TAB>
 
 "Ribon log
 nmap <silent> <leader>rib yyp^WdE"=strftime("%m/%d/%y")<CR>PWC
-
-
-" Quick coldfusion/html comments
-nmap <silent> <leader>cc mpI<!--- <esc>A ---><esc>`p<cr>
-nmap <silent> <leader>ch mpI<!-- <esc>A --><esc>`p<cr>
-
 
 "-----------------------------------------------------------------------------
 ""Function Keys
@@ -350,30 +318,6 @@ function! NetUnFold()
     set foldmethod=manual
     set foldcolumn=0
     norm zE
-endfunction
-
-function! MyDiff()
-    let opt = '-a --binary '
-    if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-    if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-    let arg1 = v:fname_in
-    if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-    let arg2 = v:fname_new
-    if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-    let arg3 = v:fname_out
-    if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-    let eq = ''
-    if $VIMRUNTIME =~ ' '
-        if &sh =~ '\<cmd'
-            let cmd = '""' . $VIMRUNTIME . '\diff"'
-            let eq = '"'
-        else
-            let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-        endif
-    else
-        let cmd = $VIMRUNTIME . '\diff'
-    endif
-    silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
 
