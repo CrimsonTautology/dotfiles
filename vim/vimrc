@@ -20,24 +20,24 @@ Plugin 'Shougo/neocomplcache'
 Plugin 'Raimondi/delimitMate'
 Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'withgod/vim-sourcepawn'
+Plugin 'tpope/vim-endwise', {'name': 'endwise'}
+Plugin 'tpope/vim-fugitive', {'name': 'fugitive'}
+Plugin 'tpope/vim-markdown', {'name': 'markdown'}
+Plugin 'tpope/vim-rails', {'name': 'rails'}
+Plugin 'tpope/vim-repeat', {'name': 'repeat'}
+Plugin 'tpope/vim-surround', {'name': 'surround'}
+Plugin 'tpope/vim-unimpaired', {'name': 'unimpaired'}
+Plugin 'vim-ruby/vim-ruby', {'name': 'ruby'}
+Plugin 'withgod/vim-sourcepawn', {'name': 'sourcepawn'}
 Plugin 'scrooloose/syntastic'
-Plugin 'alvan/vim-closetag'
-Plugin 'digitaltoad/vim-jade'
+Plugin 'alvan/vim-closetag', {'name': 'closetag'}
+Plugin 'digitaltoad/vim-jade', {'name': 'jade'}
 Plugin 'othree/html5.vim'
-Plugin 'kchmck/vim-coffee-script'
+Plugin 'kchmck/vim-coffee-script', {'name': 'coffeescript'}
 Plugin 'othree/yajs.vim'
-Plugin 'gavocanov/vim-js-indent'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'moll/vim-node'
+Plugin 'gavocanov/vim-js-indent', {'name': 'jsindent'}
+Plugin 'leafgarland/typescript-vim', {'name': 'typescript'}
+Plugin 'moll/vim-node', {'name': 'node'}
 
 call vundle#end()
 filetype plugin indent on
@@ -392,4 +392,3 @@ let g:neocomplcache_snippets_dir = $VIM_DIR.'/snippets'
 if ($AUCTION == "SOUTHERN")
     source ~/.southern.vim
 endif
-
