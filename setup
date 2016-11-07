@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo ". ~/bin/dotfiles/_bashrc" >> .bashrc
 
 ln -s ~/bin/dotfiles/_dircolors ~/.dircolors
