@@ -27,7 +27,7 @@ Plugin 'tpope/vim-rails', {'name': 'rails'}
 Plugin 'tpope/vim-repeat', {'name': 'repeat'}
 Plugin 'tpope/vim-surround', {'name': 'surround'}
 Plugin 'tpope/vim-unimpaired', {'name': 'unimpaired'}
-Plugin 'vim-ruby/vim-ruby', {'name': 'ruby'}
+"Plugin 'vim-ruby/vim-ruby', {'name': 'ruby'}
 Plugin 'withgod/vim-sourcepawn', {'name': 'sourcepawn'}
 Plugin 'scrooloose/syntastic'
 Plugin 'alvan/vim-closetag', {'name': 'closetag'}
