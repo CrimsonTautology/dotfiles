@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-ln -s vimrc ~/.vimrc
-ln -s gvimrc ~/.gvimrc
-vim +BundleInstall +qall
+ln -sf vimrc ~/.vimrc
+ln -sf gvimrc ~/.gvimrc
+#vim -c "BundleInstall" -c "qall"
