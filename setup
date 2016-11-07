@@ -2,9 +2,9 @@
 
 echo ". ~/bin/dotfiles/_bashrc" >> .bashrc
 
-ln -s ~/bin/dotfiles/_dircolors ~/.dircolors
-ln -s ~/bin/dotfiles/_gitconfig ~/.gitconfig
-ln -s ~/bin/dotfiles/_inputrc ~/.inputrc
-ln -s ~/bin/dotfiles/_rspec ~/.rspec
-ln -s ~/bin/dotfiles/_tmux.conf ~/.tmux
-ln -s ~/bin/dotfiles/_vimperatorrc ~/.vimperatorrc
+ln -sf ~/bin/dotfiles/_dircolors ~/.dircolors
+ln -sf ~/bin/dotfiles/_gitconfig ~/.gitconfig
+ln -sf ~/bin/dotfiles/_inputrc ~/.inputrc
+ln -sf ~/bin/dotfiles/_rspec ~/.rspec
+ln -sf ~/bin/dotfiles/_tmux.conf ~/.tmux
+ln -sf ~/bin/dotfiles/_vimperatorrc ~/.vimperatorrc
