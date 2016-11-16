@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo ". ~/bin/dotfiles/_bashrc" > ~/.bashrc
+echo ". ~/bin/dotfiles/_bashrc" >> ~/.bashrc
 
 ln -sf ~/bin/dotfiles/_dircolors ~/.dircolors
 ln -sf ~/bin/dotfiles/_gitconfig ~/.gitconfig
