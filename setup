@@ -7,4 +7,3 @@ ln -sf ~/bin/dotfiles/_gitconfig ~/.gitconfig
 ln -sf ~/bin/dotfiles/_inputrc ~/.inputrc
 ln -sf ~/bin/dotfiles/_rspec ~/.rspec
 ln -sf ~/bin/dotfiles/_tmux.conf ~/.tmux
-ln -sf ~/bin/dotfiles/_vimperatorrc ~/.vimperatorrc
