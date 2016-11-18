@@ -140,7 +140,6 @@ if has("multi_byte")
     set fileencodings=ucs-bom,utf-8,latin1
 endif
 " }}}
-
 " Key Re-Maps {{{
 
 " Normal Mode have space alternate folds
@@ -192,19 +191,21 @@ nnoremap <silent> <leader>ck o-<TAB><ESC>"=strftime("%m/%d/%y")<CR>pA<TAB>
 " Run source
 nnoremap <silent> <F5> :w<cr>:make<cr>
 
-"-----------------------------------------------------------------------------
-" Plugins
-nnoremap <silent> <leader>nt :NERDTreeToggle<cr>
-
 " }}}
+" Auto Commands {{{
 
-"-----------------------------------------------------------------------------
-""Auto Commands
-""-----------------------------------------------------------------------------
+" Automatically restore cursor position
 augroup resCur
     autocmd!
     autocmd BufWinEnter * call ResCur()
 augroup END
+
+function! ResCur()
+    if line("'\"") <= line("$")
+        normal! g`"
+        return 1
+    endif
+endfunction
 
 " Automatically open, but do not go to (if there are errors) the quickfix /
 " location list window, or close it when is has become empty. 
@@ -217,20 +218,11 @@ augroup END
 autocmd QuickFixCmdPost [^l]* nested botright cwindow
 autocmd QuickFixCmdPost    l* nested botright lwindow
 
-"-----------------------------------------------------------------------------
-""Functions
-""-----------------------------------------------------------------------------
-"Restore cursor position
-function! ResCur()
-    if line("'\"") <= line("$")
-        normal! g`"
-        return 1
-    endif
-endfunction
-
+" }}}
 "-----------------------------------------------------------------------------
 ""NERDTree
 ""-----------------------------------------------------------------------------
+nnoremap <silent> <leader>nt :NERDTreeToggle<cr>
 amenu Plugin.NERDTree :NERDTreeToggle <cr>
 
 let NERDTreeShowBookmarks = 1
