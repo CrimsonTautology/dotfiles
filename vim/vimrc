@@ -1,3 +1,4 @@
+" vim:foldmethod=marker:foldlevel=0
 set nocompatible    " be iMproved
 
 " In case I'm on windows use correct runtimepath
@@ -32,7 +33,7 @@ Plugin 'tpope/vim-rails', {'name': 'rails'}
 Plugin 'tpope/vim-repeat', {'name': 'repeat'}
 Plugin 'tpope/vim-surround', {'name': 'surround'}
 Plugin 'tpope/vim-unimpaired', {'name': 'unimpaired'}
-"Plugin 'vim-ruby/vim-ruby', {'name': 'ruby'}
+Plugin 'vim-ruby/vim-ruby', {'name': 'ruby'}
 Plugin 'withgod/vim-sourcepawn', {'name': 'sourcepawn'}
 Plugin 'scrooloose/syntastic'
 Plugin 'alvan/vim-closetag', {'name': 'closetag'}
@@ -48,20 +49,15 @@ call vundle#end()
 filetype plugin indent on
 " }}}
 
-runtime macros/matchit.vim
-
-"-----------------------------------------------------------------------------
-""Global Vim settings
-""-----------------------------------------------------------------------------
-
-"Syntax highlighting and color scheme
+" Colors/Syntax highlighting {{{
 set bg=dark
 syntax on
 let g:solarized_termtrans = 1
 let g:solarized_termcolors = 16
 colorscheme solarized
+" }}}
 
-"Set the status line
+" Status Line {{{
 set showcmd          "Display incomplete commands.
 set laststatus=2
 set showmode         "Show the current mode
@@ -76,6 +72,7 @@ set statusline+=%=   "left/right separator
 set statusline+=\ %{fugitive#statusline()}
 "set statusline+=\ %{tagbar#currenttag('[%s]','')}
 set statusline+=\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n
+" }}}
 
 "Other Settings
 set number
