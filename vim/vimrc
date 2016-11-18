@@ -1,20 +1,25 @@
-set nocompatible
-filetype off
+set nocompatible    " be iMproved
 
+" In case I'm on windows use correct runtimepath
 if has('win32') || has('win64')
     set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 endif
 
+" Vundle {{{
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Bundle 'VundleVim/Vundle.vim'
-
-"-----------------------------------------------------------------------------
-"Bundles go here
-":PluginInstall
-":PluginUpdate
-":PluginClean
-""-----------------------------------------------------------------------------
+Plugin 'VundleVim/Vundle.vim'
+"
+" Brief help
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginUpdate
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginList       - lists configured plugins
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 
 Plugin 'Shougo/neocomplcache'
 Plugin 'Raimondi/delimitMate'
@@ -41,7 +46,7 @@ Plugin 'moll/vim-node', {'name': 'node'}
 
 call vundle#end()
 filetype plugin indent on
-"""END"""
+" }}}
 
 runtime macros/matchit.vim
 
