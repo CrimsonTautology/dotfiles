@@ -7,6 +7,7 @@ if has('win32') || has('win64')
 endif
 
 " Vundle {{{
+
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -47,51 +48,37 @@ Plugin 'moll/vim-node', {'name': 'node'}
 
 call vundle#end()
 filetype plugin indent on
-" }}}
 
-" Colors/Syntax highlighting {{{
+" }}}
+" Colors/Syntax Highlighting {{{
+
 set bg=dark
 syntax on
 let g:solarized_termtrans = 1
 let g:solarized_termcolors = 16
 colorscheme solarized
-" }}}
 
+" }}}
 " Status Line {{{
-set showcmd          "Display incomplete commands.
+
+set showcmd          " Display incomplete commands.
 set laststatus=2
-set showmode         "Show the current mode
+set showmode         " Show the current mode
 
 set statusline=""
-set statusline+=%f   "Tail of filename
-set statusline+=%m   "Modified flag
-set statusline+=\ %y "filetype
-set statusline+=\ %r "read only flag
-set statusline+=\ %h "help file flag
-set statusline+=%=   "left/right separator
+set statusline+=%f   " Tail of filename
+set statusline+=%m   " Modified flag
+set statusline+=\ %y " filetype
+set statusline+=\ %r " read only flag
+set statusline+=\ %h " help file flag
+set statusline+=%=   " left/right separator
 set statusline+=\ %{fugitive#statusline()}
 "set statusline+=\ %{tagbar#currenttag('[%s]','')}
 set statusline+=\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n
+
 " }}}
+" Spaces/Tabs {{{
 
-"Other Settings
-set number
-set ruler
-set nowrap       "No wordwrap
-set showmatch    "Show matching parentheses
-set noerrorbells "Damn the bell
-set hlsearch     "Highlight search
-set ignorecase
-set smartcase
-set splitbelow   "Split window below current one with :sp
-set splitright   "Split new window to the right with :vs
-set nocompatible "Dont' be vi compatible
-set history=100
-set wildmenu     "Command line completion
-set backspace=2  "Allow backspacing over indent, eol, and the start of an insert
-set scrolloff=8  "Keep 8 lines below and above the cursor
-
-"Tabbing
 set autoindent
 set smartindent
 set expandtab
@@ -99,16 +86,36 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-"Auto switch directory
-set autochdir
-set directory+=,~/tmp,$TMP
+" }}}
+" UI/Editor Settings {{{
 
-"Enable file type
+set number
+set ruler
+set nowrap       " No wordwrap
+set showmatch    " Show matching parentheses
+set noerrorbells " Damn the bell
+set hlsearch     " Highlight search
+set ignorecase
+set smartcase
+set splitbelow   " Split window below current one with :sp
+set splitright   " Split new window to the right with :vs
+set history=100
+set wildmenu     " Command line completion
+set backspace=2  " Allow backspacing over indent, eol, and the start of an insert
+set scrolloff=8  " Keep 8 lines below and above the cursor
+
+" }}}
+" Default Syntax {{{
 filetype on
 filetype plugin on
 filetype indent on
+set omnifunc=syntaxcomplete#Complete
 
-set ofu=syntaxcomplete#Complete
+" }}}
+" Other Vim Settings {{{
+
+set autochdir
+set directory+=,~/tmp,$TMP
 
 " Tell vim to remember certain things when we exit
 "  '100  :  marks will be remembered for up to 10 previously edited files
@@ -118,10 +125,10 @@ set ofu=syntaxcomplete#Complete
 "  n...  :  where to save the viminfo files
 set viminfo='100,\"100,:20,%,n~/.viminfo
 
-"Set the tags files to be the following
+" Set the tags files to be the following
 set tags+=../tags
 
-"Unicode
+" Enable Unicode
 if has("multi_byte")
     if &termencoding == ""
         let &termencoding = &encoding
@@ -132,63 +139,64 @@ if has("multi_byte")
     "setglobal bomb
     set fileencodings=ucs-bom,utf-8,latin1
 endif
+" }}}
 
-"-----------------------------------------------------------------------------
-""Key maps
-""-----------------------------------------------------------------------------
-"Windowsplit jumper
+" Key Re-Maps {{{
+
+" Normal Mode have space alternate folds
+nnoremap <space> za
+
+" Windowsplit jumper
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-"Correctly map shift y to yank to end of line
-nmap Y y$
+" Correctly map shift y to yank to end of line
+nnoremap Y y$
 
-"Make shift h and l easy begining and end of line"
-map H ^
-map L $
+" Make shift h and l easy begining and end of line
+nnoremap H ^
+nnoremap L $
 
-"Quick macro to the q registry, use Q to play back
+" Quick macro to the q registry, use Q to play back
 nnoremap Q @q
 
-"Remap keys to alt that have been lost by mswin
-noremap <M-v>       <C-V>
-noremap <M-a>       <C-a>
-noremap <M-x>       <C-x>
-noremap <M-z>       <C-z>
-noremap <M-s>       <C-s>
+" Remap keys to alt that have been lost by mswin
+noremap <M-v> <C-V>
+noremap <M-a> <C-a>
+noremap <M-x> <C-x>
+noremap <M-z> <C-z>
+noremap <M-s> <C-s>
 
 "-----------------------------------------------------------------------------
-""Leader Maps
-""-----------------------------------------------------------------------------
+" Leader Commands
 let mapleader = ","
 
-"Super cool auto timestamp and comment
-map <leader>da yypf.l<c-a>WdE"=strftime("%m/%d/%y")<CR>PWcewms<esc>WC
+" Super cool auto timestamp and comment
+nnoremap <leader>da yypf.l<c-a>WdE"=strftime("%m/%d/%y")<CR>PWcewms<esc>WC
 
-"Diff get and put
-map <leader>dp :diffput<cr>]c
-map <leader>dg :diffget<cr>]c
+nnoremap <silent> <leader>ve :e $HOME/.vim/vimrc<CR>
+nnoremap <silent> <leader>vo :e! $HOME/.vim/vimrc<CR>
+nnoremap <silent> <leader>vs :so $HOME/.vim/vimrc<CR>
 
-nmap <silent> <leader>ve :e $HOME/.vim/vimrc<CR>
-nmap <silent> <leader>vo :e! $HOME/.vim/vimrc<CR>
-nmap <silent> <leader>vs :so $HOME/.vim/vimrc<CR>
-
-"cd to the directory containing the file in the buffer
-nmap <silent> <leader>cd :lcd %:h<CR>
+" 'cd' to the directory containing the file in the buffer
+nnoremap <silent> <leader>cd :lcd %:h<CR>
 
 "CK log
-nmap <silent> <leader>ck o-<TAB><ESC>"=strftime("%m/%d/%y")<CR>pA<TAB>
-
-"Ribon log
-nmap <silent> <leader>rib yyp^WdE"=strftime("%m/%d/%y")<CR>PWC
+nnoremap <silent> <leader>ck o-<TAB><ESC>"=strftime("%m/%d/%y")<CR>pA<TAB>
 
 "-----------------------------------------------------------------------------
-""Function Keys
-""-----------------------------------------------------------------------------
-"Run source
-map <silent> <F5> :w<cr>:make<cr>
+" Function Keys
+
+" Run source
+nnoremap <silent> <F5> :w<cr>:make<cr>
+
+"-----------------------------------------------------------------------------
+" Plugins
+nnoremap <silent> <leader>nt :NERDTreeToggle<cr>
+
+" }}}
 
 "-----------------------------------------------------------------------------
 ""Auto Commands
@@ -223,7 +231,6 @@ endfunction
 "-----------------------------------------------------------------------------
 ""NERDTree
 ""-----------------------------------------------------------------------------
-nmap <silent> <leader>nt :NERDTreeToggle<cr>
 amenu Plugin.NERDTree :NERDTreeToggle <cr>
 
 let NERDTreeShowBookmarks = 1
@@ -231,28 +238,6 @@ let NERDTreeChDirMode     = 1
 let NERDTreeDirArrows     = 1
 
 let NERDTreeIgnore=['\.hi$', '\.o$', '\.sw.$', '\~$', '\.smx$', '\.exe$', '\.beam$', '\~$']
-
-"-----------------------------------------------------------------------------
-""Fugitive
-""-----------------------------------------------------------------------------
-nmap <silent> <leader>gs :Gstatus<CR>
-nmap <silent> <leader>gw :Gwrite<CR>
-nmap <silent> <leader>gr :Gread<CR>
-nmap <silent> <leader>gc :Gcommit<CR>
-nmap <silent> <leader>gd :Gdiff<CR>
-
-"-----------------------------------------------------------------------------
-"""vim-rails
-""-----------------------------------------------------------------------------
-nmap <silent> <leader>ae :AE<CR>
-nmap <silent> <leader>as :AS<CR>
-nmap <silent> <leader>av :AV<CR>
-
-nmap <silent> <leader>re :RE<CR>
-nmap <silent> <leader>rs :RS<CR>
-nmap <silent> <leader>rv :RV<CR>
-
-nmap <silent> <leader>rp :RPreview<CR>
 
 "-----------------------------------------------------------------------------
 "NeoComplCache
