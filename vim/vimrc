@@ -219,9 +219,8 @@ autocmd QuickFixCmdPost [^l]* nested botright cwindow
 autocmd QuickFixCmdPost    l* nested botright lwindow
 
 " }}}
-"-----------------------------------------------------------------------------
-""NERDTree
-""-----------------------------------------------------------------------------
+" NERDTree {{{
+
 nnoremap <silent> <leader>nt :NERDTreeToggle<cr>
 amenu Plugin.NERDTree :NERDTreeToggle <cr>
 
@@ -231,9 +230,9 @@ let NERDTreeDirArrows     = 1
 
 let NERDTreeIgnore=['\.hi$', '\.o$', '\.sw.$', '\~$', '\.smx$', '\.exe$', '\.beam$', '\~$']
 
-"-----------------------------------------------------------------------------
-"NeoComplCache
-""-----------------------------------------------------------------------------
+" }}}
+"NeoComplCache {{{
+
 let g:neocomplcache_enable_at_startup = 1
 
 let g:neocomplcache_max_list = 100
@@ -286,9 +285,6 @@ let g:neocomplcache_force_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
 
 " Plugin key-mappings.
-"inoremap <expr><CR> neocomplcache#close_popup() . "\<CR>"
-"inoremap <expr><CR> pumbvisible() ? neocomplache#close_popup : "\<CR>"
-
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><C-g> neocomplcache#undo_completion()
 inoremap <expr><C-l> neocomplcache#complete_common_string()
@@ -300,9 +296,11 @@ nmap <silent> <leader>esnip :NeoComplCacheEditSnippets<CR>
 
 let g:neocomplcache_snippets_dir = $VIM_DIR.'/snippets'
 
-"-----------------------------------------------------------------------------
-"Extra
-""-----------------------------------------------------------------------------
+" }}}
+"Custom Overrides {{{
+
 if ($AUCTION == "SOUTHERN")
     source ~/.southern.vim
 endif
+
+" }}}
