@@ -71,9 +71,11 @@ set statusline+=%m   " Modified flag
 set statusline+=\ %y " filetype
 set statusline+=\ %r " read only flag
 set statusline+=\ %h " help file flag
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 set statusline+=%=   " left/right separator
 set statusline+=\ %{fugitive#statusline()}
-"set statusline+=\ %{tagbar#currenttag('[%s]','')}
 set statusline+=\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n
 
 " }}}
@@ -295,6 +297,14 @@ inoremap <expr><C-e> neocomplcache#cancel_popup()
 nmap <silent> <leader>esnip :NeoComplCacheEditSnippets<CR>
 
 let g:neocomplcache_snippets_dir = $VIM_DIR.'/snippets'
+
+" }}}
+" Syntastic {{{
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
 
 " }}}
 "Custom Overrides {{{
