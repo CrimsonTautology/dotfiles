@@ -24,7 +24,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Put your non-Plugin stuff after this line
 
 Plugin 'Shougo/neocomplcache'
-Plugin 'jiangmiao/auto-pairs'
+Plugin 'jiangmiao/auto-pairs', {'name': 'autopairs'}
 Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
