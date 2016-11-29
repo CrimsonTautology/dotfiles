@@ -43,6 +43,7 @@ Plugin 'digitaltoad/vim-pug', {'name': 'pug'}
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript', {'name':  'javascript'}
 Plugin 'elzr/vim-json', {'name': 'json'}
+Plugin 'chrisbra/csv.vim'
 
 call vundle#end()
 filetype plugin indent on
