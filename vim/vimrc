@@ -304,6 +304,12 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
 " }}}
+" Auto-Pairs {{{
+let g:AutoPairsFlyMode = 1
+let g:AutoPairsShortcutBackInsert = '<M-b>'
+
+" }}}
+
 "Custom Overrides {{{
 
 if ($AUCTION == "SOUTHERN")
