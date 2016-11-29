@@ -157,6 +157,10 @@ nnoremap Y y$
 nnoremap H ^
 nnoremap L $
 
+" Easy Visual Mode tabbing; using < or > does not clear selection
+vnoremap > >gv
+vnoremap < <gv
+
 " Quick macro to the q registry, use Q to play back
 nnoremap Q @q
 
@@ -309,7 +313,6 @@ let g:AutoPairsFlyMode = 1
 let g:AutoPairsShortcutBackInsert = '<M-b>'
 
 " }}}
-
 "Custom Overrides {{{
 
 if ($AUCTION == "SOUTHERN")
