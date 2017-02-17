@@ -44,6 +44,7 @@ Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript', {'name':  'javascript'}
 Plugin 'elzr/vim-json', {'name': 'json'}
 Plugin 'chrisbra/csv.vim'
+Plugin 'derekwyatt/vim-scala', {'name': 'scala'}
 
 call vundle#end()
 filetype plugin indent on
