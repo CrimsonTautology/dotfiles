@@ -157,8 +157,8 @@ nnoremap <c-l> <c-w>l
 nnoremap Y y$
 
 " Make shift h and l easy begining and end of line
-nnoremap H ^
-nnoremap L $
+noremap H ^
+noremap L $
 
 " Easy Visual Mode tabbing; using < or > does not clear selection
 vnoremap > >gv
