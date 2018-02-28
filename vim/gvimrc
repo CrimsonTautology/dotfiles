@@ -9,8 +9,9 @@ if has("gui_running")
 	set selection=inclusive
 
 	"guioptions
-	set guioptions+=bh "Horizontal scrollbar
-	set guioptions-=T
+	"set guioptions+=h "Horizontal scrollbar
+	"set guioptions-=mTtrL
+    set guioptions=egm
 	"set guioptions+=c
 
 	"disable menu alt keys
@@ -20,7 +21,6 @@ if has("gui_running")
 	"Font"
 	"set guifont="Inconsolata Medium 12"
 	set guifont=Consolas:h12:cANSI
-    set guifont=Consolas_for_Powerline_FixedD:h12:cANSI
 	
 	"Syntax highlighting and color scheme"
 	syntax on

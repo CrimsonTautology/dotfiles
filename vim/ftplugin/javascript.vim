@@ -3,7 +3,12 @@ if (exists("b:did_ftplugin"))
 endif
 let b:did_ftplugin = 1
 
-setlocal tabstop=2
-setlocal softtabstop=2
-setlocal shiftwidth=2
+if ($ART == "LOGIC")
+    set tabstop=3
+    set softtabstop=3
+    set shiftwidth=3
+endif
+
 setlocal omnifunc=javascriptcomplete#CompleteJS
+
+let g:syntastic_javascript_checkers = ['eslint']

@@ -42,7 +42,6 @@ Plugin 'withgod/vim-sourcepawn', {'name': 'sourcepawn'}
 Plugin 'digitaltoad/vim-pug', {'name': 'pug'}
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript', {'name':  'javascript'}
-Plugin 'elzr/vim-json', {'name': 'json'}
 Plugin 'chrisbra/csv.vim'
 Plugin 'derekwyatt/vim-scala', {'name': 'scala'}
 
@@ -320,12 +319,6 @@ let g:AutoPairsShortcutBackInsert = '<M-b>'
 
 if ($AUCTION == "SOUTHERN")
     source ~/.southern.vim
-endif
-
-if ($ART == "LOGIC")
-    set tabstop=3
-    set softtabstop=3
-    set shiftwidth=3
 endif
 
 " }}}
