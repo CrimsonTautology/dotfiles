@@ -9,8 +9,9 @@ if has("gui_running")
 	set selection=inclusive
 
 	"guioptions
-	set guioptions+=bh "Horizontal scrollbar
-	set guioptions-=T
+	"set guioptions+=h "Horizontal scrollbar
+	"set guioptions-=mTtrL
+    set guioptions=egm
 	"set guioptions+=c
 
 	"disable menu alt keys
