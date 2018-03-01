@@ -23,7 +23,6 @@ Plugin 'VundleVim/Vundle.vim'
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-Plugin 'Shougo/neocomplcache'
 Plugin 'jiangmiao/auto-pairs', {'name': 'autopairs'}
 Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/nerdtree'
@@ -35,6 +34,8 @@ Plugin 'tpope/vim-repeat', {'name': 'repeat'}
 Plugin 'tpope/vim-surround', {'name': 'surround'}
 Plugin 'tpope/vim-unimpaired', {'name': 'unimpaired'}
 Plugin 'alvan/vim-closetag', {'name': 'closetag'}
+"Plugin 'Shougo/neocomplcache'
+Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'vim-ruby/vim-ruby', {'name': 'ruby'}
 Plugin 'tpope/vim-rails', {'name': 'rails'}
@@ -42,8 +43,7 @@ Plugin 'withgod/vim-sourcepawn', {'name': 'sourcepawn'}
 Plugin 'digitaltoad/vim-pug', {'name': 'pug'}
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript', {'name':  'javascript'}
-Plugin 'chrisbra/csv.vim'
-Plugin 'derekwyatt/vim-scala', {'name': 'scala'}
+
 
 call vundle#end()
 filetype plugin indent on
