@@ -15,3 +15,6 @@ let g:syntastic_python_checkers = ['pycodestyle']
 
 compiler pylint
 setlocal makeprg +=\ %
+
+nnoremap <silent> <leader>pdb Iimport pdb; pdb.set_trace()#TODO<cr><esc>
+nnoremap <silent> <leader>ppt Ifrom pprint import pprint; pprint(vars(var_here))#TODO<cr><esc>
