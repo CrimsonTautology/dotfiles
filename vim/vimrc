@@ -126,9 +126,6 @@ set directory+=,~/tmp,$TMP
 "  n...  :  where to save the viminfo files
 set viminfo='100,\"100,:20,%,n~/.viminfo
 
-" Set the tags files to be the following
-set tags+=../tags
-
 " Enable Unicode
 if has("multi_byte")
     if &termencoding == ""
