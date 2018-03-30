@@ -2,7 +2,9 @@
 if has("gui_running")
 	"GUI only settings
 	"MSWin settings
-	source $VIMRUNTIME/mswin.vim
+	"source $VIMRUNTIME/mswin.vim
+    "My Custom MSWin settings
+    source $HOME/.vim/mswin_custom.vim
 
 	"Some corrections to behave mswin
 	set selectmode=

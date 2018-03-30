@@ -163,13 +163,6 @@ vnoremap < <gv
 " Quick macro to the q registry, use Q to play back
 nnoremap Q @q
 
-" Remap keys to alt that have been lost by mswin
-noremap <M-v> <C-V>
-noremap <M-a> <C-a>
-noremap <M-x> <C-x>
-noremap <M-z> <C-z>
-noremap <M-s> <C-s>
-
 "-----------------------------------------------------------------------------
 " Leader Commands
 let mapleader = ","
