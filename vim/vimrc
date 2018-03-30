@@ -36,6 +36,7 @@ Plugin 'tpope/vim-unimpaired', {'name': 'unimpaired'}
 Plugin 'alvan/vim-closetag', {'name': 'closetag'}
 "Plugin 'Shougo/neocomplcache'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'majutsushi/tagbar'
 
 Plugin 'vim-ruby/vim-ruby', {'name': 'ruby'}
 Plugin 'tpope/vim-rails', {'name': 'rails'}
@@ -224,6 +225,12 @@ let NERDTreeChDirMode     = 1
 let NERDTreeDirArrows     = 1
 
 let NERDTreeIgnore=['\.hi$', '\.o$', '\.sw.$', '\~$', '\.smx$', '\.exe$', '\.beam$', '\~$']
+
+" }}}
+" Tagbar {{{
+
+nnoremap <silent> <leader>tb :TagbarToggle<cr>
+amenu Plugin.Tagbar :TagbarToggle <cr>
 
 " }}}
 "NeoComplCache {{{
