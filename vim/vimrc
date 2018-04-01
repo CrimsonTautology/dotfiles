@@ -26,6 +26,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'jiangmiao/auto-pairs', {'name': 'autopairs'}
 Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-endwise', {'name': 'endwise'}
 Plugin 'tpope/vim-fugitive', {'name': 'fugitive'}
