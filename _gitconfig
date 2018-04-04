@@ -3,9 +3,10 @@
 	email = billehs+github@gmail.com
 [github]
 	user = CrimsonTautology
+[init]
+	templatedir = ~/bin/dotfiles/git-template
 [alias]
-	co = checkout
-	d = difftool
+    ctags = !.git/hooks/ctags
 [core]
 	editor = vim -f
 [diff]
