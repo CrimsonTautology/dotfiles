@@ -1,15 +1,9 @@
 #!/bin/sh
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto -p'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -18,11 +12,6 @@ fi
 
 #Default command overrides
 alias rm='rm -i'
-
-# some more ls aliases
-alias ll='ls -alFh'
-alias la='ls -A'
-alias l='ls -CF'
 
 alias vrep='grep -v'
 alias less='less -MR'
@@ -53,8 +42,6 @@ alias nmrih='cd ~/steamcmd/nmrih_main/nmrih'
 alias ins='cd ~/steamcmd/ins_main/insurgency'
 alias dod='cd ~/steamcmd/dod_main/dod'
 alias sm='cd ~/sourcemod'
-alias bd='cd ~/bin/dotfiles/'
-alias repo='cd ~/repo_dump'
 
 #Screens
 alias sxs='screen -x SRCDS'
@@ -74,12 +61,7 @@ alias smkf='screen -x fof_mk'
 alias sins='screen -x ins_main'
 alias sdod='screen -x dod_main'
 
-alias rtvs='grep -B 3 "rockthevote" L* | grep "Mapchange to" | sed -e "s/^.*Mapchange to //g" | sed -e "s/ -*//g" | sort | uniq -c |sort -n'
-
 #Vim
 alias vimn='vim -c "NERDTree" '
 alias gvimn='gvim -c "NERDTree" '
 alias vundle='vim +BundleInstall +qall'
-
-#Git
-alias gpom='git push -u origin master'

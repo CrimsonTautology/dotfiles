@@ -6,4 +6,3 @@ ln -sf ~/bin/dotfiles/_dircolors ~/.dircolors
 ln -sf ~/bin/dotfiles/_gitconfig ~/.gitconfig
 ln -sf ~/bin/dotfiles/_inputrc ~/.inputrc
 ln -sf ~/bin/dotfiles/_rspec ~/.rspec
-ln -sf ~/bin/dotfiles/_tmux.conf ~/.tmux
