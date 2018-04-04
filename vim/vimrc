@@ -226,6 +226,9 @@ let NERDTreeDirArrows     = 1
 
 let NERDTreeIgnore=['\.hi$', '\.o$', '\.sw.$', '\~$', '\.smx$', '\.exe$', '\.beam$', '\~$']
 
+let g:NERDTreeDirArrowExpandable = "\U25B6"
+let g:NERDTreeDirArrowCollapsible = "\U25BC"
+
 " }}}
 " Tagbar {{{
 
