@@ -11,18 +11,15 @@ if has("gui_running")
 	set selection=inclusive
 
 	"guioptions
-	"set guioptions+=h "Horizontal scrollbar
-	"set guioptions-=mTtrL
     set guioptions=egm
-	"set guioptions+=c
 
 	"disable menu alt keys
 	set winaltkeys=no
 
-
 	"Font"
 	"set guifont="Inconsolata Medium 12"
-	set guifont=Consolas:h12:cANSI
+	"set guifont=Consolas:h12:cANSI
+    set guifont=Office_Code_Pro_Bold:h11:b:cANSI:qDRAFT
 	
 	"Syntax highlighting and color scheme"
 	syntax on
