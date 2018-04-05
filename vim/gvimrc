@@ -19,7 +19,7 @@ if has("gui_running")
 	"Font"
 	"set guifont="Inconsolata Medium 12"
 	"set guifont=Consolas:h12:cANSI
-    set guifont=Office_Code_Pro_Bold:h11:b:cANSI:qDRAFT
+    set guifont=Office_Code_Proh11:ANSI:qDRAFT
 	
 	"Syntax highlighting and color scheme"
 	syntax on
