@@ -34,7 +34,6 @@ Plugin 'tpope/vim-repeat', {'name': 'repeat'}
 Plugin 'tpope/vim-surround', {'name': 'surround'}
 Plugin 'tpope/vim-unimpaired', {'name': 'unimpaired'}
 Plugin 'alvan/vim-closetag', {'name': 'closetag'}
-"Plugin 'Shougo/neocomplcache'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
 
@@ -44,6 +43,8 @@ Plugin 'withgod/vim-sourcepawn', {'name': 'sourcepawn'}
 Plugin 'digitaltoad/vim-pug', {'name': 'pug'}
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript', {'name':  'javascript'}
+
+Plugin 'Vimjas/vim-python-pep8-indent', {'name': 'pep8indent'}
 
 
 call vundle#end()
