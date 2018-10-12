@@ -56,21 +56,21 @@ vmap <S-Insert>		<C-V>
 
 " XXX: Use CTRL-Q to do what CTRL-V used to do
 "noremap <C-Q>		<C-V>
-" NEW: ALT-V does what CTRL-V used to do instead
-noremap <M-V>       <C-V>
 
 " NEW: Remap CTRL- to ALT- for keys have been lost by mswin
-" NOTE: I am maping the character created with Alt+a/x/z/s;  it doesn't seem
+" NOTE: I am maping the character created with Alt+a/x/z/s/v;  it doesn't seem
 " to work if I just use VIM's mapping syntax for whatever reason
 "noremap <M-A>       <C-A>
 "noremap <M-X>       <C-X>
 "noremap <M-Z>       <C-Z>
 "noremap <M-S>       <C-S>
+"noremap <M-V>       <C-V>
 noremap á           <C-A>
 noremap ø           <C-X>
 noremap ú           <C-Z>
 noremap ó           <C-S>
-" öáøó
+noremap ö           <C-V>
+" öáøóö
 
 " Use CTRL-S for saving, also in Insert mode
 noremap <C-S>		:update<CR>
