@@ -38,7 +38,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
 
 Plugin 'vim-ruby/vim-ruby', {'name': 'ruby'}
-Plugin 'tpope/vim-rails', {'name': 'rails'}
+"Plugin 'tpope/vim-rails', {'name': 'rails'} " this seems to be having issues
 Plugin 'withgod/vim-sourcepawn', {'name': 'sourcepawn'}
 Plugin 'digitaltoad/vim-pug', {'name': 'pug'}
 Plugin 'othree/html5.vim'
