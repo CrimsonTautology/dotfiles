@@ -2,6 +2,7 @@
 
 npm install --global \
     eslint \
+    eslint-plugin-import \
     jsonlint \
     prettyjson \
     csslint \
