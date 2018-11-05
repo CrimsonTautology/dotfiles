@@ -1,9 +1,3 @@
 #!/usr/bin/env bash
 
-pip install --upgrade \
-    ipython \
-    jedi \
-    pep8 \
-    pycodestyle \
-    pylint \
-
+pip install --upgrade -r development.txt

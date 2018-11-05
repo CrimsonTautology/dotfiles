@@ -1,0 +1,5 @@
+ipython
+jedi
+pep8
+pycodestyle
+pylint
