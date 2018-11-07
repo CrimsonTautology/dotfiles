@@ -72,12 +72,12 @@ set statusline+=%m   " Modified flag
 set statusline+=\ %y " filetype
 set statusline+=\ %r " read only flag
 set statusline+=\ %h " help file flag
+set statusline+=\ %{fugitive#statusline()}
+set statusline+=%=   " left/right separator
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-set statusline+=%=   " left/right separator
-set statusline+=\ %{fugitive#statusline()}
-set statusline+=\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n
+set statusline+=\ %l:%c/%L
 
 " }}}
 " Spaces/Tabs {{{
