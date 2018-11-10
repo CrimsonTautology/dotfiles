@@ -136,3 +136,7 @@ if 1
   let &cpoptions = s:save_cpo
   unlet s:save_cpo
 endif
+
+" disable middle mouse button paste
+map <MiddleMouse> <Nop>
+imap <MiddleMouse> <Nop>
