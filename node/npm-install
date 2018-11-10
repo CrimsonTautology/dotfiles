@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+npm install --global \
+    eslint \
+    eslint-plugin-import \
+    jsonlint \
+    prettyjson \
+    csslint \
+    sass-lint \
+    yaml-lint \
+    dockerfile_lint \
