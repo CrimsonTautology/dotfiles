@@ -164,11 +164,11 @@ NORMAL 00
 # normal file
 FILE 00
 # directory
-DIR 34
+DIR 04;36
 # 777 directory
-OTHER_WRITABLE 34;40
+OTHER_WRITABLE 04;36;40
 # symbolic link
-LINK 35
+LINK 04;32
 
 # pipe, socket, block device, character device (blue bg)
 FIFO 30;44
@@ -188,13 +188,13 @@ ORPHAN  05;37;41
 MISSING 05;37;41
 
 # files with execute permission
-EXEC 01;31  # Unix
-.cmd 01;31  # Win
-.exe 01;31  # Win
-.com 01;31  # Win
-.bat 01;31  # Win
-.reg 01;31  # Win
-.app 01;31  # OSX
+EXEC 01;35  # Unix
+.cmd 01;35  # Win
+.exe 01;35  # Win
+.com 01;35  # Win
+.bat 01;35  # Win
+.reg 01;35  # Win
+.app 01;35  # OSX
 
 #############################################################################
 ### By extension
@@ -205,72 +205,77 @@ EXEC 01;31  # Unix
 
 ### Text formats
 
-# Text that we can edit with a regular editor
-.txt 32
-.org 32
-.md 32
-.mkd 32
+# notable textfiles that we can edit with a regular editor
+.md 01;32
+.mkd 01;32
+.org 01;32
+.plan 01;32
+.todo 01;32
+.txt 01;32
 
 # Source text
-.h 32
-.hpp 32
-.c 32
-.C 32
-.cc 32
-.cpp 32
-.cxx 32
-.objc 32
-.cl 32
-.sh 32
-.bash 32
-.csh 32
-.zsh 32
-.el 32
-.vim 32
-.java 32
-.pl 32
-.pm 32
-.py 32
-.rb 32
-.hs 32
-.php 32
-.htm 32
-.html 32
-.shtml 32
-.erb 32
-.haml 32
-.xml 32
-.rdf 32
-.css 32
-.sass 32
-.scss 32
-.less 32
-.js 32
-.coffee 32
-.man 32
-.0 32
-.1 32
-.2 32
-.3 32
-.4 32
-.5 32
-.6 32
-.7 32
-.8 32
-.9 32
-.l 32
-.n 32
-.p 32
-.pod 32
-.tex 32
-.go 32
-.sql 32
-.csv 32
-.sv 32
-.svh 32
-.v 32
-.vh 32
-.vhd 32
+.h 07;34
+.hpp 07;34
+.c 00;34
+.C 00;34
+.cc 00;34
+.cpp 00;34
+.cxx 00;34
+.objc 00;34
+.cl 00;34
+.sh 00;34
+.bash 00;34
+.csh 00;34
+.zsh 00;34
+.el 00;34
+.vim 00;34
+.java 00;34
+.pl 00;34
+.pm 00;34
+.py 00;34
+.rb 00;34
+.hs 00;34
+.php 00;34
+.htm 00;34
+.html 00;34
+.shtml 00;34
+.erb 00;34
+.haml 00;34
+.xml 00;34
+.rdf 00;34
+.css 00;34
+.sass 00;34
+.scss 00;34
+.less 00;34
+.js 00;34
+.coffee 00;34
+.man 00;34
+.0 00;34
+.1 00;34
+.2 00;34
+.3 00;34
+.4 00;34
+.5 00;34
+.6 00;34
+.7 00;34
+.8 00;34
+.9 00;34
+.l 00;34
+.n 00;34
+.p 00;34
+.pod 00;34
+.tex 00;34
+.go 00;34
+.sql 00;34
+.csv 00;34
+.sv 00;34
+.svh 00;34
+.v 00;34
+.vh 00;34
+.vhd 00;34
+
+.sp 00;34
+.inc 07;34
 
 ### Multimedia formats
 
@@ -358,52 +363,54 @@ EXEC 01;31  # Unix
 ### Misc
 
 # Binary document formats and multimedia source
-.doc 31
-.docx 31
-.rtf 31
-.odt 31
-.dot 31
-.dotx 31
-.ott 31
-.xls 31
-.xlsx 31
-.ods 31
-.ots 31
-.ppt 31
-.pptx 31
-.odp 31
-.otp 31
-.fla 31
-.psd 31
+.doc 35
+.docx 35
+.rtf 35
+.odt 35
+.dot 35
+.dotx 35
+.ott 35
+.xls 35
+.xlsx 35
+.ods 35
+.ots 35
+.ppt 35
+.pptx 35
+.odp 35
+.otp 35
+.fla 35
+.psd 35
+
+.smx  35
 
 # Archives, compressed
-.7z   1;35
-.apk  1;35
-.arj  1;35
-.bin  1;35
-.bz   1;35
-.bz2  1;35
-.cab  1;35  # Win
-.deb  1;35
-.dmg  1;35  # OSX
-.gem  1;35
-.gz   1;35
-.iso  1;35
-.jar  1;35
-.msi  1;35  # Win
-.rar  1;35
-.rpm  1;35
-.tar  1;35
-.tbz  1;35
-.tbz2 1;35
-.tgz  1;35
-.tx   1;35
-.war  1;35
-.xpi  1;35
-.xz   1;35
-.z    1;35
-.Z    1;35
-.zip  1;35
+.7z   31
+.apk  31
+.arj  31
+.bin  31
+.bz   31
+.bz2  31
+.cab  31  # Win
+.deb  31
+.dmg  31  # OSX
+.gem  31
+.gz   31
+.iso  31
+.jar  31
+.msi  31  # Win
+.rar  31
+.rpm  31
+.tar  31
+.tbz  31
+.tbz2 31
+.tgz  31
+.tx   31
+.war  31
+.xpi  31
+.xz   31
+.z    31
+.Z    31
+.zip  31
 
 # For testing
 .ANSI-30-black 30
@@ -429,30 +436,15 @@ EXEC 01;31  # Unix
 # Unimportant text files
 # For universal scheme, use brightgreen 01;32
 # For optimal on light bg (but too prominent on dark bg), use white 01;34
-.log 01;32
-*~ 01;32
-*# 01;32
-#.log 01;34
-#*~ 01;34
-#*# 01;34
+*~ 01;34
+*# 01;34
+.log 01;34
+.save 01;34
+.out 01;34
 
 # Unimportant non-text files
 # For universal scheme, use brightcyan 01;36
 # For optimal on dark bg (but too prominent on light bg), change to 01;33
-#.bak 01;36
-#.BAK 01;36
-#.old 01;36
-#.OLD 01;36
-#.org_archive 01;36
-#.off 01;36
-#.OFF 01;36
-#.dist 01;36
-#.DIST 01;36
-#.orig 01;36
-#.ORIG 01;36
-#.swp 01;36
-#.swo 01;36
-#*,v 01;36
 .bak 01;33
 .BAK 01;33
 .old 01;33
@@ -470,11 +462,11 @@ EXEC 01;31  # Unix
 
 # The brightmagenta (Solarized: purple) color is free for you to use for your
 # custom file type
-.gpg 34
-.gpg 34
-.pgp 34
-.asc 34
-.3des 34
-.aes 34
-.enc 34
-.sqlite 34
+.gpg 35
+.gpg 35
+.pgp 35
+.asc 35
+.3des 35
+.aes 35
+.enc 35
+.sqlite 35
