@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# By default Vagrant will not access features available on the Windows system
+# from within the WSL. This means the VirtualBox and Hyper-V providers will not
+# be available. To enable Windows access, which will also enable the VirtualBox
+# and Hyper-V providers, set the VAGRANT_WSL_ENABLE_WINDOWS_ACCESS environment
+# variable:
+export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
+export PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"
+
+# directory shortcuts
+export USER_DIR="/mnt/c/Users/$USER" 
+alias bill="cd $USER_DIR"
+
+export WORK_DIR="$USER_DIR/work"
+alias work="cd $WORK_DIR"
+
+export WEBAPP_DIR="$WORK_DIR/artlogic/webapp"
+export VAGRANT_DIR=$WEBAPP_DIR/vm
+alias webapp="cd $WEBAPP_DIR"
+
+# convenience functions
+amp () ( 
+    cd $VAGRANT_DIR && vagrant "$@"
+)
+
+gvim () {
+    /mnt/c/Program\ Files\ \(x86\)/Vim/Vim80/gvim.exe "$@" &
+}
