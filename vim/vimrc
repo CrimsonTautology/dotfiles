@@ -77,7 +77,7 @@ set statusline+=%=   " left/right separator
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-set statusline+=\ %l:%c/%L
+set statusline+=\ L%-4l/%L:C%-2c
 
 " }}}
 " Spaces/Tabs {{{
