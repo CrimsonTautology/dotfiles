@@ -23,4 +23,4 @@ BCYN="\[\033[46m\]" # background cyan
 BWHT="\[\033[47m\]" # background white
 
 #Command line prompt
-PS1="$FBLE\u $FCYN\w $FGRN\$$RS\n"
+PS1="$FBLE\u@\h $FCYN\w $FGRN\$$RS\n"
