@@ -36,6 +36,7 @@ Plugin 'tpope/vim-unimpaired', {'name': 'unimpaired'}
 Plugin 'alvan/vim-closetag', {'name': 'closetag'}
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
+Plugin 'SirVer/ultisnips'
 
 Plugin 'vim-ruby/vim-ruby', {'name': 'ruby'}
 "Plugin 'tpope/vim-rails', {'name': 'rails'} " this seems to be having issues
@@ -43,7 +44,6 @@ Plugin 'withgod/vim-sourcepawn', {'name': 'sourcepawn'}
 Plugin 'digitaltoad/vim-pug', {'name': 'pug'}
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript', {'name':  'javascript'}
-
 Plugin 'Vimjas/vim-python-pep8-indent', {'name': 'pep8indent'}
 
 
@@ -106,6 +106,13 @@ set history=100
 set wildmenu     " Command line completion
 set backspace=2  " Allow backspacing over indent, eol, and the start of an insert
 set scrolloff=8  " Keep 8 lines below and above the cursor
+
+" square cursor in WSL
+let &t_EI.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_SR.="\e[4 q"
+let &t_te.="\e[0 q"
+let &t_ti.="\e[1 q"
 
 " }}}
 " Default Syntax {{{
@@ -249,6 +256,14 @@ let g:syntastic_check_on_wq = 1
 let g:AutoPairsFlyMode = 1
 let g:AutoPairsShortcutBackInsert = '<M-b>'
 
+" }}}
+" UltiSnips {{{
+" UltiSnips triggering with YCM
+let g:UltiSnipsExpandTrigger = '<C-j>'
+let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+
+let g:UltiSnipsSnippetDirectories=["snippet", "UltiSnips"]
 " }}}
 "Custom Overrides {{{
 
