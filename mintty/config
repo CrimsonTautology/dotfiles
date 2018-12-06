@@ -21,3 +21,4 @@ BackspaceSendsBS=yes
 FontSmoothing=full
 AllowBlinking=yes
 BellTaskbar=no
+Scrollbar=none
