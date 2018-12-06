@@ -24,3 +24,5 @@ BWHT="\[\033[47m\]" # background white
 
 #Command line prompt
 PS1="$FBLE\u$FRED@$FBLE\h $FCYN\w $FGRN\$$RS\n"
+PS2="$FGRN> $RS"
+PS4="$FGRN+ $RS"
