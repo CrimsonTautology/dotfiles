@@ -1,0 +1,23 @@
+#in %LOCALAPPDATA%\wsltty
+#change configdir to this directory
+#configdir=${configdir:-'%USERPROFILE%\bin\dotfiles\mintty'}
+#
+#in shortcuts
+#change configdir to this directory
+#right-click; properties; shortcut; target;
+#--configdir="%USERPROFILE%\bin\dotfiles\mintty"
+
+ThemeFile=solarized-dark
+Transparency=medium
+CursorType=block
+CursorBlinks=no
+Font=DejaVu Sans Mono
+FontHeight=11
+MiddleClickAction=void
+RightClickAction=paste
+BellType=0
+Term=xterm-256color
+BackspaceSendsBS=yes
+FontSmoothing=full
+AllowBlinking=yes
+BellTaskbar=no
