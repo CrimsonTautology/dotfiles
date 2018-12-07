@@ -38,8 +38,7 @@ git-spring-clean() {
             echo "Would you like to delete it? [Y]es/[N]o "
             read REPLY
             if [[ $REPLY =~ ^[Yy] ]]; then
-                #git branch -d $branch
-                echo "This would delete $branch"
+                git branch -d $branch
             fi
     done
 }

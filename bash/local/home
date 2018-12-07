@@ -4,5 +4,5 @@
 export USER_DIR="/mnt/c/Users/$USER" 
 alias bill="cd $USER_DIR"
 
-export WORK_DIR="mnt/m/work"
+export WORK_DIR="/mnt/m/work"
 alias work="cd $WORK_DIR"
