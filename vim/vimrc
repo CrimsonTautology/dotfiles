@@ -24,7 +24,6 @@ Plugin 'VundleVim/Vundle.vim'
 " Put your non-Plugin stuff after this line
 
 Plugin 'jiangmiao/auto-pairs', {'name': 'autopairs'}
-Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-endwise', {'name': 'endwise'}
@@ -36,10 +35,9 @@ Plugin 'tpope/vim-unimpaired', {'name': 'unimpaired'}
 Plugin 'alvan/vim-closetag', {'name': 'closetag'}
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
-Plugin 'SirVer/ultisnips'
+Plugin 'chrisbra/Colorizer.git'
 
-Plugin 'vim-ruby/vim-ruby', {'name': 'ruby'}
-"Plugin 'tpope/vim-rails', {'name': 'rails'} " this seems to be having issues
+Plugin 'tpope/vim-rails', {'name': 'rails'}
 Plugin 'withgod/vim-sourcepawn', {'name': 'sourcepawn'}
 Plugin 'digitaltoad/vim-pug', {'name': 'pug'}
 Plugin 'othree/html5.vim'
