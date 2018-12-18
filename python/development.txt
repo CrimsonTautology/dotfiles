@@ -5,3 +5,4 @@ pycodestyle
 pylint
 pytest
 pipenv
+cookiecutter
