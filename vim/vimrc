@@ -170,6 +170,9 @@ vnoremap < <gv
 " Quick macro to the q registry, use Q to play back
 nnoremap Q @q
 
+" In insert mode Ctrl-J inserts and goes to a new line below cursor
+inoremap <c-j> <c-o>$<cr>
+
 "-----------------------------------------------------------------------------
 " Leader Commands
 let mapleader = ","
