@@ -105,6 +105,7 @@ set history=100
 set wildmenu     " Command line completion
 set backspace=2  " Allow backspacing over indent, eol, and the start of an insert
 set scrolloff=8  " Keep 8 lines below and above the cursor
+set colorcolumn=80,100
 
 " square cursor in WSL
 let &t_EI.="\e[1 q"
