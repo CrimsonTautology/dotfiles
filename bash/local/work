@@ -16,12 +16,20 @@ export WORK_DIR="$USER_DIR/work"
 alias work="cd $WORK_DIR"
 
 export WEBAPP_DIR="$WORK_DIR/artlogic/webapp"
-export VAGRANT_DIR=$WEBAPP_DIR/vm
+export WEBAPP_VAGRANT_DIR=$WEBAPP_DIR/vm
 alias webapp="cd $WEBAPP_DIR"
+
+export REVIEW_DIR="$WORK_DIR/artlogic/review"
+export REVIEW_VAGRANT_DIR=$REVIEW_DIR/vm
+alias review="cd $REVIEW_DIR"
 
 # convenience functions
 amp () ( 
-    cd $VAGRANT_DIR && vagrant "$@"
+    cd $WEBAPP_VAGRANT_DIR && vagrant "$@"
+)
+
+ramp () (
+    cd $REVIEW_VAGRANT_DIR && vagrant "$@"
 )
 
 gvim () {

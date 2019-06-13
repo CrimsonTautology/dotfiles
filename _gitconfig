@@ -7,6 +7,7 @@
 	templatedir = ~/bin/dotfiles/git/template
 [alias]
     ctags = !.git/hooks/ctags
+    ignored = !git ls-files -v | grep "^[[:lower:]]"
 [core]
 	editor = vim -f
 [diff]
