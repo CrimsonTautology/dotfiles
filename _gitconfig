@@ -4,7 +4,7 @@
 [github]
 	user = CrimsonTautology
 [init]
-	templatedir = ~/bin/dotfiles/git/template
+	#templatedir = ~/bin/dotfiles/git/template
 [alias]
     ctags = !.git/hooks/ctags
     ignored = !git ls-files -v | grep "^[[:lower:]]"

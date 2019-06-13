@@ -8,7 +8,7 @@
 #--configdir="%USERPROFILE%\bin\dotfiles\mintty"
 
 ThemeFile=solarized-dark
-Transparency=medium
+Transparency=high
 CursorType=block
 CursorBlinks=no
 Font=Hack
