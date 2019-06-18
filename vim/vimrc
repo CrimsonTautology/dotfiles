@@ -82,7 +82,7 @@ set statusline+=\ %4l/%L:C%-2c%4p%%
 " Spaces/Tabs {{{
 
 set autoindent
-set smartindent
+set nosmartindent
 set expandtab
 set tabstop=4
 set softtabstop=4
