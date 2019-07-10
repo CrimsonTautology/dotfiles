@@ -2,7 +2,7 @@ if ($ART == "LOGIC")
     set tabstop=3
     set softtabstop=3
     set shiftwidth=3
-    let g:syntastic_python_pycodestyle_post_args = '--ignore=E111,E114,E121,E501'
+    let g:syntastic_python_pycodestyle_post_args = '--ignore=E111,E114,E121,E501,W504'
     "let g:syntastic_python_pylint_post_args = '--disable=R,C'
 endif
 
