@@ -107,12 +107,20 @@ set backspace=2  " Allow backspacing over indent, eol, and the start of an inser
 set scrolloff=8  " Keep 8 lines below and above the cursor
 set colorcolumn=80,100
 
-" square cursor in WSL
+" square cursor in mintty
 let &t_EI.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_SR.="\e[4 q"
 let &t_te.="\e[0 q"
 let &t_ti.="\e[1 q"
+
+" enable mouse in mintty
+set mouse=a
+if has("mouse_sgr")
+    set ttymouse=sgr
+else
+    set ttymouse=xterm2
+end
 
 " }}}
 " Default Syntax {{{
