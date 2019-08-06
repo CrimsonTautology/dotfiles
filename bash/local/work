@@ -35,3 +35,11 @@ ramp () (
 gvim () {
     /mnt/c/Program\ Files\ \(x86\)/Vim/Vim80/gvim.exe "$@" &
 }
+
+gli () {
+    cmd.exe /C start $GITLAB_URL/$GITLAB_PROJECT/issues/$1
+}
+
+glmr () {
+    cmd.exe /C start $GITLAB_URL/$GITLAB_PROJECT/merge_requests/$1
+}
