@@ -44,6 +44,7 @@ Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript', {'name':  'javascript'}
 Plugin 'vim-python/python-syntax', {'name': 'python'}
 Plugin 'Vimjas/vim-python-pep8-indent', {'name': 'pep8indent'}
+Plugin 'leafgarland/typescript-vim'
 
 
 call vundle#end()
