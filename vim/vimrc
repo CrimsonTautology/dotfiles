@@ -135,7 +135,8 @@ set omnifunc=syntaxcomplete#Complete
 " Other Vim Settings {{{
 
 set autochdir
-set directory+=,~/tmp,$TMP
+set directory=$HOME/.vim/swapfiles//
+set backupcopy=yes   " Fixes some issues with Karma
 
 " Tell vim to remember certain things when we exit
 "  '100  :  marks will be remembered for up to 10 previously edited files
