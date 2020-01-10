@@ -23,3 +23,5 @@ AllowBlinking=yes
 BellTaskbar=no
 Scrollbar=none
 LigaturesSupport=2
+CopyAsRTF=no
+CopyAsHTML=0
