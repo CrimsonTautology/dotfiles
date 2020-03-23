@@ -8,3 +8,5 @@ npm install --global \
     sass-lint \
     yaml-lint \
     dockerfile_lint \
+    tslint \
+    typescript \

@@ -10,18 +10,21 @@ export PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"
 
 # directory shortcuts
 export USER_DIR="/mnt/c/Users/$USER" 
-alias bill="cd $USER_DIR"
+alias bill='cd $USER_DIR'
 
 export WORK_DIR="$USER_DIR/work"
-alias work="cd $WORK_DIR"
+alias work='cd $WORK_DIR'
 
 export WEBAPP_DIR="$WORK_DIR/artlogic/webapp"
 export WEBAPP_VAGRANT_DIR=$WEBAPP_DIR/vm
-alias webapp="cd $WEBAPP_DIR"
+alias webapp='cd $WEBAPP_DIR'
 
 export REVIEW_DIR="$WORK_DIR/artlogic/review"
 export REVIEW_VAGRANT_DIR=$REVIEW_DIR/vm
-alias review="cd $REVIEW_DIR"
+alias review='cd $REVIEW_DIR'
+
+export MOBILE_DIR="$WORK_DIR/ck-rewrite/mobile"
+alias mobile='cd $MOBILE_DIR'
 
 # convenience functions
 amp () ( 
@@ -34,4 +37,12 @@ ramp () (
 
 gvim () {
     /mnt/c/Program\ Files\ \(x86\)/Vim/Vim80/gvim.exe "$@" &
+}
+
+gli () {
+    cmd.exe /C start $GITLAB_URL/$GITLAB_PROJECT/issues/$1
+}
+
+glmr () {
+    cmd.exe /C start $GITLAB_URL/$GITLAB_PROJECT/merge_requests/$1
 }
