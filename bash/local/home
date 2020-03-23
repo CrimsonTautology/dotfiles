@@ -2,7 +2,7 @@
 
 # directory shortcuts
 export USER_DIR="/mnt/c/Users/$USER" 
-alias bill="cd $USER_DIR"
+alias bill='cd $USER_DIR'
 
 export WORK_DIR="/mnt/m/work"
-alias work="cd $WORK_DIR"
+alias work='cd $WORK_DIR'
