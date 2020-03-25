@@ -279,7 +279,6 @@ let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
 
 let g:UltiSnipsSnippetDirectories=["~/.vim/snippet", "UltiSnips"]
 " }}}
-
 " Tsuquyomi {{{
 nnoremap <silent> <leader>tgp :TsuquyomiGeterrProject<cr>
 nnoremap <silent> <leader>tqf :TsuquyomiQuickFix<cr>
@@ -289,7 +288,6 @@ nnoremap <silent> <leader>tsh :TsuquyomiSignatureHelp<cr>
 
 
 " }}}
-
 "Custom Overrides {{{
 
 if ($AUCTION == "SOUTHERN")
