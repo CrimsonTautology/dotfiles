@@ -6,3 +6,6 @@ alias bill='cd $USER_DIR'
 
 export WORK_DIR="/mnt/m/work"
 alias work='cd $WORK_DIR'
+
+alias tutorial='cd $WORK_DIR/tutorial'
+alias play='cd $WORK_DIR/play'
