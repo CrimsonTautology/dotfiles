@@ -2,7 +2,7 @@
 	name = The Crimson Tautology
 	email = billehs+github@gmail.com
 [github]
-	user = CrimsonTautology
+    #user = CrimsonTautology
 [init]
 	#templatedir = ~/bin/dotfiles/git/template
 [alias]
