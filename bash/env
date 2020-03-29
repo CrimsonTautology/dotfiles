@@ -3,3 +3,6 @@ export EDITOR="vim"
 export PATH=$HOME/bin/:$PATH
 
 export PAGER=less
+
+# angular dev
+export NG_CLI_ANALYTICS=ci
