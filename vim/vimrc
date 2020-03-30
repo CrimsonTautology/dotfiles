@@ -54,10 +54,11 @@ filetype plugin indent on
 " }}}
 " Colors/Syntax Highlighting {{{
 
-set bg=dark
+set background=dark
 syntax on
 let g:solarized_termtrans = 1
 let g:solarized_termcolors = 16
+let g:solarized_menu=0
 colorscheme solarized
 
 " }}}
@@ -240,7 +241,6 @@ autocmd QuickFixCmdPost    l* nested botright lwindow
 " NERDTree {{{
 
 nnoremap <silent> <leader>nt :NERDTreeToggle<cr>
-amenu Plugin.NERDTree :NERDTreeToggle <cr>
 
 let NERDTreeShowBookmarks = 1
 let NERDTreeChDirMode     = 1
@@ -255,7 +255,6 @@ let g:NERDTreeDirArrowCollapsible = "\U25BC"
 " Tagbar {{{
 
 nnoremap <silent> <leader>tb :TagbarToggle<cr>
-amenu Plugin.Tagbar :TagbarToggle <cr>
 
 " }}}
 " Syntastic {{{
