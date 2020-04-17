@@ -166,7 +166,7 @@ FILE 00
 # directory
 DIR 04;36
 # 777 directory
-OTHER_WRITABLE 04;36;40
+OTHER_WRITABLE 04;36;3
 # symbolic link
 LINK 04;32
 
