@@ -2,6 +2,7 @@
 "Settings for VisualStudio's VsVim
 
 " Unimpaired {{{
+
 "Some bindings I use from the unimpaired plugin
 "cnext and cprevious; cfirst and clast not supported
 nnoremap <silent> [q :<C-U>vsc View.NextError<CR>
@@ -10,6 +11,5 @@ nnoremap <silent> ]q :<C-U>vsc View.PreviousError<CR>
 "line above and below
 nnoremap <silent> [<Space> :<C-U>vsc Edit.LineOpenAbove<CR>
 nnoremap <silent> ]<Space> :<C-U>vsc Edit.LineOpenBelow<CR>
+
 " }}}
-
-

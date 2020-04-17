@@ -54,9 +54,6 @@ endif
 imap <S-Insert>		<C-V>
 vmap <S-Insert>		<C-V>
 
-" XXX: Use CTRL-Q to do what CTRL-V used to do
-"noremap <C-Q>		<C-V>
-
 " NEW: Remap CTRL- to ALT- for keys have been lost by mswin
 " NOTE: I am maping the character created with Alt+a/x/z/s/v;  it doesn't seem
 " to work if I just use VIM's mapping syntax for whatever reason
@@ -100,7 +97,6 @@ endif
 
 " CTRL-A is Select all
 noremap <C-A> gggH<C-O>G
-"inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
 cnoremap <C-A> <C-C>gggH<C-O>G
 onoremap <C-A> <C-C>gggH<C-O>G
 snoremap <C-A> <C-C>gggH<C-O>G
@@ -117,18 +113,6 @@ noremap <C-F4> <C-W>c
 inoremap <C-F4> <C-O><C-W>c
 cnoremap <C-F4> <C-C><C-W>c
 onoremap <C-F4> <C-C><C-W>c
-
-if has("gui")
-  " XXX: CTRL-F is the search dialog
-  "noremap <C-F> :promptfind<CR>
-  "inoremap <C-F> <C-\><C-O>:promptfind<CR>
-  "cnoremap <C-F> <C-\><C-C>:promptfind<CR>
-
-  " XXX: CTRL-H is the replace dialog
-  "noremap <C-H> :promptrepl<CR>
-  "inoremap <C-H> <C-\><C-O>:promptrepl<CR>
-  "cnoremap <C-H> <C-\><C-C>:promptrepl<CR>
-endif
 
 " restore 'cpoptions'
 set cpo&

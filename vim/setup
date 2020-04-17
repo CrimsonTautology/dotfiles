@@ -2,4 +2,4 @@
 
 ln -sf vimrc ~/.vimrc
 ln -sf gvimrc ~/.gvimrc
-#vim -c "BundleInstall" -c "qall"
+#vim -c "PluginInstall" -c "qall"

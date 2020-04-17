@@ -1,37 +1,35 @@
 " GUI only settings
 if has("gui_running")
 
-    " my Custom MSWin settings
-    source $HOME/.vim/mswin_custom.vim
+  " my Custom MSWin settings
+  source $HOME/.vim/mswin_custom.vim
 
-	" some corrections to make mswin behave
-	set selectmode=
-	set selection=inclusive
+  " some corrections to make mswin behave
+  set selectmode=
+  set selection=inclusive
 
-	" guioptions
-    set guioptions=eg
+  " guioptions
+  set guioptions=eg
 
-	" disable menu alt keys
-	set winaltkeys=no
+  " disable menu alt keys
+  set winaltkeys=no
 
-	" font
-    set guifont=Hack:h11:cANSI:qDRAFT
-	
-	" syntax highlighting and color scheme
-	syntax on
-	let g:solarized_termtrans = 0
-	let g:solarized_termcolors = 256
-	colorscheme solarized
-	set background=light
+  " font
+  set guifont=Hack:h11:cANSI:qDRAFT
 
-	" memorize window size
-	set sessionoptions+=resize,winpos
+  " syntax highlighting and color scheme
+  syntax on
+  colorscheme solarized
+  set background=light
 
-    " editor settings
-	set scrolloff=0 
-	set cursorline
+  " memorize window size
+  set sessionoptions+=resize,winpos
 
-    " unicode
-    set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ 
+  " editor settings
+  set scrolloff=0 
+  set cursorline
+
+  " unicode
+  set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ 
 
 endif
