@@ -1,11 +1,15 @@
 " vim:foldmethod=marker:foldlevel=0
 set nocompatible
 
-" on windows add $HOME/.vim and runtimepath
+" Windows {{{
+
 if has('win32') || has('win64')
+  " on windows add $HOME/.vim and runtimepath
   set runtimepath=$HOME/.vim,$VIMRUNTIME,$HOME/.vim/after
+  set encoding=utf-8
 endif
 
+" }}}
 " Vundle {{{
 
 filetype off
