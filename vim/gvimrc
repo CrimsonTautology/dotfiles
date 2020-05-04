@@ -21,6 +21,7 @@ if has("gui_running")
   syntax on
   colorscheme solarized
   set background=light
+  let g:solarized_menu=0
 
   " memorize window size
   set sessionoptions+=resize,winpos
