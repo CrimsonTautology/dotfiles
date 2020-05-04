@@ -266,6 +266,13 @@ let g:AutoPairsFlyMode = 0
 let g:AutoPairsShortcutBackInsert = '<M-b>'
 
 " }}}
+" YouCompleteMe {{{
+nnoremap <silent> <leader>fi :YcmCompleter FixIt<cr>
+
+"let g:ycm_always_populate_location_list = 1
+"let g:ycm_open_loclist_on_ycm_diags = 1
+
+" }}}
 " Git specific configuration {{{
 
 " when in a git repository, will source $GITROOT/.git/vimrc
