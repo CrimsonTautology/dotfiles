@@ -1,5 +1,6 @@
 let g:python_recommended_style = 0
-let g:syntastic_python_checkers = ['pycodestyle', 'pylint']
+"let g:syntastic_python_checkers = ['pycodestyle', 'pylint']
+let g:syntastic_python_checkers = ['pycodestyle']
 
 compiler pylint
 setlocal makeprg +=\ --disable=R,C\ %
