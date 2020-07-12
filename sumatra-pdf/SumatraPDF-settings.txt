@@ -1,0 +1,179 @@
+# For documentation, see https://www.sumatrapdfreader.org/settings/settings3.2.html
+# copy these settings over to /AppData/Local/SumatraPDF/SumatraPDF-settings.txt
+# or just copy and paste them using Settings -> Advanced Options
+
+
+# background color of the non-document windows, traditionally yellow
+MainWindowBackground = #93a1a1
+
+# if true, Esc key closes SumatraPDF
+EscToExit = false
+
+# if true, we'll always open files using existing SumatraPDF process
+ReuseInstance = true
+
+# if true, we use Windows system colors for background/text color. Over-rides other settings
+UseSysColors = false
+
+# if true and SessionData isn't empty, that session will be restored at startup
+RestoreSession = true
+
+# maximum width of a single tab
+TabWidth = 300
+
+################################################################################
+# if false, the menu bar will be hidden for all newly opened windows (use F9 to show it until the window closes or Alt to show it just briefly), only applies if UseTabs is false (introduced in version 2.5)
+ShowMenubar = false
+
+# if true, we show the toolbar at the top of the window
+ShowToolbar = false
+
+# if true, we show the Favorites sidebar
+ShowFavorites = true
+
+# if true, we show table of contents (Bookmarks) sidebar if it's present in the document
+ShowToc = true
+
+# if true, we show a list of frequently read documents when no document is loaded
+ShowStartPage = false
+
+################################################################################
+# if true, a document will be reloaded automatically whenever it's changed (currently doesn't work for documents shown in the ebook UI) (introduced in version 2.5)
+ReloadModifiedDocuments = true
+
+# if true, we show the full path to a file in the title bar (introduced in version 3.0)
+FullPathInTitle = true
+
+# sequence of zoom levels when zooming in/out; all values must lie between 8.33 and 6400
+ZoomLevels = 8.33 12.5 18 25 33.33 50 66.67 75 100 125 150 200 300 400 600 800 1000 1200 1600 2000 2400 3200 4800 6400
+
+# zoom step size in percents relative to the current zoom level. if zero or negative, the values from ZoomLevels are used instead
+ZoomIncrement = 0
+
+################################################################################
+# a whitespace separated list of passwords to try when opening a password protected document (passwords containing spaces must be quoted) (introduced in version 2.4)
+DefaultPasswords =
+
+# actual resolution of the main screen in DPI (if this value isn't positive, the system's UI setting is used) (introduced in version 2.5)
+CustomScreenDPI = 0
+
+# if true, we store display settings for each document separately (i.e. everything after UseDefaultState in FileStates)
+RememberStatePerDocument = true
+
+# ISO code of the current UI language
+UiLanguage = en
+
+# a list of extensions that SumatraPDF has associated itself with and will reassociate if a different application takes over (e.g. ".pdf .xps .epub")
+AssociatedExtensions = .pdf
+
+# whether file associations should be fixed silently or only after user feedback
+AssociateSilently = false
+
+# if true, we check once a day if an update is available
+CheckForUpdates = true
+
+# we won't ask again to update to this version
+VersionToSkip =
+
+# if true, we remember which files we opened and their display settings
+RememberOpenedFiles = true
+
+# pattern used to launch the LaTeX editor when doing inverse search
+InverseSearchCmdLine =
+
+# if true, we expose the SyncTeX inverse search command line in Settings -> Options
+EnableTeXEnhancements = true
+
+# default layout of pages. valid values: automatic, single page, facing, book view, continuous, continuous facing, continuous book view
+DefaultDisplayMode = automatic
+
+# default zoom (in %) or one of those values: fit page, fit width, fit content
+DefaultZoom = fit width
+
+# default state of the window. 1 is normal, 2 is maximized, 3 is fullscreen, 4 is minimized
+WindowState = 1
+
+# default position (x, y) and size (width, height) of the window
+WindowPos = 1943 8 814 900
+
+# width of favorites/bookmarks sidebar (if shown)
+SidebarDx = 268
+
+# if both favorites and bookmarks parts of sidebar are visible, this is the height of bookmarks (table of contents) part
+TocDy = 0
+
+# if true, documents are opened in tabs instead of new windows (introduced in version 3.0)
+UseTabs = true
+
+################################################################################
+# customization options for PDF, XPS, DjVu and PostScript UI
+FixedPageUI [
+	# color value with which black (text) will be substituted
+	TextColor = #657b83
+
+  # color value with which white (background) will be substituted
+	BackgroundColor = #fdf6e3
+
+	# color value for the text selection rectangle (also used to highlight found text) (introduced in version 2.4)
+	SelectionColor = #eee8d5
+
+	# top, right, bottom and left margin (in that order) between window and document
+	WindowMargin = 2 4 2 4
+
+	# horizontal and vertical distance between two pages in facing and book view modes
+	PageSpacing = 4 4
+
+	# colors to use for the gradient from top to bottom (stops will be inserted at regular intervals throughout the document); currently only up to three colors are supported; the idea behind this experimental feature is that the background might allow to subconsciously determine reading progress; suggested values: #2828aa #28aa28 #aa2828
+	GradientColors =
+]
+
+# customization options for eBooks (EPUB, Mobi, FictionBook) UI. If UseFixedPageUI is true, FixedPageUI settings apply instead
+EbookUI [
+	FontName = Georgia
+	FontSize = 12.5
+	TextColor = #657b83
+	BackgroundColor = #fdf6e3
+	UseFixedPageUI = false
+]
+
+# customization options for Comic Book and images UI
+ComicBookUI [
+	WindowMargin = 0 0 0 0
+	PageSpacing = 4 4
+
+	# if true, default to displaying Comic Book files in manga mode (from right to left if showing 2 pages at a time)
+	CbxMangaMode = false
+]
+
+# customization options for CHM UI. If UseFixedPageUI is true, FixedPageUI settings apply instead
+ChmUI [
+
+  # if true, the UI used for PDF documents will be used for CHM documents as well
+	UseFixedPageUI = false
+]
+
+# list of additional external viewers for various file types (can have multiple entries for the same format)
+ExternalViewers [
+]
+
+################################################################################
+# these override the default settings in the Print dialog
+PrinterDefaults [
+  # default value for scaling (shrink, fit, none)
+	PrintScale = shrink
+]
+
+# customization options for how we show forward search results (used from LaTeX editors)
+ForwardSearch [
+	# when set to a positive value, the forward search highlight style will be changed to a rectangle at the left of the page (with the indicated amount of margin from the page margin)
+	HighlightOffset = 0
+
+	# width of the highlight rectangle (if HighlightOffset is > 0)
+	HighlightWidth = 15
+
+	# color used for the forward search highlight
+	HighlightColor = #586e75
+
+	# if true, highlight remains visible until the next mouse click (instead of fading away immediately)
+	HighlightPermanent = true
+]
