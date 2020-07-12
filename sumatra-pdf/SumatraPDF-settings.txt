@@ -26,7 +26,7 @@ TabWidth = 300
 ShowMenubar = false
 
 # if true, we show the toolbar at the top of the window
-ShowToolbar = false
+ShowToolbar = true
 
 # if true, we show the Favorites sidebar
 ShowFavorites = true
