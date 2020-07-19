@@ -4,6 +4,6 @@ echo ". ~/bin/dotfiles/bash/_bashrc" >> ~/.bashrc
 
 ln -sf ~/bin/dotfiles/bash/_dircolors ~/.dircolors
 ln -sf ~/bin/dotfiles/bash/_inputrc ~/.inputrc
-ln -sf ~/bin/dotfiles/git/_gitconfig ~/.gitconfig
+cp ~/bin/dotfiles/git/_gitconfig ~/.gitconfig
 ln -sf ~/bin/dotfiles/ruby/_rspec ~/.rspec
 ln -sf ~/bin/dotfiles/tmux/_tmux.conf ~/.tmux.conf
