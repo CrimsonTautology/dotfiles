@@ -27,7 +27,7 @@ Plugin 'VundleVim/Vundle.vim'
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-Plugin 'jiangmiao/auto-pairs', {'name': 'autopairs'}
+Plugin 'cohama/lexima.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-endwise', {'name': 'endwise'}
@@ -48,7 +48,7 @@ Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript', {'name':  'javascript'}
 Plugin 'vim-python/python-syntax', {'name': 'python'}
 Plugin 'Vimjas/vim-python-pep8-indent', {'name': 'pep8indent'}
-Plugin 'leafgarland/typescript-vim'
+Plugin 'leafgarland/typescript-vim', {'name': 'typescript'}
 
 
 call vundle#end()
@@ -265,9 +265,10 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
 " }}}
-" Auto-Pairs {{{
-let g:AutoPairsFlyMode = 0
-let g:AutoPairsShortcutBackInsert = '<M-b>'
+" Lexima.vim {{{
+let g:lexima_enable_basic_rules = 1
+let g:lexima_enable_newline_rules = 1
+let g:lexima_enable_endwise_rules = 1
 
 " }}}
 " YouCompleteMe {{{
