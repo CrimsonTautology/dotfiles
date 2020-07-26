@@ -2,6 +2,10 @@ let g:python_recommended_style = 0
 "let g:syntastic_python_checkers = ['pycodestyle', 'pylint']
 let g:syntastic_python_checkers = ['pycodestyle']
 
+setlocal tabstop=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
+
 compiler pylint
 setlocal makeprg +=\ --disable=R,C\ %
 
