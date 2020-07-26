@@ -21,3 +21,6 @@ wsl --set-default-version 2
 
 # set WSL version of a specific distribution
 wsl --set-version <DistributionName> <VersionNumber>
+
+wsl --set-version Ubuntu-20.04 1
+wsl --set-version Ubuntu-20.04 2
