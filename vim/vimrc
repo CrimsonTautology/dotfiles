@@ -27,7 +27,7 @@ Plugin 'VundleVim/Vundle.vim'
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-Plugin 'cohama/lexima.vim'
+Plugin 'jiangmiao/auto-pairs', {'name': 'autopairs'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-endwise', {'name': 'endwise'}
