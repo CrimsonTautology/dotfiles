@@ -8,7 +8,7 @@
 #--configdir="%USERPROFILE%\bin\dotfiles\mintty"
 
 ThemeFile=solarized-dark
-Transparency=high
+Transparency=medium
 CursorType=block
 CursorBlinks=no
 Font=Hack
@@ -17,7 +17,7 @@ MiddleClickAction=void
 RightClickAction=paste
 BellType=0
 Term=xterm-256color
-BackspaceSendsBS=yes
+BackspaceSendsBS=no
 FontSmoothing=full
 AllowBlinking=yes
 BellTaskbar=no
