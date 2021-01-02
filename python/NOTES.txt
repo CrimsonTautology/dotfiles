@@ -1,0 +1,12 @@
+# set up a virtual environment
+python3 -m venv env
+
+# activate virtual environment
+source env/bin/activate
+
+# deactivate virtual environment
+deactivate
+
+# install packages with pip
+python -m pip install FooBar==1.2.3
+python -m pip freeze > requirements.txt
