@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+; https://github.com/bambocher/cmd-colors-gruvbox
+; undo-cmd-here.reg
+
+[-HKEY_CLASSES_ROOT\Directory\shell\cmdprompt]
+; [-HKEY_CLASSES_ROOT\Directory\Background\shell\cmdprompt]
+; [-HKEY_CLASSES_ROOT\Drive\shell\cmdprompt]
