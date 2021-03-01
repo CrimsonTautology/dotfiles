@@ -126,6 +126,9 @@ set backupcopy=yes
 "  n...  where to save the viminfo files
 set viminfo='100,\"100,:20,%,n~/.viminfo
 
+" recursivly go up until home directory to find a tags file
+set tags^=tags;~,.git/tags;~
+
 " }}}
 " Custom Statusline {{{
 
