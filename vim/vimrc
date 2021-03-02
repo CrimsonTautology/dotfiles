@@ -42,7 +42,6 @@ Plugin 'majutsushi/tagbar'
 Plugin 'chrisbra/Colorizer.git'
 
 Plugin 'tpope/vim-rails', {'name': 'rails'}
-Plugin 'withgod/vim-sourcepawn', {'name': 'sourcepawn'}
 Plugin 'digitaltoad/vim-pug', {'name': 'pug'}
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript', {'name':  'javascript'}
