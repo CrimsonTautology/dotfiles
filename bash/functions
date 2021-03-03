@@ -42,3 +42,7 @@ git-spring-clean() {
             fi
     done
 }
+
+set-title() {
+  echo -ne "\e]0;$1\a"
+}
