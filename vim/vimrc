@@ -92,7 +92,7 @@ set shiftwidth=2
 
 " colorscheme
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 
 " square cursor in mintty
 let &t_EI.="\e[1 q"
