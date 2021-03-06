@@ -149,7 +149,8 @@ if g:gruvbox_underline == 0
   let s:underline = ''
 endif
 
-let s:undercurl = 'undercurl,'
+"let s:undercurl = 'undercurl,'  "Not working"
+let s:undercurl = 'underline,'
 if g:gruvbox_undercurl == 0
   let s:undercurl = ''
 endif
