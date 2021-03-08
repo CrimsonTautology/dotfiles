@@ -38,7 +38,7 @@ Plugin 'tpope/vim-surround', {'name': 'surround'}
 Plugin 'tpope/vim-unimpaired', {'name': 'unimpaired'}
 Plugin 'alvan/vim-closetag', {'name': 'closetag'}
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'majutsushi/tagbar'
+Plugin 'preservim/tagbar'
 Plugin 'chrisbra/Colorizer.git'
 
 Plugin 'tpope/vim-rails', {'name': 'rails'}
