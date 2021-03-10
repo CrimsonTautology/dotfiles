@@ -1,14 +1,26 @@
 #!/bin/sh
 
-#PS1="$FCYN\w $FGRN\$$RS\n"
+export SOURCEMOD_DIR_1_8=$HOME/sourcemod/sm-1.8
+export SOURCEMOD_DIR_1_9=$HOME/sourcemod/sm-1.9
+export SOURCEMOD_DIR_1_10=$HOME/sourcemod/sm-1.10
+export SOURCEMOD_DIR_1_11=$HOME/sourcemod/sm-1.11
+export SOURCEMOD_DIR=$SOURCEMOD_DIR_1_10
+
+export PATH=$PATH:$SOURCEMOD_DIR/addons/sourcemod/scripting
+export SRCDS_DEV_DIR=$HOME/steamcmd/fof_mk/fof
+
+export FOF=$HOME/steamcmd/fof_main/fof
+export GGF=$HOME/steamcmd/fof_gg/fof
+export GGF2=$HOME/steamcmd/fof_gg2/fof
+export FOZ=$HOME/steamcmd/fof_foz/fof
+export MKF=$HOME/steamcmd/fof_mk/fof
 
 # directory shortcuts
-alias fof='cd ~/steamcmd/fof_main/fof'
-alias ggf='cd ~/steamcmd/fof_gg/fof'
-alias ggf2='cd ~/steamcmd/fof_gg2/fof'
-alias foz='cd ~/steamcmd/fof_foz/fof'
-alias mkf='cd ~/steamcmd/fof_mk/fof'
-alias mord='cd ~/steamcmd/mordhau_main'
+alias fof="cd $FOF"
+alias ggf="cd $GGF"
+alias ggf2="cd $GGF2"
+alias foz="cd $FOZ"
+alias mkf="cd $MKF"
 alias sm='cd ~/sourcemod'
 
 # screens
