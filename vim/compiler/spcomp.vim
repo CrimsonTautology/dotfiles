@@ -13,7 +13,7 @@ set cpo&vim
 "CompilerSet errorformat=%f\(%l\)\ :\ fatal\ %t%*[^0-9]%n:\ %m,%f\(%l\)\ :\ %t%*[^0-9]%n:\ %m
 
 " spcomp called by a Makefile at the root project directory
-CompilerSet makeprg=make\ -C`git\ rev-parse\ --show-toplevel`\ SRCDS=$SRCDS_DEV_DIR
+CompilerSet makeprg=make\ -C`git\ rev-parse\ --show-toplevel`\ SRCDS=$SRCDS_DEV_DIR\ DEBUG=1
 CompilerSet errorformat=%f\(%l\)\ :\ fatal\ %t%*[^0-9]%n:\ %m,%f\(%l\)\ :\ %t%*[^0-9]%n:\ %m
 CompilerSet errorformat+=\%D%*\\a[%*\\d]:\ Entering\ directory\ `%f'
 CompilerSet errorformat+=\%D%*\\a[%*\\d]:\ Entering\ directory\ '%f'
