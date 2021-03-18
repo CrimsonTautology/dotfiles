@@ -75,6 +75,8 @@ set scrolloff=8  " keep 8 lines below and above the cursor
 set cursorline
 set colorcolumn=80,100  " add marker on column 80 and 100
 
+set title
+
 " syntax configuration
 syntax on
 filetype on
