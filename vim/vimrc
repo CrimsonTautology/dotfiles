@@ -38,17 +38,16 @@ Plugin 'tpope/vim-surround', {'name': 'surround'}
 Plugin 'tpope/vim-unimpaired', {'name': 'unimpaired'}
 Plugin 'alvan/vim-closetag', {'name': 'closetag'}
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'majutsushi/tagbar'
+Plugin 'preservim/tagbar'
 Plugin 'chrisbra/Colorizer.git'
 
 Plugin 'tpope/vim-rails', {'name': 'rails'}
-Plugin 'withgod/vim-sourcepawn', {'name': 'sourcepawn'}
 Plugin 'digitaltoad/vim-pug', {'name': 'pug'}
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript', {'name':  'javascript'}
 Plugin 'vim-python/python-syntax', {'name': 'python'}
 Plugin 'Vimjas/vim-python-pep8-indent', {'name': 'pep8indent'}
-Plugin 'leafgarland/typescript-vim'
+Plugin 'leafgarland/typescript-vim', {'name': 'typescript'}
 
 
 call vundle#end()
@@ -93,7 +92,7 @@ set shiftwidth=2
 
 " colorscheme
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 
 " square cursor in mintty
 let &t_EI.="\e[1 q"
@@ -125,6 +124,9 @@ set backupcopy=yes
 "  %     saves and restores the buffer list
 "  n...  where to save the viminfo files
 set viminfo='100,\"100,:20,%,n~/.viminfo
+
+" recursivly go up until home directory to find a tags file
+set tags^=tags;~,.git/tags;~
 
 " }}}
 " Custom Statusline {{{
@@ -264,12 +266,6 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
-" }}}
-" Auto-Pairs {{{
-let g:AutoPairsFlyMode = 0
-let g:AutoPairsShortcutBackInsert = '<M-b>'
-
-" }}}
 " YouCompleteMe {{{
 nnoremap <silent> <leader>fi :YcmCompleter FixIt<cr>
 
