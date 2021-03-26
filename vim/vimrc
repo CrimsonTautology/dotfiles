@@ -92,7 +92,7 @@ set shiftwidth=2
 
 " colorscheme
 set background=dark
-colorscheme gruvbox
+colorscheme solarized
 
 " square cursor in mintty
 let &t_EI.="\e[1 q"
@@ -266,11 +266,12 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
+" }}}
 " YouCompleteMe {{{
 nnoremap <silent> <leader>fi :YcmCompleter FixIt<cr>
 
-"let g:ycm_always_populate_location_list = 1
-"let g:ycm_open_loclist_on_ycm_diags = 1
+" set to 1 to disable YCM
+let g:loaded_youcompleteme = 0
 
 " }}}
 " Git specific configuration {{{
