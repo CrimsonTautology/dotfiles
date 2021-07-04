@@ -1,5 +1,5 @@
 # set up a virtual environment
-python3 -m venv env
+python -m venv env
 
 # activate virtual environment
 source env/bin/activate
@@ -7,9 +7,12 @@ source env/bin/activate
 # deactivate virtual environment
 deactivate
 
+# uninstall virtual environment
+rm -rf env
+
 # install packages with pip
-python -m pip install FooBar==1.2.3
-python -m pip freeze > requirements.txt
+pip install FooBar==1.2.3
+pip freeze > requirements.txt
 
 --------------------------------------------------------------------------------
 # pyenv
