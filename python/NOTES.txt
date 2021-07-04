@@ -10,3 +10,39 @@ deactivate
 # install packages with pip
 python -m pip install FooBar==1.2.3
 python -m pip freeze > requirements.txt
+
+--------------------------------------------------------------------------------
+# pyenv
+
+# install
+https://github.com/pyenv/pyenv
+curl https://pyenv.run | bash
+
+## add to .profile
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+## add to .bashrc
+eval "$(pyenv init -)"
+
+# uninstall
+rm -rf ~/.pyenv
+
+# update
+pyenv update
+
+# manage python environments
+pyenv install --list
+pyenv install {version}
+pyenv versions
+python --version
+python uninstall {version}
+
+# set environment
+pyenv global {version}
+pyenv local {version}
+pyenv shell {version}
+
+# fix issues
+pyenv rehash
