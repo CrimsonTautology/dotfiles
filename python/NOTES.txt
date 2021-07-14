@@ -50,9 +50,18 @@ deactivate
 # uninstall virtual environment
 rm -rf env
 
-# install packages with pip
+--------------------------------------------------------------------------------
+# pip
+
+pip install -r requirements.txt
 pip install FooBar==1.2.3
 pip freeze > requirements.txt
+
+# pip-tools
+https://github.com/jazzband/pip-tools
+
+pip-compile requirements.in
+pip-sync
 
 --------------------------------------------------------------------------------
 # pipx - global packages
@@ -84,3 +93,23 @@ cookiecutter gh:{github repo}
 
 # custom template
 https://cookiecutter.readthedocs.io/en/1.7.2/tutorial2.html
+https://training.talkpython.fm/courses/explore_cookiecutter_course/using-and-mastering-cookiecutter-templates-for-project-creation
+
+--------------------------------------------------------------------------------
+# poetry
+https://python-poetry.org/
+
+# install
+pipx install poetry
+
+# usage
+poetry new foobar-demo
+poetry add pytest
+poetry install
+poetry run django-admin startproject foobarsite
+
+# publish package
+poetry build
+poetry publish
+
+--------------------------------------------------------------------------------
