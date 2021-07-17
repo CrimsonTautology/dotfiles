@@ -160,3 +160,48 @@ vulture {directory} --make-whitelist > whitelist.py
 # ipython
 https://ipython.org/
 https://www.youtube.com/watch?v=3i6db5zX3Rw (Sebastian Witowski - Wait, IPython can do that?!)
+
+# install
+pipx install ipython
+
+--------------------------------------------------------------------------------
+# pytest
+https://docs.pytest.org/
+
+# install
+pipx install pytest
+
+# usage
+pytest {file|directory}
+pytest test_foo.py::test_bar
+
+## run tests that match expression
+pytest -k {expression}
+pytest -k "not {expression}"
+
+## run test that match `@pytest.mark.type`
+pytest -m type
+pytest -m "not type"
+
+@pytest.mark.usefixtures
+@pytest.mark.filterwarnings
+@pytest.mark.skip
+@pytest.mark.skipif
+@pytest.mark.xfail
+@pytest.mark.parametrize
+
+## stop running on first failure;  or start up pdb
+pytest -x
+pytest --pdb
+
+## re-run failing tests; or run failed tests first than others
+pytest --lf
+pytest --ff
+
+## check documentation is out of date
+"""
+blah blah
+>>> add(1, 2)
+4
+"""
+pytest --doctest-modules {file|directory}
