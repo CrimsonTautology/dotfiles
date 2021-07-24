@@ -269,13 +269,3 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
 " }}}
-" Git specific configuration {{{
-
-" when in a git repository, will source $GITROOT/.git/vimrc
-let git_path = system("git rev-parse --show-toplevel")
-let git_vimrc = substitute(git_path, '\n', '', '') . "/.git/vimrc"
-if !empty(glob(git_vimrc))
-  sandbox execute 'source ' . git_vimrc
-endif
-
-" }}}
