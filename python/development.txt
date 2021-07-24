@@ -1,8 +1,7 @@
 ipython
 jedi
-pep8
-pycodestyle
 pylint
 pytest
-pipenv
 cookiecutter
+flake8
+black
