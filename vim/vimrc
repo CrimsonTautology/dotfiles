@@ -37,7 +37,6 @@ Plugin 'tpope/vim-repeat', {'name': 'repeat'}
 Plugin 'tpope/vim-surround', {'name': 'surround'}
 Plugin 'tpope/vim-unimpaired', {'name': 'unimpaired'}
 Plugin 'alvan/vim-closetag', {'name': 'closetag'}
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'preservim/tagbar'
 Plugin 'chrisbra/Colorizer.git'
 
@@ -268,13 +267,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
-
-" }}}
-" YouCompleteMe {{{
-nnoremap <silent> <leader>fi :YcmCompleter FixIt<cr>
-
-" set to 1 to disable YCM
-let g:loaded_youcompleteme = 0
 
 " }}}
 " Git specific configuration {{{
