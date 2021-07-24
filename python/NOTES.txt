@@ -121,6 +121,7 @@ pipx install black
 
 # usage
 black {file|directory}
+black . --check --verbose --diff --color
 
 --------------------------------------------------------------------------------
 # pylint
@@ -131,6 +132,19 @@ pipx install pylint
 
 # usage
 pylint {file|directory}
+
+--------------------------------------------------------------------------------
+# flake8
+https://flake8.pycqa.org/en/latest/
+
+# install
+pipx install flake8
+
+# usage 
+flake8 {file|directory}
+flake8 --extend-ignore=E203 --max-line-length=100 .
+flake8 --disable-noqa
+flake8 --statistics
 
 --------------------------------------------------------------------------------
 # bandit - security issues
