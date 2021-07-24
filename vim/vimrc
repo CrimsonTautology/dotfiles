@@ -40,14 +40,12 @@ Plugin 'alvan/vim-closetag', {'name': 'closetag'}
 Plugin 'preservim/tagbar'
 Plugin 'chrisbra/Colorizer.git'
 
-Plugin 'tpope/vim-rails', {'name': 'rails'}
-Plugin 'digitaltoad/vim-pug', {'name': 'pug'}
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript', {'name':  'javascript'}
+Plugin 'leafgarland/typescript-vim', {'name': 'typescript'}
 Plugin 'vim-python/python-syntax', {'name': 'python'}
 Plugin 'psf/black'
 Plugin 'Vimjas/vim-python-pep8-indent', {'name': 'pep8indent'}
-Plugin 'leafgarland/typescript-vim', {'name': 'typescript'}
 
 
 call vundle#end()
