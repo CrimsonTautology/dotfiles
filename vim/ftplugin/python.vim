@@ -1,5 +1,3 @@
-let g:python_recommended_style = 0
-
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = '--extend-ignore=E203 --max-line-length=100'
 
