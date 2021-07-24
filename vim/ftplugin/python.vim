@@ -15,3 +15,11 @@ nnoremap <silent> <leader>ipy Iimport IPython; IPython.start_ipython(argv=[])#TO
 " semicolon isn't used (usually); replace with regular colon so I don't have
 " to hold shift
 inoremap <silent> <c-;> <c-o>$:<cr>
+
+" run Black on save
+autocmd BufWritePre <buffer> call ExecuteBlack()
+function ExecuteBlack()
+  if exists('g:load_black')
+    execute ':Black'
+  endif
+endfunction
