@@ -39,6 +39,7 @@ Plugin 'tpope/vim-unimpaired', {'name': 'unimpaired'}
 Plugin 'alvan/vim-closetag', {'name': 'closetag'}
 Plugin 'preservim/tagbar'
 Plugin 'chrisbra/Colorizer.git'
+Plugin 'lifepillar/vim-mucomplete'
 
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript', {'name':  'javascript'}
@@ -265,5 +266,18 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
+
+" }}}
+" MUcomplete {{{
+
+" vim settings
+set completeopt-=preview
+set completeopt+=longest,menuone,noselect,noinsert
+set shortmess+=c  " Shut off completion messages
+
+let g:mucomplete#enable_auto_at_startup = 1
+"let g:mucomplete#completion_delay = 1
+
+
 
 " }}}
