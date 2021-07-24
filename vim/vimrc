@@ -47,6 +47,7 @@ Plugin 'leafgarland/typescript-vim', {'name': 'typescript'}
 Plugin 'vim-python/python-syntax', {'name': 'python'}
 Plugin 'psf/black'
 Plugin 'Vimjas/vim-python-pep8-indent', {'name': 'pep8indent'}
+Plugin 'davidhalter/jedi-vim'
 
 
 call vundle#end()
