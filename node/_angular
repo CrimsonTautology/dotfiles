@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# add `. ~/bin/dotfiles/node/_angular` to ~/.bashrc
+
 export NG_CLI_ANALYTICS=ci
 
 # completion

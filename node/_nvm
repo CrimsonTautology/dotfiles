@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# add `. ~/bin/dotfiles/node/_nvm` to ~/.bashrc
+
 # Defer initialization of nvm until nvm, node or a node-dependent command is
 # run. Ensure this block is only run once if .bashrc gets sourced multiple times
 # by checking whether __init_nvm is a function.
