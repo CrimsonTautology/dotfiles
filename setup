@@ -7,3 +7,4 @@ ln -sf ~/bin/dotfiles/bash/_inputrc ~/.inputrc
 cp ~/bin/dotfiles/git/_gitconfig ~/.gitconfig
 ln -sf ~/bin/dotfiles/ruby/_rspec ~/.rspec
 ln -sf ~/bin/dotfiles/tmux/_tmux.conf ~/.tmux.conf
+ln -sf ~/bin/dotfiles/lynx/_lynxrc ~/.lynxrc
