@@ -143,6 +143,7 @@ pipx install flake8
 # usage 
 flake8 {file|directory}
 flake8 --extend-ignore=E203 --max-line-length=100 .
+flake8 --extend-ignore=E203,E501,W503 --max-line-length=100 .
 flake8 --disable-noqa
 flake8 --statistics
 
