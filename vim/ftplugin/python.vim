@@ -15,7 +15,7 @@ inoremap <silent> <c-;> <c-o>$:<cr>
 
 " syntastic
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args = '--extend-ignore=E203 --max-line-length=99'
+let g:syntastic_python_flake8_args = '--extend-ignore=E203,E501,W503'
 
 " black
 let g:black_linelength = 99
