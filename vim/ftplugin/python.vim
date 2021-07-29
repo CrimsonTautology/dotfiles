@@ -15,15 +15,3 @@ inoremap <silent> <c-;> <c-o>$:<cr>
 
 " syntastic
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args = '--extend-ignore=E203,E501,W503'
-
-" black
-let g:black_linelength = 99
-
-" run Black on save
-"autocmd BufWritePre <buffer> call ExecuteBlack()
-"function ExecuteBlack()
-"  if exists('g:load_black')
-"    execute ':Black'
-"  endif
-"endfunction
