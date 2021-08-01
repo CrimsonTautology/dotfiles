@@ -179,6 +179,10 @@ https://www.youtube.com/watch?v=3i6db5zX3Rw (Sebastian Witowski - Wait, IPython 
 # install
 pipx install ipython
 
+# config
+ipython locate profile
+ipython profile create {profilename}
+
 --------------------------------------------------------------------------------
 # pytest
 https://docs.pytest.org/
