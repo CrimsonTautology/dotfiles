@@ -4,7 +4,7 @@
 export USER_DIR="/mnt/c/Users/$USER" 
 alias bill='cd $USER_DIR'
 
-export WORK_DIR="/mnt/m/work"
+export WORK_DIR="$USER_DIR/work"
 export TUTORIAL_DIR="$WORK_DIR/tutorial"
 export PLAY_DIR="$WORK_DIR/play"
 export CURRENT_PROJECT="$TUTORIAL_DIR/python"
