@@ -15,3 +15,6 @@ inoremap <silent> <c-;> <c-o>$:<cr>
 
 " syntastic
 let g:syntastic_python_checkers = ['flake8']
+
+" black
+let g:black_linelength = 79
