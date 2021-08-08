@@ -30,9 +30,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'jiangmiao/auto-pairs', {'name': 'autopairs'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-endwise', {'name': 'endwise'}
 Plugin 'tpope/vim-fugitive', {'name': 'fugitive'}
-Plugin 'tpope/vim-markdown', {'name': 'markdown'}
 Plugin 'tpope/vim-repeat', {'name': 'repeat'}
 Plugin 'tpope/vim-surround', {'name': 'surround'}
 Plugin 'tpope/vim-unimpaired', {'name': 'unimpaired'}
