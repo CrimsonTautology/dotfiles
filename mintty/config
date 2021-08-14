@@ -1,28 +1,55 @@
-#in %LOCALAPPDATA%\wsltty
-#change configdir to this directory
-#configdir=${configdir:-'%USERPROFILE%\bin\dotfiles\mintty'}
+# in %LOCALAPPDATA%\wsltty
+# change configdir to this directory
+# configdir=${configdir:-'%USERPROFILE%\bin\dotfiles\mintty'}
 #
-#in shortcuts
-#change configdir to this directory
-#right-click; properties; shortcut; target;
-#--configdir="%USERPROFILE%\bin\dotfiles\mintty"
+# in shortcuts
+# change configdir to this directory
+# right-click; properties; shortcut; target;
+# --configdir="%USERPROFILE%\bin\dotfiles\mintty"
 
-ThemeFile=solarized-dark
-Transparency=medium
-CursorType=block
+AllowBlinking=yes
+BackspaceSendsBS=no
+BellTaskbar=no
+BellType=0
+CopyAsHTML=0
+CopyAsRTF=no
 CursorBlinks=no
+CursorType=block
+Emojis=google
 Font=Hack
 FontHeight=11
+FontSmoothing=full
+LigaturesSupport=2
 MiddleClickAction=void
 RightClickAction=paste
-BellType=0
-Term=xterm-256color
-BackspaceSendsBS=no
-FontSmoothing=full
-AllowBlinking=yes
-BellTaskbar=no
 Scrollbar=none
-LigaturesSupport=2
-CopyAsRTF=no
-CopyAsHTML=0
-Emojis=google
+Term=xterm-256color
+ThemeFile=solarized-dark
+Transparency=high
+
+
+# TODO
+
+
+# Ctrl+Shift+letter shortcuts
+# 
+# An alternative set of shortcuts for clipboard and window commands using Ctrl+Shift+letter combinations is available. These can be enabled on the Keys pane of the options dialog.
+# – Ctrl+Shift+A: Select all
+# – Ctrl+Shift+C: Copy
+# – Ctrl+Shift+V: Paste
+# – Ctrl+Shift+N: New
+# – Ctrl+Shift+H: Search scrollback buffer
+# – Ctrl+Shift+W: Close
+# – Ctrl+Shift+R: Reset
+# – Ctrl+Shift+D: Default terminal size (rows/columns)
+# – Ctrl+Shift+F: Full screen (not zooming font despite Shift)
+# – Ctrl+Shift+S: Flip screen
+# – Ctrl+Shift+O: Toggle scrollbar
+# – Ctrl+Shift+P: Cycle text pointer (cursor) styles
+# – Ctrl+Shift+T: Cycle or tune transparency levels
+# 
+# Ctrl+Shift+T cycles through transparency levels in steps, whenever Ctrl+Shift+T is released. Alternatively, while Ctrl+Shift+T is held down, the navigation keys on the numeric keypad can be used for further fine-tuning:
+# Up/Dn to increase/decrease, PgUp/PgDn for steps, Del/Ins for no/max transparency, End for highest preconfigured transparency, Home for previous value.
+# If OpaqueWhenFocused is set, opaqueness is temporarily disabled to provide visible feedback for the changes.
+# 
+# User-defined shortcuts
