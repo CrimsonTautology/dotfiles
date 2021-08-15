@@ -72,7 +72,7 @@ set ignorecase  "unimpaired: *yoi*
 set smartcase
 
 " marking
-set list  "unimpaired: *yol*
+set nolist  "unimpaired: *yol*
 set listchars=tab:→\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set cursorline  "unimpaired: *yoc*
 set nocursorcolumn  "unimpaired: *you*
