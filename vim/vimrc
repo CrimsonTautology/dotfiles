@@ -6,7 +6,6 @@ set nocompatible
 if has('win32') || has('win64')
   " on windows add $HOME/.vim and runtimepath
   set runtimepath=$HOME/.vim,$VIMRUNTIME,$HOME/.vim/after
-  set encoding=utf-8
 endif
 
 " }}}
@@ -46,40 +45,44 @@ Plugin 'psf/black'
 Plugin 'Vimjas/vim-python-pep8-indent', {'name': 'pep8indent'}
 Plugin 'davidhalter/jedi-vim', {'name': 'jedi'}
 
-
 call vundle#end()
-filetype plugin indent on
 
 " }}}
 " VIM Editor Settings {{{
 
-set number
-set nowrap       " no wordwrap
-set showmatch    " show matching parentheses
-set noerrorbells " damn the bell
+set encoding=utf-8
 
-set hlsearch     " highlight search
-set ignorecase
-set smartcase
-
-set splitbelow   " split window below current one with :sp
-set splitright   " split new window to the right with :vs
+set number  "unimpaired: *yon*
+set norelativenumber  "unimpaired: *yor*
+set nowrap  "unimpaired: *yow*
+set nospell  "unimpaired: *yos*
+set virtualedit=  "unimpaired: *yov*
+set splitbelow
+set splitright
 set history=100
-set wildmenu     " command line completion
-set backspace=2  " allow backspacing over indent, eol, and the start of an insert
-set scrolloff=8  " keep 8 lines below and above the cursor
-
-set cursorline
-set colorcolumn=80,100  " add marker on column 80 and 100
-
+set wildmenu
+set backspace=indent,eol,start
+set scrolloff=8
 set title
 
-" syntax configuration
-syntax on
-filetype on
-filetype plugin on
-filetype indent on
-set omnifunc=syntaxcomplete#Complete
+" searching
+set hlsearch  "unimpaired: *yoh*
+set noincsearch
+set ignorecase  "unimpaired: *yoi*
+set smartcase
+
+" marking
+set list  "unimpaired: *yol*
+set listchars=tab:→\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+set cursorline  "unimpaired: *yoc*
+set nocursorcolumn  "unimpaired: *you*
+set colorcolumn=80,100  " add marker on column 80 and 100
+set showmatch
+
+" damn the bell
+set noerrorbells
+set novisualbell
+set t_vb=
 
 " indentation settings
 set autoindent
@@ -90,8 +93,16 @@ set softtabstop=2
 set shiftwidth=2
 
 " colorscheme
-set background=dark
-colorscheme solarized
+set background=dark  "unimpaired: *yob*
+try
+  colorscheme solarized
+catch
+endtry
+
+" syntax configuration
+filetype plugin indent on
+syntax on
+set omnifunc=syntaxcomplete#Complete
 
 " square cursor in mintty
 let &t_EI.="\e[1 q"
@@ -131,8 +142,8 @@ set tags^=tags;~,.git/tags;~
 " Custom Statusline {{{
 
 set showcmd          " display incomplete commands.
-set laststatus=2
 set showmode         " show the current mode
+set laststatus=2
 
 set statusline=""
 set statusline+=%f   " tail of filename

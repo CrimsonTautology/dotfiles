@@ -9,7 +9,7 @@ if has("gui_running")
   set selection=inclusive
 
   " guioptions
-  set guioptions=eg
+  set guioptions=!eg
 
   " disable menu alt keys
   set winaltkeys=no
@@ -17,20 +17,18 @@ if has("gui_running")
   " font
   set guifont=Hack:h11:cANSI:qDRAFT
 
-  " syntax highlighting and color scheme
-  syntax on
-  colorscheme solarized
-  set background=light
-  let g:solarized_menu=0
+  " colorscheme;  use light scheme for gvim
+  set background=light  "unimpaired: *yob*
+  try
+    colorscheme solarized
+    let g:solarized_menu=0
+  catch
+  endtry
 
   " memorize window size
   set sessionoptions+=resize,winpos
 
   " editor settings
-  set scrolloff=0 
-  set cursorline
-
-  " unicode
-  set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ 
+  set scrolloff=0
 
 endif
