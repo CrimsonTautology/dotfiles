@@ -13,6 +13,3 @@ alias work='cd $WORK_DIR'
 alias tut='cd $TUTORIAL_DIR'
 alias play='cd $PLAY_DIR'
 alias cpro='cd $CURRENT_PROJECT'
-
-. ~/bin/dotfiles/python/_pyenv
-. ~/bin/dotfiles/python/_pipx

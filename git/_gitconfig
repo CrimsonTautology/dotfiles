@@ -1,17 +1,15 @@
-[init]
-	#templatedir = ~/bin/dotfiles/git/template
 [alias]
-    ctags = !.git/hooks/ctags
-    ignored = !git ls-files -v | grep "^[[:lower:]]"
+  ctags = !.git/hooks/ctags
+  ignored = !git ls-files -v | grep "^[[:lower:]]"
 [core]
-	editor = vim -f
+  editor = vim -f
 [diff]
-	tool = vimdiff
+  tool = vimdiff
 [difftool]
-	prompt = false
+  prompt = false
 [merge]
-	tool = vimdiff
+  tool = vimdiff
 [credential]
-	helper = cache --timeout=36000
+  helper = cache --timeout=36000
 [push]
-	default = current
+  default = current
