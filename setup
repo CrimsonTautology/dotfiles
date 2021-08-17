@@ -32,7 +32,7 @@ echo ". ~/bin/dotfiles/bash/_bashrc" >> ~/.bashrc
 # setup vim
 git clone git@github.com:CrimsonTautology/dotvim.git ~/.vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-ln -sf ~/.vim/vimrce ~/.vimrc
+ln -sf ~/.vim/vimrc ~/.vimrc
 vim +PluginInstall +qall
 
 
