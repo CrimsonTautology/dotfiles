@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # directory shortcuts
-export USER_DIR="/mnt/c/Users/$USER" 
+export USER_DIR='/mnt/c/Users/bille'
 alias bill='cd $USER_DIR'
 
 export WORK_DIR="$USER_DIR/work"
