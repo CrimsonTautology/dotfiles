@@ -1123,4 +1123,4 @@ autocmd ColorScheme * if g:colors_name != "solarized" | silent! aunmenu Solarize
 "}}}
 
 " make background transparent to fix terminal background
-hi Normal guibg=NONE ctermbg=NONE
+hi Normal ctermbg=NONE
