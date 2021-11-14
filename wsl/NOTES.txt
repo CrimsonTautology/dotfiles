@@ -14,7 +14,17 @@ wsl --setdefault <DistributionName>
 wsl --distribution <DistributionName>
 
 # enable Virtual Machine Platform (for WSL 2)
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+dism /online /enable-feature /all /norestart /featurename:VirtualMachinePlatform
+
+# enable Hyper-V
+# to fix "Please enable the Virtual Machine Platform Windows feature and ensure
+# virtualization is enabled in the BIOS."
+dism /online /enable-feature /all /norestart /featurename:Microsoft-Hyper-V
+bcdedit /set hypervisorlaunchtype auto
+
+# disable Hyper-V
+Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor
+bcdedit /set hypervisorlaunchtype off
 
 # set WSL 2 as default version
 wsl --set-default-version 2
