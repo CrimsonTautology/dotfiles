@@ -8,10 +8,10 @@
 # --configdir="%USERPROFILE%\bin\dotfiles\mintty"
 
 AllowBlinking=yes
-BackspaceSendsBS=no
+BackspaceSendsBS=yes
 BellTaskbar=no
 BellType=0
-CopyAsHTML=0
+CopyAsHTML=no
 CopyAsRTF=no
 CursorBlinks=no
 CursorType=block
@@ -24,6 +24,7 @@ MiddleClickAction=extend
 RightClickAction=paste
 ScrollbackLines=50000
 Scrollbar=none
-Term=mintty-direct
+Term=xterm-256color
 ThemeFile=solarized-dark
-Transparency=high
+Transparency=40
+BoldAsFont=yes
