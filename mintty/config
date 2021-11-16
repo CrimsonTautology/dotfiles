@@ -8,7 +8,7 @@
 # --configdir="%USERPROFILE%\bin\dotfiles\mintty"
 
 AllowBlinking=yes
-BackspaceSendsBS=yes
+BackspaceSendsBS=no
 BellTaskbar=no
 BellType=0
 CopyAsHTML=no
@@ -28,3 +28,4 @@ Term=xterm-256color
 ThemeFile=solarized-dark
 Transparency=40
 BoldAsFont=yes
+DeleteSendsDEL=no
