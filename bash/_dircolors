@@ -125,10 +125,10 @@ TERM xterm-termite
 ## Special files
 
 # normal (nonfilename) text
-NORMAL 00;38
+NORMAL 01;34
 
 # default file color
-FILE 00
+FILE 01;34
 
 # directory
 DIR 04;36
@@ -322,8 +322,6 @@ EXEC 01;35
 *setup.py 01;36
 .ini 01;36
 .md 01;36
-*LICENSE 01;36
-*LICENSE.txt 01;36
 .plan 01;36
 .todo 01;36
 .toml 01;36
