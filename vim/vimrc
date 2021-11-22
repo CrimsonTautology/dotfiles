@@ -33,6 +33,7 @@ Plugin 'tpope/vim-fugitive', {'name': 'fugitive'}
 Plugin 'tpope/vim-repeat', {'name': 'repeat'}
 Plugin 'tpope/vim-surround', {'name': 'surround'}
 Plugin 'tpope/vim-unimpaired', {'name': 'unimpaired'}
+Plugin 'tpope/vim-endwise', {'name': 'endwise'}
 Plugin 'alvan/vim-closetag', {'name': 'closetag'}
 Plugin 'preservim/tagbar'
 Plugin 'chrisbra/Colorizer.git'
