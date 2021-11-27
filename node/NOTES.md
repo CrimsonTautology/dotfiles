@@ -26,3 +26,12 @@ nvm use --lts
 nvm use v8.2.1
 
 --------------------------------------------------------------------------------
+# angular
+https://angular.io/
+
+npm install -g @angular/cli
+
+## init
+ng new my-app
+cd my-app
+ng serve
