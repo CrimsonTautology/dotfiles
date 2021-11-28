@@ -25,6 +25,14 @@ nvm use node
 nvm use --lts
 nvm use v8.2.1
 
+
+--------------------------------------------------------------------------------
+# typescript
+https://www.typescriptlang.org/
+
+npm install -g typescript
+
+
 --------------------------------------------------------------------------------
 # angular
 https://angular.io/
