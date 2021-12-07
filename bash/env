@@ -3,3 +3,5 @@ export EDITOR="vim"
 export PATH=$HOME/bin/:$PATH
 
 export PAGER=less
+
+export LYNX_LSS=$HOME/bin/dotfiles/lynx/lynx.lss
