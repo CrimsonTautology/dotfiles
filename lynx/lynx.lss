@@ -12,30 +12,30 @@
 #
 # The next line (beginning with "em") means:  use bold if mono, otherwise
 # brightblue on <defaultbackground>
-em:bold:brightblue
-strong:bold:brightred
-b:bold:red
-i:bold:brightblue
+em:bold:brightgreen
+strong:bold:yellow
+b:bold:yellow
+i:bold:brightgreen
 a:bold:green
 img:dim:brown
-fig:normal:gray
+fig:normal:brown
 caption:reverse:brown
 hr:normal:yellow
-blockquote:normal:brightblue
-ul:normal:brown
+blockquote:normal:yellow
+ul:normal:magenta
 address:normal:magenta
 title:normal:magenta
-tt:dim:brightmagenta:black
-h1:bold:blue
+tt:dim:magenta:black
+h1:bold:brightgreen
 label:normal:magenta
-q:normal:brightmagenta
+q:normal:magenta
 small:dim:default
 big:bold:yellow
 sup:bold:yellow
 sub:dim:gray
 li:normal:magenta
 code:normal:cyan
-cite:normal:cyan
+cite:normal:magenta
 
 table:normal:brightcyan
 tr:bold:brown
@@ -50,7 +50,7 @@ br:normal:default
 #whereis- whereis search target
 #
 #normal:normal:default:blue
-alink:reverse:yellow:black
+alink:reverse:black:green
 status:reverse:black:brightblue
 alert:reverse:black:red
 whereis:reverse:black:yellow
