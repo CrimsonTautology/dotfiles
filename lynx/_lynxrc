@@ -25,7 +25,7 @@
 # accept all cookies if desired.  The default is "FALSE" which will
 # prompt for each cookie.  Set accept_all_cookies to "TRUE" to accept
 # all cookies.
-accept_all_cookies=on
+accept_all_cookies=TRUE
 
 # anonftp_password allows the user to tell Lynx to use the personal
 # email address as the password for anonymous ftp.  If no value is given,
@@ -108,7 +108,7 @@ cookie_accept_domains=
 
 # cookie_file specifies the file from which to read persistent cookies.
 # The default is ~/.lynx_cookies.
-cookie_file=
+cookie_file=~/.lynx_cookies
 
 # cookie_loose_invalid_domains, cookie_strict_invalid_domains, and
 # cookie_query_invalid_domains are comma-delimited lists of which domains
@@ -145,7 +145,7 @@ emacs_keys=off
 # or sending mail.  If no editor is specified, then file editing is disabled
 # unless it is activated from the command line, and the built-in line editor
 # will be used for sending mail.
-file_editor=
+file_editor=vim
 
 # The file_sorting_method specifies which value to sort on when viewing
 # file lists such as FTP directories.  The options are:
@@ -341,4 +341,3 @@ vi_keys=on
 # The visited_links setting controls how Lynx organizes the information
 # in the Visited Links Page.
 visited_links=LAST_REVERSED
-
