@@ -185,6 +185,7 @@ vnoremap < <gv
 
 " quick macro to the q registry, use shift+q to play back
 nnoremap Q @q
+vnoremap Q :normal @q<cr>
 
 " in insert mode ctrl+j inserts a new line at the end of the current line and
 " goes to the next line;  this allows you to jump to the next line while in
