@@ -1,1 +1,1 @@
-let g:syntastic_typescript_checkers = ['tslint']
+let g:syntastic_typescript_checkers = ['eslint']
