@@ -1,2 +1,6 @@
+# vim: syntax=readline
+
 TAB: menu-complete
 "\e[Z": complete
+
+set colored-stats On
