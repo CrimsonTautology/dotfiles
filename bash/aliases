@@ -1,33 +1,13 @@
 #!/bin/sh
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto -p'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-#Default command overrides
+# default command overrides
 alias rm='rm -i'
-
-alias vrep='grep -v'
 alias less='less -MR'
+alias ls='ls --color=auto -p'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
-alias mdy='date +%m%d%y'
-alias mdY='date +%m%d%Y'
-alias ymd='date +%y%m%d'
-alias Ymd='date +%Y%m%d'
-
-# directory shortcuts
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
 
 # vim
 alias vimn='vim -c "NERDTree" '
-alias gvimn='gvim -c "NERDTree" '
-alias vundle='vim +BundleInstall +qall'
