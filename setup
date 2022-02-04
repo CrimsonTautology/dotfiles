@@ -4,6 +4,7 @@ exit 1
 # setup ssh
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
+ssh-keygen -t rsa -b 2048 -C "<comment>"
 chmod 600 ~/.ssh/id_rsa
 chmod 644 ~/.ssh/id_rsa.pub
 chmod 644 ~/.ssh/authorized_keys
