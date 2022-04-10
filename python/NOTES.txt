@@ -72,6 +72,10 @@ pip install pipx
 pipx ensurepath
 pipx completions
 
+# uninstall
+pip uninstall pipx
+pip uninstall argcomplete
+
 ## add to .bashrc
 eval "$(register-python-argcomplete pipx)"
 
