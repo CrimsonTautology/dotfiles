@@ -1,7 +1,10 @@
-ipython
-jedi
-pylint
-pytest
 cookiecutter
-flake8
+poetry
 black
+pylint
+flake8
+bandit
+vulture
+ipython
+pytest
+jedi
