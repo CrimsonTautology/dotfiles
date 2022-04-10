@@ -22,7 +22,7 @@ pyenv install --list
 pyenv install {version}
 pyenv versions
 python --version
-python uninstall {version}
+pyenv uninstall {version}
 
 # set environment
 pyenv global {version}
