@@ -56,6 +56,7 @@ set encoding=utf-8
 set number  "unimpaired: *yon*
 set norelativenumber  "unimpaired: *yor*
 set nowrap  "unimpaired: *yow*
+set linebreak
 set nospell  "unimpaired: *yos*
 set virtualedit=  "unimpaired: *yov*
 set splitbelow
