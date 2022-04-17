@@ -60,6 +60,7 @@ pipx install black
 pipx install cookiecutter
 pipx install flake8
 pipx install ipython
+pipx install mypy
 pipx install poetry
 pipx install pylint
 pipx install pytest

@@ -152,6 +152,13 @@ flake8 --disable-noqa
 flake8 --statistics
 
 --------------------------------------------------------------------------------
+# mypy - static type checker
+http://mypy-lang.org/
+
+# install
+pipx install mypy
+
+--------------------------------------------------------------------------------
 # bandit - security issues
 https://pypi.org/project/bandit/
 
