@@ -67,6 +67,7 @@ pipx install pytest
 pipx install vulture
 
 ln -sf ~/bin/dotfiles/python/ipython_config.py ~/.ipython/profile_default/ipython_config.py
+ln -sf ~/bin/dotfiles/python/_flake8 ~/.flake8
 
 
 # setup node.js

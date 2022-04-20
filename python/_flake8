@@ -1,0 +1,17 @@
+# vim: set ft=cfg
+
+[flake8]
+# https://www.flake8rules.com/
+# intentionally ignore E203, W503 for black compatability
+ignore =
+  E203,
+  W503,
+exclude = 
+  .svn,
+  CVS,
+  .bzr,
+  .hg,
+  .git,
+  __pycache__
+max-line-length = 160
+max-complexity = 10
