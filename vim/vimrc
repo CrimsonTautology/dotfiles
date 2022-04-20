@@ -98,7 +98,8 @@ set shiftwidth=2
 " colorscheme
 set background=dark  "unimpaired: *yob*
 try
-  colorscheme solarized
+  colorscheme solarized8
+  let g:solarized_termtrans=1
 catch
 endtry
 

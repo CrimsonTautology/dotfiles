@@ -20,8 +20,7 @@ if has("gui_running")
   " colorscheme;  use light scheme for gvim
   set background=light  "unimpaired: *yob*
   try
-    colorscheme solarized
-    let g:solarized_menu=0
+    colorscheme solarized8
   catch
   endtry
 
