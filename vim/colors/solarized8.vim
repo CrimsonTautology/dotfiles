@@ -908,9 +908,9 @@ if s:t_Co >= 256
     elseif get(g:, 'solarized_statusline', '') ==# 'flat'
       hi StatusLine ctermfg=236 ctermbg=254 cterm=reverse
       hi StatusLineNC ctermfg=236 ctermbg=247 cterm=reverse
-      hi TabLineSel ctermfg=254 ctermbg=236 cterm=NONE
       hi TabLine ctermfg=242 ctermbg=236 cterm=NONE
       hi TabLineFill ctermfg=242 ctermbg=236 cterm=NONE
+      hi TabLineSel ctermfg=254 ctermbg=236 cterm=NONE
       hi VertSplit ctermfg=242 ctermbg=236 cterm=NONE
     else
       hi StatusLine ctermfg=246 ctermbg=236 cterm=reverse
@@ -920,10 +920,10 @@ if s:t_Co >= 256
       hi TabLineSel ctermfg=246 ctermbg=236 cterm=reverse
       hi VertSplit ctermfg=236 ctermbg=242 cterm=NONE
     endif
-    hi ColorColumn ctermfg=NONE ctermbg=236 cterm=NONE
+    hi ColorColumn ctermfg=NONE ctermbg=0 cterm=NONE "edit: ctermbg 236 -> 0
     hi Conceal ctermfg=32 ctermbg=NONE cterm=NONE
-    hi CursorColumn ctermfg=NONE ctermbg=236 cterm=NONE
-    hi CursorLine ctermfg=NONE ctermbg=236 cterm=NONE
+    hi CursorColumn ctermfg=NONE ctermbg=0 cterm=NONE "edit: ctermbg 236 -> 0
+    hi CursorLine ctermfg=NONE ctermbg=0 cterm=NONE "edit: ctermbg 236 -> 0
     hi Directory ctermfg=32 ctermbg=NONE cterm=NONE
     hi EndOfBuffer ctermfg=NONE ctermbg=NONE cterm=NONE
     hi ErrorMsg ctermfg=160 ctermbg=230 cterm=reverse
@@ -931,7 +931,7 @@ if s:t_Co >= 256
     hi MatchParen ctermfg=230 ctermbg=236 cterm=bold
     hi ModeMsg ctermfg=32 ctermbg=NONE cterm=NONE
     hi MoreMsg ctermfg=32 ctermbg=NONE cterm=NONE
-    hi Pmenu ctermfg=247 ctermbg=236 cterm=NONE
+    hi Pmenu ctermfg=247 ctermbg=0 cterm=NONE "edit: ctermbg 236 -> 0
     hi PmenuSbar ctermfg=NONE ctermbg=242 cterm=NONE
     hi PmenuSel ctermfg=254 ctermbg=66 cterm=NONE
     hi PmenuThumb ctermfg=NONE ctermbg=246 cterm=NONE
