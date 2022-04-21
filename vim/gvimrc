@@ -21,6 +21,7 @@ if has("gui_running")
   set background=light  "unimpaired: *yob*
   try
     colorscheme solarized8
+    let g:solarized_use16=0
   catch
   endtry
 
