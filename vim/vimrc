@@ -34,7 +34,6 @@ Plugin 'tpope/vim-repeat', {'name': 'repeat'}
 Plugin 'tpope/vim-surround', {'name': 'surround'}
 Plugin 'tpope/vim-unimpaired', {'name': 'unimpaired'}
 Plugin 'tpope/vim-endwise', {'name': 'endwise'}
-Plugin 'tpope/vim-speeddating', {'name': 'speeddating'}
 Plugin 'alvan/vim-closetag', {'name': 'closetag'}
 Plugin 'preservim/tagbar'
 Plugin 'chrisbra/Colorizer.git'
@@ -283,7 +282,4 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
-" }}}
-" Speed Dating {{{
-autocmd VimEnter * :SpeedDatingFormat %m/%d/%Y
 " }}}
