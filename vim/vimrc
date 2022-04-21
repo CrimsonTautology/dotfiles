@@ -96,12 +96,18 @@ set shiftwidth=2
 
 " colorscheme
 set background=dark  "unimpaired: *yob*
+if (has("termguicolors"))
+  set termguicolors
+endif
 try
-  colorscheme solarized8
-  let g:solarized_termtrans=1
-  let g:solarized_old_cursor_style=1
-  let g:solarized_use16=1
-  let g:solarized_extra_hi_groups=1
+  let g:gruvbox_italic=1
+  let g:gruvbox_transparent_bg=1
+  let g:gruvbox_contrast_dark="hard"
+  let g:gruvbox_contrast_light="hard"
+  let g:gruvbox_improved_strings=0
+  let g:gruvbox_improved_warnings=1
+  let g:gruvbox_invert_selection=0
+  colorscheme gruvbox
 catch
 endtry
 
