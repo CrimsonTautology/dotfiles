@@ -104,9 +104,12 @@ try
   let g:gruvbox_transparent_bg=1
   let g:gruvbox_contrast_dark="hard"
   let g:gruvbox_contrast_light="hard"
-  let g:gruvbox_improved_strings=1
+  let g:gruvbox_improved_strings=0
   let g:gruvbox_improved_warnings=1
-  let g:gruvbox_invert_selection=1
+  let g:gruvbox_invert_selection=0
+  let g:gruvbox_number_column="bg1"
+  let g:gruvbox_vert_split="bg2"
+  let g:gruvbox_color_column="bg1"
   colorscheme gruvbox
 catch
 endtry
