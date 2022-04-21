@@ -100,6 +100,7 @@ set background=dark  "unimpaired: *yob*
 try
   colorscheme solarized8
   let g:solarized_termtrans=1
+  let g:solarized_use16=1
   let g:solarized_extra_hi_groups=1
 catch
 endtry
