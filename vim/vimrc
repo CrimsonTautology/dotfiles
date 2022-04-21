@@ -281,3 +281,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
 " }}}
+" Speed Dating {{{
+autocmd VimEnter * :SpeedDatingFormat %m/%d/%Y
+" }}}
