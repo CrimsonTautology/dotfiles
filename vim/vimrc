@@ -110,7 +110,8 @@ try
   let g:gruvbox_number_column="bg1"
   let g:gruvbox_vert_split="bg2"
   let g:gruvbox_color_column="bg1"
-  colorscheme gruvbox
+  "colorscheme gruvbox
+  colorscheme solarized
 catch
 endtry
 
