@@ -277,8 +277,8 @@ let NERDTreeDirArrows=1
 
 let NERDTreeIgnore=[ '\.hi$', '\.o$', '\.sw.$', '\~$', '\.smx$', '\.exe$', '\.beam$', '\~$' ]
 
-let g:NERDTreeDirArrowExpandable="\U25B6"
-let g:NERDTreeDirArrowCollapsible="\U25BC"
+let g:NERDTreeDirArrowExpandable="\u25B6"
+let g:NERDTreeDirArrowCollapsible="\u25BC"
 
 " }}}
 " Tagbar {{{
@@ -292,5 +292,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
+
+"let g:syntastic_error_symbol = ""
+let g:syntastic_style_error_symbol = "\u274C"
+"let g:syntastic_warning_symbol = ""
+let g:syntastic_style_warning_symbol = "\u26A0"
 
 " }}}
