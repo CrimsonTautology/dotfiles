@@ -659,6 +659,10 @@ exe "hi! rubyDefine"     . s:fg_base1  .s:bg_back   .s:fmt_bold
 "hi! link rubyClassVariable     Identifier
 "hi! link rubyConstant          Type
 "}}}
+" python highlighting "{{{
+" ---------------------------------------------------------------------
+hi! link pythonDocString Comment
+"}}}
 " haskell syntax highlighting"{{{
 " ---------------------------------------------------------------------
 " For use with syntax/haskell.vim : Haskell Syntax File
