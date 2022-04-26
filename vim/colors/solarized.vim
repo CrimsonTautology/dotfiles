@@ -394,8 +394,12 @@ exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_back
 exe "hi! Comment"        .s:fmt_ital   .s:fg_base01 .s:bg_none
 "       *Comment         any comment
 
-exe "hi! Constant"       .s:fmt_bold   .s:fg_base0  .s:bg_none
+exe "hi! Constant"       .s:fmt_none   .s:fg_green  .s:bg_none
+exe "hi! Number"         .s:fmt_none   .s:fg_yellow .s:bg_none
+exe "hi! Float"          .s:fmt_none   .s:fg_yellow .s:bg_none
 exe "hi! String"         .s:fmt_none   .s:fg_cyan   .s:bg_none
+exe "hi! Character"      .s:fmt_bold   .s:fg_cyan   .s:bg_none
+exe "hi! Boolean"        .s:fmt_bold   .s:fg_green  .s:bg_none
 "       *Constant        any constant
 "        String          a string constant: "this is a string"
 "        Character       a character constant: 'c', '\n'
@@ -418,7 +422,7 @@ exe "hi! Operator"       .s:fmt_bold   .s:fg_yellow   .s:bg_none
 "        Keyword         any other keyword
 "        Exception       try, catch, throw
 
-exe "hi! PreProc"        .s:fmt_none   .s:fg_orange .s:bg_none
+exe "hi! PreProc"        .s:fmt_bold   .s:fg_orange .s:bg_none
 "       *PreProc         generic Preprocessor
 "        Include         preprocessor #include
 "        Define          preprocessor #define
@@ -485,7 +489,7 @@ exe "hi! Title"          .s:fmt_bold   .s:fg_orange .s:bg_none
 exe "hi! VisualNOS"      .s:fmt_stnd   .s:fg_none   .s:bg_base02 .s:fmt_revbb
 exe "hi! WarningMsg"     .s:fmt_bold   .s:fg_red    .s:bg_none
 exe "hi! WildMenu"       .s:fmt_none   .s:fg_base2  .s:bg_base02 .s:fmt_revbb
-exe "hi! Folded"         .s:fmt_bold   .s:fg_base0  .s:bg_base02  .s:sp_base03
+exe "hi! Folded"         .s:fmt_undb   .s:fg_base0  .s:bg_base02 .s:sp_base03
 exe "hi! FoldColumn"     .s:fmt_none   .s:fg_base0  .s:bg_base02
 
 if (g:solarized_diffmode=="high")
