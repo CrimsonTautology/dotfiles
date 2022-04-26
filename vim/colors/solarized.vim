@@ -156,8 +156,8 @@ let colors_name = "solarized"
     let s:gui_violet      = "#6c71c4"
     let s:gui_blue        = "#268bd2"
     let s:gui_cyan        = "#2aa198"
-    let s:gui_green       = "#719e07" "experimental
-    "let s:gui_green       = "#859900" "original
+    "let s:gui_green       = "#719e07" "experimental
+    let s:gui_green       = "#859900" "original
 
     let s:term_mode       = "cterm"
     let s:term_base03      = "8"
@@ -394,7 +394,8 @@ exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_back
 exe "hi! Comment"        .s:fmt_ital   .s:fg_base01 .s:bg_none
 "       *Comment         any comment
 
-exe "hi! Constant"       .s:fmt_none   .s:fg_cyan   .s:bg_none
+exe "hi! Constant"       .s:fmt_bold   .s:fg_base0  .s:bg_none
+exe "hi! String"         .s:fmt_none   .s:fg_cyan   .s:bg_none
 "       *Constant        any constant
 "        String          a string constant: "this is a string"
 "        Character       a character constant: 'c', '\n'
@@ -403,11 +404,12 @@ exe "hi! Constant"       .s:fmt_none   .s:fg_cyan   .s:bg_none
 "        Float           a floating point constant: 2.3e10
 
 exe "hi! Identifier"     .s:fmt_none   .s:fg_blue   .s:bg_none
+exe "hi! Function"       .s:fmt_bold   .s:fg_blue   .s:bg_none
 "       *Identifier      any variable name
 "        Function        function name (also: methods for classes)
 "
 exe "hi! Statement"      .s:fmt_bold   .s:fg_magenta  .s:bg_none
-exe "hi! Operator"       .s:fmt_bold   .s:fg_blue  .s:bg_none
+exe "hi! Operator"       .s:fmt_bold   .s:fg_yellow   .s:bg_none
 "       *Statement       any statement
 "        Conditional     if, then, else, endif, switch, etc.
 "        Repeat          for, do, while, etc.

@@ -216,13 +216,15 @@ nnoremap <silent> <leader>dt o<c-r>=strftime("%m/%d/%Y %r")<CR>
 nnoremap <silent> <leader>di o<c-r>=strftime("%F")<CR>
 
 " show highlighting groups for current word
-nnoremap <silent> <leader>sy :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
+nnoremap <silent> <leader>hi :call SynStack()<CR>
+function! SynStack ()
+  for i1 in synstack(line("."), col("."))
+    let i2 = synIDtrans(i1)
+    let n1 = synIDattr(i1, "name")
+    let n2 = synIDattr(i2, "name")
+    echo n1 "->" n2
+  endfor
+endfunction
 
 "------------------------------------------------------------------------------
 " Function Keys
