@@ -96,6 +96,9 @@ set shiftwidth=2
 
 " colorscheme
 set background=dark  "unimpaired: *yob*
+if (has("termguicolors"))
+  set termguicolors
+endif
 try
   colorscheme solarized
 catch
