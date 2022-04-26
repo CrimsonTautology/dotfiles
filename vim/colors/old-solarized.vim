@@ -543,8 +543,8 @@ exe "hi! Comment"        .s:fmt_ital   .s:fg_green .s:bg_none
 "       *Comment         any comment
 
 exe "hi! Constant"       .s:fmt_none   .s:fg_blue   .s:bg_none
-exe "hi! Number"       .s:fmt_none   .s:fg_blue   .s:bg_none
-exe "hi! Float"       .s:fmt_none   .s:fg_blue   .s:bg_none
+exe "hi! Number"         .s:fmt_none   .s:fg_blue   .s:bg_none
+exe "hi! Float"          .s:fmt_none   .s:fg_blue   .s:bg_none
 "       *Constant        any constant
 "        String          a string constant: "this is a string"
 "        Character       a character constant: 'c', '\n'
@@ -553,12 +553,12 @@ exe "hi! Float"       .s:fmt_none   .s:fg_blue   .s:bg_none
 "        Float           a floating point constant: 2.3e10
 
 exe "hi! Identifier"     .s:fmt_none   .s:fg_cyan   .s:bg_none
-exe "hi! Function"     .s:fmt_ital   .s:fg_cyan   .s:bg_none
+exe "hi! Function"       .s:fmt_ital   .s:fg_cyan   .s:bg_none
 "       *Identifier      any variable name
 "        Function        function name (also: methods for classes)
 "
 exe "hi! Statement"      .s:fmt_bold   .s:fg_magenta  .s:bg_none
-exe "hi! Operator"      .s:fmt_bold   .s:fg_blue  .s:bg_none
+exe "hi! Operator"       .s:fmt_bold   .s:fg_blue  .s:bg_none
 "       *Statement       any statement
 "        Conditional     if, then, else, endif, switch, etc.
 "        Repeat          for, do, while, etc.

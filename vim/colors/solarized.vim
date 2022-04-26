@@ -394,8 +394,12 @@ exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_back
 exe "hi! Comment"        .s:fmt_ital   .s:fg_base01 .s:bg_none
 "       *Comment         any comment
 
-exe "hi! Constant"       .s:fmt_bold   .s:fg_base0  .s:bg_none
+exe "hi! Constant"       .s:fmt_none   .s:fg_green  .s:bg_none
+exe "hi! Number"         .s:fmt_none   .s:fg_yellow .s:bg_none
+exe "hi! Float"          .s:fmt_none   .s:fg_yellow .s:bg_none
 exe "hi! String"         .s:fmt_none   .s:fg_cyan   .s:bg_none
+exe "hi! Character"      .s:fmt_bold   .s:fg_cyan   .s:bg_none
+exe "hi! Boolean"        .s:fmt_bold   .s:fg_green  .s:bg_none
 "       *Constant        any constant
 "        String          a string constant: "this is a string"
 "        Character       a character constant: 'c', '\n'
