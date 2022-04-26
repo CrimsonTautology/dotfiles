@@ -124,6 +124,10 @@ else
   set ttymouse=xterm2
 end
 
+" enable undercurl in mintty
+let &t_Cs = "\e[4:3m"
+let &t_Ce = "\e[4:0m"
+
 " automatically set working directory to current file
 set autochdir
 
