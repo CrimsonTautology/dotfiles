@@ -24,4 +24,5 @@ let g:python_version_2 = 0
 let b:python_version_2 = 0
 let g:python_highlight_all = 1
 let g:python_highlight_file_headers_as_comments	= 0
+let g:python_highlight_space_errors = 0
 let g:python_slow_sync = 1
