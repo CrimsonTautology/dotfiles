@@ -89,10 +89,23 @@ if has("gui")
   inoremap <M-Space> <C-O>:simalt ~<CR>
   cnoremap <M-Space> <C-C>:simalt ~<CR>
 
-  " Alt-Enter maximizes window
-  noremap <M-Enter> :simalt ~x<CR>
-  inoremap <M-Enter> <C-O>:simalt ~x<CR>
-  cnoremap <M-Enter> <C-C>:simalt ~x<CR>
+  " Alt-Enter maximizes/restores window
+  let g:gui_maximize_restore_toggle = 0
+  function! MaximizeRestoreToggle()
+    " alternates between maximizing and restoring
+    " TODO:  still have an issue where if window starts maximized you'll need
+    " to do Alt-Enter twice.
+    let g:gui_maximize_restore_toggle = !g:gui_maximize_restore_toggle
+    if g:gui_maximize_restore_toggle
+      simalt ~x
+    else
+      simalt ~R
+    endif
+  endfunction
+
+  noremap <M-Enter> :call MaximizeRestoreToggle()<CR>
+  inoremap <M-Enter> <C-O>:call MaximizeRestoreToggle()<CR>
+  cnoremap <M-Enter> <C-C>:call MaximizeRestoreToggle()<CR>
 endif
 
 " CTRL-A is Select all
