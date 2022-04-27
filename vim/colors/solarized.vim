@@ -124,7 +124,7 @@ let g:solarized_diffmode = get(g:, "solarized_diffmode", "normal")
 let g:solarized_term_bold_as_bright = get(g:, "solarized_term_bold_as_bright", 1)
 let g:solarized_termtrans = get(g:, "solarized_termtrans", 1)
 let g:solarized_visibility = get(g:, "solarized_visibility", "normal")
-let g:solarized_vert_split_bg_trans = get(g:, "solarized_vert_split_bg_trans", 1)
+let g:solarized_vert_split_bg_trans = get(g:, "solarized_vert_split_bg_trans", 0)
 
 "}}}
 " Colorscheme initialization "{{{
