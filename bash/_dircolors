@@ -131,12 +131,12 @@ NORMAL 01;34
 FILE 01;34
 
 # directory
-DIR 04;36
+DIR 04;34
 
 # additional directory types for sticky and other writable attributes
-STICKY 04;36
-STICKY_OTHER_WRITABLE 04;36
-OTHER_WRITABLE 04;36
+STICKY 04;34
+STICKY_OTHER_WRITABLE 04;34
+OTHER_WRITABLE 04;34
 
 # symbolic link
 LINK 04;32
@@ -153,54 +153,54 @@ BLK 37;44
 CHR 37;44
 
 # executable files
-EXEC 01;35
-.cmd 01;35
-.exe 01;35
-.com 01;35
-.bat 01;35
-.reg 01;35
+EXEC 01;31
+.cmd 01;31
+.exe 01;31
+.com 01;31
+.bat 01;31
+.reg 01;31
 
 # archived or compressed files
-.7z 00;31
-.Z 00;31
-.ace 00;31
-.apk 00;31
-.arj 00;31
-.bin 00;31
-.bz 00;31
-.bz2 00;31
-.cab 00;31
-.cpio 00;31
-.deb 00;31
-.dmg 00;31
-.dz 00;31
-.gem 00;31
-.gz 00;31
-.iso 00;31
-.jar 00;31
-.lz 00;31
-.lzh 00;31
-.lzma 00;31
-.msi 00;31
-.rar 00;31
-.rpm 00;31
-.rz 00;31
-.tar 00;31
-.taz 00;31
-.tbz 00;31
-.tbz2 00;31
-.tgz 00;31
-.tlz 00;31
-.tx 00;31
-.txz 00;31
-.tz 00;31
-.war 00;31
-.xpi 00;31
-.xz 00;31
-.z 00;31
-.zip 00;31
-.zoo 00;31
-.zst 00;31
+.7z 00;35
+.Z 00;35
+.ace 00;35
+.apk 00;35
+.arj 00;35
+.bin 00;35
+.bz 00;35
+.bz2 00;35
+.cab 00;35
+.cpio 00;35
+.deb 00;35
+.dmg 00;35
+.dz 00;35
+.gem 00;35
+.gz 00;35
+.iso 00;35
+.jar 00;35
+.lz 00;35
+.lzh 00;35
+.lzma 00;35
+.msi 00;35
+.rar 00;35
+.rpm 00;35
+.rz 00;35
+.tar 00;35
+.taz 00;35
+.tbz 00;35
+.tbz2 00;35
+.tgz 00;35
+.tlz 00;35
+.tx 00;35
+.txz 00;35
+.tz 00;35
+.war 00;35
+.xpi 00;35
+.xz 00;35
+.z 00;35
+.zip 00;35
+.zoo 00;35
+.zst 00;35
 
 # multi-media formats
 .aac 00;33
@@ -331,26 +331,26 @@ EXEC 01;35
 .csv 01;36
 
 # Source files
-.bash 00;34
-.c 00;34
-.cpp 00;34
-.cxx 00;34
-.erb 00;34
-.hs 00;34
-.java 00;34
-.php 00;34
-.pl 00;34
-.py 00;34
-.rb 00;34
-.sh 00;34
-.sp 00;34
-.vim 00;34
+.bash 00;36
+.c 00;36
+.cpp 00;36
+.cxx 00;36
+.erb 00;36
+.hs 00;36
+.java 00;36
+.php 00;36
+.pl 00;36
+.py 00;36
+.rb 00;36
+.sh 00;36
+.sp 00;36
+.vim 00;36
 
 # custom preference
-.inc 07;34
-.h 07;34
-.hpp 07;34
-*__init__.py 07;34
+.inc 07;36
+.h 07;36
+.hpp 07;36
+*__init__.py 07;36
 
 # unimportant files such as logs and backups
 *# 01;32

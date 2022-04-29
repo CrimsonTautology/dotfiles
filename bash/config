@@ -28,6 +28,6 @@ BCYN="\[\033[46m\]" # background cyan
 BWHT="\[\033[47m\]" # background white
 
 # command line prompt
-PS1="\e]0;\u@\h \w\a$FBLE\u$FRED@$FBLE\h $FCYN\w $FGRN\$$RS\n"
+PS1="\e]0;\u@\h \w\a$FCYN\u$FRED@$FCYN\h $FBLE\w $FGRN\$$RS\n"
 PS2="$FGRN> $RS"
 PS4="$FGRN+ $RS"
