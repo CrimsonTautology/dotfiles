@@ -30,3 +30,10 @@ alias sggf='screen -x fof_gg'
 alias sggf2='screen -x fof_2gg'
 alias sfoz='screen -x fof_foz'
 alias smkf='screen -x fof_mk'
+
+# ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# python
+alias py.test='python3 -m pytest'

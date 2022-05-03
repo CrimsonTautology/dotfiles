@@ -36,3 +36,6 @@ amp () (
 gli () {
     cmd.exe /C start $GITLAB_URL/$GITLAB_PROJECT/issues/$1
 }
+
+# enable ipython
+alias ipython='python3 -m IPython'

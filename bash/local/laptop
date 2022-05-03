@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+. ~/bin/dotfiles/python/pyenv.sh
+. ~/bin/dotfiles/python/pipx.sh
+. ~/bin/dotfiles/node/nvm.sh
+
 # directory shortcuts
 export USER_DIR='/mnt/c/Users/bille'
 alias bill='cd $USER_DIR'
