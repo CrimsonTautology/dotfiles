@@ -1,6 +1,4 @@
-#!/bin/sh
-
-# add `. ~/bin/dotfiles/python/_pyenv` to ~/.bashrc
+#!/usr/bin/env sh
 
 # setup pyenv
 export PYENV_ROOT="$HOME/.pyenv"

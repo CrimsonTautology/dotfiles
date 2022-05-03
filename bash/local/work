@@ -1,4 +1,8 @@
-#!/bin/sh
+#!/usr/bin/env sh
+
+. ~/bin/dotfiles/python/pyenv.sh
+. ~/bin/dotfiles/python/pipx.sh
+. ~/bin/dotfiles/node/nvm.sh
 
 # By default Vagrant will not access features available on the Windows system
 # from within the WSL. This means the VirtualBox and Hyper-V providers will not

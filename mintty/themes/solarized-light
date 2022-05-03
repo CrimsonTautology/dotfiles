@@ -19,4 +19,4 @@ BoldCyan=        147, 161, 161
 White=           238, 232, 213
 BoldWhite=       253, 246, 227
 
-# vim: syn=dosini:et
+# vi: syn=dosini:et

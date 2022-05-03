@@ -373,3 +373,5 @@ EXEC 01;31
 .temp 01;32
 .tmp 01;32
 .todo 01;32
+
+# vi: filetype=dircolors

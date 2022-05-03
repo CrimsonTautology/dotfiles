@@ -1,6 +1,4 @@
-#!/bin/sh
-
-# add `. ~/bin/dotfiles/node/_nvm` to ~/.bashrc
+#!/usr/bin/env sh
 
 # setup nvm
 export NVM_DIR="$HOME/.nvm"

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # directory shortcuts
 export USER_DIR='/mnt/c/Users/bille'

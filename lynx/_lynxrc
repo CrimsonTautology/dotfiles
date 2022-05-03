@@ -341,3 +341,5 @@ vi_keys=on
 # The visited_links setting controls how Lynx organizes the information
 # in the Visited Links Page.
 visited_links=LAST_REVERSED
+
+# vi: filetype=lynx
