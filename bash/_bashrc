@@ -8,5 +8,6 @@
 . ~/bin/dotfiles/bash/aliases
 . ~/bin/dotfiles/bash/functions
 
-. ~/bin/dotfiles/git/git.sh
 . ~/bin/dotfiles/git/git-completion.bash
+. ~/bin/dotfiles/git/git-prompt.sh
+. ~/bin/dotfiles/git/git.sh
