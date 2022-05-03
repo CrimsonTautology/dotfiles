@@ -43,7 +43,7 @@ sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g
   libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 curl https://pyenv.run | bash
-echo ". ~/bin/dotfiles/python/_pyenv" >> ~/.bashrc
+echo ". ~/bin/dotfiles/python/pyenv.sh" >> ~/.bashrc
 # restart needed
 pyenv update
 pyenv install --list
@@ -51,7 +51,7 @@ pyenv install --list
 # pyenv global {version}
 
 pip install pipx
-echo ". ~/bin/dotfiles/python/_pipx" >> ~/.bashrc
+echo ". ~/bin/dotfiles/python/pipx.sh" >> ~/.bashrc
 pipx ensurepath
 pipx completions
 
@@ -72,7 +72,7 @@ ln -sf ~/bin/dotfiles/python/_flake8 ~/.flake8
 
 # setup node.js
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-echo ". ~/bin/dotfiles/node/_nvm" >> ~/.bashrc
+echo ". ~/bin/dotfiles/node/nvm.sh" >> ~/.bashrc
 # restart needed
 nvm install --lts
 
