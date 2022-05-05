@@ -144,7 +144,11 @@ set backupcopy=yes
 "  :20   up to 20 lines of command-line history will be remembered
 "  %     saves and restores the buffer list
 "  n...  where to save the viminfo files
-set viminfo='100,\"100,:20,%,n~/.viminfo
+set viminfo='100,\"100,:20,%
+if !has('nvim')
+  " skip if in neovim
+  set viminfo+=n~/.viminfo
+endif
 
 " recursivly go up until home directory to find a tags file
 set tags^=tags;~,.git/tags;~
