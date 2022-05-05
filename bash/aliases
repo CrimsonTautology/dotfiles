@@ -2,12 +2,8 @@
 
 # default command overrides
 alias rm='rm -i'
-alias less='less -MR'
 alias ls='ls --color=auto -p'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 
 
 # vim
-alias vimn='vim -c "NERDTree" '
+alias vimn='vim -c "NERDTree"'

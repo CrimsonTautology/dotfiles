@@ -1,8 +1,11 @@
 #!/usr/bin/env sh
 
-export EDITOR="vim"
 export PATH=$HOME/bin/:$PATH
 
+export EDITOR=vim
+export VISUAL=vim
 export PAGER=less
 
 export LYNX_LSS=$HOME/bin/dotfiles/lynx/lynx.lss
+export GREP_OPTIONS='--color=always'
+export LESS='-MR'
