@@ -118,10 +118,12 @@ let &t_ti.="\e[1 q"
 
 " enable mouse in mintty
 set mouse=a
-if has("mouse_sgr")
-  set ttymouse=sgr
-else
-  set ttymouse=xterm2
+if has("ttymouse")
+  if has("mouse_sgr")
+    set ttymouse=sgr
+  else
+    set ttymouse=xterm2
+  end
 end
 
 " enable undercurl in mintty
