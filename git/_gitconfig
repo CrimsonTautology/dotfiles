@@ -2,6 +2,9 @@
 	name = Bill
 	email = billehs+github@gmail.com
 
+[github]
+	user = CrimsonTautology
+
 [alias]
   ctags = !.git/hooks/ctags
   ignored = !git ls-files -v | grep "^[[:lower:]]"
