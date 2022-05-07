@@ -1,6 +1,8 @@
 # For documentation, see https://www.sumatrapdfreader.org/settings/settings3.2.html
 # copy these settings over to /AppData/Local/SumatraPDF/SumatraPDF-settings.txt
 # or just copy and paste them using Settings -> Advanced Options
+#
+# vi: filetype=dosini
 
 
 # background color of the non-document windows, traditionally yellow
@@ -35,7 +37,7 @@ ShowFavorites = true
 ShowToc = true
 
 # if true, we show a list of frequently read documents when no document is loaded
-ShowStartPage = false
+ShowStartPage = true
 
 ################################################################################
 # if true, a document will be reloaded automatically whenever it's changed (currently doesn't work for documents shown in the ebook UI) (introduced in version 2.5)
@@ -94,7 +96,7 @@ DefaultZoom = fit width
 WindowState = 1
 
 # default position (x, y) and size (width, height) of the window
-WindowPos = 1943 8 814 900
+WindowPos = -7 0 876 1047
 
 # width of favorites/bookmarks sidebar (if shown)
 SidebarDx = 268
@@ -104,6 +106,8 @@ TocDy = 0
 
 # if true, documents are opened in tabs instead of new windows (introduced in version 3.0)
 UseTabs = true
+
+TreeFontSize = 0
 
 ################################################################################
 # customization options for PDF, XPS, DjVu and PostScript UI
@@ -156,6 +160,10 @@ ChmUI [
 ExternalViewers [
 ]
 
+Annotations [
+	HighlightColor = #ffff00
+]
+
 ################################################################################
 # these override the default settings in the Print dialog
 PrinterDefaults [
@@ -177,3 +185,22 @@ ForwardSearch [
 	# if true, highlight remains visible until the next mouse click (instead of fading away immediately)
 	HighlightPermanent = true
 ]
+
+################################################################################
+# custom keyboard shortcuts
+# https://www.sumatrapdfreader.org/docs/Customizing-keyboard-shortcuts
+# https://github.com/sumatrapdfreader/sumatrapdf/blob/master/src/Commands.h#L9
+Shortcuts [
+	[
+		Cmd = CmdScrollUpHalfPage
+		Key = Ctrl + U
+	]
+	[
+		Cmd = CmdScrollDownHalfPage
+		Key = Ctrl + D
+	]
+]
+
+# end custom settings
+################################################################################
+# file and session data begin here
