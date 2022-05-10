@@ -2,7 +2,7 @@
 if has("gui_running")
 
   " my Custom MSWin settings
-  source $HOME/.vim/mswin_custom.vim
+  source $DOTVIM/mswin_custom.vim
 
   " some corrections to make mswin behave
   set selectmode=

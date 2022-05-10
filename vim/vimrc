@@ -1,18 +1,21 @@
 " vim:foldmethod=marker:foldlevel=0
 set nocompatible
 
+" path to the user's vim folder (~/.vim)
+let $DOTVIM = $HOME . '/.vim'
+
 " Windows {{{
 
 if has('win32') || has('win64')
-  " on windows add $HOME/.vim and runtimepath
-  set runtimepath=$HOME/.vim,$VIMRUNTIME,$HOME/.vim/after
+  " on windows add $DOTVIM and runtimepath
+  set runtimepath=$DOTVIM,$VIMRUNTIME,$DOTVIM/after
 endif
 
 " }}}
 " Vundle {{{
 
 filetype off
-set runtimepath+=~/.vim/bundle/Vundle.vim
+set runtimepath+=$DOTVIM/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "
@@ -134,7 +137,7 @@ let &t_Ce = "\e[4:0m"
 set autochdir
 
 " prevent vim from generating swap and backup files in working directory
-set directory=$HOME/.vim/swapfiles//
+set directory=$DOTVIM/swapfiles//
 set backupcopy=yes
 
 
@@ -147,7 +150,7 @@ set backupcopy=yes
 set viminfo='100,\"100,:20,%
 if !has('nvim')
   " skip if in neovim
-  set viminfo+=n~/.viminfo
+  set viminfo+=n$DOTVIM/.viminfo
 endif
 
 " recursivly go up until home directory to find a tags file
@@ -216,9 +219,9 @@ inoremap <c-,> <c-o>$,<cr>
 let mapleader = ","
 
 " shortcuts to open and load vimrc
-nnoremap <silent> <leader>ve :e $HOME/.vim/vimrc<CR>
-nnoremap <silent> <leader>vo :e! $HOME/.vim/vimrc<CR>
-nnoremap <silent> <leader>vs :so $HOME/.vim/vimrc<CR>
+nnoremap <silent> <leader>ve :e $DOTVIM/vimrc<CR>
+nnoremap <silent> <leader>vo :e! $DOTVIM/vimrc<CR>
+nnoremap <silent> <leader>vs :so $DOTVIM/vimrc<CR>
 
 " 'cd' to the directory containing the file in the buffer
 nnoremap <silent> <leader>cd :lcd %:h<CR>

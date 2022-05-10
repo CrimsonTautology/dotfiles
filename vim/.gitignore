@@ -1,5 +1,7 @@
 bundle/*
 .*.sw*
 .netrwhist
+.viminfo
 swapfiles/*
+spell/*
 black/*
