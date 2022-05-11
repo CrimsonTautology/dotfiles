@@ -67,7 +67,7 @@ set splitright
 set history=100
 set wildmenu
 set backspace=indent,eol,start
-set scrolloff=8
+set scrolloff=0
 set title
 
 " searching
@@ -195,6 +195,11 @@ nnoremap Y y$
 " map shift+h and shift+l jump to begining and end of line
 noremap H ^
 noremap L $
+
+" map ctrl+u and ctrl+d to replicate shift+h and shift+l if curson not already
+" at the top or bottom
+noremap <expr> <c-u> getcurpos()[1] == line("w0") ? "\<c-u>" : "H"
+noremap <expr> <c-d> getcurpos()[1] == line("w$") ? "\<c-d>" : "L"
 
 " in visual mode < and > shifts indentation and does not clear selection
 vnoremap > >gv
