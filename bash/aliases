@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # default command overrides
-alias grep='grep --color=always'
+alias grep='grep --color=auto'
 alias ls='ls --color=auto -p'
 alias rm='rm -i'
 
