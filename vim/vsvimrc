@@ -1,5 +1,8 @@
+" Settings for VisualStudio's VsVim
+"
+" Github: https://github.com/CrimsonTautology/dotvim
+"
 " vim:foldmethod=marker:foldlevel=0
-"Settings for VisualStudio's VsVim
 
 " Key Re-Maps {{{
 

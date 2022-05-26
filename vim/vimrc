@@ -1,4 +1,9 @@
+" Settings for Vim
+"
+" Github: https://github.com/CrimsonTautology/dotvim
+"
 " vim:foldmethod=marker:foldlevel=0
+
 set nocompatible
 
 " path to the user's vim folder (~/.vim)
@@ -12,45 +17,50 @@ if has('win32') || has('win64')
 endif
 
 " }}}
-" Vundle {{{
+" Plugins {{{
 
-filetype off
-set runtimepath+=$DOTVIM/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin($DOTVIM . '/plugged')
 "
-" Brief help
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginUpdate
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginList       - lists configured plugins
+" Commands:
+" :PlugInstall [name ...] - Install plugins
+" :PlugUpdate [name ...]  - Install or update plugins
+" :PlugClean[!]           - Remove unlisted plugins (bang version will clean without prompt)
+" :PlugUpgrade            - Upgrade vim-plug itself
+" :PlugStatus             - Check the status of plugins
+" :PlugDiff               - Examine changes from the previous update and the pending changes
+" :PlugSnapshot[!] [path] - Generate script for restoring the current snapshot of the plugins
 "
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" Plug Options:
+" branch/tag/commit	      - Branch/tag/commit of the repository to use
+" rtp	                    - Subdirectory that contains Vim plugin
+" dir	                    - Custom directory for the plugin
+" as	                    - Use different name for the plugin
+" do	                    - Post-update hook (string or funcref)
+" on	                    - On-demand loading: Commands or <Plug>-mappings
+" for	                    - On-demand loading: File types
+" frozen	                - Do not update unless explicitly specified
 
-Plugin 'jiangmiao/auto-pairs', {'name': 'autopairs'}
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-fugitive', {'name': 'fugitive'}
-Plugin 'tpope/vim-repeat', {'name': 'repeat'}
-Plugin 'tpope/vim-surround', {'name': 'surround'}
-Plugin 'tpope/vim-unimpaired', {'name': 'unimpaired'}
-Plugin 'tpope/vim-endwise', {'name': 'endwise'}
-Plugin 'tpope/vim-abolish', {'name': 'abolish'}
-Plugin 'alvan/vim-closetag', {'name': 'closetag'}
-Plugin 'preservim/tagbar'
-Plugin 'chrisbra/Colorizer.git'
+Plug 'vim-syntastic/syntastic'
+Plug 'preservim/nerdtree'
+Plug 'preservim/tagbar'
+Plug 'tpope/vim-fugitive', { 'as': 'fugitive' }
+Plug 'tpope/vim-repeat', { 'as': 'repeat' }
+Plug 'tpope/vim-surround', { 'as': 'surround' }
+Plug 'tpope/vim-unimpaired', { 'as': 'unimpaired' }
+Plug 'tpope/vim-endwise', { 'as': 'endwise' }
+Plug 'tpope/vim-abolish', { 'as': 'abolish' }
+Plug 'jiangmiao/auto-pairs', { 'as': 'autopairs' }
+Plug 'alvan/vim-closetag', { 'as': 'closetag' }
+Plug 'chrisbra/Colorizer'
 
-Plugin 'othree/html5.vim'
-Plugin 'pangloss/vim-javascript', {'name':  'javascript'}
-Plugin 'leafgarland/typescript-vim', {'name': 'typescript'}
-Plugin 'vim-python/python-syntax', {'name': 'python'}
-Plugin 'psf/black'
-Plugin 'Vimjas/vim-python-pep8-indent', {'name': 'pep8indent'}
-Plugin 'davidhalter/jedi-vim', {'name': 'jedi'}
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript', { 'as':  'javascript' }
+Plug 'leafgarland/typescript-vim', { 'as': 'typescript' }
+Plug 'vim-python/python-syntax', { 'as': 'python' }
+Plug 'psf/black', { 'branch': 'stable' }
+Plug 'Vimjas/vim-python-pep8-indent', { 'as': 'pep8indent' }
 
-call vundle#end()
+call plug#end()
 
 " }}}
 " VIM Editor Settings {{{
@@ -170,10 +180,10 @@ set statusline+=%m   " modified flag '[+]'
 set statusline+=\ %y " filetype
 set statusline+=\ %r " read only flag '[RO]'
 set statusline+=\ %h " help file flag
-set statusline+=\ %{fugitive#statusline()}
+set statusline+=\ %{exists('g:loaded_fugitive')?fugitive#statusline():''}
 set statusline+=%=   " left/right separator
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}
 set statusline+=%*
 set statusline+=\ %4l/%L:C%-2c%4p%%     "78/274:C50 28%
 
