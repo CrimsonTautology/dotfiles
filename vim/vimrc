@@ -12,7 +12,7 @@ let $DOTVIM = $HOME . '/.vim'
 " Windows {{{
 
 if has('win32') || has('win64')
-  " on windows add $DOTVIM and runtimepath
+  " on windows add our custom $DOTVIM to runtimepath
   set runtimepath=$DOTVIM,$VIMRUNTIME,$DOTVIM/after
 endif
 
