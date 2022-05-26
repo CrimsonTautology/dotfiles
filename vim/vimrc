@@ -40,9 +40,6 @@ call plug#begin($DOTVIM . '/plugged')
 " for	                    - On-demand loading: File types
 " frozen	                - Do not update unless explicitly specified
 
-Plug 'vim-syntastic/syntastic'
-Plug 'preservim/nerdtree'
-Plug 'preservim/tagbar'
 Plug 'tpope/vim-fugitive', { 'as': 'fugitive' }
 Plug 'tpope/vim-repeat', { 'as': 'repeat' }
 Plug 'tpope/vim-surround', { 'as': 'surround' }
@@ -52,6 +49,10 @@ Plug 'tpope/vim-abolish', { 'as': 'abolish' }
 Plug 'jiangmiao/auto-pairs', { 'as': 'autopairs' }
 Plug 'alvan/vim-closetag', { 'as': 'closetag' }
 Plug 'chrisbra/Colorizer'
+Plug 'preservim/nerdtree'
+Plug 'preservim/tagbar'
+Plug 'vim-syntastic/syntastic'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript', { 'as':  'javascript' }
@@ -321,5 +322,10 @@ let g:syntastic_error_symbol = "\u2620"
 let g:syntastic_style_error_symbol = "\u2717>"
 let g:syntastic_warning_symbol = "\u0021"
 let g:syntastic_style_warning_symbol =  "\u203c>"
+
+" }}}
+" Conquer of Completion (coc) {{{
+
+" TODO
 
 " }}}
