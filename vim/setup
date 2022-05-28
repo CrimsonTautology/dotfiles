@@ -1,5 +1,15 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
+exit 1
 
-ln -sf vimrc ~/.vimrc
-ln -sf gvimrc ~/.gvimrc
-#vim -c "PluginInstall" -c "qall"
+# execute current line in bash from vim
+# :.w !bash
+
+# symlink rc files
+ln -sf ~/.vim/vimrc ~/.vimrc
+ln -sf ~/.vim/gvimrc ~/.gvimrc
+
+# install node for coc-nvim
+curl -sL install-node.vercel.app/lts | bash
+
+# install plugins
+vim +PlugInstall +qall

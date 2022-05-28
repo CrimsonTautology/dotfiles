@@ -1,0 +1,4 @@
+{
+  "diagnostic.checkCurrentLine": true,
+  "pyright.disableDiagnostics": true
+}

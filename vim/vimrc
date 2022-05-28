@@ -326,6 +326,11 @@ let g:syntastic_style_warning_symbol =  "\u203c>"
 " }}}
 " Conquer of Completion (coc) {{{
 
-" TODO
+let g:coc_config_home = $DOTVIM
+let g:coc_global_extensions = [
+  \ 'coc-json',
+  \ 'coc-tsserver',
+  \ 'coc-pyright',
+  \ ]
 
 " }}}
