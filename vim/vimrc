@@ -145,6 +145,10 @@ end
 let &t_Cs = "\e[4:3m"
 let &t_Ce = "\e[4:0m"
 
+" fix underline background in mintty
+let &t_AU = "\e[58:5:%dm"
+let &t_8u = "\e[58:2::%lu:%lu:%lum"
+
 " automatically set working directory to current file
 set autochdir
 
