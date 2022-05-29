@@ -16,5 +16,5 @@ Pull the `nerdfonts/patcher` image and run a container with the given input and 
 
 ```
 docker pull nerdfonts/patcher
-docker run -v ~/bin/dotfiles/font/Hack-3.003-custom/ttf/:/in -v ~/bin/dotfiles/font/Hack-3.003-custom/nerdfonts/:/out nerdfonts/patcher
+docker run -v ~/bin/dotfiles/font/Hack-3.003-custom/ttf/:/in -v ~/bin/dotfiles/font/Hack-3.003-custom/nerdfonts/:/out nerdfonts/patcher --windows
 ```
