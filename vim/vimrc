@@ -4,9 +4,17 @@
 "
 " vim:foldmethod=marker:foldlevel=0
 
+" Runtime Path {{{
+
 " path to the user's vim folder (~/.vim)
 let $DOTVIM = $HOME . '/.vim'
 
+if has('win32') || has('win64')
+  " on windows add our custom $DOTVIM to runtimepath
+  set runtimepath=$DOTVIM,$VIMRUNTIME,$DOTVIM/after
+endif
+
+" }}}
 " Plugins {{{
 
 call plug#begin($DOTVIM . '/plugged')
@@ -187,14 +195,6 @@ let &t_Ce = "\e[4:0m"
 " fix underline background in mintty
 let &t_AU = "\e[58:5:%dm"
 let &t_8u = "\e[58:2::%lu:%lu:%lum"
-
-" }}}
-" Windows {{{
-
-if has('win32') || has('win64')
-  " on windows add our custom $DOTVIM to runtimepath
-  set runtimepath=$DOTVIM,$VIMRUNTIME,$DOTVIM/after
-endif
 
 " }}}
 " Key Re-Maps {{{
