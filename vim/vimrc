@@ -67,6 +67,10 @@ call plug#end()
 " be iMproved
 set nocompatible
 
+" set default encoding to utf-8
+set encoding=utf-8
+set termencoding=utf-8
+
 set number  "unimpaired: *yon*
 set norelativenumber  "unimpaired: *yor*
 set nowrap  "unimpaired: *yow*
@@ -107,10 +111,6 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-
-" set default encoding to utf-8
-set encoding=utf-8
-set termencoding=utf-8
 
 " colorscheme
 set background=dark  "unimpaired: *yob*
