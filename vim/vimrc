@@ -4,19 +4,9 @@
 "
 " vim:foldmethod=marker:foldlevel=0
 
-set nocompatible
-
 " path to the user's vim folder (~/.vim)
 let $DOTVIM = $HOME . '/.vim'
 
-" Windows {{{
-
-if has('win32') || has('win64')
-  " on windows add our custom $DOTVIM to runtimepath
-  set runtimepath=$DOTVIM,$VIMRUNTIME,$DOTVIM/after
-endif
-
-" }}}
 " Plugins {{{
 
 call plug#begin($DOTVIM . '/plugged')
@@ -66,7 +56,8 @@ call plug#end()
 " }}}
 " VIM Editor Settings {{{
 
-set encoding=utf-8
+" be iMproved
+set nocompatible
 
 set number  "unimpaired: *yon*
 set norelativenumber  "unimpaired: *yor*
@@ -109,6 +100,10 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
+" set default encoding to utf-8
+set encoding=utf-8
+set termencoding=utf-8
+
 " colorscheme
 set background=dark  "unimpaired: *yob*
 if (has("termguicolors"))
@@ -145,6 +140,28 @@ if !has('nvim')
   " skip if in neovim
   set viminfo+=n$DOTVIM/.viminfo
 endif
+" }}}
+" Statusline {{{
+
+set showcmd          " display incomplete commands.
+set showmode         " show the current mode
+set laststatus=2
+
+set statusline=""
+set statusline+=%f   " tail of filename
+set statusline+=%m   " modified flag '[+]'
+set statusline+=\ %y " filetype
+set statusline+=\ %r " read only flag '[RO]'
+set statusline+=\ %h " help file flag
+set statusline+=\ %{exists('g:loaded_fugitive')?fugitive#statusline():''}
+set statusline+=%=   " left/right separator
+set statusline+=%#warningmsg#
+set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}
+set statusline+=%*
+set statusline+=\ %4l/%L:C%-2c%4p%%     "78/274:C50 28%
+
+" }}}
+" Terminal {{{
 
 " square cursor in mintty
 let &t_EI.="\e[1 q"
@@ -172,24 +189,12 @@ let &t_AU = "\e[58:5:%dm"
 let &t_8u = "\e[58:2::%lu:%lu:%lum"
 
 " }}}
-" Statusline {{{
+" Windows {{{
 
-set showcmd          " display incomplete commands.
-set showmode         " show the current mode
-set laststatus=2
-
-set statusline=""
-set statusline+=%f   " tail of filename
-set statusline+=%m   " modified flag '[+]'
-set statusline+=\ %y " filetype
-set statusline+=\ %r " read only flag '[RO]'
-set statusline+=\ %h " help file flag
-set statusline+=\ %{exists('g:loaded_fugitive')?fugitive#statusline():''}
-set statusline+=%=   " left/right separator
-set statusline+=%#warningmsg#
-set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}
-set statusline+=%*
-set statusline+=\ %4l/%L:C%-2c%4p%%     "78/274:C50 28%
+if has('win32') || has('win64')
+  " on windows add our custom $DOTVIM to runtimepath
+  set runtimepath=$DOTVIM,$VIMRUNTIME,$DOTVIM/after
+endif
 
 " }}}
 " Key Re-Maps {{{
