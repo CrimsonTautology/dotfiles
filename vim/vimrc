@@ -124,6 +124,28 @@ filetype plugin indent on
 syntax on
 set omnifunc=syntaxcomplete#Complete
 
+" automatically set working directory to current file
+set autochdir
+
+" prevent vim from generating swap and backup files in working directory
+set directory=$DOTVIM/swapfiles//
+set backupcopy=yes
+
+" recursivly go up until home directory to find a tags file
+set tags^=tags;~,.git/tags;~
+
+" tell vim to remember certain things when we exit
+"  '100  marks will be remembered for up to 10 previously edited files
+"  "100  will save up to 100 lines for each register
+"  :20   up to 20 lines of command-line history will be remembered
+"  %     saves and restores the buffer list
+"  n...  where to save the viminfo files
+set viminfo='100,\"100,:20,%
+if !has('nvim')
+  " skip if in neovim
+  set viminfo+=n$DOTVIM/.viminfo
+endif
+
 " square cursor in mintty
 let &t_EI.="\e[1 q"
 let &t_SI.="\e[5 q"
@@ -149,31 +171,8 @@ let &t_Ce = "\e[4:0m"
 let &t_AU = "\e[58:5:%dm"
 let &t_8u = "\e[58:2::%lu:%lu:%lum"
 
-" automatically set working directory to current file
-set autochdir
-
-" prevent vim from generating swap and backup files in working directory
-set directory=$DOTVIM/swapfiles//
-set backupcopy=yes
-
-
-" tell vim to remember certain things when we exit
-"  '100  marks will be remembered for up to 10 previously edited files
-"  "100  will save up to 100 lines for each register
-"  :20   up to 20 lines of command-line history will be remembered
-"  %     saves and restores the buffer list
-"  n...  where to save the viminfo files
-set viminfo='100,\"100,:20,%
-if !has('nvim')
-  " skip if in neovim
-  set viminfo+=n$DOTVIM/.viminfo
-endif
-
-" recursivly go up until home directory to find a tags file
-set tags^=tags;~,.git/tags;~
-
 " }}}
-" Custom Statusline {{{
+" Statusline {{{
 
 set showcmd          " display incomplete commands.
 set showmode         " show the current mode
