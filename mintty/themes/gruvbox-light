@@ -1,3 +1,5 @@
+# vi: syn=dosini:et
+
 ForegroundColour=60,56,54
 BackgroundColour=249,245,215
 CursorColour=60,56,54
@@ -17,5 +19,3 @@ Cyan=104,157,106
 BoldCyan=66,123,88
 White=124,111,100
 BoldWhite=60,56,54
-
-# vi: syn=dosini:et

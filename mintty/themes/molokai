@@ -1,3 +1,5 @@
+# vi: syn=dosini:et
+
 # terminal color-theme-molokai
 # https://github.com/sonatard/color-theme-molokai
 
@@ -20,5 +22,3 @@ BoldBlue=#62ADE3
 BoldMagenta=#BFA0FE 
 BoldCyan=#94D8E5 
 BoldWhite=#F8F8F2 
-
-# vi: syn=dosini:et

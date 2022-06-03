@@ -1,3 +1,5 @@
+# vi: syn=dosini:et
+
 ForegroundColour=101, 123, 131
 BackgroundColour=253, 246, 227
 CursorColour=    220,  50,  47
@@ -18,5 +20,3 @@ Cyan=             42, 161, 152
 BoldCyan=        147, 161, 161
 White=           238, 232, 213
 BoldWhite=       253, 246, 227
-
-# vi: syn=dosini:et
