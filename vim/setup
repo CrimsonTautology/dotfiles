@@ -5,8 +5,8 @@ exit 1
 # :.w !bash
 
 # symlink rc files
-ln -sf ~/.vim/vimrc ~/.vimrc
-ln -sf ~/.vim/gvimrc ~/.gvimrc
+ln -sf ~/bin/dotfiles/vim/vimrc ~/.vimrc
+ln -sf ~/bin/dotfiles/vim/gvimrc ~/.gvimrc
 
 # install node for coc-nvim
 curl -sL install-node.vercel.app/lts | bash

@@ -3,7 +3,7 @@
 " Set options and add mapping such that Vim behaves a lot like MS-Windows
 "
 " File: mswin_custom.vim
-" Github: https://github.com/CrimsonTautology/dotvim
+" Github: https://github.com/CrimsonTautology/dotfiles
 " Original:	Bram Moolenaar <Bram@vim.org>
 " NOTE: I am maping the character created with Alt+a/x/z/s/v;  it doesn't seem
 " to work if I just use VIM's mapping syntax for whatever reason

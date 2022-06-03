@@ -3,18 +3,14 @@
 " Settings for Vim
 "
 " File: ~/.vimrc
-" Github: https://github.com/CrimsonTautology/dotvim
+" Github: https://github.com/CrimsonTautology/dotfiles
 " -----------------------------------------------------------------------------
 
 " Runtime Path {{{
 
-" path to the user's vim folder (~/.vim)
-let $DOTVIM = $HOME . '/.vim'
-
-if has('win32') || has('win64')
-  " on windows add our custom $DOTVIM to runtimepath
-  set runtimepath=$DOTVIM,$VIMRUNTIME,$DOTVIM/after
-endif
+" path to the user's vim folder (~/bin/dotfiles/vim)
+let $DOTVIM = $HOME . '/bin/dotfiles/vim'
+set runtimepath=$DOTVIM,$VIMRUNTIME,$DOTVIM/after
 
 " }}}
 " Plugins {{{
