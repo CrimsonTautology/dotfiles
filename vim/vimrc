@@ -48,7 +48,6 @@ Plug 'chrisbra/Colorizer'
 Plug 'preservim/nerdtree'
 Plug 'preservim/tagbar'
 Plug 'vim-syntastic/syntastic'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript', { 'as':  'javascript' }
@@ -56,6 +55,11 @@ Plug 'leafgarland/typescript-vim', { 'as': 'typescript' }
 Plug 'vim-python/python-syntax', { 'as': 'python' }
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'Vimjas/vim-python-pep8-indent', { 'as': 'pep8indent' }
+
+if executable('node')
+  " only install if nodejs is installed
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
 
 call plug#end()
 
