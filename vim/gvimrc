@@ -1,8 +1,10 @@
+" vim:foldmethod=marker:foldlevel=0
+" -----------------------------------------------------------------------------
 " Settings for GVim
 "
+" File: ~/.gvimrc
 " Github: https://github.com/CrimsonTautology/dotvim
-"
-" vim:foldmethod=marker:foldlevel=0
+" -----------------------------------------------------------------------------
 
 
 " do not execute outside of gui

@@ -1,8 +1,10 @@
+" vim:foldmethod=marker:foldlevel=0
+" -----------------------------------------------------------------------------
 " Settings for Vim
 "
+" File: ~/.vimrc
 " Github: https://github.com/CrimsonTautology/dotvim
-"
-" vim:foldmethod=marker:foldlevel=0
+" -----------------------------------------------------------------------------
 
 " Runtime Path {{{
 

@@ -1,8 +1,10 @@
+" vim:foldmethod=marker:foldlevel=0
+" -----------------------------------------------------------------------------
 " Set options and add mapping such that Vim behaves a lot like MS-Windows
 "
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2017 Feb 09
-
+" File: mswin_custom.vim
+" Github: https://github.com/CrimsonTautology/dotvim
+" Original:	Bram Moolenaar <Bram@vim.org>
 " NOTE: I am maping the character created with Alt+a/x/z/s/v;  it doesn't seem
 " to work if I just use VIM's mapping syntax for whatever reason
 "
@@ -12,6 +14,7 @@
 " <M-S> -> ó
 " <M-V> -> ö
 " <M-Y> -> ù
+" -----------------------------------------------------------------------------
 
 " bail out if this isn't wanted (mrsvim.vim uses this).
 if exists("g:skip_loading_mswin") && g:skip_loading_mswin
