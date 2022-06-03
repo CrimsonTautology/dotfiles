@@ -16,10 +16,7 @@ export CHROME_BIN="/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.e
 
 # directory shortcuts
 export USER_DIR="/mnt/c/Users/$USER" 
-alias bill='cd $USER_DIR'
-
 export WORK_DIR="$USER_DIR/work"
-alias work='cd $WORK_DIR'
 
 export WEBAPP_DIR="$WORK_DIR/amp/webapp"
 export WEBAPP_VAGRANT_DIR=$WEBAPP_DIR/vm

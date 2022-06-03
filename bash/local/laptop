@@ -5,15 +5,5 @@
 . ~/bin/dotfiles/node/nvm.sh
 
 # directory shortcuts
-export USER_DIR='/mnt/c/Users/bille'
-alias bill='cd $USER_DIR'
-
-export WORK_DIR="$USER_DIR/work"
-export TUTORIAL_DIR="$WORK_DIR/tutorial"
-export PLAY_DIR="$WORK_DIR/play"
-export CURRENT_PROJECT="$TUTORIAL_DIR/python"
-
-alias work='cd $WORK_DIR'
-alias tut='cd $TUTORIAL_DIR'
-alias play='cd $PLAY_DIR'
-alias cpro='cd $CURRENT_PROJECT'
+export USER_DIR="/mnt/c/Users/${USER}e"
+export CURRENT_PROJECT="$PLAY_DIR/python"

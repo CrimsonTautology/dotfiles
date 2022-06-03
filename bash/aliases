@@ -5,6 +5,12 @@ alias grep='grep --color=auto'
 alias ls='ls --color=auto -p'
 alias rm='rm -i'
 
-
 # vim
 alias vimn='vim -c "NERDTree"'
+
+# directory shortcuts
+alias bill='cd $USER_DIR'
+alias dots='cd $DOTFILES'
+alias work='cd $WORK_DIR'
+alias play='cd $PLAY_DIR'
+alias cpro='cd $CURRENT_PROJECT'
