@@ -1,0 +1,7 @@
+plugged/*
+.*.sw*
+.netrwhist
+.viminfo
+swapfiles/*
+spell/*
+black/*

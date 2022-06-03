@@ -1,0 +1,48 @@
+" vim:foldmethod=marker:foldlevel=0
+" -----------------------------------------------------------------------------
+" Settings for VisualStudio's VsVim
+"
+" File: ~/.vsvimrc
+" Github: https://github.com/CrimsonTautology/dotvim
+" -----------------------------------------------------------------------------
+
+" Key Re-Maps {{{
+
+" in normal mode have space alternate folds
+nnoremap <space> za
+
+" map shift+y to yank to end of line to match shift+c and shift+d
+nnoremap Y y$
+
+" map shift+h and shift+l jump to begining and end of line
+noremap H ^
+noremap L $
+
+" in visual mode < and > shifts indentation and does not clear selection
+vnoremap > >gv
+vnoremap < <gv
+
+" quick macro to the q registry, use shift+q to play back
+nnoremap Q @q
+
+" in insert mode ctrl+j inserts a new line at the end of the current line and
+" goes to the next line;  this allows you to jump to the next line while in
+" the middle of text.
+" ctrl+; and ctrl+, does the same but also adds a semicolon and comma
+inoremap <c-j> <c-o>$<cr>
+inoremap <c-;> <c-o>$;<cr>
+inoremap <c-,> <c-o>$,<cr>
+
+" }}}
+" Unimpaired {{{
+
+"Some bindings I use from the unimpaired plugin
+"cnext and cprevious; cfirst and clast not supported
+nnoremap <silent> [q :<C-U>vsc View.NextError<CR>
+nnoremap <silent> ]q :<C-U>vsc View.PreviousError<CR>
+
+"line above and below
+nnoremap <silent> [<Space> :<C-U>vsc Edit.LineOpenAbove<CR>
+nnoremap <silent> ]<Space> :<C-U>vsc Edit.LineOpenBelow<CR>
+
+" }}}
