@@ -1,6 +1,9 @@
 #!/usr/bin/env sh
 exit 1
 
+# execute current line in bash from vim
+# :.w !bash
+
 # setup ssh
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
@@ -70,7 +73,7 @@ ln -sf ~/bin/dotfiles/python/_flake8 ~/.flake8
 
 
 # setup node.js
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 echo ". ~/bin/dotfiles/node/nvm.sh" >> ~/.bashrc
 # restart needed
 nvm install --lts
