@@ -1,3 +1,5 @@
+# vi: filetype=dircolors
+#
 # Exact Solarized Dark color theme for the color GNU ls utility.
 # Used and tested with dircolors (GNU coreutils) 8.5
 #
@@ -373,5 +375,3 @@ EXEC 01;31
 .temp 01;32
 .tmp 01;32
 .todo 01;32
-
-# vi: filetype=dircolors

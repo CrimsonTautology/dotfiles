@@ -1,8 +1,8 @@
+# vi: filetype=dosini
+#
 # For documentation, see https://www.sumatrapdfreader.org/settings/settings3.2.html
 # copy these settings over to /AppData/Local/SumatraPDF/SumatraPDF-settings.txt
 # or just copy and paste them using Settings -> Advanced Options
-#
-# vi: filetype=dosini
 
 
 # background color of the non-document windows, traditionally yellow

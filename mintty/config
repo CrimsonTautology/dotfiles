@@ -1,3 +1,5 @@
+# vi: syn=dosini:et
+#
 # in %LOCALAPPDATA%\wsltty
 # change configdir to this directory
 # configdir=${configdir:-'%USERPROFILE%\bin\dotfiles\mintty'}

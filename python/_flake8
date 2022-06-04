@@ -1,3 +1,5 @@
+# vi: filetype=cfg
+
 [flake8]
 # https://www.flake8rules.com/
 # intentionally ignore E203, W503 for black compatability
@@ -13,5 +15,3 @@ exclude =
   __pycache__
 max-line-length = 160
 max-complexity = 10
-
-# vi: filetype=cfg

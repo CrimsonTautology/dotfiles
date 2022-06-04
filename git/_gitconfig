@@ -1,3 +1,5 @@
+# vi: filetype=gitconfig
+
 [user]
 	name = Bill
 	email = billehs+github@gmail.com
@@ -30,5 +32,3 @@
 
 [pager]
   branch = false
-
-# vi: filetype=gitconfig

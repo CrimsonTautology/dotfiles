@@ -37,3 +37,6 @@ eval "$(rbenv init -)"
 
 # python
 alias py.test='python3 -m pytest'
+
+# unaliases
+unalias bill

@@ -1,2 +1,8 @@
-#vim files
 *.sw*
+
+vim/.netrwhist
+vim/.viminfo
+vim/black/*
+vim/plugged/*
+vim/spell/*
+vim/swapfiles/*

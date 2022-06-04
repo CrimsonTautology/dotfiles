@@ -1,3 +1,5 @@
+# vi: syn=dosini:et
+
 # https://github.com/psyanite/palenight-mintty
 
 ForegroundColour=161,176,184
@@ -18,5 +20,3 @@ Cyan=137,221,255
 BoldCyan=137,221,255
 White=245,245,245
 BoldWhite=245,245,245
-
-# vi: syn=dosini:et

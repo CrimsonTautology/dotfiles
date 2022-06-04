@@ -1,0 +1,346 @@
+" vim:foldmethod=marker:foldlevel=0
+" -----------------------------------------------------------------------------
+" Settings for Vim
+"
+" File: ~/.vimrc
+" Github: https://github.com/CrimsonTautology/dotfiles
+" -----------------------------------------------------------------------------
+
+" Runtime Path {{{
+
+" path to the user's vim folder (~/bin/dotfiles/vim)
+let $DOTVIM = $HOME . '/bin/dotfiles/vim'
+set runtimepath=$DOTVIM,$VIMRUNTIME,$DOTVIM/after
+
+" }}}
+" Plugins {{{
+
+call plug#begin($DOTVIM . '/plugged')
+"
+" Commands:
+" :PlugInstall [name ...] - Install plugins
+" :PlugUpdate [name ...]  - Install or update plugins
+" :PlugClean[!]           - Remove unlisted plugins (bang version will clean without prompt)
+" :PlugUpgrade            - Upgrade vim-plug itself
+" :PlugStatus             - Check the status of plugins
+" :PlugDiff               - Examine changes from the previous update and the pending changes
+" :PlugSnapshot[!] [path] - Generate script for restoring the current snapshot of the plugins
+"
+" Plug Options:
+" branch/tag/commit	      - Branch/tag/commit of the repository to use
+" rtp	                    - Subdirectory that contains Vim plugin
+" dir	                    - Custom directory for the plugin
+" as	                    - Use different name for the plugin
+" do	                    - Post-update hook (string or funcref)
+" on	                    - On-demand loading: Commands or <Plug>-mappings
+" for	                    - On-demand loading: File types
+" frozen	                - Do not update unless explicitly specified
+
+Plug 'tpope/vim-fugitive', { 'as': 'fugitive' }
+Plug 'tpope/vim-repeat', { 'as': 'repeat' }
+Plug 'tpope/vim-surround', { 'as': 'surround' }
+Plug 'tpope/vim-unimpaired', { 'as': 'unimpaired' }
+Plug 'tpope/vim-endwise', { 'as': 'endwise' }
+Plug 'tpope/vim-abolish', { 'as': 'abolish' }
+Plug 'jiangmiao/auto-pairs', { 'as': 'autopairs' }
+Plug 'alvan/vim-closetag', { 'as': 'closetag' }
+Plug 'chrisbra/Colorizer'
+Plug 'preservim/nerdtree'
+Plug 'preservim/tagbar'
+Plug 'vim-syntastic/syntastic'
+
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript', { 'as':  'javascript' }
+Plug 'leafgarland/typescript-vim', { 'as': 'typescript' }
+Plug 'vim-python/python-syntax', { 'as': 'python' }
+Plug 'psf/black', { 'branch': 'stable' }
+Plug 'Vimjas/vim-python-pep8-indent', { 'as': 'pep8indent' }
+
+if executable('node')
+  " only install if nodejs is installed
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
+
+call plug#end()
+
+" }}}
+" VIM Editor Settings {{{
+
+" be iMproved
+set nocompatible
+
+" set default encoding to utf-8
+set encoding=utf-8
+set termencoding=utf-8
+
+set number  "unimpaired: *yon*
+set norelativenumber  "unimpaired: *yor*
+set nowrap  "unimpaired: *yow*
+set linebreak
+set nospell  "unimpaired: *yos*
+set virtualedit=  "unimpaired: *yov*
+set splitbelow
+set splitright
+set history=100
+set wildmenu
+set backspace=indent,eol,start
+set scrolloff=8
+set title
+
+" searching
+set hlsearch  "unimpaired: *yoh*
+set noincsearch
+set ignorecase  "unimpaired: *yoi*
+set smartcase
+
+" marking
+set nolist  "unimpaired: *yol*
+set listchars=tab:→\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+set cursorline  "unimpaired: *yoc*
+set nocursorcolumn  "unimpaired: *you*
+set colorcolumn=80,100  " add marker on column 80 and 100
+set showmatch
+
+" damn the bell
+set noerrorbells
+set novisualbell
+set t_vb=
+
+" indentation settings
+set autoindent
+set nosmartindent
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
+" colorscheme
+set background=dark  "unimpaired: *yob*
+if (has("termguicolors"))
+  set termguicolors
+endif
+try
+  colorscheme solarized
+catch
+endtry
+
+" syntax configuration
+filetype plugin indent on
+syntax on
+set omnifunc=syntaxcomplete#Complete
+
+" automatically set working directory to current file
+set autochdir
+
+" prevent vim from generating swap and backup files in working directory
+set directory=$DOTVIM/swapfiles//
+set backupcopy=yes
+
+" recursivly go up until home directory to find a tags file
+set tags^=tags;~,.git/tags;~
+
+" tell vim to remember certain things when we exit
+"  '100  marks will be remembered for up to 10 previously edited files
+"  "100  will save up to 100 lines for each register
+"  :20   up to 20 lines of command-line history will be remembered
+"  %     saves and restores the buffer list
+"  n...  where to save the viminfo files
+set viminfo='100,\"100,:20,%
+if !has('nvim')
+  " skip if in neovim
+  set viminfo+=n$DOTVIM/.viminfo
+endif
+" }}}
+" Statusline {{{
+
+set showcmd          " display incomplete commands.
+set showmode         " show the current mode
+set laststatus=2
+
+set statusline=""
+set statusline+=%f   " tail of filename
+set statusline+=%m   " modified flag '[+]'
+set statusline+=\ %y " filetype
+set statusline+=\ %r " read only flag '[RO]'
+set statusline+=\ %h " help file flag
+set statusline+=\ %{exists('g:loaded_fugitive')?fugitive#statusline():''}
+set statusline+=%=   " left/right separator
+set statusline+=%#warningmsg#
+set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}
+set statusline+=%*
+set statusline+=\ %4l/%L:C%-2c%4p%%     "78/274:C50 28%
+
+" }}}
+" Terminal {{{
+
+" square cursor in mintty
+let &t_EI.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_SR.="\e[4 q"
+let &t_te.="\e[0 q"
+let &t_ti.="\e[1 q"
+
+" enable mouse in mintty
+set mouse=a
+if has("ttymouse")
+  if has("mouse_sgr")
+    set ttymouse=sgr
+  else
+    set ttymouse=xterm2
+  end
+end
+
+" enable undercurl in mintty
+let &t_Cs = "\e[4:3m"
+let &t_Ce = "\e[4:0m"
+
+" fix underline background in mintty
+let &t_AU = "\e[58:5:%dm"
+let &t_8u = "\e[58:2::%lu:%lu:%lum"
+
+" }}}
+" Key Re-Maps {{{
+
+" in normal mode have space alternate folds
+nnoremap <space> za
+
+" windowsplit jumper;  use ctrl+jkhl to jump between window splits instead of
+" ctrl+w jkhl
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" map shift+y to yank to end of line to match shift+c and shift+d
+nnoremap Y y$
+
+" map shift+h and shift+l jump to begining and end of line
+noremap H ^
+noremap L $
+
+" in visual mode < and > shifts indentation and does not clear selection
+vnoremap > >gv
+vnoremap < <gv
+
+" quick macro to the q registry, use shift+q to play back
+nnoremap Q @q
+vnoremap Q :normal @q<cr>
+
+" in insert mode ctrl+j inserts a new line at the end of the current line and
+" goes to the next line;  this allows you to jump to the next line while in
+" the middle of text.
+" ctrl+; and ctrl+, does the same but also adds a semicolon and comma
+inoremap <c-j> <c-o>$<cr>
+inoremap <c-;> <c-o>$;<cr>
+inoremap <c-,> <c-o>$,<cr>
+
+"------------------------------------------------------------------------------
+" Leader Commands
+"------------------------------------------------------------------------------
+
+let mapleader = ","
+
+" shortcuts to open and load vimrc
+nnoremap <silent> <leader>ve :e $DOTVIM/vimrc<CR>
+nnoremap <silent> <leader>vo :e! $DOTVIM/vimrc<CR>
+nnoremap <silent> <leader>vs :so $DOTVIM/vimrc<CR>
+
+" 'cd' to the directory containing the file in the buffer
+nnoremap <silent> <leader>cd :lcd %:h<CR>
+
+" dump current date after current line, good for appending to log files
+nnoremap <silent> <leader>da o<c-r>=strftime("%m/%d/%Y")<CR>
+nnoremap <silent> <leader>dt o<c-r>=strftime("%m/%d/%Y %r")<CR>
+nnoremap <silent> <leader>di o<c-r>=strftime("%F")<CR>
+
+" show highlighting groups for current word
+nnoremap <silent> <leader>hi :call SynStack()<CR>
+function! SynStack ()
+  for i1 in synstack(line("."), col("."))
+    let i2 = synIDtrans(i1)
+    let n1 = synIDattr(i1, "name")
+    let n2 = synIDattr(i2, "name")
+    echo n1 "->" n2
+  endfor
+endfunction
+
+"------------------------------------------------------------------------------
+" Function Keys
+"------------------------------------------------------------------------------
+
+" F5 calls make
+nnoremap <silent> <F5> :w<cr>:make<cr>
+
+" }}}
+" Auto Commands {{{
+
+" automatically restore cursor position
+augroup restore_cursor
+  autocmd!
+  autocmd BufWinEnter * call RestoreCursor()
+augroup END
+
+function! RestoreCursor()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+
+" Automatically open, but do not go to (if there are errors) the quickfix /
+" location list window, or close it when is has become empty. 
+"
+" Note: Must allow nesting of autocmds to enable any customizations for quickfix
+" buffers. 
+" Note: Normally, :cwindow jumps to the quickfix window if the command opens it
+" (but not if it's already open). However, as part of the autocmd, this doesn't
+" seem to happen. 
+augroup auto_load_quickfix
+  autocmd!
+  autocmd QuickFixCmdPost [^l]* nested botright cwindow
+  autocmd QuickFixCmdPost    l* nested botright lwindow
+augroup END
+
+" }}}
+" NERDTree {{{
+
+nnoremap <silent> <leader>nt :NERDTreeToggle<cr>
+
+let NERDTreeShowBookmarks=1
+let NERDTreeChDirMode=1
+let NERDTreeDirArrows=1
+
+let NERDTreeIgnore=[ '\.hi$', '\.o$', '\.sw.$', '\~$', '\.smx$', '\.exe$', '\.beam$', '\~$' ]
+
+let g:NERDTreeDirArrowExpandable="\u25B6"
+let g:NERDTreeDirArrowCollapsible="\u25BC"
+
+" }}}
+" Tagbar {{{
+
+nnoremap <silent> <leader>tb :TagbarToggle<cr>
+
+" }}}
+" Syntastic {{{
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+
+let g:syntastic_error_symbol = "\u2620"
+let g:syntastic_style_error_symbol = "\u2717>"
+let g:syntastic_warning_symbol = "\u0021"
+let g:syntastic_style_warning_symbol =  "\u203c>"
+
+" }}}
+" Conquer of Completion (coc) {{{
+
+let g:coc_config_home = $DOTVIM
+let g:coc_global_extensions = [
+  \ 'coc-json',
+  \ 'coc-tsserver',
+  \ 'coc-pyright',
+  \ ]
+
+" }}}
