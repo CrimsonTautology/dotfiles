@@ -457,75 +457,77 @@ exe "hi! Todo"           .s:fmt_bold   .s:fg_yellow .s:bg_base02
 " Extended highlighting "{{{
 " ---------------------------------------------------------------------
 if  (g:solarized_visibility=="high")
-    exe "hi! SpecialKey" .s:fmt_revr   .s:fg_red    .s:bg_none
-    exe "hi! NonText"    .s:fmt_bold   .s:fg_red    .s:bg_none
+    exe "hi! SpecialKey"    .s:fmt_revr   .s:fg_red    .s:bg_none
+    exe "hi! NonText"       .s:fmt_bold   .s:fg_red    .s:bg_none
 elseif  (g:solarized_visibility=="low")
-    exe "hi! SpecialKey" .s:fmt_bold   .s:fg_base02 .s:bg_none
-    exe "hi! NonText"    .s:fmt_bold   .s:fg_base02 .s:bg_none
+    exe "hi! SpecialKey"    .s:fmt_bold   .s:fg_base02 .s:bg_none
+    exe "hi! NonText"       .s:fmt_bold   .s:fg_base02 .s:bg_none
 else
-    exe "hi! SpecialKey" .s:fmt_bold   .s:fg_base00 .s:bg_base02
-    exe "hi! NonText"    .s:fmt_bold   .s:fg_base00 .s:bg_none
+    exe "hi! SpecialKey"    .s:fmt_bold   .s:fg_base00 .s:bg_base02
+    exe "hi! NonText"       .s:fmt_bold   .s:fg_base00 .s:bg_none
 endif
-exe "hi! StatusLine"     .s:fmt_none   .s:fg_base1  .s:bg_base02 .s:fmt_revbb
-exe "hi! StatusLineNC"   .s:fmt_none   .s:fg_base00 .s:bg_base02 .s:fmt_revbb
-exe "hi! Visual"         .s:fmt_none   .s:fg_base01 .s:bg_base03 .s:fmt_revbb
-exe "hi! Directory"      .s:fmt_none   .s:fg_blue   .s:bg_none
-exe "hi! ErrorMsg"       .s:fmt_revr   .s:fg_red    .s:bg_none
-exe "hi! IncSearch"      .s:fmt_stnd   .s:fg_orange .s:bg_none
-exe "hi! Search"         .s:fmt_revr   .s:fg_yellow .s:bg_none
-exe "hi! MoreMsg"        .s:fmt_none   .s:fg_blue   .s:bg_none
-exe "hi! ModeMsg"        .s:fmt_none   .s:fg_blue   .s:bg_none
-exe "hi! LineNr"         .s:fmt_none   .s:fg_base01 .s:bg_base02
-exe "hi! Question"       .s:fmt_bold   .s:fg_cyan   .s:bg_none
+exe "hi! StatusLine"        .s:fmt_none   .s:fg_base1  .s:bg_base02 .s:fmt_revbb
+exe "hi! StatusLineNC"      .s:fmt_none   .s:fg_base00 .s:bg_base02 .s:fmt_revbb
+exe "hi! StatusLineTerm"    .s:fmt_none   .s:fg_green  .s:bg_base02 .s:fmt_revbb
+exe "hi! StatusLineTermNC"  .s:fmt_none   .s:fg_base00 .s:bg_base02 .s:fmt_revbb
+exe "hi! Visual"            .s:fmt_none   .s:fg_base01 .s:bg_base03 .s:fmt_revbb
+exe "hi! Directory"         .s:fmt_none   .s:fg_blue   .s:bg_none
+exe "hi! ErrorMsg"          .s:fmt_revr   .s:fg_red    .s:bg_none
+exe "hi! IncSearch"         .s:fmt_stnd   .s:fg_orange .s:bg_none
+exe "hi! Search"            .s:fmt_revr   .s:fg_yellow .s:bg_none
+exe "hi! MoreMsg"           .s:fmt_none   .s:fg_blue   .s:bg_none
+exe "hi! ModeMsg"           .s:fmt_none   .s:fg_blue   .s:bg_none
+exe "hi! LineNr"            .s:fmt_none   .s:fg_base01 .s:bg_base02
+exe "hi! Question"          .s:fmt_bold   .s:fg_cyan   .s:bg_none
 if (g:solarized_vert_split_bg_trans == 1)
-    exe "hi! VertSplit"  .s:fmt_none   .s:fg_base00 .s:bg_none
+    exe "hi! VertSplit"     .s:fmt_none   .s:fg_base00 .s:bg_none
 else
-    exe "hi! VertSplit"  .s:fmt_none   .s:fg_base00 .s:bg_base00
+    exe "hi! VertSplit"     .s:fmt_none   .s:fg_base00 .s:bg_base00
 endif
-exe "hi! Title"          .s:fmt_bold   .s:fg_orange .s:bg_none
-exe "hi! VisualNOS"      .s:fmt_stnd   .s:fg_none   .s:bg_base02 .s:fmt_revbb
-exe "hi! WarningMsg"     .s:fmt_bold   .s:fg_red    .s:bg_none
-exe "hi! WildMenu"       .s:fmt_none   .s:fg_base2  .s:bg_base02 .s:fmt_revbb
-exe "hi! Folded"         .s:fmt_undb   .s:fg_base0  .s:bg_base02 .s:sp_base03
-exe "hi! FoldColumn"     .s:fmt_none   .s:fg_base0  .s:bg_base02
+exe "hi! Title"             .s:fmt_bold   .s:fg_orange .s:bg_none
+exe "hi! VisualNOS"         .s:fmt_stnd   .s:fg_none   .s:bg_base02 .s:fmt_revbb
+exe "hi! WarningMsg"        .s:fmt_bold   .s:fg_red    .s:bg_none
+exe "hi! WildMenu"          .s:fmt_none   .s:fg_base2  .s:bg_base02 .s:fmt_revbb
+exe "hi! Folded"            .s:fmt_undb   .s:fg_base0  .s:bg_base02 .s:sp_base03
+exe "hi! FoldColumn"        .s:fmt_none   .s:fg_base0  .s:bg_base02
 
 if (g:solarized_diffmode=="high")
-    exe "hi! DiffAdd"        .s:fmt_revr   .s:fg_green  .s:bg_none
-    exe "hi! DiffChange"     .s:fmt_revr   .s:fg_yellow .s:bg_none
-    exe "hi! DiffDelete"     .s:fmt_revr   .s:fg_red    .s:bg_none
-    exe "hi! DiffText"       .s:fmt_revr   .s:fg_blue   .s:bg_none
+    exe "hi! DiffAdd"       .s:fmt_revr   .s:fg_green  .s:bg_none
+    exe "hi! DiffChange"    .s:fmt_revr   .s:fg_yellow .s:bg_none
+    exe "hi! DiffDelete"    .s:fmt_revr   .s:fg_red    .s:bg_none
+    exe "hi! DiffText"      .s:fmt_revr   .s:fg_blue   .s:bg_none
 elseif  (g:solarized_diffmode=="low")
-    exe "hi! DiffAdd"        .s:fmt_undr   .s:fg_green  .s:bg_none   .s:sp_green
-    exe "hi! DiffChange"     .s:fmt_undr   .s:fg_yellow .s:bg_none   .s:sp_yellow
-    exe "hi! DiffDelete"     .s:fmt_bold   .s:fg_red    .s:bg_none
-    exe "hi! DiffText"       .s:fmt_undr   .s:fg_blue   .s:bg_none   .s:sp_blue
+    exe "hi! DiffAdd"       .s:fmt_undr   .s:fg_green  .s:bg_none   .s:sp_green
+    exe "hi! DiffChange"    .s:fmt_undr   .s:fg_yellow .s:bg_none   .s:sp_yellow
+    exe "hi! DiffDelete"    .s:fmt_bold   .s:fg_red    .s:bg_none
+    exe "hi! DiffText"      .s:fmt_undr   .s:fg_blue   .s:bg_none   .s:sp_blue
 else " normal
-    exe "hi! DiffAdd"        .s:fmt_bold   .s:fg_green  .s:bg_base02 .s:sp_green
-    exe "hi! DiffChange"     .s:fmt_bold   .s:fg_yellow .s:bg_base02 .s:sp_yellow
-    exe "hi! DiffDelete"     .s:fmt_bold   .s:fg_red    .s:bg_base02
-    exe "hi! DiffText"       .s:fmt_bold   .s:fg_blue   .s:bg_base02 .s:sp_blue
+    exe "hi! DiffAdd"       .s:fmt_bold   .s:fg_green  .s:bg_base02 .s:sp_green
+    exe "hi! DiffChange"    .s:fmt_bold   .s:fg_yellow .s:bg_base02 .s:sp_yellow
+    exe "hi! DiffDelete"    .s:fmt_bold   .s:fg_red    .s:bg_base02
+    exe "hi! DiffText"      .s:fmt_bold   .s:fg_blue   .s:bg_base02 .s:sp_blue
 endif
 
-exe "hi! SignColumn"     .s:fmt_none   .s:fg_base0  .s:bg_none
-exe "hi! Conceal"        .s:fmt_none   .s:fg_blue   .s:bg_none
-exe "hi! SpellBad"       .s:fmt_curl   .s:fg_none   .s:bg_none    .s:sp_red
-exe "hi! SpellCap"       .s:fmt_curl   .s:fg_none   .s:bg_none    .s:sp_violet
-exe "hi! SpellRare"      .s:fmt_curl   .s:fg_none   .s:bg_none    .s:sp_cyan
-exe "hi! SpellLocal"     .s:fmt_curl   .s:fg_none   .s:bg_none    .s:sp_yellow
-exe "hi! Pmenu"          .s:fmt_none   .s:fg_base0  .s:bg_base02  .s:fmt_revbb
-exe "hi! PmenuSel"       .s:fmt_none   .s:fg_base01 .s:bg_base2   .s:fmt_revbb
-exe "hi! PmenuSbar"      .s:fmt_none   .s:fg_base2  .s:bg_base0   .s:fmt_revbb
-exe "hi! PmenuThumb"     .s:fmt_none   .s:fg_base0  .s:bg_base03  .s:fmt_revbb
-exe "hi! TabLine"        .s:fmt_none   .s:fg_base0  .s:bg_base02  .s:sp_base0
-exe "hi! TabLineFill"    .s:fmt_none   .s:fg_base0  .s:bg_base02  .s:sp_base0
-exe "hi! TabLineSel"     .s:fmt_none   .s:fg_base01  .s:bg_base2  .s:sp_base0  .s:fmt_revr
-exe "hi! CursorColumn"   .s:fmt_none   .s:fg_none   .s:bg_base02
-exe "hi! CursorLine"     .s:fmt_uopt   .s:fg_none   .s:bg_base02  .s:sp_base1
-exe "hi! CursorLineNr"   .s:fmt_uopt   .s:fg_yellow .s:bg_none    .s:sp_base1
-exe "hi! ColorColumn"    .s:fmt_none   .s:fg_none   .s:bg_base02
-exe "hi! Cursor"         .s:fmt_none   .s:fg_base03 .s:bg_base0
+exe "hi! SignColumn"        .s:fmt_none   .s:fg_base0  .s:bg_none
+exe "hi! Conceal"           .s:fmt_none   .s:fg_blue   .s:bg_none
+exe "hi! SpellBad"          .s:fmt_curl   .s:fg_none   .s:bg_none   .s:sp_red
+exe "hi! SpellCap"          .s:fmt_curl   .s:fg_none   .s:bg_none   .s:sp_violet
+exe "hi! SpellRare"         .s:fmt_curl   .s:fg_none   .s:bg_none   .s:sp_cyan
+exe "hi! SpellLocal"        .s:fmt_curl   .s:fg_none   .s:bg_none   .s:sp_yellow
+exe "hi! Pmenu"             .s:fmt_none   .s:fg_base0  .s:bg_base02 .s:fmt_revbb
+exe "hi! PmenuSel"          .s:fmt_none   .s:fg_base01 .s:bg_base2  .s:fmt_revbb
+exe "hi! PmenuSbar"         .s:fmt_none   .s:fg_base2  .s:bg_base0  .s:fmt_revbb
+exe "hi! PmenuThumb"        .s:fmt_none   .s:fg_base0  .s:bg_base03 .s:fmt_revbb
+exe "hi! TabLine"           .s:fmt_none   .s:fg_base0  .s:bg_base02 .s:sp_base0
+exe "hi! TabLineFill"       .s:fmt_none   .s:fg_base0  .s:bg_base02 .s:sp_base0
+exe "hi! TabLineSel"        .s:fmt_none   .s:fg_base01 .s:bg_base2  .s:sp_base0  .s:fmt_revr
+exe "hi! CursorColumn"      .s:fmt_none   .s:fg_none   .s:bg_base02
+exe "hi! CursorLine"        .s:fmt_uopt   .s:fg_none   .s:bg_base02 .s:sp_base1
+exe "hi! CursorLineNr"      .s:fmt_uopt   .s:fg_yellow .s:bg_none   .s:sp_base1
+exe "hi! ColorColumn"       .s:fmt_none   .s:fg_none   .s:bg_base02
+exe "hi! Cursor"            .s:fmt_none   .s:fg_base03 .s:bg_base0
 hi! link lCursor Cursor
-exe "hi! MatchParen"     .s:fmt_bold   .s:fg_red    .s:bg_yellow
+exe "hi! MatchParen"        .s:fmt_bold   .s:fg_orange .s:bg_yellow
 
 "}}}
 " vim syntax highlighting "{{{
