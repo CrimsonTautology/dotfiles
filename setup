@@ -35,7 +35,7 @@ echo ". ~/bin/dotfiles/bash/_bashrc" >> ~/.bashrc
 
 # setup vim
 ln -sf ~/bin/dotfiles/vim/vimrc ~/.vimrc
-vim +PlugInstall +qall
+vim -es -u ~/bin/dotfiles/vim/vimrc -i NONE -c "PlugInstall" -c "qa"
 
 
 # setup python
