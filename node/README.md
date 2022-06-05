@@ -67,3 +67,8 @@ ng new my-app
 cd my-app
 ng serve
 ```
+
+## run application
+```
+ng serve
+```
