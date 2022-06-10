@@ -302,6 +302,12 @@ augroup auto_load_quickfix
 augroup END
 
 " }}}
+" Auto Pairs {{{
+
+let g:AutoPairsFlyMode = 1
+let g:AutoPairsShortcutBackInsert = '<C-b>'
+
+" }}}
 " NERDTree {{{
 
 nnoremap <silent> <leader>nt :NERDTreeToggle<cr>
