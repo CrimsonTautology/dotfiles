@@ -388,6 +388,7 @@ endif
 " exe compiled formats
 
 exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_back
+exe "hi! Terminal"       .s:fmt_none   .s:fg_base0  .s:bg_base03
 
 exe "hi! Comment"        .s:fmt_ital   .s:fg_base01 .s:bg_none
 "       *Comment         any comment
@@ -469,7 +470,7 @@ endif
 exe "hi! StatusLine"        .s:fmt_none   .s:fg_base1  .s:bg_base02 .s:fmt_revbb
 exe "hi! StatusLineNC"      .s:fmt_none   .s:fg_base00 .s:bg_base02 .s:fmt_revbb
 exe "hi! StatusLineTerm"    .s:fmt_none   .s:fg_green  .s:bg_base02 .s:fmt_revbb
-exe "hi! StatusLineTermNC"  .s:fmt_none   .s:fg_base00 .s:bg_base02 .s:fmt_revbb
+exe "hi! StatusLineTermNC"  .s:fmt_none   .s:fg_red    .s:bg_base02 .s:fmt_revbb
 exe "hi! Visual"            .s:fmt_none   .s:fg_base01 .s:bg_base03 .s:fmt_revbb
 exe "hi! Directory"         .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! ErrorMsg"          .s:fmt_revr   .s:fg_red    .s:bg_none
