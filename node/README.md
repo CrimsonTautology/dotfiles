@@ -72,3 +72,8 @@ ng serve
 ```
 ng serve
 ```
+
+## generate component
+```
+ng generate component hello-world
+```
