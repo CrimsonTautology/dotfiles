@@ -1,4 +1,5 @@
 {
   "diagnostic.checkCurrentLine": true,
-  "pyright.disableDiagnostics": true
+  "pyright.disableDiagnostics": true,
+  "suggest.noselect": false
 }
