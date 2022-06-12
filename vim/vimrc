@@ -167,6 +167,7 @@ set statusline+=\ %{exists('g:loaded_fugitive')?fugitive#statusline():''}
 set statusline+=%=   " left/right separator
 set statusline+=%#warningmsg#
 set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}
+set statusline+=%{exists('g:did_coc_loaded')?coc#status():''}
 set statusline+=%*
 set statusline+=\ %4l/%L:C%-2c%4p%%     "78/274:C50 28%
 
@@ -352,5 +353,35 @@ let g:coc_global_extensions = [
   \ 'coc-tsserver',
   \ 'coc-pyright',
   \ ]
+
+" code navigation
+nnoremap <silent> cgd <Plug>(coc-definition)
+nnoremap <silent> cgy <Plug>(coc-type-definition)
+nnoremap <silent> cgi <Plug>(coc-implementation)
+nnoremap <silent> cgr <Plug>(coc-references)
+
+" show documentation in preview window.
+nnoremap <silent> ck :call CocActionAsync('doHover')<CR>
+
+" rename symbol
+nnoremap <leader>crn <Plug>(coc-rename)
+
+" codeaction
+xnoremap <leader>cca <Plug>(coc-codeaction-selected)
+nnoremap <leader>cca <Plug>(coc-codeaction-selected)
+
+" quick-fix
+nnoremap <leader>cqf <Plug>(coc-fix-current)
+
+" map function and class text objects
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
 
 " }}}
