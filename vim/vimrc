@@ -211,6 +211,10 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+" windowsplit mappings for terminal;  leave ctrl+hl  as is
+tnoremap <c-j> <c-w>j
+tnoremap <c-k> <c-w>k
+
 " map shift+y to yank to end of line to match shift+c and shift+d
 nnoremap Y y$
 
