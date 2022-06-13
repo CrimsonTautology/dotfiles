@@ -306,6 +306,18 @@ augroup auto_load_quickfix
   autocmd QuickFixCmdPost    l* nested botright lwindow
 augroup END
 
+" https://stackoverflow.com/questions/16049965/vim-save-highlight-info-screen-to-file/16049993#16049993
+function! HiFile()
+  let i = 1
+  while i <= line("$")
+    if strlen(getline(i)) > 0 && len(split(getline(i))) > 2
+      let w = split(getline(i))[0]
+      exe "syn match " . w . " /\\(" . w . "\\s\\+\\)\\@<=xxx/"
+    endif
+    let i += 1
+  endwhile
+endfunction
+
 " }}}
 " Auto Pairs {{{
 
