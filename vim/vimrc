@@ -349,9 +349,13 @@ let g:syntastic_style_warning_symbol =  "\u203c>"
 
 let g:coc_config_home = $DOTVIM
 let g:coc_global_extensions = [
+  \ 'coc-angular',
   \ 'coc-json',
-  \ 'coc-tsserver',
   \ 'coc-pyright',
+  \ 'coc-sh',
+  \ 'coc-tsserver',
+  \ 'coc-vimlsp',
+  \ 'coc-yaml',
   \ ]
 
 " code navigation
