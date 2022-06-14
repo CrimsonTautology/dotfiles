@@ -29,7 +29,6 @@
 " g:solarized_contrast
 " g:solarized_term_bold_as_bright
 " g:solarized_termtrans
-" g:solarized_vert_split_bg_trans
 " g:solarized_visibility
 "
 " ---------------------------------------------------------------------
@@ -122,7 +121,6 @@ let g:solarized_contrast = get(g:, "solarized_contrast", "normal")
 let g:solarized_term_bold_as_bright = get(g:, "solarized_term_bold_as_bright", 1)
 let g:solarized_termtrans = get(g:, "solarized_termtrans", 1)
 let g:solarized_visibility = get(g:, "solarized_visibility", "normal")
-let g:solarized_vert_split_bg_trans = get(g:, "solarized_vert_split_bg_trans", 0)
 
 "}}}
 " Colorscheme initialization "{{{
@@ -480,11 +478,7 @@ exe "hi! LineNr"            .s:fmt_none   .s:fg_base01 .s:bg_base02
 exe "hi! LineNrAbove"       .s:fmt_none   .s:fg_red    .s:bg_base02
 exe "hi! LineNrBelow"       .s:fmt_none   .s:fg_green  .s:bg_base02
 exe "hi! Question"          .s:fmt_bold   .s:fg_cyan   .s:bg_none
-if (g:solarized_vert_split_bg_trans == 1)
-    exe "hi! VertSplit"     .s:fmt_none   .s:fg_base02 .s:bg_none
-else
-    exe "hi! VertSplit"     .s:fmt_none   .s:fg_base02 .s:bg_base02
-endif
+exe "hi! VertSplit"         .s:fmt_none   .s:fg_base02 .s:bg_base02
 exe "hi! Title"             .s:fmt_bold   .s:fg_orange .s:bg_none
 exe "hi! VisualNOS"         .s:fmt_stnd   .s:fg_none   .s:bg_base02 .s:fmt_revbb
 exe "hi! WarningMsg"        .s:fmt_bold   .s:fg_red    .s:bg_none
