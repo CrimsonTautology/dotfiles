@@ -1,7 +1,8 @@
-" Name:     customized NeoSolarized; modified by CrimsonTautolgy with ideas
+" Name:     customized NeoSolarized; modified by CrimsonTautology with ideas
 "           from solarized8 and gruvbox
 " Author:   iCyMind <icyminnd@gmail.com>
 " URL:      original: https://github.com/iCyMind/NeoSolarized
+"           current: https://github.com/CrimsonTautology/dotfiles
 " License:  MIT
 " Modified: 04/24/2022
 
@@ -110,7 +111,7 @@
 " Default option values"{{{
 " ---------------------------------------------------------------------
 
-" Font styles:
+" Font:
 let g:solarized_bold = get(g:, "solarized_bold", 1)
 let g:solarized_italic = get(g:, "solarized_italic", 1)
 let g:solarized_underline = get(g:, "solarized_underline", 1)
@@ -134,146 +135,145 @@ let colors_name = "solarized"
 " ---------------------------------------------------------------------
 "
 " Set gui and terminal at the same time.
-    let s:gui_mode       = "gui"
-    let s:gui_base03      = "#002b36"
-    let s:gui_base02      = "#073642"
-    let s:gui_base01      = "#586e75"
-    let s:gui_base00      = "#657b83"
-    let s:gui_base0       = "#839496"
-    let s:gui_base1       = "#93a1a1"
-    let s:gui_base2       = "#eee8d5"
-    let s:gui_base3       = "#fdf6e3"
-    let s:gui_yellow      = "#b58900"
-    let s:gui_orange      = "#cb4b16"
-    let s:gui_red         = "#dc322f"
-    let s:gui_magenta     = "#d33682"
-    let s:gui_violet      = "#6c71c4"
-    let s:gui_blue        = "#268bd2"
-    let s:gui_cyan        = "#2aa198"
-    "let s:gui_green       = "#719e07" "experimental
-    let s:gui_green       = "#859900" "original
+let s:gui_mode = "gui"
+let s:gui_base03 = "#002b36"
+let s:gui_base02 = "#073642"
+let s:gui_base01 = "#586e75"
+let s:gui_base00 = "#657b83"
+let s:gui_base0 = "#839496"
+let s:gui_base1 = "#93a1a1"
+let s:gui_base2 = "#eee8d5"
+let s:gui_base3 = "#fdf6e3"
+let s:gui_yellow = "#b58900"
+let s:gui_orange = "#cb4b16"
+let s:gui_red = "#dc322f"
+let s:gui_magenta = "#d33682"
+let s:gui_violet = "#6c71c4"
+let s:gui_blue = "#268bd2"
+let s:gui_cyan = "#2aa198"
+let s:gui_green = "#859900" "original
 
-    let s:term_mode       = "cterm"
-    let s:term_base03      = "8"
-    let s:term_base02      = "0"
-    let s:term_base01      = "10"
-    let s:term_base00      = "11"
-    let s:term_base0       = "12"
-    let s:term_base1       = "14"
-    let s:term_base2       = "7"
-    let s:term_base3       = "15"
-    let s:term_yellow      = "3"
-    let s:term_orange      = "9"
-    let s:term_red         = "1"
-    let s:term_magenta     = "5"
-    let s:term_violet      = "13"
-    let s:term_blue        = "4"
-    let s:term_cyan        = "6"
-    let s:term_green       = "2"
+let s:term_mode = "cterm"
+let s:term_base03 = "8"
+let s:term_base02 = "0"
+let s:term_base01 = "10"
+let s:term_base00 = "11"
+let s:term_base0 = "12"
+let s:term_base1 = "14"
+let s:term_base2 = "7"
+let s:term_base3 = "15"
+let s:term_yellow = "3"
+let s:term_orange = "9"
+let s:term_red = "1"
+let s:term_magenta = "5"
+let s:term_violet = "13"
+let s:term_blue = "4"
+let s:term_cyan = "6"
+let s:term_green = "2"
 
 "}}}
 " Formatting options and null values for passthrough effect "{{{
 " ---------------------------------------------------------------------
-    let s:gui_none        = "NONE"
-    let s:term_none       = "NONE"
-    let s:n               = "NONE"
-    let s:c               = ",undercurl"
-    let s:r               = ",reverse"
-    let s:s               = ",standout"
-    let s:ou              = ""
-    let s:ob              = ""
+let s:gui_none = "NONE"
+let s:term_none = "NONE"
+let s:n = "NONE"
+let s:c = ",undercurl"
+let s:r = ",reverse"
+let s:s = ",standout"
+let s:ou = ""
+let s:ob = ""
 "}}}
 " Background value based on termtrans setting "{{{
 " ---------------------------------------------------------------------
 if (has("gui_running") || g:solarized_termtrans == 0)
-    let s:gui_back        = s:gui_base03
-    let s:term_back        = s:term_base03
+  let s:gui_back = s:gui_base03
+  let s:term_back = s:term_base03
 else
-    let s:gui_back        = "NONE"
-    let s:term_back        = "NONE"
+  let s:gui_back = "NONE"
+  let s:term_back = "NONE"
 endif
 "}}}
 " Alternate light scheme "{{{
 " ---------------------------------------------------------------------
 if &background == "light"
-    " GUI
-    let s:gui_temp03    =   s:gui_base03
-    let s:gui_temp02    =   s:gui_base02
-    let s:gui_temp01    =   s:gui_base01
-    let s:gui_temp00    =   s:gui_base00
-    let s:gui_base03    =   s:gui_base3
-    let s:gui_base02    =   s:gui_base2
-    let s:gui_base01    =   s:gui_base1
-    let s:gui_base00    =   s:gui_base0
-    let s:gui_base0     =   s:gui_temp00
-    let s:gui_base1     =   s:gui_temp01
-    let s:gui_base2     =   s:gui_temp02
-    let s:gui_base3     =   s:gui_temp03
-    if (s:gui_back != "NONE")
-        let s:gui_back  =   s:gui_base03
-    endif
+  " GUI
+  let s:gui_temp03 = s:gui_base03
+  let s:gui_temp02 = s:gui_base02
+  let s:gui_temp01 = s:gui_base01
+  let s:gui_temp00 = s:gui_base00
+  let s:gui_base03 = s:gui_base3
+  let s:gui_base02 = s:gui_base2
+  let s:gui_base01 = s:gui_base1
+  let s:gui_base00 = s:gui_base0
+  let s:gui_base0 = s:gui_temp00
+  let s:gui_base1 = s:gui_temp01
+  let s:gui_base2 = s:gui_temp02
+  let s:gui_base3 = s:gui_temp03
+  if (s:gui_back != "NONE")
+    let s:gui_back = s:gui_base03
+  endif
 
-    " terminal
-    let s:term_temp03   =   s:term_base03
-    let s:term_temp02   =   s:term_base02
-    let s:term_temp01   =   s:term_base01
-    let s:term_temp00   =   s:term_base00
-    let s:term_base03   =   s:term_base3
-    let s:term_base02   =   s:term_base2
-    let s:term_base01   =   s:term_base1
-    let s:term_base00   =   s:term_base0
-    let s:term_base0    =   s:term_temp00
-    let s:term_base1    =   s:term_temp01
-    let s:term_base2    =   s:term_temp02
-    let s:term_base3    =   s:term_temp03
-    if (s:term_back != "NONE")
-        let s:term_back =   s:term_base03
-    endif
+  " terminal
+  let s:term_temp03 = s:term_base03
+  let s:term_temp02 = s:term_base02
+  let s:term_temp01 = s:term_base01
+  let s:term_temp00 = s:term_base00
+  let s:term_base03 = s:term_base3
+  let s:term_base02 = s:term_base2
+  let s:term_base01 = s:term_base1
+  let s:term_base00 = s:term_base0
+  let s:term_base0 = s:term_temp00
+  let s:term_base1 = s:term_temp01
+  let s:term_base2 = s:term_temp02
+  let s:term_base3 = s:term_temp03
+  if (s:term_back != "NONE")
+    let s:term_back = s:term_base03
+  endif
 endif
 "}}}
 " Optional contrast schemes "{{{
 " ---------------------------------------------------------------------
 if g:solarized_contrast == "high"
-    let s:gui_base01      = s:gui_base00
-    let s:gui_base00      = s:gui_base0
-    let s:gui_base0       = s:gui_base1
-    let s:gui_base1       = s:gui_base2
-    let s:gui_base2       = s:gui_base3
-    let s:gui_back        = s:gui_back
+  let s:gui_base01 = s:gui_base00
+  let s:gui_base00 = s:gui_base0
+  let s:gui_base0 = s:gui_base1
+  let s:gui_base1 = s:gui_base2
+  let s:gui_base2 = s:gui_base3
+  let s:gui_back = s:gui_back
 
-    let s:term_base01      = s:term_base00
-    let s:term_base00      = s:term_base0
-    let s:term_base0       = s:term_base1
-    let s:term_base1       = s:term_base2
-    let s:term_base2       = s:term_base3
-    let s:term_back        = s:term_back
+  let s:term_base01 = s:term_base00
+  let s:term_base00 = s:term_base0
+  let s:term_base0 = s:term_base1
+  let s:term_base1 = s:term_base2
+  let s:term_base2 = s:term_base3
+  let s:term_back = s:term_back
 endif
 if g:solarized_contrast == "low"
-    let s:gui_back        = s:gui_base02
-    let s:term_back        = s:term_base02
-    let s:ou          = ",underline"
+  let s:gui_back = s:gui_base02
+  let s:term_back = s:term_base02
+  let s:ou = ",underline"
 endif
 "}}}
 " Overrides dependent on user specified values and environment "{{{
 " ---------------------------------------------------------------------
 if (g:solarized_bold == 0 || &t_Co == 8 )
-    let s:b           = ""
-    let s:bb          = ",bold"
+  let s:b = ""
+  let s:bb = ",bold"
 else
-    let s:b           = ",bold"
-    let s:bb          = ""
+  let s:b = ",bold"
+  let s:bb = ""
 endif
 
 if g:solarized_underline == 0
-    let s:u           = ""
+  let s:u = ""
 else
-    let s:u           = ",underline"
+  let s:u = ",underline"
 endif
 
 if g:solarized_italic == 0
-    let s:i           = ""
+  let s:i = ""
 else
-    let s:i           = ",italic"
+  let s:i = ",italic"
 endif
 "}}}
 " Highlighting primitives"{{{
@@ -317,62 +317,62 @@ exe "let s:fg_violet    = ' "   .   "guifg=".s:gui_violet   .   " ctermfg=".s:te
 exe "let s:fg_blue      = ' "   .   "guifg=".s:gui_blue     .   " ctermfg=".s:term_blue      .   "'"
 exe "let s:fg_cyan      = ' "   .   "guifg=".s:gui_cyan     .   " ctermfg=".s:term_cyan      .   "'"
 
-exe "let s:fmt_none     = ' "   .   "gui=NONE"          .   " cterm=NONE"           .   "'"
-exe "let s:fmt_bold     = ' "   .   "gui=NONE".s:b      .   " cterm=NONE".s:b       .   "'"
-exe "let s:fmt_bldi     = ' "   .   "gui=NONE".s:b      .   " cterm=NONE".s:b       .   "'"
-exe "let s:fmt_undr     = ' "   .   "gui=NONE".s:u      .   " cterm=NONE".s:u       .   "'"
-exe "let s:fmt_undb     = ' "   .   "gui=NONE".s:u.s:b  .   " cterm=NONE".s:u.s:b   .   "'"
-exe "let s:fmt_undi     = ' "   .   "gui=NONE".s:u      .   " cterm=NONE".s:u       .   "'"
-exe "let s:fmt_uopt     = ' "   .   "gui=NONE".s:ou     .   " cterm=NONE".s:ou      .   "'"
-exe "let s:fmt_curl     = ' "   .   "gui=NONE".s:c      .   " cterm=NONE".s:c       .   "'"
-exe "let s:fmt_ital     = ' "   .   "gui=NONE".s:i      .   " cterm=NONE".s:i       .   "'"
-exe "let s:fmt_stnd     = ' "   .   "gui=NONE".s:s      .   " cterm=NONE".s:s       .   "'"
-exe "let s:fmt_revr     = ' "   .   "gui=NONE".s:r      .   " cterm=NONE".s:r       .   "'"
-exe "let s:fmt_revb     = ' "   .   "gui=NONE".s:r.s:b  .   " cterm=NONE".s:r.s:b   .   "'"
+exe "let s:fmt_none     = ' "   .   "gui=NONE"              .   " cterm=NONE"                .   "'"
+exe "let s:fmt_bold     = ' "   .   "gui=NONE".s:b          .   " cterm=NONE".s:b            .   "'"
+exe "let s:fmt_bldi     = ' "   .   "gui=NONE".s:b          .   " cterm=NONE".s:b            .   "'"
+exe "let s:fmt_undr     = ' "   .   "gui=NONE".s:u          .   " cterm=NONE".s:u            .   "'"
+exe "let s:fmt_undb     = ' "   .   "gui=NONE".s:u.s:b      .   " cterm=NONE".s:u.s:b        .   "'"
+exe "let s:fmt_undi     = ' "   .   "gui=NONE".s:u          .   " cterm=NONE".s:u            .   "'"
+exe "let s:fmt_uopt     = ' "   .   "gui=NONE".s:ou         .   " cterm=NONE".s:ou           .   "'"
+exe "let s:fmt_curl     = ' "   .   "gui=NONE".s:c          .   " cterm=NONE".s:c            .   "'"
+exe "let s:fmt_ital     = ' "   .   "gui=NONE".s:i          .   " cterm=NONE".s:i            .   "'"
+exe "let s:fmt_stnd     = ' "   .   "gui=NONE".s:s          .   " cterm=NONE".s:s            .   "'"
+exe "let s:fmt_revr     = ' "   .   "gui=NONE".s:r          .   " cterm=NONE".s:r            .   "'"
+exe "let s:fmt_revb     = ' "   .   "gui=NONE".s:r.s:b      .   " cterm=NONE".s:r.s:b        .   "'"
 " revbb (reverse bold for bright colors) is only set to actual bold in low
 " color terminals (t_co=8, such as OS X Terminal.app) and should only be used
 " with colors 8-15.
-exe "let s:fmt_revbb    = ' "   .   "gui=NONE".s:r.s:bb     .   " cterm=NONE".s:r.s:bb      .   "'"
-exe "let s:fmt_revbbu   = ' "   .   "gui=NONE".s:r.s:bb.s:u .   " cterm=NONE".s:r.s:bb.s:u  .   "'"
+exe "let s:fmt_revbb    = ' "   .   "gui=NONE".s:r.s:bb     .   " cterm=NONE".s:r.s:bb       .   "'"
+exe "let s:fmt_revbbu   = ' "   .   "gui=NONE".s:r.s:bb.s:u .   " cterm=NONE".s:r.s:bb.s:u   .   "'"
 
 if has("gui_running") || has("termguicolors") && &termguicolors
-    exe "let s:sp_none      = ' guisp="     .       s:gui_none      .   "'"
-    exe "let s:sp_back      = ' guisp="     .       s:gui_back      .   "'"
-    exe "let s:sp_base03    = ' guisp="     .       s:gui_base03    .   "'"
-    exe "let s:sp_base02    = ' guisp="     .       s:gui_base02    .   "'"
-    exe "let s:sp_base01    = ' guisp="     .       s:gui_base01    .   "'"
-    exe "let s:sp_base00    = ' guisp="     .       s:gui_base00    .   "'"
-    exe "let s:sp_base0     = ' guisp="     .       s:gui_base0     .   "'"
-    exe "let s:sp_base1     = ' guisp="     .       s:gui_base1     .   "'"
-    exe "let s:sp_base2     = ' guisp="     .       s:gui_base2     .   "'"
-    exe "let s:sp_base3     = ' guisp="     .       s:gui_base3     .   "'"
-    exe "let s:sp_green     = ' guisp="     .       s:gui_green     .   "'"
-    exe "let s:sp_yellow    = ' guisp="     .       s:gui_yellow    .   "'"
-    exe "let s:sp_orange    = ' guisp="     .       s:gui_orange    .   "'"
-    exe "let s:sp_red       = ' guisp="     .       s:gui_red       .   "'"
-    exe "let s:sp_magenta   = ' guisp="     .       s:gui_magenta   .   "'"
-    exe "let s:sp_violet    = ' guisp="     .       s:gui_violet    .   "'"
-    exe "let s:sp_blue      = ' guisp="     .       s:gui_blue      .   "'"
-    exe "let s:sp_cyan      = ' guisp="     .       s:gui_cyan      .   "'"
+  exe "let s:sp_none      = ' guisp="     .       s:gui_none      .   "'"
+  exe "let s:sp_back      = ' guisp="     .       s:gui_back      .   "'"
+  exe "let s:sp_base03    = ' guisp="     .       s:gui_base03    .   "'"
+  exe "let s:sp_base02    = ' guisp="     .       s:gui_base02    .   "'"
+  exe "let s:sp_base01    = ' guisp="     .       s:gui_base01    .   "'"
+  exe "let s:sp_base00    = ' guisp="     .       s:gui_base00    .   "'"
+  exe "let s:sp_base0     = ' guisp="     .       s:gui_base0     .   "'"
+  exe "let s:sp_base1     = ' guisp="     .       s:gui_base1     .   "'"
+  exe "let s:sp_base2     = ' guisp="     .       s:gui_base2     .   "'"
+  exe "let s:sp_base3     = ' guisp="     .       s:gui_base3     .   "'"
+  exe "let s:sp_green     = ' guisp="     .       s:gui_green     .   "'"
+  exe "let s:sp_yellow    = ' guisp="     .       s:gui_yellow    .   "'"
+  exe "let s:sp_orange    = ' guisp="     .       s:gui_orange    .   "'"
+  exe "let s:sp_red       = ' guisp="     .       s:gui_red       .   "'"
+  exe "let s:sp_magenta   = ' guisp="     .       s:gui_magenta   .   "'"
+  exe "let s:sp_violet    = ' guisp="     .       s:gui_violet    .   "'"
+  exe "let s:sp_blue      = ' guisp="     .       s:gui_blue      .   "'"
+  exe "let s:sp_cyan      = ' guisp="     .       s:gui_cyan      .   "'"
 else
-    let s:sp_none           =   ""
-    let s:sp_back           =   ""
-    let s:sp_base03         =   ""
-    let s:sp_base02         =   ""
-    let s:sp_base01         =   ""
-    let s:sp_base00         =   ""
-    let s:sp_base0          =   ""
-    let s:sp_base1          =   ""
-    let s:sp_base2          =   ""
-    let s:sp_base3          =   ""
-    let s:sp_green          =   ""
-    let s:sp_yellow         =   ""
-    let s:sp_orange         =   ""
-    let s:sp_red            =   ""
-    let s:sp_magenta        =   ""
-    let s:sp_violet         =   ""
-    let s:sp_blue           =   ""
-    let s:sp_cyan           =   ""
+  let s:sp_none = ""
+  let s:sp_back = ""
+  let s:sp_base03 = ""
+  let s:sp_base02 = ""
+  let s:sp_base01 = ""
+  let s:sp_base00 = ""
+  let s:sp_base0 = ""
+  let s:sp_base1 = ""
+  let s:sp_base2 = ""
+  let s:sp_base3 = ""
+  let s:sp_green = ""
+  let s:sp_yellow = ""
+  let s:sp_orange = ""
+  let s:sp_red = ""
+  let s:sp_magenta = ""
+  let s:sp_violet = ""
+  let s:sp_blue = ""
+  let s:sp_cyan = ""
 endif
 
 "}}}
@@ -381,17 +381,17 @@ endif
 " note that link syntax to avoid duplicate configuration doesn't work with the
 " exe compiled formats
 
-exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_back
+exe "hi! Normal"         .s:fmt_none   .s:fg_base0   .s:bg_back
 
-exe "hi! Comment"        .s:fmt_ital   .s:fg_base01 .s:bg_none
+exe "hi! Comment"        .s:fmt_ital   .s:fg_base01  .s:bg_none
 "       *Comment         any comment
 
-exe "hi! Constant"       .s:fmt_bold   .s:fg_green  .s:bg_none
-exe "hi! Number"         .s:fmt_none   .s:fg_green  .s:bg_none
-exe "hi! Float"          .s:fmt_none   .s:fg_green  .s:bg_none
-exe "hi! Boolean"        .s:fmt_none   .s:fg_green  .s:bg_none
-exe "hi! String"         .s:fmt_none   .s:fg_cyan   .s:bg_none
-exe "hi! Character"      .s:fmt_bold   .s:fg_cyan   .s:bg_none
+exe "hi! Constant"       .s:fmt_bold   .s:fg_green   .s:bg_none
+exe "hi! Number"         .s:fmt_none   .s:fg_green   .s:bg_none
+exe "hi! Float"          .s:fmt_none   .s:fg_green   .s:bg_none
+exe "hi! Boolean"        .s:fmt_none   .s:fg_green   .s:bg_none
+exe "hi! String"         .s:fmt_none   .s:fg_cyan    .s:bg_none
+exe "hi! Character"      .s:fmt_bold   .s:fg_cyan    .s:bg_none
 "       *Constant        any constant
 "        String          a string constant: "this is a string"
 "        Character       a character constant: 'c', '\n'
@@ -399,12 +399,12 @@ exe "hi! Character"      .s:fmt_bold   .s:fg_cyan   .s:bg_none
 "        Boolean         a boolean constant: TRUE, false
 "        Float           a floating point constant: 2.3e10
 
-exe "hi! Identifier"     .s:fmt_none   .s:fg_blue   .s:bg_none
-exe "hi! Function"       .s:fmt_bold   .s:fg_blue   .s:bg_none
+exe "hi! Identifier"     .s:fmt_none   .s:fg_blue    .s:bg_none
+exe "hi! Function"       .s:fmt_bold   .s:fg_blue    .s:bg_none
 "       *Identifier      any variable name
 "        Function        function name (also: methods for classes)
 "
-exe "hi! Statement"      .s:fmt_bold   .s:fg_magenta  .s:bg_none
+exe "hi! Statement"      .s:fmt_bold   .s:fg_magenta .s:bg_none
 "       *Statement       any statement
 "        Conditional     if, then, else, endif, switch, etc.
 "        Repeat          for, do, while, etc.
@@ -413,7 +413,7 @@ exe "hi! Statement"      .s:fmt_bold   .s:fg_magenta  .s:bg_none
 "        Keyword         any other keyword
 "        Exception       try, catch, throw
 
-exe "hi! PreProc"        .s:fmt_bold   .s:fg_orange .s:bg_none
+exe "hi! PreProc"        .s:fmt_bold   .s:fg_orange  .s:bg_none
 "       *PreProc         generic Preprocessor
 "        Include         preprocessor #include
 "        Define          preprocessor #define
@@ -426,7 +426,7 @@ exe "hi! Type"           .s:fmt_none   .s:fg_magenta .s:bg_none
 "        Structure       struct, union, enum, etc.
 "        Typedef         A typedef
 
-exe "hi! Special"        .s:fmt_none   .s:fg_red    .s:bg_none
+exe "hi! Special"        .s:fmt_none   .s:fg_red     .s:bg_none
 "       *Special         any special symbol
 "        Tag             you can use CTRL-] on this
 "        SpecialChar     special character in a constant
@@ -434,16 +434,16 @@ exe "hi! Special"        .s:fmt_none   .s:fg_red    .s:bg_none
 "        SpecialComment  special things inside a comment
 "        Debug           debugging statements
 
-exe "hi! Underlined"     .s:fmt_undr   .s:fg_violet .s:bg_none
+exe "hi! Underlined"     .s:fmt_undr   .s:fg_violet  .s:bg_none
 "       *Underlined      text that stands out, HTML links
 
-exe "hi! Ignore"         .s:fmt_none   .s:fg_none   .s:bg_none
+exe "hi! Ignore"         .s:fmt_none   .s:fg_none    .s:bg_none
 "       *Ignore          left blank, hidden  |hl-Ignore|
 
-exe "hi! Error"          .s:fmt_revb   .s:fg_red    .s:bg_none
+exe "hi! Error"          .s:fmt_revb   .s:fg_red     .s:bg_none
 "       *Error           any erroneous construct
 
-exe "hi! Todo"           .s:fmt_bold   .s:fg_yellow .s:bg_base02
+exe "hi! Todo"           .s:fmt_bold   .s:fg_yellow  .s:bg_base02
 "       *Todo            anything that needs extra attention; mostly the
 "                        keywords TODO FIXME and XXX
 "
@@ -469,8 +469,8 @@ exe "hi! CursorLineNr"      .s:fmt_uopt   .s:fg_yellow .s:bg_base03 .s:sp_base1
 exe "hi! CursorLineSign"    .s:fmt_uopt   .s:fg_none   .s:bg_base03 .s:sp_base1
 exe "hi! CursorLineFold"    .s:fmt_uopt   .s:fg_none   .s:bg_base03 .s:sp_base1
 exe "hi! Question"          .s:fmt_bold   .s:fg_cyan   .s:bg_none
-exe "hi! StatusLine"        .s:fmt_none   .s:fg_base02 .s:bg_base2  .s:fmt_revbb
-exe "hi! StatusLineNC"      .s:fmt_none   .s:fg_base02 .s:bg_base1  .s:fmt_revbb
+exe "hi! StatusLine"        .s:fmt_none   .s:fg_base02 .s:bg_base1  .s:fmt_revbb
+exe "hi! StatusLineNC"      .s:fmt_none   .s:fg_base02 .s:bg_base01 .s:fmt_revbb
 exe "hi! VertSplit"         .s:fmt_none   .s:fg_base02 .s:bg_base02
 exe "hi! Title"             .s:fmt_bold   .s:fg_orange .s:bg_none
 exe "hi! Visual"            .s:fmt_none   .s:fg_base01 .s:bg_base03 .s:fmt_revbb
@@ -494,7 +494,7 @@ exe "hi! PmenuSel"          .s:fmt_bold   .s:fg_base02 .s:bg_blue
 exe "hi! PmenuSbar"         .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! PmenuThumb"        .s:fmt_none   .s:fg_none   .s:bg_base01
 exe "hi! TabLine"           .s:fmt_none   .s:fg_base01 .s:bg_base02 .s:sp_base02
-exe "hi! TabLineSel"        .s:fmt_none   .s:fg_base2  .s:bg_base02 .s:sp_base02
+exe "hi! TabLineSel"        .s:fmt_none   .s:fg_base1  .s:bg_base02 .s:sp_base02
 exe "hi! TabLineFill"       .s:fmt_none   .s:fg_base01 .s:bg_base02 .s:sp_base02
 exe "hi! CursorColumn"      .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! CursorLine"        .s:fmt_uopt   .s:fg_none   .s:bg_base02 .s:sp_base1
@@ -891,22 +891,22 @@ endif
 " colors of the underlying terminal.
 
 let g:terminal_ansi_colors = [
-  \'#073642',
-  \'#dc322f',
-  \'#859900',
-  \'#b58900',
-  \'#268bd2',
-  \'#d33682',
-  \'#2aa198',
-  \'#eee8d5',
-  \'#002b36',
-  \'#cb4b16',
-  \'#586e75',
-  \'#657b83',
-  \'#839496',
-  \'#6c71c4',
-  \'#93a1a1',
-  \'#fdf6e3' ]
+      \'#073642',
+      \'#dc322f',
+      \'#859900',
+      \'#b58900',
+      \'#268bd2',
+      \'#d33682',
+      \'#2aa198',
+      \'#eee8d5',
+      \'#002b36',
+      \'#cb4b16',
+      \'#586e75',
+      \'#657b83',
+      \'#839496',
+      \'#6c71c4',
+      \'#93a1a1',
+      \'#fdf6e3' ]
 
 "}}}
 " Utility autocommand "{{{
