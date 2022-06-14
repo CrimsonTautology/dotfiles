@@ -493,8 +493,8 @@ exe "hi! Pmenu"             .s:fmt_bold   .s:fg_base0  .s:bg_base02
 exe "hi! PmenuSel"          .s:fmt_bold   .s:fg_base02 .s:bg_blue
 exe "hi! PmenuSbar"         .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! PmenuThumb"        .s:fmt_none   .s:fg_none   .s:bg_base01
-exe "hi! TabLine"           .s:fmt_undr   .s:fg_base1  .s:bg_base02 .s:sp_base00
-exe "hi! TabLineSel"        .s:fmt_undr   .s:fg_green  .s:bg_base02 .s:sp_base00
+exe "hi! TabLine"           .s:fmt_undr   .s:fg_base01 .s:bg_base02 .s:sp_base00
+exe "hi! TabLineSel"        .s:fmt_undr   .s:fg_base1  .s:bg_base02 .s:sp_base00
 exe "hi! TabLineFill"       .s:fmt_undr   .s:fg_base01 .s:bg_base02 .s:sp_base00
 exe "hi! CursorColumn"      .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! CursorLine"        .s:fmt_uopt   .s:fg_none   .s:bg_base02 .s:sp_base1
