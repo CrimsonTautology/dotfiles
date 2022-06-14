@@ -517,8 +517,8 @@ exe "hi! SpellBad"          .s:fmt_curl   .s:fg_none   .s:bg_none   .s:sp_red
 exe "hi! SpellCap"          .s:fmt_curl   .s:fg_none   .s:bg_none   .s:sp_violet
 exe "hi! SpellRare"         .s:fmt_curl   .s:fg_none   .s:bg_none   .s:sp_cyan
 exe "hi! SpellLocal"        .s:fmt_curl   .s:fg_none   .s:bg_none   .s:sp_yellow
-exe "hi! Pmenu"             .s:fmt_none   .s:fg_base0  .s:bg_base02
-exe "hi! PmenuSel"          .s:fmt_none   .s:fg_base2  .s:bg_base01
+exe "hi! Pmenu"             .s:fmt_bold   .s:fg_base0  .s:bg_base02
+exe "hi! PmenuSel"          .s:fmt_bold   .s:fg_base02 .s:bg_blue
 exe "hi! PmenuSbar"         .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! PmenuThumb"        .s:fmt_none   .s:fg_none   .s:bg_base01
 exe "hi! TabLine"           .s:fmt_none   .s:fg_base01 .s:bg_base02 .s:sp_base02
