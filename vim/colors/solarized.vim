@@ -469,14 +469,14 @@ exe "hi! CursorLineNr"      .s:fmt_uopt   .s:fg_yellow .s:bg_base03 .s:sp_base1
 exe "hi! CursorLineSign"    .s:fmt_uopt   .s:fg_none   .s:bg_base03 .s:sp_base1
 exe "hi! CursorLineFold"    .s:fmt_uopt   .s:fg_none   .s:bg_base03 .s:sp_base1
 exe "hi! Question"          .s:fmt_bold   .s:fg_cyan   .s:bg_none
-exe "hi! StatusLine"        .s:fmt_none   .s:fg_base02 .s:bg_base1  .s:fmt_revbb
-exe "hi! StatusLineNC"      .s:fmt_none   .s:fg_base02 .s:bg_base01 .s:fmt_revbb
+exe "hi! StatusLine"        .s:fmt_revbb  .s:fg_base02 .s:bg_base1
+exe "hi! StatusLineNC"      .s:fmt_revbb  .s:fg_base02 .s:bg_base01
 exe "hi! VertSplit"         .s:fmt_none   .s:fg_base02 .s:bg_base02
 exe "hi! Title"             .s:fmt_bold   .s:fg_orange .s:bg_none
-exe "hi! Visual"            .s:fmt_none   .s:fg_base01 .s:bg_base03 .s:fmt_revbb
-exe "hi! VisualNOS"         .s:fmt_stnd   .s:fg_none   .s:bg_base02 .s:fmt_revbb
+exe "hi! Visual"            .s:fmt_revbb  .s:fg_base01 .s:bg_base03
+exe "hi! VisualNOS"         .s:fmt_revbb  .s:fg_none   .s:bg_base02
 exe "hi! WarningMsg"        .s:fmt_bold   .s:fg_orange .s:bg_none
-exe "hi! WildMenu"          .s:fmt_none   .s:fg_base02 .s:bg_blue   .s:fmt_revbb
+exe "hi! WildMenu"          .s:fmt_revbb  .s:fg_base02 .s:bg_blue
 exe "hi! Folded"            .s:fmt_undb   .s:fg_base0  .s:bg_base02 .s:sp_base03
 exe "hi! FoldColumn"        .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! DiffAdd"           .s:fmt_bold   .s:fg_green  .s:bg_base02 .s:sp_green
@@ -499,8 +499,8 @@ exe "hi! TabLineFill"       .s:fmt_none   .s:fg_base01 .s:bg_base02 .s:sp_base02
 exe "hi! CursorColumn"      .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! CursorLine"        .s:fmt_uopt   .s:fg_none   .s:bg_base02 .s:sp_base1
 exe "hi! ColorColumn"       .s:fmt_none   .s:fg_none   .s:bg_base02
-exe "hi! StatusLineTerm"    .s:fmt_none   .s:fg_green  .s:bg_base02 .s:fmt_revbb
-exe "hi! StatusLineTermNC"  .s:fmt_none   .s:fg_green  .s:bg_base02
+exe "hi! StatusLineTerm"    .s:fmt_revbb  .s:fg_green  .s:bg_base02
+exe "hi! StatusLineTermNC"  .s:fmt_revbb  .s:fg_base02 .s:bg_green
 exe "hi! MatchParen"        .s:fmt_bold   .s:fg_orange .s:bg_yellow
 exe "hi! ToolbarButton"     .s:fmt_bold   .s:fg_base1  .s:bg_base02
 exe "hi! ToolbarLine"       .s:fmt_none   .s:fg_none   .s:bg_base02
