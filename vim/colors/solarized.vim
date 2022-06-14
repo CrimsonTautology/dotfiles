@@ -27,7 +27,6 @@
 "
 " Appearance:
 " g:solarized_contrast
-" g:solarized_diffmode
 " g:solarized_term_bold_as_bright
 " g:solarized_termtrans
 " g:solarized_vert_split_bg_trans
@@ -120,7 +119,6 @@ let g:solarized_underline = get(g:, "solarized_underline", 1)
 
 " Appearance:
 let g:solarized_contrast = get(g:, "solarized_contrast", "normal")
-let g:solarized_diffmode = get(g:, "solarized_diffmode", "normal")
 let g:solarized_term_bold_as_bright = get(g:, "solarized_term_bold_as_bright", 1)
 let g:solarized_termtrans = get(g:, "solarized_termtrans", 1)
 let g:solarized_visibility = get(g:, "solarized_visibility", "normal")
@@ -493,24 +491,10 @@ exe "hi! WarningMsg"        .s:fmt_bold   .s:fg_red    .s:bg_none
 exe "hi! WildMenu"          .s:fmt_none   .s:fg_base00 .s:bg_base2  .s:fmt_revbb
 exe "hi! Folded"            .s:fmt_undb   .s:fg_base0  .s:bg_base02 .s:sp_base03
 exe "hi! FoldColumn"        .s:fmt_none   .s:fg_none   .s:bg_base02
-
-if (g:solarized_diffmode=="high")
-    exe "hi! DiffAdd"       .s:fmt_revr   .s:fg_green  .s:bg_none
-    exe "hi! DiffChange"    .s:fmt_revr   .s:fg_yellow .s:bg_none
-    exe "hi! DiffDelete"    .s:fmt_revr   .s:fg_red    .s:bg_none
-    exe "hi! DiffText"      .s:fmt_revr   .s:fg_blue   .s:bg_none
-elseif  (g:solarized_diffmode=="low")
-    exe "hi! DiffAdd"       .s:fmt_undr   .s:fg_green  .s:bg_none   .s:sp_green
-    exe "hi! DiffChange"    .s:fmt_undr   .s:fg_yellow .s:bg_none   .s:sp_yellow
-    exe "hi! DiffDelete"    .s:fmt_bold   .s:fg_red    .s:bg_none
-    exe "hi! DiffText"      .s:fmt_undr   .s:fg_blue   .s:bg_none   .s:sp_blue
-else " normal
-    exe "hi! DiffAdd"       .s:fmt_bold   .s:fg_green  .s:bg_base02 .s:sp_green
-    exe "hi! DiffChange"    .s:fmt_bold   .s:fg_yellow .s:bg_base02 .s:sp_yellow
-    exe "hi! DiffDelete"    .s:fmt_bold   .s:fg_red    .s:bg_base02
-    exe "hi! DiffText"      .s:fmt_bold   .s:fg_blue   .s:bg_base02 .s:sp_blue
-endif
-
+exe "hi! DiffAdd"           .s:fmt_bold   .s:fg_green  .s:bg_base02 .s:sp_green
+exe "hi! DiffChange"        .s:fmt_bold   .s:fg_yellow .s:bg_base02 .s:sp_yellow
+exe "hi! DiffDelete"        .s:fmt_bold   .s:fg_red    .s:bg_base02
+exe "hi! DiffText"          .s:fmt_bold   .s:fg_blue   .s:bg_base02 .s:sp_blue
 exe "hi! SignColumn"        .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! Conceal"           .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! SpellBad"          .s:fmt_curl   .s:fg_none   .s:bg_none   .s:sp_red
