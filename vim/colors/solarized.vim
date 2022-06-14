@@ -29,7 +29,6 @@
 " g:solarized_contrast
 " g:solarized_term_bold_as_bright
 " g:solarized_termtrans
-" g:solarized_visibility
 "
 " ---------------------------------------------------------------------
 " INSTALLATION:
@@ -120,7 +119,6 @@ let g:solarized_underline = get(g:, "solarized_underline", 1)
 let g:solarized_contrast = get(g:, "solarized_contrast", "normal")
 let g:solarized_term_bold_as_bright = get(g:, "solarized_term_bold_as_bright", 1)
 let g:solarized_termtrans = get(g:, "solarized_termtrans", 1)
-let g:solarized_visibility = get(g:, "solarized_visibility", "normal")
 
 "}}}
 " Colorscheme initialization "{{{
@@ -453,16 +451,8 @@ exe "hi! Todo"           .s:fmt_bold   .s:fg_yellow .s:bg_base02
 "}}}
 " Extended highlighting "{{{
 " ---------------------------------------------------------------------
-if  (g:solarized_visibility=="high")
-    exe "hi! SpecialKey"    .s:fmt_revr   .s:fg_red    .s:bg_none
-    exe "hi! NonText"       .s:fmt_bold   .s:fg_red    .s:bg_none
-elseif  (g:solarized_visibility=="low")
-    exe "hi! SpecialKey"    .s:fmt_bold   .s:fg_base02 .s:bg_none
-    exe "hi! NonText"       .s:fmt_bold   .s:fg_base02 .s:bg_none
-else
-    exe "hi! SpecialKey"    .s:fmt_bold   .s:fg_base00 .s:bg_base02
-    exe "hi! NonText"       .s:fmt_bold   .s:fg_base00 .s:bg_none
-endif
+exe "hi! SpecialKey"        .s:fmt_bold   .s:fg_base00 .s:bg_base02
+exe "hi! NonText"           .s:fmt_bold   .s:fg_base00 .s:bg_none
 exe "hi! StatusLine"        .s:fmt_none   .s:fg_base02 .s:bg_base2  .s:fmt_revbb
 exe "hi! StatusLineNC"      .s:fmt_none   .s:fg_base02 .s:bg_base1  .s:fmt_revbb
 exe "hi! StatusLineTerm"    .s:fmt_none   .s:fg_green  .s:bg_base02 .s:fmt_revbb
