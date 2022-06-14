@@ -476,7 +476,7 @@ exe "hi! Title"             .s:fmt_bold   .s:fg_orange .s:bg_none
 exe "hi! Visual"            .s:fmt_revbb  .s:fg_base01 .s:bg_base03
 exe "hi! VisualNOS"         .s:fmt_revbb  .s:fg_none   .s:bg_base02
 exe "hi! WarningMsg"        .s:fmt_bold   .s:fg_orange .s:bg_none
-exe "hi! WildMenu"          .s:fmt_revbb  .s:fg_base02 .s:bg_blue
+exe "hi! WildMenu"          .s:fmt_revbb  .s:fg_blue   .s:bg_base02
 exe "hi! Folded"            .s:fmt_undb   .s:fg_base0  .s:bg_base02 .s:sp_base03
 exe "hi! FoldColumn"        .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! DiffAdd"           .s:fmt_bold   .s:fg_green  .s:bg_base02 .s:sp_green
