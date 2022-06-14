@@ -382,7 +382,6 @@ endif
 " exe compiled formats
 
 exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_back
-exe "hi! Terminal"       .s:fmt_none   .s:fg_base0  .s:bg_base03
 
 exe "hi! Comment"        .s:fmt_ital   .s:fg_base01 .s:bg_none
 "       *Comment         any comment
@@ -429,8 +428,8 @@ exe "hi! Type"           .s:fmt_none   .s:fg_magenta .s:bg_none
 
 exe "hi! Special"        .s:fmt_none   .s:fg_red    .s:bg_none
 "       *Special         any special symbol
-"        SpecialChar     special character in a constant
 "        Tag             you can use CTRL-] on this
+"        SpecialChar     special character in a constant
 "        Delimiter       character that needs attention
 "        SpecialComment  special things inside a comment
 "        Debug           debugging statements
@@ -453,26 +452,31 @@ exe "hi! Todo"           .s:fmt_bold   .s:fg_yellow .s:bg_base02
 " ---------------------------------------------------------------------
 exe "hi! SpecialKey"        .s:fmt_bold   .s:fg_base00 .s:bg_base02
 exe "hi! NonText"           .s:fmt_bold   .s:fg_base00 .s:bg_none
-exe "hi! StatusLine"        .s:fmt_none   .s:fg_base02 .s:bg_base2  .s:fmt_revbb
-exe "hi! StatusLineNC"      .s:fmt_none   .s:fg_base02 .s:bg_base1  .s:fmt_revbb
-exe "hi! StatusLineTerm"    .s:fmt_none   .s:fg_green  .s:bg_base02 .s:fmt_revbb
-exe "hi! StatusLineTermNC"  .s:fmt_none   .s:fg_green  .s:bg_base02
-exe "hi! Visual"            .s:fmt_none   .s:fg_base01 .s:bg_base03 .s:fmt_revbb
+"        EndOfBuffer     Filler lines (~) after the last line in the buffer.
 exe "hi! Directory"         .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! ErrorMsg"          .s:fmt_revr   .s:fg_red    .s:bg_none   .s:sp_base3
 exe "hi! IncSearch"         .s:fmt_stnd   .s:fg_orange .s:bg_none
 exe "hi! Search"            .s:fmt_revr   .s:fg_yellow .s:bg_none
+"        CurSearch       Current match for the last search pattern
+"                        (see 'hlsearch').
+"        QuickFixLine    Current |quickfix| item in the quickfix window.
 exe "hi! MoreMsg"           .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! ModeMsg"           .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! LineNr"            .s:fmt_none   .s:fg_base01 .s:bg_base02
 exe "hi! LineNrAbove"       .s:fmt_none   .s:fg_red    .s:bg_base02
 exe "hi! LineNrBelow"       .s:fmt_none   .s:fg_green  .s:bg_base02
+exe "hi! CursorLineNr"      .s:fmt_uopt   .s:fg_yellow .s:bg_base03 .s:sp_base1
+exe "hi! CursorLineSign"    .s:fmt_uopt   .s:fg_none   .s:bg_base03 .s:sp_base1
+exe "hi! CursorLineFold"    .s:fmt_uopt   .s:fg_none   .s:bg_base03 .s:sp_base1
 exe "hi! Question"          .s:fmt_bold   .s:fg_cyan   .s:bg_none
+exe "hi! StatusLine"        .s:fmt_none   .s:fg_base02 .s:bg_base2  .s:fmt_revbb
+exe "hi! StatusLineNC"      .s:fmt_none   .s:fg_base02 .s:bg_base1  .s:fmt_revbb
 exe "hi! VertSplit"         .s:fmt_none   .s:fg_base02 .s:bg_base02
 exe "hi! Title"             .s:fmt_bold   .s:fg_orange .s:bg_none
+exe "hi! Visual"            .s:fmt_none   .s:fg_base01 .s:bg_base03 .s:fmt_revbb
 exe "hi! VisualNOS"         .s:fmt_stnd   .s:fg_none   .s:bg_base02 .s:fmt_revbb
-exe "hi! WarningMsg"        .s:fmt_bold   .s:fg_red    .s:bg_none
-exe "hi! WildMenu"          .s:fmt_none   .s:fg_base00 .s:bg_base2  .s:fmt_revbb
+exe "hi! WarningMsg"        .s:fmt_bold   .s:fg_orange .s:bg_none
+exe "hi! WildMenu"          .s:fmt_none   .s:fg_base02 .s:bg_blue   .s:fmt_revbb
 exe "hi! Folded"            .s:fmt_undb   .s:fg_base0  .s:bg_base02 .s:sp_base03
 exe "hi! FoldColumn"        .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! DiffAdd"           .s:fmt_bold   .s:fg_green  .s:bg_base02 .s:sp_green
@@ -494,13 +498,15 @@ exe "hi! TabLineSel"        .s:fmt_none   .s:fg_base2  .s:bg_base02 .s:sp_base02
 exe "hi! TabLineFill"       .s:fmt_none   .s:fg_base01 .s:bg_base02 .s:sp_base02
 exe "hi! CursorColumn"      .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! CursorLine"        .s:fmt_uopt   .s:fg_none   .s:bg_base02 .s:sp_base1
-exe "hi! CursorLineNr"      .s:fmt_uopt   .s:fg_yellow .s:bg_base03 .s:sp_base1
-exe "hi! CursorLineSign"    .s:fmt_uopt   .s:fg_none   .s:bg_base03 .s:sp_base1
-exe "hi! CursorLineFold"    .s:fmt_uopt   .s:fg_none   .s:bg_base03 .s:sp_base1
 exe "hi! ColorColumn"       .s:fmt_none   .s:fg_none   .s:bg_base02
+exe "hi! StatusLineTerm"    .s:fmt_none   .s:fg_green  .s:bg_base02 .s:fmt_revbb
+exe "hi! StatusLineTermNC"  .s:fmt_none   .s:fg_green  .s:bg_base02
+exe "hi! MatchParen"        .s:fmt_bold   .s:fg_orange .s:bg_yellow
+exe "hi! ToolbarButton"     .s:fmt_bold   .s:fg_base1  .s:bg_base02
+exe "hi! ToolbarLine"       .s:fmt_none   .s:fg_none   .s:bg_base02
+exe "hi! Terminal"          .s:fmt_none   .s:fg_base0  .s:bg_base03
 exe "hi! Cursor"            .s:fmt_none   .s:fg_base03 .s:bg_base0
 hi! link lCursor Cursor
-exe "hi! MatchParen"        .s:fmt_bold   .s:fg_orange .s:bg_yellow
 
 "}}}
 " vim syntax highlighting "{{{
