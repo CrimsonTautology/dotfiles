@@ -369,6 +369,8 @@ let g:coc_global_extensions = [
   \ 'coc-vimlsp',
   \ 'coc-yaml',
   \ ]
+let g:coc_snippet_next = '<C-l>'
+let g:coc_snippet_prev = '<C-h>'
 
 " code navigation
 nnoremap <silent> cgd <Plug>(coc-definition)
