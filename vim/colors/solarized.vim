@@ -119,7 +119,7 @@ let g:solarized_underline = get(g:, "solarized_underline", 1)
 " Appearance:
 let g:solarized_contrast = get(g:, "solarized_contrast", "normal")
 let g:solarized_term_bold_as_bright = get(g:, "solarized_term_bold_as_bright", 1)
-let g:solarized_termtrans = get(g:, "solarized_termtrans", 1)
+let g:solarized_termtrans = get(g:, "solarized_termtrans", 0)
 
 "}}}
 " Colorscheme initialization "{{{
