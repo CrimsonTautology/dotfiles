@@ -477,7 +477,7 @@ exe "hi! Visual"            .s:fmt_revbb  .s:fg_base01 .s:bg_base03
 exe "hi! VisualNOS"         .s:fmt_revbb  .s:fg_none   .s:bg_base02
 exe "hi! WarningMsg"        .s:fmt_bold   .s:fg_orange .s:bg_none
 exe "hi! WildMenu"          .s:fmt_revbb  .s:fg_blue   .s:bg_base02
-exe "hi! Folded"            .s:fmt_undb   .s:fg_base0  .s:bg_base02 .s:sp_base03
+exe "hi! Folded"            .s:fmt_undb   .s:fg_base0  .s:bg_base02 .s:sp_base00
 exe "hi! FoldColumn"        .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! DiffAdd"           .s:fmt_bold   .s:fg_green  .s:bg_base02 .s:sp_green
 exe "hi! DiffChange"        .s:fmt_bold   .s:fg_yellow .s:bg_base02 .s:sp_yellow
@@ -491,8 +491,8 @@ exe "hi! SpellRare"         .s:fmt_curl   .s:fg_none   .s:bg_none   .s:sp_cyan
 exe "hi! SpellLocal"        .s:fmt_curl   .s:fg_none   .s:bg_none   .s:sp_yellow
 exe "hi! Pmenu"             .s:fmt_bold   .s:fg_base0  .s:bg_base02
 exe "hi! PmenuSel"          .s:fmt_bold   .s:fg_base02 .s:bg_blue
-exe "hi! PmenuSbar"         .s:fmt_none   .s:fg_none   .s:bg_base02
-exe "hi! PmenuThumb"        .s:fmt_none   .s:fg_none   .s:bg_base01
+exe "hi! PmenuSbar"         .s:fmt_none   .s:fg_none   .s:bg_base00
+exe "hi! PmenuThumb"        .s:fmt_none   .s:fg_none   .s:bg_base1
 exe "hi! TabLine"           .s:fmt_undr   .s:fg_base01 .s:bg_base02 .s:sp_base00
 exe "hi! TabLineSel"        .s:fmt_undr   .s:fg_base1  .s:bg_base02 .s:sp_base00
 exe "hi! TabLineFill"       .s:fmt_undr   .s:fg_base01 .s:bg_base02 .s:sp_base00
