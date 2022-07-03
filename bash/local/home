@@ -5,6 +5,8 @@
 . ~/bin/dotfiles/node/nvm.sh
 
 # directory shortcuts
-export USER_DIR="/mnt/c/Users/$USER" 
-export WORK_DIR="/mnt/m/work"
+export WIN_USER_DIR="/mnt/c/Users/$USER" 
+export WIN_WORK_DIR="/mnt/m/work"
+export WIN_PLAY_DIR="/mnt/m/work/play"
+export WIN_DOTFILES="$WIN_USER_DIR/bin/dotfiles"
 export CURRENT_PROJECT="$PLAY_DIR/python"

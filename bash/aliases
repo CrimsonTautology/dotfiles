@@ -9,8 +9,12 @@ alias rm='rm -i'
 alias vimn='vim -c "NERDTree"'
 
 # directory shortcuts
-alias bill='cd $USER_DIR'
 alias dots='cd $DOTFILES'
 alias work='cd $WORK_DIR'
 alias play='cd $PLAY_DIR'
 alias cpro='cd $CURRENT_PROJECT'
+
+alias bill='cd $WIN_USER_DIR'
+alias bdots='cd $WIN_DOTFILES'
+alias bwork='cd $WIN_WORK_DIR'
+alias bplay='cd $WIN_PLAY_DIR'

@@ -15,14 +15,15 @@ export PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"
 export CHROME_BIN="/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"
 
 # directory shortcuts
-export USER_DIR="/mnt/c/Users/$USER" 
-export WORK_DIR="$USER_DIR/work"
+export WIN_USER_DIR="/mnt/c/Users/$USER" 
+export WIN_DOTFILES="$WIN_USER_DIR/bin/dotfiles"
+export WIN_WORK_DIR="$WIN_USER_DIR/work"
 
-export WEBAPP_DIR="$WORK_DIR/amp/webapp"
+export WEBAPP_DIR="$WIN_WORK_DIR/amp/webapp"
 export WEBAPP_VAGRANT_DIR=$WEBAPP_DIR/vm
 alias webapp='cd $WEBAPP_DIR'
 
-export MOBILE_DIR="$WORK_DIR/volt/mobile"
+export MOBILE_DIR="$WIN_WORK_DIR/volt/mobile"
 alias mobile='cd $MOBILE_DIR'
 
 # convenience functions

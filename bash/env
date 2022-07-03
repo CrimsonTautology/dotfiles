@@ -10,8 +10,12 @@ export LYNX_LSS=$HOME/bin/dotfiles/lynx/lynx.lss
 export LESS='-MR'
 
 # directory shortcuts
-export USER_DIR=$HOME
 export DOTFILES="$HOME/bin/dotfiles"
 export WORK_DIR="$HOME/work"
 export PLAY_DIR="$HOME/play"
 export CURRENT_PROJECT="$HOME/work"
+
+export WIN_USER_DIR=$HOME
+export WIN_DOTFILES=$DOTFILES
+export WIN_WORK_DIR=$WORK_DIR
+export WIN_PLAY_DIR=$PLAY_DIR
