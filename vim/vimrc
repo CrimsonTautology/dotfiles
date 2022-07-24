@@ -55,6 +55,8 @@ Plug 'leafgarland/typescript-vim', { 'as': 'typescript' }
 Plug 'vim-python/python-syntax', { 'as': 'python' }
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'Vimjas/vim-python-pep8-indent', { 'as': 'pep8indent' }
+Plug 'CrimsonTautology/vim-intermec-direct-protocol', { 'as': 'intermec' }
+Plug 'CrimsonTautology/vim-zebra-programming-language', { 'as': 'zebra' }
 
 if executable('node')
   " only install if nodejs is installed
@@ -321,7 +323,7 @@ endfunction
 " }}}
 " Auto Pairs {{{
 
-let g:AutoPairsFlyMode = 1
+let g:AutoPairsFlyMode = 0
 let g:AutoPairsShortcutBackInsert = '<C-b>'
 
 " }}}
