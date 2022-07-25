@@ -4,19 +4,19 @@
 " Maintainer:	kahlil hodgson <kahlil.hodgson999@gmail.coml>
 " Last Change: 2020-02-16
 
-if exists("current_compiler")
+if exists('current_compiler')
   finish
 endif
 
-let current_compiler = "pytest"
+let current_compiler = 'pytest'
 
-if exists(":CompilerSet") != 2		" older Vim always used :setlocal
+if exists(':CompilerSet') != 2		" older Vim always used :setlocal
   command -nargs=* CompilerSet setlocal <args>
 endif
 
 " Disable Python warnings
 if !exists('$PYTHONWARNINGS')
-  let $PYTHONWARNINGS="ignore"
+  let $PYTHONWARNINGS='ignore'
 endif
 
 let s:cpo_save = &cpo

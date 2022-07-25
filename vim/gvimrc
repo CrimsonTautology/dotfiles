@@ -8,7 +8,7 @@
 
 
 " do not execute outside of gui
-if !has("gui_running")
+if !has('gui_running')
   finish
 endif
 

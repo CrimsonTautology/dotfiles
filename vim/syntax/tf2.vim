@@ -4,7 +4,7 @@
 " Latest Revision:  2010-5-5
 " Credits:          Based on the original quake.vim by Nikolai Weibull
 
-if exists("b:current_syntax")
+if exists('b:current_syntax')
   finish
 endif
 
@@ -48,7 +48,7 @@ hi def link tf2Float        Number
 hi def link tf2Command      tf2Commands
 hi def link tf2Commands     Keyword
 
-let b:current_syntax = "tf2"
+let b:current_syntax = 'tf2'
 
 let &cpo = s:cpo_save
 unlet s:cpo_save

@@ -21,15 +21,15 @@ syn cluster	cCommentGroup	contains=cTodo
 " String and Character constants
 " Highlight special characters (those which have a backslash) differently
 syn match	cSpecial	display contained "\\\(x\x\+\|\o\{1,3}\|.\|$\)"
-if !exists("c_no_utf")
+if !exists('c_no_utf')
   syn match	cSpecial	display contained "\\\(u\x\{4}\|U\x\{8}\)"
 endif
-if exists("c_no_cformat")
+if exists('c_no_cformat')
   syn region	cString		start=+L\="+ skip=+\\\\\|\\"+ end=+"+ contains=cSpecial,@Spell
   " cCppString: same as cString, but ends at end of line
   syn region	cCppString	start=+L\="+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end='$' contains=cSpecial,@Spell
 else
-  if !exists("c_no_c99") " ISO C99
+  if !exists('c_no_c99') " ISO C99
     syn match	cFormat		display "%\(\d\+\$\)\=[-+' #0*]*\(\d*\|\*\|\*\d\+\$\)\(\.\(\d*\|\*\|\*\d\+\$\)\)\=\([hlLjzt]\|ll\|hh\)\=\([aAbdiuoxXDOUfFeEgGcCsSpn]\|\[\^\=.[^]]*\]\)" contained
   else
     syn match	cFormat		display "%\(\d\+\$\)\=[-+' #0*]*\(\d*\|\*\|\*\d\+\$\)\(\.\(\d*\|\*\|\*\d\+\$\)\)\=\([hlL]\|ll\)\=\([bdiuoxXDOUfeEgGcCsSpn]\|\[\^\=.[^]]*\]\)" contained
@@ -42,7 +42,7 @@ endif
 
 syn match	cCharacter	"L\='[^\\]'"
 syn match	cCharacter	"L'[^']*'" contains=cSpecial
-if exists("c_gnu")
+if exists('c_gnu')
   syn match	cSpecialError	"L\='\\[^'\"?\\abefnrtv]'"
   syn match	cSpecialCharacter "L\='\\['\"?\\abefnrtv]'"
 else
@@ -54,11 +54,11 @@ syn match	cSpecialCharacter display "'\\x\x\{1,2}'"
 syn match	cSpecialCharacter display "L'\\x\x\+'"
 
 "when wanted, highlight trailing white space
-if exists("c_space_errors")
-  if !exists("c_no_trail_space_error")
+if exists('c_space_errors')
+  if !exists('c_no_trail_space_error')
     syn match	cSpaceError	display excludenl "\s\+$"
   endif
-  if !exists("c_no_tab_space_error")
+  if !exists('c_no_tab_space_error')
     syn match	cSpaceError	display " \+\t"me=e-1
   endif
 endif
@@ -70,13 +70,13 @@ syntax region	cBlock		start="{" end="}" transparent fold
 " also accept <% for {, %> for }, <: for [ and :> for ] (C99)
 " But avoid matching <::.
 syn cluster	cParenGroup	contains=cParenError,cIncluded,cSpecial,cCommentSkip,cCommentString,cComment2String,@cCommentGroup,cCommentStartError,cUserCont,cUserLabel,cCommentSkip,cCppOut,cCppOut2,cCppSkip,cFormat,cNumber,cFloat,cNumbersCom
-if exists("c_no_curly_error")
+if exists('c_no_curly_error')
   syn region	cParen		transparent start='(' end=')' contains=ALLBUT,@cParenGroup,cCppParen,cCppString,@Spell
   " cCppParen: same as cParen but ends at end-of-line; used in cDefine
   syn region	cCppParen	transparent start='(' skip='\\$' excludenl end=')' end='$' contained contains=ALLBUT,@cParenGroup,cParen,cString,@Spell
   syn match	cParenError	display ")"
   syn match	cErrInParen	display contained "^[{}]\|^<%\|^%>"
-elseif exists("c_no_bracket_error")
+elseif exists('c_no_bracket_error')
   syn region	cParen		transparent start='(' end=')' contains=ALLBUT,@cParenGroup,cCppParen,cCppString,@Spell
   " cCppParen: same as cParen but ends at end-of-line; used in cDefine
   syn region	cCppParen	transparent start='(' skip='\\$' excludenl end=')' end='$' contained contains=ALLBUT,@cParenGroup,cParen,cString,@Spell
@@ -109,7 +109,7 @@ syn match	cFloat		display contained "\d\+\.\d*\(e[-+]\=\d\+\)\=[fl]\="
 syn match	cFloat		display contained "\.\d\+\(e[-+]\=\d\+\)\=[fl]\=\>"
 "floating point number, without dot, with exponent
 syn match	cFloat		display contained "\d\+e[-+]\=\d\+[fl]\=\>"
-if !exists("c_no_c99")
+if !exists('c_no_c99')
   "hexadecimal floating point number, optional leading digits, with dot, with exponent
   syn match	cFloat		display contained "0x\x*\.\x\+p[-+]\=\d\+[fl]\=\>"
   "hexadecimal floating point number, with leading digits, optional dot, with exponent
@@ -118,7 +118,7 @@ endif
 
 syn case match
 
-if exists("c_comment_strings")
+if exists('c_comment_strings')
   " A comment can contain cString, cCharacter and cNumber.
   " But a "*/" inside a cString in a cComment DOES end the comment!  So we
   " need to use a special type of cString: cCommentString, which also ends on
@@ -128,7 +128,7 @@ if exists("c_comment_strings")
   syntax region cCommentString	contained start=+L\=\\\@<!"+ skip=+\\\\\|\\"+ end=+"+ end=+\*/+me=s-1 contains=cSpecial,cCommentSkip
   syntax region cComment2String	contained start=+L\=\\\@<!"+ skip=+\\\\\|\\"+ end=+"+ end="$" contains=cSpecial
   syntax region  cCommentL	start="//" skip="\\$" end="$" keepend contains=@cCommentGroup,cComment2String,cCharacter,cNumbersCom,cSpaceError,@Spell
-  if exists("c_no_comment_fold")
+  if exists('c_no_comment_fold')
     " Use "extend" here to have preprocessor lines not terminate halfway a
     " comment.
     syntax region cComment	matchgroup=cCommentStart start="/\*" end="\*/" contains=@cCommentGroup,cCommentStartError,cCommentString,cCharacter,cNumbersCom,cSpaceError,@Spell extend
@@ -137,7 +137,7 @@ if exists("c_comment_strings")
   endif
 else
   syn region	cCommentL	start="//" skip="\\$" end="$" keepend contains=@cCommentGroup,cSpaceError,@Spell
-  if exists("c_no_comment_fold")
+  if exists('c_no_comment_fold')
     syn region	cComment	matchgroup=cCommentStart start="/\*" end="\*/" contains=@cCommentGroup,cCommentStartError,cSpaceError,@Spell
   else
     syn region	cComment	matchgroup=cCommentStart start="/\*" end="\*/" contains=@cCommentGroup,cCommentStartError,cSpaceError,@Spell fold
@@ -768,8 +768,8 @@ syn keyword	cConstant	SOURCEMOD_V_RELEASE SOURCEMOD_V_REV SOURCEMOD_VERSION
 " Accept %: for # (C99)
 syn region	cPreCondit	start="^\s*\(%:\|#\)\s*\(if\|ifdef\|ifndef\|elif\)\>" skip="\\$" end="$" end="//"me=s-1 contains=cComment,cCppString,cCharacter,cCppParen,cParenError,cNumbers,cCommentError,cSpaceError
 syn match	cPreCondit	display "^\s*\(%:\|#\)\s*\(else\|endif\)\>"
-if !exists("c_no_if0")
-  if !exists("c_no_if0_fold")
+if !exists('c_no_if0')
+  if !exists('c_no_if0_fold')
     syn region	cCppOut		start="^\s*\(%:\|#\)\s*if\s\+0\+\>" end=".\@=\|$" contains=cCppOut2 fold
   else
     syn region	cCppOut		start="^\s*\(%:\|#\)\s*if\s\+0\+\>" end=".\@=\|$" contains=cCppOut2
@@ -802,16 +802,16 @@ syn keyword cppStatement	new decl
 syn keyword cppAccess		public
 syn keyword cppOperator		operator
 
-if exists("c_minlines")
+if exists('c_minlines')
   let b:c_minlines = c_minlines
 else
-  if !exists("c_no_if0")
+  if !exists('c_no_if0')
     let b:c_minlines = 50	" #if 0 constructs can be long
   else
     let b:c_minlines = 15	" mostly for () constructs
   endif
 endif
-exec "syn sync ccomment cComment minlines=" . b:c_minlines
+exec 'syn sync ccomment cComment minlines=' . b:c_minlines
 
 " Define the default highlighting.
 " Only used when an item doesn't have highlighting yet
@@ -864,6 +864,6 @@ hi def link cppStatement	Statement
 hi def link cFunction   	Function
 hi def link cForward    	Function
 
-let b:current_syntax = "sourcepawn"
+let b:current_syntax = 'sourcepawn'
 
 " vim: ts=4

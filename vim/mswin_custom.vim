@@ -15,9 +15,10 @@
 " <M-V> -> ö
 " <M-Y> -> ù
 " -----------------------------------------------------------------------------
+scriptencoding utf-8
 
 " bail out if this isn't wanted (mrsvim.vim uses this).
-if exists("g:skip_loading_mswin") && g:skip_loading_mswin
+if exists('g:skip_loading_mswin') && g:skip_loading_mswin
   finish
 endif
 
@@ -34,7 +35,7 @@ set backspace=indent,eol,start whichwrap+=<,>,[,]
 " backspace in Visual mode deletes selection
 vnoremap <BS> d
 
-if has("clipboard")
+if has('clipboard')
   " CTRL-X and SHIFT-Del are Cut
   " Use ALT-X instead
   vnoremap ø "+x
@@ -72,7 +73,7 @@ inoremap ó <C-O>:update<CR>
 
 " For CTRL-V to work autoselect must be off.
 " On Unix we have two selections, autoselect can be used.
-if !has("unix")
+if !has('unix')
   set guioptions-=a
 endif
 
@@ -86,7 +87,7 @@ inoremap ú <C-O>u
 noremap ù <C-R>
 inoremap ù <C-O><C-R>
 
-if has("gui")
+if has('gui')
   " Alt-Space is System menu
   noremap <M-Space> :simalt ~<CR>
   inoremap <M-Space> <C-O>:simalt ~<CR>

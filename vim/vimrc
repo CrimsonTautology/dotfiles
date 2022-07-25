@@ -68,12 +68,10 @@ call plug#end()
 " }}}
 " VIM Editor Settings {{{
 
-" be iMproved
-set nocompatible
-
 " set default encoding to utf-8
 set encoding=utf-8
 set termencoding=utf-8
+scriptencoding utf-8
 
 set number  "unimpaired: *yon*
 set norelativenumber  "unimpaired: *yor*
@@ -118,7 +116,7 @@ set shiftwidth=2
 
 " colorscheme
 set background=dark  "unimpaired: *yob*
-if (has("termguicolors"))
+if (has('termguicolors'))
   set termguicolors
 endif
 try
@@ -185,8 +183,8 @@ let &t_ti.="\e[1 q"
 
 " enable mouse in mintty
 set mouse=a
-if has("ttymouse")
-  if has("mouse_sgr")
+if has('ttymouse')
+  if has('mouse_sgr')
     set ttymouse=sgr
   else
     set ttymouse=xterm2
@@ -245,7 +243,7 @@ inoremap <c-,> <c-o>$,<cr>
 " Leader Commands
 "------------------------------------------------------------------------------
 
-let mapleader = ","
+let mapleader = ','
 
 " shortcuts to open and load vimrc
 nnoremap <silent> <leader>ve :e $DOTVIM/vimrc<CR>
@@ -263,11 +261,11 @@ nnoremap <silent> <leader>di o<c-r>=strftime("%F")<CR>
 " show highlighting groups for current word
 nnoremap <silent> <leader>hi :call SynStack()<CR>
 function! SynStack ()
-  for i1 in synstack(line("."), col("."))
+  for i1 in synstack(line('.'), col('.'))
     let i2 = synIDtrans(i1)
-    let n1 = synIDattr(i1, "name")
-    let n2 = synIDattr(i2, "name")
-    echo n1 "->" n2
+    let n1 = synIDattr(i1, 'name')
+    let n2 = synIDattr(i2, 'name')
+    echo n1 '->' n2
   endfor
 endfunction
 
@@ -288,7 +286,7 @@ augroup restore_cursor
 augroup END
 
 function! RestoreCursor()
-  if line("'\"") <= line("$")
+  if line("'\"") <= line('$')
     normal! g`"
     return 1
   endif
@@ -311,10 +309,10 @@ augroup END
 " https://stackoverflow.com/questions/16049965/vim-save-highlight-info-screen-to-file/16049993#16049993
 function! HiFile()
   let i = 1
-  while i <= line("$")
+  while i <= line('$')
     if strlen(getline(i)) > 0 && len(split(getline(i))) > 2
       let w = split(getline(i))[0]
-      exe "syn match " . w . " /\\(" . w . "\\s\\+\\)\\@<=xxx/"
+      exe 'syn match ' . w . " /\\(" . w . "\\s\\+\\)\\@<=xxx/"
     endif
     let i += 1
   endwhile
