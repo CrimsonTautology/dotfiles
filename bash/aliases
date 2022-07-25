@@ -8,6 +8,10 @@ alias rm='rm -i'
 # vim
 alias vimn='vim -c "NERDTree"'
 
+# python
+alias penv='python -m venv env'
+alias seba='source env/bin/activate'
+
 # directory shortcuts
 alias dots='cd $DOTFILES'
 alias work='cd $WORK_DIR'
