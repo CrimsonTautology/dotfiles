@@ -199,6 +199,9 @@ let &t_Ce = "\e[4:0m"
 let &t_AU = "\e[58:5:%dm"
 let &t_8u = "\e[58:2::%lu:%lu:%lum"
 
+" clear junk showing up when vim boots up
+set t_u7=
+
 " }}}
 " Key Re-Maps {{{
 
