@@ -319,6 +319,78 @@ function! HiFile()
 endfunction
 
 " }}}
+" Digraphs {{{
+
+digraph aS 7491
+
+
+
+digraph aS 7491 "ᵃ
+digraph bS 7495 "ᵇ
+digraph cS 7580 "ᶜ
+digraph dS 7496 "ᵈ
+digraph eS 7497 "ᵉ
+digraph gS 7501 "ᵍ
+digraph hS 688 "ʰ
+digraph iS 8305 "ⁱ
+digraph jS 690 "ʲ
+digraph kS 7503 "ᵏ
+digraph lS 737 "ˡ
+digraph mS 7504 "ᵐ
+digraph oS 7506 "ᵒ
+digraph pS 7510 "ᵖ
+digraph rS 691 "ʳ
+digraph sS 738 "ˢ
+digraph tS 7511 "ᵗ
+digraph uS 7512 "ᵘ
+digraph vS 7515 "ᵛ
+digraph wS 695 "ʷ
+digraph xS 739 "ˣ
+digraph yS 696 "ʸ
+digraph zS 7611 "ᶻ
+
+digraph AS 7468 "ᴬ
+digraph BS 7470 "ᴮ
+digraph DS 7472 "ᴰ
+digraph ES 7473 "ᴱ
+digraph GS 7475 "ᴳ
+digraph HS 7476 "ᴴ
+digraph IS 7477 "ᴵ
+digraph JS 7478 "ᴶ
+digraph KS 7479 "ᴷ
+digraph LS 7480 "ᴸ
+digraph MS 7481 "ᴹ
+digraph NS 7482 "ᴺ
+digraph PS 7486 "ᴾ
+digraph RS 7487 "ᴿ
+digraph TS 7488 "ᵀ
+digraph US 7489 "ᵁ
+digraph VS 11389 "ⱽ
+digraph WS 7490 "ᵂ
+
+digraph Is 7590 "ᶦ
+digraph Ls 7595 "ᶫ
+digraph Ns 7600 "ᶰ
+digraph Us 7608 "ᶸ
+
+digraph as 8336 "ₐ
+digraph es 8337 "ₑ
+digraph hs 8341 "ₕ
+digraph is 7522 "ᵢ
+digraph js 11388 "ⱼ
+digraph ks 8342 "ₖ
+digraph ls 8343 "ₗ
+digraph ms 8344 "ₘ
+digraph ns 8345 "ₙ
+digraph os 8338 "ₒ
+digraph ps 8346 "ₚ
+digraph rs 7523 "ᵣ
+digraph ts 8348 "ₜ
+digraph us 7524 "ᵤ
+digraph vs 7525 "ᵥ
+digraph xs 8339 "ₓ
+
+" }}}
 " Auto Pairs {{{
 
 let g:AutoPairsFlyMode = 0
