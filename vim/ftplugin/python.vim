@@ -5,7 +5,7 @@ setlocal shiftwidth=4
 compiler pylint
 setlocal makeprg +=\ --disable=R,C\ %
 
-nnoremap <silent> <leader>pdb Iimport pdb; pdb.set_trace()#TODO<cr><esc>
+nnoremap <silent> <leader>pdb Ibreakpoint()#TODO<cr><esc>
 nnoremap <silent> <leader>ipdb Ifrom IPython import embed; embed()#TODO<cr><esc>
 
 " semicolon isn't used (usually); replace ctrl+; map with regular colon so I
