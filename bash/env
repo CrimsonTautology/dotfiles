@@ -9,6 +9,8 @@ export PAGER=less
 export LYNX_LSS=$HOME/bin/dotfiles/lynx/lynx.lss
 export LESS='-MR'
 
+export PYTHONBREAKPOINT=ipdb.set_trace
+
 # directory shortcuts
 export DOTFILES="$HOME/bin/dotfiles"
 export WORK_DIR="$HOME/work"

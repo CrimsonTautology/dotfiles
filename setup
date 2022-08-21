@@ -52,21 +52,12 @@ pyenv install --list
 # pyenv install {version}
 # pyenv global {version}
 
-pip install pipx
-echo ". ~/bin/dotfiles/python/pipx.sh" >> ~/.bashrc
-pipx ensurepath
-pipx completions
-
-pipx install bandit
-pipx install black
-pipx install cookiecutter
-pipx install flake8
-pipx install ipython
-pipx install mypy
-pipx install poetry
-pipx install pylint
-pipx install pytest
-pipx install vulture
+pip install black
+pip install flake8
+pip install ipython
+pip install numpy
+pip install pytest
+pip install vim-vint
 
 ln -sf ~/bin/dotfiles/python/ipython_config.py ~/.ipython/profile_default/ipython_config.py
 ln -sf ~/bin/dotfiles/python/_flake8 ~/.flake8

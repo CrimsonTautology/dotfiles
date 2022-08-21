@@ -1,10 +1,9 @@
-cookiecutter
-poetry
-black
-pylint
-flake8
 bandit
-vulture
+black
+cookiecutter
+flake8
 ipython
-pytest
+mypy
 jedi
+pytest
+vulture

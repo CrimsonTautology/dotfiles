@@ -126,7 +126,7 @@ https://cookiecutter.readthedocs.io/
 
 ## install
 ```
-pipx install cookiecutter
+pip install cookiecutter
 ```
 
 ## usage
@@ -145,7 +145,7 @@ https://python-poetry.org/
 
 ## install
 ```
-pipx install poetry
+pip install poetry
 ```
 
 ## usage
@@ -168,7 +168,7 @@ https://black.readthedocs.io/en/stable/
 
 ## install
 ```
-pipx install black
+pip install black
 ```
 
 ## usage
@@ -183,7 +183,7 @@ https://www.pylint.org/
 
 ## install
 ```
-pipx install pylint
+pip install pylint
 ```
 
 ## usage
@@ -197,7 +197,7 @@ https://flake8.pycqa.org/en/latest/
 
 ## install
 ```
-pipx install flake8
+pip install flake8
 ```
 
 ## usage 
@@ -215,7 +215,7 @@ http://mypy-lang.org/
 
 ## install
 ```
-pipx install mypy
+pip install mypy
 ```
 
 --------------------------------------------------------------------------------
@@ -224,7 +224,7 @@ https://pypi.org/project/bandit/
 
 ## install
 ```
-pipx install bandit
+pip install bandit
 ```
 
 ## usage
@@ -240,7 +240,7 @@ https://pypi.org/project/vulture/
 
 ## install
 ```
-pipx install vulture
+pip install vulture
 ```
 
 ## usage
@@ -257,7 +257,7 @@ https://ipython.org/
 
 ## install
 ```
-pipx install ipython
+pip install ipython
 ```
 
 ## config
@@ -272,7 +272,7 @@ https://docs.pytest.org/
 
 ## install
 ```
-pipx install pytest
+pip install pytest
 ```
 
 ## usage
