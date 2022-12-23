@@ -226,6 +226,11 @@ nnoremap Y y$
 noremap H ^
 noremap L $
 
+" return functionality of original H and L by using MH and ML
+noremap MH H
+noremap ML L
+noremap MM M
+
 " in visual mode < and > shifts indentation and does not clear selection
 vnoremap > >gv
 vnoremap < <gv
