@@ -171,6 +171,9 @@ set statusline+=%{exists('g:did_coc_loaded')?coc#status():''}
 set statusline+=%*
 set statusline+=\ %4l/%L:C%-2c%4p%%     "78/274:C50 28%
 
+" messages that show at the bottom right below statusline
+set shortmess=inxoOtT
+
 " }}}
 " Terminal {{{
 
