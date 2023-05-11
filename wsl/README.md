@@ -36,10 +36,18 @@ dism /online /enable-feature /all /norestart /featurename:Microsoft-Hyper-V
 bcdedit /set hypervisorlaunchtype auto
 ```
 
+```
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+```
+
 # disable Hyper-V
 ```
 Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor
 bcdedit /set hypervisorlaunchtype off
+```
+
+```
+Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor
 ```
 
 # set WSL 2 as default version
