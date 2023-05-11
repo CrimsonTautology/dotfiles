@@ -37,7 +37,9 @@ bcdedit /set hypervisorlaunchtype auto
 ```
 
 ```
+Enable-WindowsOptionalFeature -Online -FeatureName containers –All
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
 ```
 
 # disable Hyper-V
