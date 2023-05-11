@@ -31,6 +31,8 @@ dism /online /enable-feature /all /norestart /featurename:VirtualMachinePlatform
 # enable Hyper-V
 # to fix "Please enable the Virtual Machine Platform Windows feature and ensure
 # virtualization is enabled in the BIOS."
+#
+# https://forums.docker.com/t/cant-start-container-required-feature-not-installed/133977/8
 ```
 dism /online /enable-feature /all /norestart /featurename:Microsoft-Hyper-V
 bcdedit /set hypervisorlaunchtype auto
