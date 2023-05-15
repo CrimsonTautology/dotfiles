@@ -66,3 +66,15 @@ wsl --set-version <DistributionName> <VersionNumber>
 wsl --set-version Ubuntu-20.04 1
 wsl --set-version Ubuntu-20.04 2
 ```
+
+# vagrant
+add to bashrc
+```
+export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"' >> ~/.bashrc
+export PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox
+```
+
+fix ` default: Warning: Connection refused. Retrying...`: install vagrant plugin
+```
+vagrant plugin install virtualbox_WSL2
+```

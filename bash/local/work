@@ -36,3 +36,5 @@ gli () {
 
 # enable ipython
 alias ipython='python3 -m IPython'
+
+export CURRENT_PROJECT="$WORK_DIR/sqlalchemy-test"
