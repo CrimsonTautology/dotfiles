@@ -25,6 +25,9 @@ alias webapp='cd $WEBAPP_DIR'
 export MOBILE_DIR="$WIN_WORK_DIR/volt/mobile"
 alias mobile='cd $MOBILE_DIR'
 
+export PUBLIC_DIR="$WORK_DIR/farad"
+alias public='cd $PUBLIC_DIR'
+
 # convenience functions
 amp () ( 
     cd $WEBAPP_VAGRANT_DIR && vagrant "$@"
@@ -37,4 +40,4 @@ gli () {
 # enable ipython
 alias ipython='python3 -m IPython'
 
-export CURRENT_PROJECT="$WORK_DIR/sqlalchemy-test"
+export CURRENT_PROJECT="$WORK_DIR/farad"
