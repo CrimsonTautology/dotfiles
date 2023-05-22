@@ -78,3 +78,14 @@ fix ` default: Warning: Connection refused. Retrying...`: install vagrant plugin
 ```
 vagrant plugin install virtualbox_WSL2
 ```
+
+# restart Hyper-V
+```powershell
+Restart-Service vmms
+Restart-Service vmcompute
+```
+
+# add a .wslconfig
+```powershell
+cp wslconfig C:\Users\{your username}\.wslconfig
+```
