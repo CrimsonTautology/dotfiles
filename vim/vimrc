@@ -48,7 +48,6 @@ Plug 'chrisbra/Colorizer'
 Plug 'preservim/nerdtree'
 Plug 'preservim/tagbar'
 Plug 'vim-syntastic/syntastic'
-Plug 'dense-analysis/neural'
 
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript', { 'as':  'javascript' }
@@ -485,19 +484,5 @@ xmap ic <Plug>(coc-classobj-i)
 omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
-
-" }}}
-" Neural {{{
-
-" https://beta.openai.com/account/api-keys
-" export OPENAI_API_KEY={api-key}
-let g:neural = {
-\   'source': {
-\       'openai': {
-\           'api_key': $OPENAI_API_KEY,
-\       },
-\   },
-\		'selected': 'chatgpt',
-\}
 
 " }}}
