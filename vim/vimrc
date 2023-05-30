@@ -102,6 +102,14 @@ set colorcolumn=80,100  " add marker on column 80 and 100
 set showmatch
 
 " damn the bell
+set noerrorbells
+set novisualbell
+set t_vb=
+
+" indentation settings
+set autoindent
+set nosmartindent
+set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
