@@ -424,7 +424,7 @@ let NERDTreeShowBookmarks=1
 let NERDTreeChDirMode=1
 let NERDTreeDirArrows=1
 
-let NERDTreeIgnore=[ '\.hi$', '\.o$', '\.sw.$', '\~$', '\.smx$', '\.exe$', '\.beam$', '\~$' ]
+let NERDTreeIgnore=[ '\.hi$', '\.o$', '\.sw.$', '\~$', '\.smx$', '\.exe$', '\.beam$', '\~$', '__pycache__', '\.egg-info$' ]
 
 let g:NERDTreeDirArrowExpandable="\u25B6"
 let g:NERDTreeDirArrowCollapsible="\u25BC"
