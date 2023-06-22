@@ -52,12 +52,11 @@ pyenv install --list
 # pyenv install {version}
 # pyenv global {version}
 
-pip install black
-pip install flake8
-pip install ipython
-pip install numpy
-pip install pytest
-pip install vim-vint
+# unintall all existing pip packages
+pip freeze | xargs pip uninstall -y
+
+# install general development pip packages
+pip install -r ~/bin/dotfiles/python/development.txt
 
 ln -sf ~/bin/dotfiles/python/ipython_config.py ~/.ipython/profile_default/ipython_config.py
 ln -sf ~/bin/dotfiles/python/_flake8 ~/.flake8

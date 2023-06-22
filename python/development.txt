@@ -1,9 +1,6 @@
-bandit
 black
-cookiecutter
 flake8
 ipython
-mypy
-jedi
+numpy
 pytest
-vulture
+vim-vint
