@@ -280,6 +280,9 @@ function! SynStack ()
   endfor
 endfunction
 
+" send highlighted text to clip.exe
+vnoremap <silent> <leader>cp :w !clip.exe<CR><CR>gv
+
 "------------------------------------------------------------------------------
 " Function Keys
 "------------------------------------------------------------------------------
