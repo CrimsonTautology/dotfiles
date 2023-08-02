@@ -1,42 +1,7 @@
 #!/usr/bin/env sh
 
-export SOURCEMOD_DIR_1_8=$HOME/sourcemod/sm-1.8
-export SOURCEMOD_DIR_1_9=$HOME/sourcemod/sm-1.9
-export SOURCEMOD_DIR_1_10=$HOME/sourcemod/sm-1.10
-export SOURCEMOD_DIR_1_11=$HOME/sourcemod/sm-1.11
-export SOURCEMOD_DIR=$SOURCEMOD_DIR_1_10
-
-export PATH=$PATH:$SOURCEMOD_DIR/addons/sourcemod/scripting
-export SRCDS_DEV_DIR=$HOME/steamcmd/fof_mk/fof
-
-export FOF=$HOME/steamcmd/fof_main/fof
-export GGF=$HOME/steamcmd/fof_gg/fof
-export GGF2=$HOME/steamcmd/fof_gg2/fof
-export FOZ=$HOME/steamcmd/fof_foz/fof
-export MKF=$HOME/steamcmd/fof_mk/fof
-
-# directory shortcuts
-alias fof="cd $FOF"
-alias ggf="cd $GGF"
-alias ggf2="cd $GGF2"
-alias foz="cd $FOZ"
-alias mkf="cd $MKF"
-alias sm='cd ~/sourcemod'
-
-# screens
-alias sxs='screen -x SRCDS'
-alias sfof='screen -x fof_main'
-alias sggf='screen -x fof_gg'
-alias sggf2='screen -x fof_2gg'
-alias sfoz='screen -x fof_foz'
-alias smkf='screen -x fof_mk'
-
-# ruby
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-# python
-alias py.test='python3 -m pytest'
+. ~/bin/dotfiles/python/pyenv.sh
+. ~/bin/dotfiles/node/nvm.sh
 
 # unaliases
 unalias bill
