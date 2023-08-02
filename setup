@@ -12,9 +12,13 @@ git clone git@github.com:CrimsonTautology/scripts.git ~/bin/scripts
 git clone git@github.com:CrimsonTautology/junk-drawer.git ~/junk-drawer
 
 
-# setup vim
+# setup vim; update to newest version
 ln -sf ~/bin/dotfiles/vim/vimrc ~/.vimrc
 vim -es -u ~/bin/dotfiles/vim/vimrc -i NONE -c "PlugInstall" -c "qa"
+
+sudo add-apt-repository ppa:jonathonf/vim
+sudo apt update
+sudo apt install vim
 
 
 # symlink/copy over configuration files
@@ -26,6 +30,7 @@ ln -sf ~/bin/dotfiles/tmux/_tmux.conf ~/.tmux.conf
 ln -sf ~/bin/dotfiles/lynx/_lynxrc ~/.lynxrc
 
 echo ". ~/bin/dotfiles/bash/_bashrc" >> ~/.bashrc
+echo ". ~/bin/dotfiles/bash/_profile" >> ~/.profile
 
 
 # setup ssh
