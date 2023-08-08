@@ -2,6 +2,7 @@
   "diagnostic.checkCurrentLine": true,
   "pyright.disableDiagnostics": true,
   "inlayHint.enable": false,
+  "suggest.autoTrigger": "trigger",
   "suggest.enablePreselect": false,
   "suggest.noselect": false
 }
