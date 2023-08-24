@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+pip install --upgrade pip
+
+# unintall all existing pip packages
+pip freeze | xargs pip uninstall -y
+
+# install general development pip packages
+pip install -r ~/bin/dotfiles/python/development.txt
+
+pip list
