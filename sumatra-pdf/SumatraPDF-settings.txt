@@ -199,6 +199,14 @@ Shortcuts [
 		Cmd = CmdScrollDownHalfPage
 		Key = Ctrl + D
 	]
+  [
+    Cmd = CmdFindNext
+    Key = N
+  ]
+  [
+    Cmd = CmdFindPrev
+    Key = Shift + N
+  ]
 ]
 
 # end custom settings
