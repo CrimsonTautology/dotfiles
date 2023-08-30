@@ -199,6 +199,14 @@ Shortcuts [
 		Cmd = CmdScrollDownHalfPage
 		Key = Ctrl + D
 	]
+  [
+    Cmd = CmdNavigateBack
+    Key = Shift + H
+  ]
+  [
+    Cmd = CmdNavigateForward
+    Key = Shift + L
+  ]
 ]
 
 # end custom settings
