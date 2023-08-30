@@ -207,6 +207,14 @@ Shortcuts [
     Cmd = CmdFindPrev
     Key = Shift + N
   ]
+  [
+    Cmd = CmdNavigateBack
+    Key = Shift + H
+  ]
+  [
+    Cmd = CmdNavigateForward
+    Key = Shift + L
+  ]
 ]
 
 # end custom settings
