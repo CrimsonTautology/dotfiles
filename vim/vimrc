@@ -269,6 +269,9 @@ nnoremap <silent> <leader>da o<c-r>=strftime("%m/%d/%Y")<CR>
 nnoremap <silent> <leader>dt o<c-r>=strftime("%m/%d/%Y %r")<CR>
 nnoremap <silent> <leader>di o<c-r>=strftime("%F")<CR>
 
+" Git shortcuts
+nnoremap <silent> <leader>gd :Gdiff<CR>
+
 " show highlighting groups for current word
 nnoremap <silent> <leader>hi :call SynStack()<CR>
 function! SynStack ()
