@@ -4,3 +4,6 @@ ipython
 numpy
 pytest
 vim-vint
+numpy
+matplotlib
+scipy

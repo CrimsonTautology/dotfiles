@@ -25,8 +25,11 @@ alias webapp='cd $WEBAPP_DIR'
 export MOBILE_DIR="$WIN_WORK_DIR/volt/mobile"
 alias mobile='cd $MOBILE_DIR'
 
-export PUBLIC_DIR="$WORK_DIR/farad"
-alias public='cd $PUBLIC_DIR'
+export FARAD_DIR="$WORK_DIR/farad"
+alias farad='cd $FARAD_DIR'
+
+export CR_DIR="$WORK_DIR/ConditionReport"
+alias cr='cd $CR_DIR'
 
 # convenience functions
 amp () ( 

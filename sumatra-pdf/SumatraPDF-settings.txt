@@ -200,6 +200,14 @@ Shortcuts [
 		Key = Ctrl + D
 	]
   [
+    Cmd = CmdFindNext
+    Key = N
+  ]
+  [
+    Cmd = CmdFindPrev
+    Key = Shift + N
+  ]
+  [
     Cmd = CmdNavigateBack
     Key = Shift + H
   ]
