@@ -4,3 +4,5 @@ TAB: menu-complete
 "\e[Z": complete
 
 set colored-stats On
+
+"\C-g": "\C-x\C-e"

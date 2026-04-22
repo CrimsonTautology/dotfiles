@@ -12,6 +12,7 @@ export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
 export PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"
 
 export CHROME_BIN="/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+export BROWSER=wslview
 
 # directory shortcuts
 export WIN_USER_DIR="/mnt/c/Users/$USER" 

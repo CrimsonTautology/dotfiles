@@ -3,6 +3,8 @@
 . ~/bin/dotfiles/python/pyenv.sh
 . ~/bin/dotfiles/node/nvm.sh
 
+export BROWSER=wslview
+
 # directory shortcuts
 export WIN_USER_DIR="/mnt/c/Users/${USER}e"
 export WIN_DOTFILES="$WIN_USER_DIR/bin/dotfiles"
