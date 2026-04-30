@@ -3,5 +3,8 @@
 . ~/bin/dotfiles/python/pyenv.sh
 . ~/bin/dotfiles/node/nvm.sh
 
+# aliases
+alias ddg='lynx https://lite.duckduckgo.com/lite/'
+
 # unaliases
 unalias bill
