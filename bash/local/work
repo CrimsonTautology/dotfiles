@@ -33,7 +33,16 @@ export CR_DIR="$WORK_DIR/ConditionReport"
 alias cr='cd $CR_DIR'
 
 # convenience functions
-amp () ( 
+gv() {
+    local win_paths=()
+    for f in "$@"; do
+        win_paths+=("$(wslpath -w "$f")")
+    done
+    cmd.exe /c start "" "C:\Program Files (x86)\Vim\vim82\gvim.exe" --remote-tab-silent "${win_paths[@]}"
+}
+complete -f gv
+
+amp () (
     cd $WEBAPP_VAGRANT_DIR && vagrant "$@"
 )
 
