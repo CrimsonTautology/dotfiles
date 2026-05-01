@@ -33,7 +33,7 @@ export CR_DIR="$WORK_DIR/ConditionReport"
 alias cr='cd $CR_DIR'
 
 # convenience functions
-gv() {
+gvim() {
     local win_paths=()
     for f in "$@"; do
         win_paths+=("$(wslpath -w "$f")")
