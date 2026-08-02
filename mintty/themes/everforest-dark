@@ -1,0 +1,21 @@
+# vi: syn=dosini:et
+
+ForegroundColour=211,198,170
+BackgroundColour=39,46,51
+CursorColour=230,152,117
+Black=122,132,120
+BoldBlack=166,176,160
+Red=230,126,128
+BoldRed=248,85,82
+Green=167,192,128
+BoldGreen=141,161,1
+Yellow=219,188,127
+BoldYellow=223,160,0
+Blue=127,187,179
+BoldBlue=58,148,197
+Magenta=214,153,182
+BoldMagenta=223,105,186
+Cyan=131,192,146
+BoldCyan=53,167,124
+White=242,239,223
+BoldWhite=255,251,239
