@@ -250,6 +250,16 @@ inoremap <c-j> <c-o>$<cr>
 inoremap <c-;> <c-o>$;<cr>
 inoremap <c-,> <c-o>$,<cr>
 
+" disable middle mouse button paste
+noremap <MiddleMouse> <Nop>
+noremap <2-MiddleMouse> <Nop>
+noremap <3-MiddleMouse> <Nop>
+noremap <4-MiddleMouse> <Nop>
+inoremap <MiddleMouse> <Nop>
+inoremap <2-MiddleMouse> <Nop>
+inoremap <3-MiddleMouse> <Nop>
+inoremap <4-MiddleMouse> <Nop>
+
 "------------------------------------------------------------------------------
 " Leader Commands
 "------------------------------------------------------------------------------

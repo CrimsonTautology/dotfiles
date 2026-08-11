@@ -124,7 +124,3 @@ xnoremap á <C-C>ggVG
 set cpo&
 let &cpoptions = s:save_cpo
 unlet s:save_cpo
-
-" disable middle mouse button paste
-map <MiddleMouse> <Nop>
-imap <MiddleMouse> <Nop>
